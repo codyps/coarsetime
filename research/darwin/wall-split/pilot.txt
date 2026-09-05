@@ -1,0 +1,15 @@
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16         	23803681	         5.054 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitCurrentUnixNano-16    	56799489	         2.194 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitFixedFresh-16         	40126780	         3.163 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitFixedAged-16          	24879216	         4.820 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitRebaseFresh-16        	38987899	         3.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitRebaseAged-16         	45082308	         2.972 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitAddFresh-16           	13465051	         7.776 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitAddAged-16            	25709457	         4.561 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSplitRebaseBoundary-16     	 1959250	        58.59 ns/op	      64 B/op	       1 allocs/op
+BenchmarkSplitRebaseSteady-16       	37396994	         3.151 ns/op	       0 B/op	       0 allocs/op
+PASS

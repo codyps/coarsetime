@@ -1,0 +1,218 @@
+{
+  "BenchmarkPrototypeInstantLibc": {
+    "median_ns": 16.98,
+    "min_ns": 16.95,
+    "max_ns": 18.87,
+    "samples_ns": [
+      16.97,
+      18.87,
+      16.95,
+      16.98,
+      17.26
+    ]
+  },
+  "BenchmarkPrototypeInstantCheckedASM": {
+    "median_ns": 2.507,
+    "min_ns": 2.44,
+    "max_ns": 2.524,
+    "samples_ns": [
+      2.507,
+      2.501,
+      2.524,
+      2.521,
+      2.44
+    ]
+  },
+  "BenchmarkPrototypeInstantOnceASM": {
+    "median_ns": 2.545,
+    "min_ns": 2.51,
+    "max_ns": 2.763,
+    "samples_ns": [
+      2.763,
+      2.607,
+      2.532,
+      2.545,
+      2.51
+    ]
+  },
+  "BenchmarkPrototypeInstantOnceAtomic": {
+    "median_ns": 0.6221,
+    "min_ns": 0.618,
+    "max_ns": 0.6307,
+    "samples_ns": [
+      0.6218,
+      0.618,
+      0.6221,
+      0.6307,
+      0.6273
+    ]
+  },
+  "BenchmarkPrototypeSinceLibc": {
+    "median_ns": 19.72,
+    "min_ns": 19.02,
+    "max_ns": 22.05,
+    "samples_ns": [
+      19.72,
+      19.02,
+      22.05,
+      19.56,
+      21.22
+    ]
+  },
+  "BenchmarkPrototypeSinceCheckedASM": {
+    "median_ns": 4.8,
+    "min_ns": 4.702,
+    "max_ns": 4.897,
+    "samples_ns": [
+      4.8,
+      4.897,
+      4.774,
+      4.872,
+      4.702
+    ]
+  },
+  "BenchmarkPrototypeSinceOnceASM": {
+    "median_ns": 5.207,
+    "min_ns": 5.08,
+    "max_ns": 5.268,
+    "samples_ns": [
+      5.08,
+      5.268,
+      5.214,
+      5.11,
+      5.207
+    ]
+  },
+  "BenchmarkPrototypeSinceOnceAtomic": {
+    "median_ns": 3.148,
+    "min_ns": 3.112,
+    "max_ns": 3.173,
+    "samples_ns": [
+      3.148,
+      3.112,
+      3.165,
+      3.173,
+      3.144
+    ]
+  },
+  "BenchmarkPrototypeUnixNanoLibc": {
+    "median_ns": 19.87,
+    "min_ns": 19.6,
+    "max_ns": 22.09,
+    "samples_ns": [
+      22.09,
+      19.9,
+      19.6,
+      19.87,
+      19.62
+    ]
+  },
+  "BenchmarkPrototypeUnixNanoCheckedASM": {
+    "median_ns": 3.938,
+    "min_ns": 3.905,
+    "max_ns": 3.99,
+    "samples_ns": [
+      3.905,
+      3.99,
+      3.949,
+      3.938,
+      3.915
+    ]
+  },
+  "BenchmarkPrototypeUnixNanoOnceASM": {
+    "median_ns": 4.417,
+    "min_ns": 4.342,
+    "max_ns": 4.485,
+    "samples_ns": [
+      4.387,
+      4.485,
+      4.466,
+      4.342,
+      4.417
+    ]
+  },
+  "BenchmarkPrototypeUnixNanoOnceAtomic": {
+    "median_ns": 2.255,
+    "min_ns": 2.232,
+    "max_ns": 2.399,
+    "samples_ns": [
+      2.399,
+      2.255,
+      2.232,
+      2.238,
+      2.26
+    ]
+  },
+  "BenchmarkPrototypeNowLibc": {
+    "median_ns": 21.53,
+    "min_ns": 20.06,
+    "max_ns": 23.09,
+    "samples_ns": [
+      23.09,
+      21.53,
+      20.06,
+      21.13,
+      21.83
+    ]
+  },
+  "BenchmarkPrototypeNowCheckedASM": {
+    "median_ns": 6.662,
+    "min_ns": 6.636,
+    "max_ns": 6.951,
+    "samples_ns": [
+      6.636,
+      6.657,
+      6.951,
+      6.682,
+      6.662
+    ]
+  },
+  "BenchmarkPrototypeNowOnceASM": {
+    "median_ns": 6.748,
+    "min_ns": 6.63,
+    "max_ns": 6.949,
+    "samples_ns": [
+      6.748,
+      6.949,
+      6.63,
+      6.64,
+      6.789
+    ]
+  },
+  "BenchmarkPrototypeNowOnceAtomic": {
+    "median_ns": 5.001,
+    "min_ns": 4.914,
+    "max_ns": 5.115,
+    "samples_ns": [
+      4.914,
+      4.989,
+      5.104,
+      5.115,
+      5.001
+    ]
+  },
+  "BenchmarkTimeNow": {
+    "median_ns": 76.73,
+    "min_ns": 75.51,
+    "max_ns": 77.69,
+    "samples_ns": [
+      75.51,
+      76.83,
+      76.73,
+      77.69,
+      76.42
+    ]
+  },
+  "BenchmarkTimeSince": {
+    "median_ns": 34.64,
+    "min_ns": 34.18,
+    "max_ns": 36.29,
+    "samples_ns": [
+      34.64,
+      36.07,
+      34.18,
+      34.21,
+      36.29
+    ]
+  }
+}

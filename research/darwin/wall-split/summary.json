@@ -1,0 +1,312 @@
+{
+  "BenchmarkSplitFixedAged": {
+    "median_ns": 4.725,
+    "min_ns": 4.603,
+    "max_ns": 4.827,
+    "samples": [
+      {
+        "ns": 4.827,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.725,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.702,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.603,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.819,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitCurrentNow": {
+    "median_ns": 4.961,
+    "min_ns": 4.834,
+    "max_ns": 5.07,
+    "samples": [
+      {
+        "ns": 4.961,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.834,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.908,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 5.07,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 5.035,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitAddAged": {
+    "median_ns": 4.699,
+    "min_ns": 4.606,
+    "max_ns": 4.903,
+    "samples": [
+      {
+        "ns": 4.647,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.699,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.707,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.606,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 4.903,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitFixedFresh": {
+    "median_ns": 3.079,
+    "min_ns": 2.953,
+    "max_ns": 3.136,
+    "samples": [
+      {
+        "ns": 3.079,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.136,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.111,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.953,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.051,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitAddFresh": {
+    "median_ns": 7.929,
+    "min_ns": 7.63,
+    "max_ns": 8.487,
+    "samples": [
+      {
+        "ns": 7.63,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 7.932,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 7.777,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 7.929,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 8.487,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitRebaseBoundary": {
+    "median_ns": 57.98,
+    "min_ns": 56.11,
+    "max_ns": 60.01,
+    "samples": [
+      {
+        "ns": 57.5,
+        "bytes": 64,
+        "allocs": 1
+      },
+      {
+        "ns": 59.74,
+        "bytes": 64,
+        "allocs": 1
+      },
+      {
+        "ns": 57.98,
+        "bytes": 64,
+        "allocs": 1
+      },
+      {
+        "ns": 56.11,
+        "bytes": 64,
+        "allocs": 1
+      },
+      {
+        "ns": 60.01,
+        "bytes": 64,
+        "allocs": 1
+      }
+    ]
+  },
+  "BenchmarkSplitRebaseAged": {
+    "median_ns": 3.087,
+    "min_ns": 2.994,
+    "max_ns": 3.104,
+    "samples": [
+      {
+        "ns": 3.049,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.104,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.093,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.994,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.087,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitCurrentUnixNano": {
+    "median_ns": 2.221,
+    "min_ns": 2.166,
+    "max_ns": 2.342,
+    "samples": [
+      {
+        "ns": 2.241,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.221,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.187,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.166,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.342,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitRebaseFresh": {
+    "median_ns": 3.049,
+    "min_ns": 2.999,
+    "max_ns": 3.145,
+    "samples": [
+      {
+        "ns": 3.012,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.049,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 2.999,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.093,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.145,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  },
+  "BenchmarkSplitRebaseSteady": {
+    "median_ns": 3.137,
+    "min_ns": 3.084,
+    "max_ns": 3.256,
+    "samples": [
+      {
+        "ns": 3.084,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.137,
+        "bytes": 0,
+        "allocs": 0
+      },
+      {
+        "ns": 3.256,
+        "bytes": 0,
+        "allocs": 0
+      }
+    ]
+  }
+}

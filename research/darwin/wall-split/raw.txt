@@ -1,0 +1,383 @@
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedAged-16    	50178771	         4.827 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentNow$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16    	47749666	         4.961 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddAged-16    	50526016	         4.647 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedFresh-16    	78014124	         3.079 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddFresh-16    	30593919	         7.630 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseBoundary$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseBoundary-16    	 3932564	        57.50 ns/op	      64 B/op	       1 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseAged-16    	75801433	         3.049 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentUnixNano$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentUnixNano-16    	100000000	         2.241 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseFresh-16    	78047232	         3.012 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseFresh-16    	73694094	         3.049 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseBoundary$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseBoundary-16    	 3912529	        59.74 ns/op	      64 B/op	       1 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddFresh-16    	25456911	         7.932 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddAged-16    	51153696	         4.699 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseAged-16    	78107734	         3.104 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentUnixNano$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentUnixNano-16    	100000000	         2.221 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedFresh-16    	77508088	         3.136 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentNow$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16    	47607400	         4.834 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedAged-16    	50516712	         4.725 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedFresh-16    	78165151	         3.111 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedAged-16    	50502796	         4.702 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddAged-16    	49684184	         4.707 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseAged-16    	76924456	         3.093 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseFresh-16    	75059413	         2.999 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentUnixNano$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentUnixNano-16    	100000000	         2.187 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddFresh-16    	30490941	         7.777 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseBoundary$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseBoundary-16    	 4136437	        57.98 ns/op	      64 B/op	       1 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentNow$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16    	47785500	         4.908 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseAged-16    	82705431	         2.994 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddAged-16    	50405193	         4.606 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseFresh-16    	77237895	         3.093 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedFresh-16    	78137360	         2.953 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseBoundary$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseBoundary-16    	 3951712	        56.11 ns/op	      64 B/op	       1 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedAged-16    	50395118	         4.603 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddFresh-16    	30590546	         7.929 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentUnixNano$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentUnixNano-16    	100000000	         2.166 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentNow$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16    	47665076	         5.070 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentUnixNano$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentUnixNano-16    	100000000	         2.342 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseAged-16    	78099805	         3.087 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedFresh-16    	78090276	         3.051 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddFresh-16    	30462044	         8.487 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitFixedAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitFixedAged-16    	50413686	         4.819 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseFresh$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseFresh-16    	76120372	         3.145 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitAddAged$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitAddAged-16    	48587529	         4.903 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseBoundary$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseBoundary-16    	 3939790	        60.01 ns/op	      64 B/op	       1 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitCurrentNow$', '-test.benchtime=200ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitCurrentNow-16    	47671164	         5.035 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseSteady$', '-test.benchtime=3s', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseSteady-16    	1000000000	         3.084 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseSteady$', '-test.benchtime=3s', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseSteady-16    	1000000000	         3.137 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wall-split.test', '-test.run=^$', '-test.bench=^BenchmarkSplitRebaseSteady$', '-test.benchtime=3s', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkSplitRebaseSteady-16    	1000000000	         3.256 ns/op	       0 B/op	       0 allocs/op
+PASS

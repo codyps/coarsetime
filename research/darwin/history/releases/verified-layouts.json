@@ -1,0 +1,119 @@
+[
+  [
+    "macOS 10.13",
+    "xnu-4570.1.46",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA\t(_COMM_PAGE_START_ADDRESS+0x0D0) \t/* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40*/",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA\t\t(_COMM_PAGE_START_ADDRESS+0x120)\t// used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 10.14.6",
+    "xnu-4903.270.47",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 10.15",
+    "xnu-6153.11.26",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 11.1",
+    "xnu-7195.60.75",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 12.1",
+    "xnu-8019.61.5",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 13.0",
+    "xnu-8792.41.9",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 14.0",
+    "xnu-10002.1.13",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 15.0",
+    "xnu-11215.1.10",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ],
+  [
+    "macOS 26.0",
+    "xnu-12377.1.9",
+    [
+      "TimeStamp_tick",
+      "TimeStamp_sec",
+      "TimeStamp_frac",
+      "Ticks_scale",
+      "Ticks_per_sec"
+    ],
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA    (_COMM_PAGE_START_ADDRESS+0x0D0)        /* used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40 */",
+    "#define _COMM_PAGE_NEWTIMEOFDAY_DATA            (_COMM_PAGE_START_ADDRESS+0x120)        // used by gettimeofday(). Currently, sizeof(new_commpage_timeofday_data_t) = 40."
+  ]
+]

@@ -1,0 +1,208 @@
+TEXT coarsetime.BenchmarkPrototypeInstantLibc(SB) /Users/cody/p/coarsetime/commpage_prototype_darwin_test.go
+  commpage_prototype_darwin_test.go:121	0x1138060		493b6610		CMPQ SP, 0x10(R14)
+  commpage_prototype_darwin_test.go:121	0x1138064		7653			JBE 0x11380b9
+  commpage_prototype_darwin_test.go:121	0x1138066		55			PUSHQ BP
+  commpage_prototype_darwin_test.go:121	0x1138067		4889e5			MOVQ SP, BP
+  commpage_prototype_darwin_test.go:121	0x113806a		4883ec28		SUBQ $0x28, SP
+  commpage_prototype_darwin_test.go:123	0x113806e		4889442438		MOVQ AX, 0x38(SP)
+  commpage_prototype_darwin_test.go:122	0x1138073		e868ffffff		CALL coarsetime.prototypeBenchmarkSupported(SB)
+  commpage_prototype_darwin_test.go:122	0x1138078		31c0			XORL AX, AX
+  commpage_prototype_darwin_test.go:123	0x113807a		eb29			JMP 0x11380a5
+  commpage_prototype_darwin_test.go:123	0x113807c		4889442420		MOVQ AX, 0x20(SP)
+  coarsetime_darwin.go:39		0x1138081		488b0530731d00		MOVQ coarsetime.approximateTimePC(SB), AX
+  coarsetime.go:25			0x1138088		90			NOPL
+  coarsetime_darwin.go:39		0x1138089		31db			XORL BX, BX
+  coarsetime_darwin.go:39		0x113808b		4889d9			MOVQ BX, CX
+  coarsetime_darwin.go:39		0x113808e		4889cf			MOVQ CX, DI
+  coarsetime_darwin.go:39		0x1138091		e86abcf5ff		CALL syscall.rawSyscall(SB)
+  commpage_prototype_darwin_test.go:124	0x1138096		4889054b731d00		MOVQ AX, coarsetime.instantSink(SB)
+  commpage_prototype_darwin_test.go:123	0x113809d		488b442420		MOVQ 0x20(SP), AX
+  commpage_prototype_darwin_test.go:123	0x11380a2		48ffc0			INCQ AX
+  commpage_prototype_darwin_test.go:123	0x11380a5		488b542438		MOVQ 0x38(SP), DX
+  commpage_prototype_darwin_test.go:123	0x11380aa		48398210020000		CMPQ 0x210(DX), AX
+  commpage_prototype_darwin_test.go:123	0x11380b1		7fc9			JG 0x113807c
+  commpage_prototype_darwin_test.go:126	0x11380b3		4883c428		ADDQ $0x28, SP
+  commpage_prototype_darwin_test.go:126	0x11380b7		5d			POPQ BP
+  commpage_prototype_darwin_test.go:126	0x11380b8		c3			RET
+  commpage_prototype_darwin_test.go:121	0x11380b9		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin_test.go:121	0x11380be		6690			NOPW
+  commpage_prototype_darwin_test.go:121	0x11380c0		e89bd1f4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  commpage_prototype_darwin_test.go:121	0x11380c5		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:121	0x11380ca		eb94			JMP coarsetime.BenchmarkPrototypeInstantLibc(SB)
+  :-1					0x11380cc		cc			INT $0x3
+  :-1					0x11380cd		cc			INT $0x3
+  :-1					0x11380ce		cc			INT $0x3
+  :-1					0x11380cf		cc			INT $0x3
+  :-1					0x11380d0		cc			INT $0x3
+  :-1					0x11380d1		cc			INT $0x3
+  :-1					0x11380d2		cc			INT $0x3
+  :-1					0x11380d3		cc			INT $0x3
+  :-1					0x11380d4		cc			INT $0x3
+  :-1					0x11380d5		cc			INT $0x3
+  :-1					0x11380d6		cc			INT $0x3
+  :-1					0x11380d7		cc			INT $0x3
+  :-1					0x11380d8		cc			INT $0x3
+  :-1					0x11380d9		cc			INT $0x3
+  :-1					0x11380da		cc			INT $0x3
+  :-1					0x11380db		cc			INT $0x3
+  :-1					0x11380dc		cc			INT $0x3
+  :-1					0x11380dd		cc			INT $0x3
+  :-1					0x11380de		cc			INT $0x3
+  :-1					0x11380df		cc			INT $0x3
+
+TEXT coarsetime.BenchmarkPrototypeInstantCheckedASM(SB) /Users/cody/p/coarsetime/commpage_prototype_darwin_test.go
+  commpage_prototype_darwin_test.go:150	0x11382a0		493b6610		CMPQ SP, 0x10(R14)
+  commpage_prototype_darwin_test.go:150	0x11382a4		7649			JBE 0x11382ef
+  commpage_prototype_darwin_test.go:150	0x11382a6		55			PUSHQ BP
+  commpage_prototype_darwin_test.go:150	0x11382a7		4889e5			MOVQ SP, BP
+  commpage_prototype_darwin_test.go:150	0x11382aa		4883ec10		SUBQ $0x10, SP
+  commpage_prototype_darwin_test.go:152	0x11382ae		4889442420		MOVQ AX, 0x20(SP)
+  commpage_prototype_darwin_test.go:151	0x11382b3		e828fdffff		CALL coarsetime.prototypeBenchmarkSupported(SB)
+  commpage_prototype_darwin_test.go:151	0x11382b8		31c0			XORL AX, AX
+  commpage_prototype_darwin_test.go:152	0x11382ba		eb19			JMP 0x11382d5
+  commpage_prototype_darwin_test.go:152	0x11382bc		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin.go:64	0x11382c1		e87ac6ffff		CALL coarsetime.prototypeCheckedTicks(SB)
+  commpage_prototype_darwin_test.go:153	0x11382c6		4889051b711d00		MOVQ AX, coarsetime.instantSink(SB)
+  commpage_prototype_darwin_test.go:152	0x11382cd		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:152	0x11382d2		48ffc0			INCQ AX
+  commpage_prototype_darwin_test.go:152	0x11382d5		488b4c2420		MOVQ 0x20(SP), CX
+  commpage_prototype_darwin_test.go:152	0x11382da		660f1f440000		NOPW 0(AX)(AX*1)
+  commpage_prototype_darwin_test.go:152	0x11382e0		48398110020000		CMPQ 0x210(CX), AX
+  commpage_prototype_darwin_test.go:152	0x11382e7		7fd3			JG 0x11382bc
+  commpage_prototype_darwin_test.go:155	0x11382e9		4883c410		ADDQ $0x10, SP
+  commpage_prototype_darwin_test.go:155	0x11382ed		5d			POPQ BP
+  commpage_prototype_darwin_test.go:155	0x11382ee		c3			RET
+  commpage_prototype_darwin_test.go:150	0x11382ef		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin_test.go:150	0x11382f4		e867cff4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  commpage_prototype_darwin_test.go:150	0x11382f9		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:150	0x11382fe		6690			NOPW
+  commpage_prototype_darwin_test.go:150	0x1138300		eb9e			JMP coarsetime.BenchmarkPrototypeInstantCheckedASM(SB)
+  :-1					0x1138302		cc			INT $0x3
+  :-1					0x1138303		cc			INT $0x3
+  :-1					0x1138304		cc			INT $0x3
+  :-1					0x1138305		cc			INT $0x3
+  :-1					0x1138306		cc			INT $0x3
+  :-1					0x1138307		cc			INT $0x3
+  :-1					0x1138308		cc			INT $0x3
+  :-1					0x1138309		cc			INT $0x3
+  :-1					0x113830a		cc			INT $0x3
+  :-1					0x113830b		cc			INT $0x3
+  :-1					0x113830c		cc			INT $0x3
+  :-1					0x113830d		cc			INT $0x3
+  :-1					0x113830e		cc			INT $0x3
+  :-1					0x113830f		cc			INT $0x3
+  :-1					0x1138310		cc			INT $0x3
+  :-1					0x1138311		cc			INT $0x3
+  :-1					0x1138312		cc			INT $0x3
+  :-1					0x1138313		cc			INT $0x3
+  :-1					0x1138314		cc			INT $0x3
+  :-1					0x1138315		cc			INT $0x3
+  :-1					0x1138316		cc			INT $0x3
+  :-1					0x1138317		cc			INT $0x3
+  :-1					0x1138318		cc			INT $0x3
+  :-1					0x1138319		cc			INT $0x3
+  :-1					0x113831a		cc			INT $0x3
+  :-1					0x113831b		cc			INT $0x3
+  :-1					0x113831c		cc			INT $0x3
+  :-1					0x113831d		cc			INT $0x3
+  :-1					0x113831e		cc			INT $0x3
+  :-1					0x113831f		cc			INT $0x3
+
+TEXT coarsetime.BenchmarkPrototypeInstantOnceASM(SB) /Users/cody/p/coarsetime/commpage_prototype_darwin_test.go
+  commpage_prototype_darwin_test.go:179	0x11384e0		493b6610		CMPQ SP, 0x10(R14)
+  commpage_prototype_darwin_test.go:179	0x11384e4		764b			JBE 0x1138531
+  commpage_prototype_darwin_test.go:179	0x11384e6		55			PUSHQ BP
+  commpage_prototype_darwin_test.go:179	0x11384e7		4889e5			MOVQ SP, BP
+  commpage_prototype_darwin_test.go:179	0x11384ea		4883ec10		SUBQ $0x10, SP
+  commpage_prototype_darwin_test.go:181	0x11384ee		4889442420		MOVQ AX, 0x20(SP)
+  commpage_prototype_darwin_test.go:180	0x11384f3		e8e8faffff		CALL coarsetime.prototypeBenchmarkSupported(SB)
+  commpage_prototype_darwin_test.go:180	0x11384f8		31c0			XORL AX, AX
+  commpage_prototype_darwin_test.go:181	0x11384fa		eb21			JMP 0x113851d
+  commpage_prototype_darwin_test.go:181	0x11384fc		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin.go:35	0x1138501		0fb605c56d1d00		MOVZX coarsetime.prototypeSupported(SB), AX
+  commpage_prototype_darwin.go:74	0x1138508		90			NOPL
+  commpage_prototype_darwin.go:35	0x1138509		e8d2c4ffff		CALL coarsetime.prototypeASMTicksIf(SB)
+  commpage_prototype_darwin_test.go:182	0x113850e		488905d36e1d00		MOVQ AX, coarsetime.instantSink(SB)
+  commpage_prototype_darwin_test.go:181	0x1138515		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:181	0x113851a		48ffc0			INCQ AX
+  commpage_prototype_darwin_test.go:181	0x113851d		488b4c2420		MOVQ 0x20(SP), CX
+  commpage_prototype_darwin_test.go:181	0x1138522		48398110020000		CMPQ 0x210(CX), AX
+  commpage_prototype_darwin_test.go:181	0x1138529		7fd1			JG 0x11384fc
+  commpage_prototype_darwin_test.go:184	0x113852b		4883c410		ADDQ $0x10, SP
+  commpage_prototype_darwin_test.go:184	0x113852f		5d			POPQ BP
+  commpage_prototype_darwin_test.go:184	0x1138530		c3			RET
+  commpage_prototype_darwin_test.go:179	0x1138531		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin_test.go:179	0x1138536		e825cdf4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  commpage_prototype_darwin_test.go:179	0x113853b		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:179	0x1138540		eb9e			JMP coarsetime.BenchmarkPrototypeInstantOnceASM(SB)
+  :-1					0x1138542		cc			INT $0x3
+  :-1					0x1138543		cc			INT $0x3
+  :-1					0x1138544		cc			INT $0x3
+  :-1					0x1138545		cc			INT $0x3
+  :-1					0x1138546		cc			INT $0x3
+  :-1					0x1138547		cc			INT $0x3
+  :-1					0x1138548		cc			INT $0x3
+  :-1					0x1138549		cc			INT $0x3
+  :-1					0x113854a		cc			INT $0x3
+  :-1					0x113854b		cc			INT $0x3
+  :-1					0x113854c		cc			INT $0x3
+  :-1					0x113854d		cc			INT $0x3
+  :-1					0x113854e		cc			INT $0x3
+  :-1					0x113854f		cc			INT $0x3
+  :-1					0x1138550		cc			INT $0x3
+  :-1					0x1138551		cc			INT $0x3
+  :-1					0x1138552		cc			INT $0x3
+  :-1					0x1138553		cc			INT $0x3
+  :-1					0x1138554		cc			INT $0x3
+  :-1					0x1138555		cc			INT $0x3
+  :-1					0x1138556		cc			INT $0x3
+  :-1					0x1138557		cc			INT $0x3
+  :-1					0x1138558		cc			INT $0x3
+  :-1					0x1138559		cc			INT $0x3
+  :-1					0x113855a		cc			INT $0x3
+  :-1					0x113855b		cc			INT $0x3
+  :-1					0x113855c		cc			INT $0x3
+  :-1					0x113855d		cc			INT $0x3
+  :-1					0x113855e		cc			INT $0x3
+  :-1					0x113855f		cc			INT $0x3
+
+TEXT coarsetime.BenchmarkPrototypeInstantOnceAtomic(SB) /Users/cody/p/coarsetime/commpage_prototype_darwin_test.go
+  commpage_prototype_darwin_test.go:208	0x1138720		493b6610		CMPQ SP, 0x10(R14)
+  commpage_prototype_darwin_test.go:208	0x1138724		7663			JBE 0x1138789
+  commpage_prototype_darwin_test.go:208	0x1138726		55			PUSHQ BP
+  commpage_prototype_darwin_test.go:208	0x1138727		4889e5			MOVQ SP, BP
+  commpage_prototype_darwin_test.go:208	0x113872a		4883ec10		SUBQ $0x10, SP
+  commpage_prototype_darwin_test.go:210	0x113872e		4889442420		MOVQ AX, 0x20(SP)
+  commpage_prototype_darwin_test.go:209	0x1138733		e8a8f8ffff		CALL coarsetime.prototypeBenchmarkSupported(SB)
+  commpage_prototype_darwin_test.go:210	0x1138738		488b4c2420		MOVQ 0x20(SP), CX
+  commpage_prototype_darwin_test.go:210	0x113873d		31c0			XORL AX, AX
+  commpage_prototype_darwin_test.go:210	0x113873f		90			NOPL
+  commpage_prototype_darwin_test.go:210	0x1138740		eb0a			JMP 0x113874c
+  commpage_prototype_darwin_test.go:211	0x1138742		4889159f6c1d00		MOVQ DX, coarsetime.instantSink(SB)
+  commpage_prototype_darwin_test.go:210	0x1138749		48ffc0			INCQ AX
+  commpage_prototype_darwin_test.go:210	0x113874c		48398110020000		CMPQ 0x210(CX), AX
+  commpage_prototype_darwin_test.go:210	0x1138753		7e2e			JLE 0x1138783
+  commpage_prototype_darwin.go:46	0x1138755		803d716b1d0000		CMPB coarsetime.prototypeSupported(SB), $0x0
+  commpage_prototype_darwin.go:50	0x113875c		740c			JE 0x113876a
+  commpage_prototype_darwin.go:54	0x113875e		488b1523531b00		MOVQ coarsetime.prototypeApproxPointer(SB), DX
+  commpage_prototype_darwin.go:54	0x1138765		488b12			MOVQ 0(DX), DX
+  commpage_prototype_darwin.go:46	0x1138768		ebd8			JMP 0x1138742
+  commpage_prototype_darwin_test.go:210	0x113876a		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin.go:56	0x113876f		e80cc3ffff		CALL coarsetime.prototypeFallbackTicks(SB)
+  commpage_prototype_darwin_test.go:210	0x1138774		488b4c2420		MOVQ 0x20(SP), CX
+  commpage_prototype_darwin.go:82	0x1138779		4889c2			MOVQ AX, DX
+  commpage_prototype_darwin_test.go:210	0x113877c		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin.go:46	0x1138781		ebbf			JMP 0x1138742
+  commpage_prototype_darwin_test.go:213	0x1138783		4883c410		ADDQ $0x10, SP
+  commpage_prototype_darwin_test.go:213	0x1138787		5d			POPQ BP
+  commpage_prototype_darwin_test.go:213	0x1138788		c3			RET
+  commpage_prototype_darwin_test.go:208	0x1138789		4889442408		MOVQ AX, 0x8(SP)
+  commpage_prototype_darwin_test.go:208	0x113878e		e8cdcaf4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  commpage_prototype_darwin_test.go:208	0x1138793		488b442408		MOVQ 0x8(SP), AX
+  commpage_prototype_darwin_test.go:208	0x1138798		eb86			JMP coarsetime.BenchmarkPrototypeInstantOnceAtomic(SB)
+  :-1					0x113879a		cc			INT $0x3
+  :-1					0x113879b		cc			INT $0x3
+  :-1					0x113879c		cc			INT $0x3
+  :-1					0x113879d		cc			INT $0x3
+  :-1					0x113879e		cc			INT $0x3
+  :-1					0x113879f		cc			INT $0x3

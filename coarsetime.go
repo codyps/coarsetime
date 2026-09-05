@@ -1,24 +1,64 @@
-// Package coarsetime provides current wall-clock timestamps with a low-overhead
-// coarse fast path on Windows/amd64.
+// Package coarsetime provides inexpensive clock readings for measuring elapsed
+// time and approximate wall time. Readings may repeat and have platform-dependent
+// resolution and staleness; no maximum error is promised. Instant readings are
+// not calendar timestamps; Now reads approximate wall time and Instant.Time
+// translates an Instant using a cached wall correction.
 //
-// Nanosecond units do not imply nanosecond resolution. Wall time may jump
-// backwards or forwards after a clock adjustment. Use time.Since with a value
-// returned by Now for elapsed time; do not subtract UnixNano timestamps.
+// Darwin uses the Mach approximate clock; Linux uses CLOCK_MONOTONIC_COARSE. Both
+// exclude system sleep. Other platforms use Go's monotonic clock, whose sleep
+// behavior depends on the platform.
+// Instants are meaningful only within the process that obtained them.
 package coarsetime
 
-import "time"
+import (
+	"math"
+	"math/bits"
+	"time"
+)
 
-// Now returns the current local time, including Go's monotonic clock reading.
-// It is equivalent to time.Now.
-func Now() time.Time { return time.Now() }
+// Instant is an opaque clock reading. Obtain it with NowInstant; its zero value is not
+// an initialized reading. Instant is comparable and safe to share between
+// goroutines using normal synchronization. Repeated readings may compare equal.
+type Instant struct{ ticks uint64 }
 
-// UnixNano returns the current wall time as nanoseconds since the Unix epoch.
-// On Windows/amd64 it reads the OS's coarse shared clock directly. Elsewhere,
-// or with the purego build tag, it uses time.Now().UnixNano().
-//
-// Consecutive calls may return the same value, and clock adjustments may cause
-// the value to decrease. Resolution depends on the OS and its timer settings;
-// no maximum staleness is guaranteed. Like time.Time.UnixNano, the result is
-// undefined outside the range representable by signed 64-bit Unix nanoseconds
-// (approximately years 1678 through 2262).
-func UnixNano() int64 { return unixNano() }
+// NowInstant reads the platform clock without converting its native ticks.
+func NowInstant() Instant { return Instant{ticks: readTicks()} }
+
+// Before reports whether i precedes j.
+func (i Instant) Before(j Instant) bool { return i.ticks < j.ticks }
+
+// After reports whether i follows j.
+func (i Instant) After(j Instant) bool { return i.ticks > j.ticks }
+
+// Sub returns i-j, truncating fractional nanoseconds toward zero. Results outside
+// time.Duration's range are saturated to its minimum or maximum value.
+func (i Instant) Sub(j Instant) time.Duration {
+	if i.ticks >= j.ticks {
+		return time.Duration(scaleTicks(i.ticks-j.ticks, clockNumer, clockDenom, math.MaxInt64))
+	}
+	n := scaleTicks(j.ticks-i.ticks, clockNumer, clockDenom, uint64(1)<<63)
+	return time.Duration(-n)
+}
+
+// Since returns the elapsed time since i, equivalent to NowInstant().Sub(i).
+func Since(i Instant) time.Duration { return NowInstant().Sub(i) }
+
+// scaleTicks avoids overflowing the intermediate product for long uptimes and
+// non-unit Mach timebases. denom must be nonzero.
+func scaleTicks(ticks, numer, denom, limit uint64) uint64 {
+	if numer == denom {
+		if ticks > limit {
+			return limit
+		}
+		return ticks
+	}
+	hi, lo := bits.Mul64(ticks, numer)
+	if hi >= denom {
+		return limit
+	}
+	n, _ := bits.Div64(hi, lo, denom)
+	if n > limit {
+		return limit
+	}
+	return n
+}

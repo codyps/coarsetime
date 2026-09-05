@@ -1,0 +1,25 @@
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant-16    	951369073	         0.6293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-16    	923051744	         0.6241 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-16    	963297668	         0.6282 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-16    	948847533	         0.6192 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-16    	893670927	         0.6396 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-16         	160210471	         3.593 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-16         	165049880	         3.651 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-16         	161982261	         3.698 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-16         	167925177	         3.675 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-16         	165067544	         3.649 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-16           	100000000	         5.057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-16           	100000000	         5.013 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-16           	120128221	         5.147 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-16           	100000000	         5.050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-16           	120636290	         4.983 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16      	252549634	         2.358 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16      	252572469	         2.332 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16      	255874983	         2.386 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16      	262338634	         2.324 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16      	256842229	         2.397 ns/op	       0 B/op	       0 allocs/op
+PASS

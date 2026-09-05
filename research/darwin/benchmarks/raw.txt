@@ -1,0 +1,719 @@
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoCheckedASM-16    	160249119	         3.905 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeNow$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeNow-16    	 7788733	        75.51 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowCheckedASM-16    	89090100	         6.636 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceCheckedASM-16    	127097672	         4.800 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeSince$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeSince-16    	17355902	        34.64 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceASM-16    	100000000	         5.080 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowLibc-16    	29473090	        23.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceLibc-16    	26127460	        19.72 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantLibc-16    	34459220	        16.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceAtomic-16    	942703234	         0.6218 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceAtomic-16    	121007557	         4.914 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceAtomic-16    	267955696	         2.399 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantCheckedASM-16    	237065925	         2.507 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceAtomic-16    	189283441	         3.148 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceASM-16    	88877722	         6.748 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceASM-16    	139541463	         4.387 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceASM-16    	237164356	         2.763 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoLibc-16    	30558271	        22.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceLibc-16    	30779889	        19.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceAtomic-16    	933761030	         0.6180 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceAtomic-16    	269295966	         2.255 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceAtomic-16    	181681257	         3.112 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceASM-16    	198139466	         2.607 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoLibc-16    	30047095	        19.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowCheckedASM-16    	88662176	         6.657 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowLibc-16    	28025498	        21.53 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceAtomic-16    	120679904	         4.989 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantCheckedASM-16    	242807430	         2.501 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantLibc-16    	34809129	        18.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoCheckedASM-16    	144281448	         3.990 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceASM-16    	86335009	         6.949 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeNow$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeNow-16    	 7370301	        76.83 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceASM-16    	133741131	         4.485 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeSince$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeSince-16    	15344612	        36.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceCheckedASM-16    	107858539	         4.897 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceASM-16    	100000000	         5.268 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceCheckedASM-16    	125590408	         4.774 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceAtomic-16    	100000000	         5.104 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceASM-16    	100000000	         5.214 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceAtomic-16    	186830710	         3.165 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceLibc-16    	30976868	        22.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoCheckedASM-16    	151592264	         3.949 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowCheckedASM-16    	84758655	         6.951 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceASM-16    	86500476	         6.630 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceASM-16    	133573074	         4.466 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceAtomic-16    	944761927	         0.6221 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoLibc-16    	29856621	        19.60 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceASM-16    	239205148	         2.532 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantLibc-16    	34995296	        16.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceAtomic-16    	272104124	         2.232 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeNow$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeNow-16    	 7878964	        76.73 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowLibc-16    	29204446	        20.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeSince$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeSince-16    	17267779	        34.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantCheckedASM-16    	236553915	         2.524 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceASM-16    	140246112	         4.342 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceAtomic-16    	920169258	         0.6307 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceLibc-16    	29324775	        19.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoCheckedASM-16    	156169209	         3.938 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceASM-16    	234280635	         2.545 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeNow$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeNow-16    	 7504855	        77.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeSince$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeSince-16    	17378854	        34.21 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantLibc-16    	34543105	        16.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceASM-16    	100000000	         5.110 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceASM-16    	88727982	         6.640 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceAtomic-16    	272811114	         2.238 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceCheckedASM-16    	126984400	         4.872 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceAtomic-16    	100000000	         5.115 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoLibc-16    	29758848	        19.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowCheckedASM-16    	88960293	         6.682 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowLibc-16    	29503556	        21.13 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceAtomic-16    	182546679	         3.173 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantCheckedASM-16    	238097109	         2.521 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceASM-16    	244421882	         2.510 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeNow$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeNow-16    	 7774713	        76.42 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceAtomic-16    	265872963	         2.260 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantOnceAtomic-16    	947270517	         0.6273 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceLibc-16    	27698186	        21.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoLibc-16    	26535898	        19.62 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowLibc-16    	26853666	        21.83 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantCheckedASM-16    	241380859	         2.440 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeInstantLibc$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeInstantLibc-16    	31229437	        17.26 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoOnceASM-16    	136365422	         4.417 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceASM-16    	100000000	         5.207 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceASM-16    	88843071	         6.789 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeUnixNanoCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeUnixNanoCheckedASM-16    	151688437	         3.915 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceOnceAtomic-16    	190127782	         3.144 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowCheckedASM-16    	87891482	         6.662 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkTimeSince$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkTimeSince-16    	16319460	        36.29 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeSinceCheckedASM$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeSinceCheckedASM-16    	124431151	         4.702 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5: ['/private/tmp/coarsetime-prototype-amd64.test', '-test.run=^$', '-test.bench=^BenchmarkPrototypeNowOnceAtomic$', '-test.benchtime=500ms', '-test.benchmem', '-test.count=1']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkPrototypeNowOnceAtomic-16    	100000000	         5.001 ns/op	       0 B/op	       0 allocs/op
+PASS

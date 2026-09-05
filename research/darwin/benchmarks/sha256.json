@@ -1,0 +1,7 @@
+{
+  "commpage_prototype_darwin.go": "b2126341215c217c5a2bf8457c7a78a734693c3d741c3cfbeb06e8d480c93030",
+  "commpage_prototype_darwin_arm64.s": "327e6d1f9d18cc1ceea5e8ad936fcc6294f6b1e82dd032cbe28808ba0a2483b6",
+  "commpage_prototype_darwin_amd64.s": "a6a541e179370f28de02b0464b4a0420b3e5a1d6fb26563104564b4665611c85",
+  "commpage_prototype_darwin_test.go": "b2bc1126d5495e5b4fa13e29ea85658ba7b7e6acbbb81796507c29499edd5b62",
+  "/tmp/coarsetime-prototype-amd64.test": "33b4a6a12e92d1260bd4b86c6e0988088d424e5699fa159621c559bad337c5e7"
+}

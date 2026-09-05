@@ -1,0 +1,7 @@
+# Local development environment.
+/.direnv/
+
+# Downloaded Apple source; retain research notes and provenance metadata.
+/research/darwin/xnu/
+/research/darwin/Libc/
+/research/darwin/history/xnu-*/
