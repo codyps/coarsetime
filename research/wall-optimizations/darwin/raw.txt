@@ -1,0 +1,519 @@
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnsignedNow-16    	76329921	         4.710 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitInstantTime-16    	140840533	         2.723 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	66551974	         5.426 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineUnixNano-16    	174472488	         1.985 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	158929328	         2.213 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnixNano-16    	175835712	         2.079 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatNow-16    	91205185	         4.003 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentInstantTime-16    	100000000	         3.169 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineNow-16    	75482505	         4.893 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	75593979	         4.806 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitNow-16    	75843441	         4.534 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatUnsignedNow-16    	100000000	         3.077 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	71445865	         4.802 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	74546755	         4.549 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	163824367	         2.220 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineUnixNano-16    	176342152	         2.078 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentInstantTime-16    	120194992	         3.026 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatUnsignedNow-16    	100000000	         3.283 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitNow-16    	75896943	         4.623 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitInstantTime-16    	144275996	         2.403 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineNow-16    	75853765	         4.530 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	67763953	         5.390 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatNow-16    	92081125	         3.832 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	71288440	         4.930 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnixNano-16    	179575413	         2.060 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnsignedNow-16    	75661056	         4.803 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatUnsignedNow-16    	100000000	         3.407 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatNow-16    	92042232	         3.843 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	67730626	         4.964 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineUnixNano-16    	177234366	         1.931 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnsignedNow-16    	74617801	         4.665 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineNow-16    	75812008	         4.966 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentInstantTime-16    	100000000	         3.138 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	71836170	         4.617 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitInstantTime-16    	141849838	         2.549 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitNow-16    	75340191	         4.716 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnixNano-16    	174631796	         2.063 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	71326322	         5.003 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	158507401	         2.247 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatNow-16    	91837320	         3.969 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	74724669	         4.680 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnsignedNow-16    	75195177	         4.865 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatUnsignedNow-16    	100000000	         3.301 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineUnixNano-16    	177692338	         1.961 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	165134894	         2.168 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentInstantTime-16    	100000000	         3.022 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitNow-16    	75845040	         4.508 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitInstantTime-16    	148953475	         2.284 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineNow-16    	80585948	         4.586 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	67107175	         5.044 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnixNano-16    	175672218	         2.052 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	71340301	         4.907 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	67668002	         5.051 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	75815936	         4.566 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentInstantTime-16    	100000000	         3.095 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnsignedNow-16    	75099584	         4.721 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	70632276	         4.988 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineUnixNano-16    	176886094	         1.920 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitUnixNano-16    	183625100	         1.997 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitNow-16    	72276645	         4.771 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	162610351	         2.149 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatNow-16    	92028232	         3.685 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptInlineNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptInlineNow-16    	75049375	         4.594 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptUnitInstantTime$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnitInstantTime-16    	142346683	         2.420 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/private/tmp/coarsetime-wallopt-darwin.test', '-test.run=^$', '-test.bench=^BenchmarkWallOptFlatUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: darwin
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFlatUnsignedNow-16    	100000000	         3.146 ns/op	       0 B/op	       0 allocs/op
+PASS

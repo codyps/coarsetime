@@ -1,0 +1,86 @@
+{
+  "BenchmarkWallOptTimespecNow": {
+    "median_ns": 15.86,
+    "min_ns": 15.56,
+    "max_ns": 16.47,
+    "samples_ns": [
+      15.81,
+      15.56,
+      15.98,
+      16.47,
+      15.86
+    ]
+  },
+  "BenchmarkWallOptFusedNow": {
+    "median_ns": 13.14,
+    "min_ns": 12.2,
+    "max_ns": 15.89,
+    "samples_ns": [
+      13.44,
+      15.89,
+      13.14,
+      12.95,
+      12.2
+    ]
+  },
+  "BenchmarkWallOptFusedUnixNano": {
+    "median_ns": 12.76,
+    "min_ns": 12.39,
+    "max_ns": 13.34,
+    "samples_ns": [
+      12.63,
+      13.21,
+      12.39,
+      13.34,
+      12.76
+    ]
+  },
+  "BenchmarkWallOptCurrentNow": {
+    "median_ns": 17.94,
+    "min_ns": 17.49,
+    "max_ns": 18.48,
+    "samples_ns": [
+      17.94,
+      18.48,
+      17.49,
+      18.25,
+      17.54
+    ]
+  },
+  "BenchmarkWallOptCurrentUnixNano": {
+    "median_ns": 16.05,
+    "min_ns": 15.56,
+    "max_ns": 16.71,
+    "samples_ns": [
+      15.56,
+      16.05,
+      15.89,
+      16.71,
+      16.16
+    ]
+  },
+  "BenchmarkWallOptUnsignedNow": {
+    "median_ns": 17.83,
+    "min_ns": 17.69,
+    "max_ns": 20.45,
+    "samples_ns": [
+      17.83,
+      19.69,
+      17.69,
+      20.45,
+      17.71
+    ]
+  },
+  "BenchmarkWallOptSignedNow": {
+    "median_ns": 18.38,
+    "min_ns": 17.76,
+    "max_ns": 20.14,
+    "samples_ns": [
+      20.14,
+      17.76,
+      18.38,
+      17.88,
+      19.45
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+=== RUN   TestLinuxWallProbe
+--- PASS: TestLinuxWallProbe (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxWallProbe
+--- PASS: TestLinuxWallProbe (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxWallProbe
+--- PASS: TestLinuxWallProbe (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxWallProbe
+--- PASS: TestLinuxWallProbe (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxWallProbe
+--- PASS: TestLinuxWallProbe (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkLinuxWallBridgeOnly
+BenchmarkLinuxWallBridgeOnly-16    	50957469	        12.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallBridgeOnly-16    	49353457	        12.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallBridgeOnly-16    	48317289	        12.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallBridgeOnly-16    	49575710	        12.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallBridgeOnly-16    	47561294	        12.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallNarrowNow
+BenchmarkLinuxWallNarrowNow-16     	43385116	        13.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallNarrowNow-16     	44482194	        13.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallNarrowNow-16     	38787494	        13.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallNarrowNow-16     	46912878	        13.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallNarrowNow-16     	45053554	        13.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCurrentNow
+BenchmarkLinuxWallCurrentNow-16    	49258425	        13.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCurrentNow-16    	43571737	        13.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCurrentNow-16    	39163598	        13.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCurrentNow-16    	43975869	        13.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCurrentNow-16    	44986892	        13.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCachedNow
+BenchmarkLinuxWallCachedNow-16     	665396365	         0.8759 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCachedNow-16     	693890905	         0.8786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCachedNow-16     	699415629	         0.8679 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCachedNow-16     	691354449	         0.8760 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallCachedNow-16     	683236767	         0.8733 ns/op	       0 B/op	       0 allocs/op
+PASS

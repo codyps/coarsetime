@@ -1,0 +1,6 @@
+adopted BenchmarkInstantTime: median 2.4820 ns/op; samples [2.482, 2.519, 2.43, 2.458, 2.547]
+adopted BenchmarkNow: median 3.2770 ns/op; samples [3.264, 3.277, 3.31, 3.15, 5.152]
+adopted BenchmarkUnixNano: median 0.8106 ns/op; samples [0.8081, 0.8176, 0.8106, 0.8055, 1.227]
+baseline BenchmarkInstantTime: median 3.0800 ns/op; samples [3.108, 3.172, 3.0, 3.08, 3.073]
+baseline BenchmarkNow: median 5.0290 ns/op; samples [5.029, 4.818, 5.157, 5.064, 4.703]
+baseline BenchmarkUnixNano: median 2.3150 ns/op; samples [2.206, 2.315, 2.368, 2.344, 2.255]

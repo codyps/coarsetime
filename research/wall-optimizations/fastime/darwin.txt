@@ -1,0 +1,38 @@
+goos: darwin
+goarch: amd64
+pkg: coarsetime/benchmarks
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkFastimeNow/1ms-16           	297978758	         1.946 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/1ms-16           	305596098	         1.984 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/1ms-16           	303815194	         1.964 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	309012782	         1.953 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	302479502	         1.953 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	317042751	         2.166 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	360879888	         1.694 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	355772004	         1.691 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	355835001	         1.694 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	361210388	         1.688 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	362912212	         1.721 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	351778496	         1.677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2177 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2264 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2105 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2275 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2164 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	172250750	         3.411 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	179142946	         3.645 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	182895452	         3.322 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	722154645	         0.8412 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	714804806	         0.8420 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	706917254	         0.8557 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	 7707217	        76.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	 7735891	        78.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	 7847170	        72.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	1000000000	         0.3826 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	1000000000	         0.3935 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	1000000000	         0.3799 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	98512776	         6.237 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	89402042	         6.301 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	89808379	         6.209 ns/op	       0 B/op	       0 allocs/op
+PASS

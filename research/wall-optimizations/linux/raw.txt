@@ -1,0 +1,279 @@
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	19719663	        17.94 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	18575179	        20.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedNow-16    	26328109	        13.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	19114572	        17.83 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptTimespecNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptTimespecNow-16    	23190866	        15.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedUnixNano-16    	27314565	        12.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	21727933	        15.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedUnixNano-16    	31655146	        13.21 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	19137393	        18.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	23141674	        16.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptTimespecNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptTimespecNow-16    	23004770	        15.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedNow-16    	30515593	        15.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	16311807	        19.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	19833975	        17.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	19842982	        17.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedUnixNano-16    	30541585	        12.39 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	21878335	        17.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	19353126	        18.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	21896072	        15.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptTimespecNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptTimespecNow-16    	21705268	        15.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedNow-16    	28135262	        13.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedUnixNano-16    	26384491	        13.34 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	19867303	        18.25 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptTimespecNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptTimespecNow-16    	23783458	        16.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	19279614	        20.45 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	21964054	        16.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedNow-16    	26342216	        12.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	19856967	        17.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedUnixNano-16    	27840596	        12.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptFusedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptFusedNow-16    	29644747	        12.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentNow-16    	21310458	        17.54 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptTimespecNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptTimespecNow-16    	19350529	        15.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptCurrentUnixNano$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptCurrentUnixNano-16    	21617889	        16.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptUnsignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptUnsignedNow-16    	19903545	        17.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+['/wallopt', '-test.run=^TestVDSO$', '-test.bench=^BenchmarkWallOptSignedNow$', '-test.benchtime=300ms', '-test.count=1', '-test.benchmem']
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkWallOptSignedNow-16    	20332651	        19.45 ns/op	       0 B/op	       0 allocs/op
+PASS

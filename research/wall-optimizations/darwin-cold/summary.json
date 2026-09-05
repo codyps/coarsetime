@@ -1,0 +1,74 @@
+{
+  "BenchmarkWallOptFlatUnsignedNow": {
+    "median_ns": 3.251,
+    "min_ns": 3.212,
+    "max_ns": 3.324,
+    "samples_ns": [
+      3.253,
+      3.324,
+      3.212,
+      3.251,
+      3.226
+    ]
+  },
+  "BenchmarkWallOptColdUnixNano": {
+    "median_ns": 0.8135,
+    "min_ns": 0.7919,
+    "max_ns": 0.8377,
+    "samples_ns": [
+      0.8286,
+      0.8098,
+      0.8135,
+      0.8377,
+      0.7919
+    ]
+  },
+  "BenchmarkWallOptColdNow": {
+    "median_ns": 3.83,
+    "min_ns": 3.717,
+    "max_ns": 3.982,
+    "samples_ns": [
+      3.717,
+      3.732,
+      3.83,
+      3.914,
+      3.982
+    ]
+  },
+  "BenchmarkWallOptColdUnsignedNow": {
+    "median_ns": 3.26,
+    "min_ns": 3.215,
+    "max_ns": 3.287,
+    "samples_ns": [
+      3.287,
+      3.235,
+      3.277,
+      3.26,
+      3.215
+    ]
+  },
+  "BenchmarkWallOptCurrentNow": {
+    "median_ns": 4.895,
+    "min_ns": 4.792,
+    "max_ns": 5.022,
+    "samples_ns": [
+      4.895,
+      5.022,
+      4.83,
+      4.98,
+      4.792
+    ]
+  },
+  "BenchmarkWallOptCurrentUnixNano": {
+    "median_ns": 2.304,
+    "min_ns": 2.23,
+    "max_ns": 2.355,
+    "samples_ns": [
+      2.322,
+      2.355,
+      2.304,
+      2.23,
+      2.294
+    ]
+  }
+}

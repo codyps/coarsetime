@@ -1,0 +1,36 @@
+TEXT coarsetime.BenchmarkWallOptColdUnixNano(SB) /Users/cody/p/coarsetime/wall_opt_prototype_darwin_amd64_test.go
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c20		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c24		7668			JBE 0x1138c8e
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c26		55			PUSHQ BP
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c27		4889e5			MOVQ SP, BP
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c2a		4883ec08		SUBQ $0x8, SP
+  wall_opt_prototype_darwin_amd64_test.go:152	0x1138c2e		4889442418		MOVQ AX, 0x18(SP)
+  benchmark.go:193				0x1138c33		c6805202000001		MOVB $0x1, 0x252(AX)
+  benchmark.go:193				0x1138c3a		31c9			XORL CX, CX
+  wall_opt_prototype_darwin_amd64_test.go:152	0x1138c3c		eb0a			JMP 0x1138c48
+  wall_opt_prototype_darwin_amd64_test.go:154	0x1138c3e		48891513781d00		MOVQ DX, coarsetime.unixNanoSink(SB)
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c45		48ffc1			INCQ CX
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c48		48398810020000		CMPQ 0x210(AX), CX
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c4f		7e37			JLE 0x1138c88
+  wall_opt_prototype_darwin_amd64.go:61		0x1138c51		803dd5761d0000		CMPB coarsetime.approximateTimeSupported(SB), $0x0
+  wall_opt_prototype_darwin_amd64.go:61		0x1138c58		7417			JE 0x1138c71
+  wall_opt_prototype_darwin_amd64.go:62		0x1138c5a		90			NOPL
+  type.go:114					0x1138c5b		488b15d6771d00		MOVQ coarsetime.wallCorrection(SB), DX
+  wall_opt_prototype_darwin_amd64.go:63		0x1138c62		488b1d7f5e1b00		MOVQ coarsetime.approximateTimePointer(SB), BX
+  wall_opt_prototype_darwin_amd64.go:63		0x1138c69		488b1b			MOVQ 0(BX), BX
+  wall_opt_prototype_darwin_amd64.go:63		0x1138c6c		4801da			ADDQ BX, DX
+  wall_opt_prototype_darwin_amd64_test.go:154	0x1138c6f		ebcd			JMP 0x1138c3e
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c71		48890c24		MOVQ CX, 0(SP)
+  wall_opt_prototype_darwin_amd64.go:65		0x1138c75		e8a6c6ffff		CALL coarsetime.wallOptColdFallback(SB)
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c7a		488b0c24		MOVQ 0(SP), CX
+  wall_opt_prototype_darwin_amd64_test.go:154	0x1138c7e		4889c2			MOVQ AX, DX
+  wall_opt_prototype_darwin_amd64_test.go:153	0x1138c81		488b442418		MOVQ 0x18(SP), AX
+  wall_opt_prototype_darwin_amd64_test.go:154	0x1138c86		ebb6			JMP 0x1138c3e
+  wall_opt_prototype_darwin_amd64_test.go:156	0x1138c88		4883c408		ADDQ $0x8, SP
+  wall_opt_prototype_darwin_amd64_test.go:156	0x1138c8c		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64_test.go:156	0x1138c8d		c3			RET
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c8e		4889442408		MOVQ AX, 0x8(SP)
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c93		e8a8c5f4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c98		488b442408		MOVQ 0x8(SP), AX
+  wall_opt_prototype_darwin_amd64_test.go:151	0x1138c9d		eb81			JMP coarsetime.BenchmarkWallOptColdUnixNano(SB)
+  :-1						0x1138c9f		cc			INT $0x3

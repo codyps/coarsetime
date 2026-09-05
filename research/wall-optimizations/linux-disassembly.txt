@@ -1,0 +1,227 @@
+TEXT coarsetime.readClockVDSO(SB) /Users/cody/p/coarsetime/vdso_linux.go
+  vdso_linux.go:33	0x55ca40		493b6610		CMPQ SP, 0x10(R14)
+  vdso_linux.go:33	0x55ca44		7666			JBE 0x55caac
+  vdso_linux.go:33	0x55ca46		55			PUSHQ BP
+  vdso_linux.go:33	0x55ca47		4889e5			MOVQ SP, BP
+  vdso_linux.go:33	0x55ca4a		4883ec28		SUBQ $0x28, SP
+  vdso_linux.go:34	0x55ca4e		488b0d131b2000		MOVQ coarsetime.coarseVDSO(SB), CX
+  vdso_linux.go:34	0x55ca55		4885c9			TESTQ CX, CX
+  vdso_linux.go:34	0x55ca58		744a			JE 0x55caa4
+  vdso_linux.go:34	0x55ca5a		4889442438		MOVQ AX, 0x38(SP)
+  vdso_linux.go:37	0x55ca5f		48894c2410		MOVQ CX, 0x10(SP)
+  vdso_linux.go:37	0x55ca64		440f117c2418		MOVUPS X15, 0x18(SP)
+  vdso_linux.go:41	0x55ca6a		4889d8			MOVQ BX, AX
+  vdso_linux.go:41	0x55ca6d		488d5c2410		LEAQ 0x10(SP), BX
+  vdso_linux.go:41	0x55ca72		e82906f3ff		CALL runtime.asmcgocall(SB)
+  vdso_linux.go:41	0x55ca77		85c0			TESTL AX, AX
+  vdso_linux.go:41	0x55ca79		7408			JE 0x55ca83
+  vdso_linux.go:42	0x55ca7b		31c0			XORL AX, AX
+  vdso_linux.go:42	0x55ca7d		4883c428		ADDQ $0x28, SP
+  vdso_linux.go:42	0x55ca81		5d			POPQ BP
+  vdso_linux.go:42	0x55ca82		c3			RET
+  vdso_linux.go:44	0x55ca83		488b4c2418		MOVQ 0x18(SP), CX
+  vdso_linux.go:44	0x55ca88		488b542420		MOVQ 0x20(SP), DX
+  vdso_linux.go:44	0x55ca8d		488b5c2438		MOVQ 0x38(SP), BX
+  vdso_linux.go:44	0x55ca92		48890b			MOVQ CX, 0(BX)
+  vdso_linux.go:44	0x55ca95		48895308		MOVQ DX, 0x8(BX)
+  vdso_linux.go:45	0x55ca99		b801000000		MOVL $0x1, AX
+  vdso_linux.go:45	0x55ca9e		4883c428		ADDQ $0x28, SP
+  vdso_linux.go:45	0x55caa2		5d			POPQ BP
+  vdso_linux.go:45	0x55caa3		c3			RET
+  vdso_linux.go:35	0x55caa4		31c0			XORL AX, AX
+  vdso_linux.go:35	0x55caa6		4883c428		ADDQ $0x28, SP
+  vdso_linux.go:35	0x55caaa		5d			POPQ BP
+  vdso_linux.go:35	0x55caab		c3			RET
+  vdso_linux.go:33	0x55caac		4889442408		MOVQ AX, 0x8(SP)
+  vdso_linux.go:33	0x55cab1		48895c2410		MOVQ BX, 0x10(SP)
+  vdso_linux.go:33	0x55cab6		e8e5c7f2ff		CALL runtime.morestack_noctxt.abi0(SB)
+  vdso_linux.go:33	0x55cabb		488b442408		MOVQ 0x8(SP), AX
+  vdso_linux.go:33	0x55cac0		488b5c2410		MOVQ 0x10(SP), BX
+  vdso_linux.go:33	0x55cac5		e976ffffff		JMP coarsetime.readClockVDSO(SB)
+
+TEXT coarsetime.wallOptTimespecNow(SB) /Users/cody/p/coarsetime/wall_opt_prototype_linux_amd64.go
+  wall_opt_prototype_linux_amd64.go:11	0x55dee0		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_linux_amd64.go:11	0x55dee4		0f861e010000		JBE 0x55e008
+  wall_opt_prototype_linux_amd64.go:11	0x55deea		55			PUSHQ BP
+  wall_opt_prototype_linux_amd64.go:11	0x55deeb		4889e5			MOVQ SP, BP
+  wall_opt_prototype_linux_amd64.go:11	0x55deee		4883ec20		SUBQ $0x20, SP
+  wall_opt_prototype_linux_amd64.go:12	0x55def2		440f117c2410		MOVUPS X15, 0x10(SP)
+  vdso_linux.go:31			0x55def8		488b1df9e41d00		MOVQ coarsetime.realtimeTrampoline(SB), BX
+  vdso_linux.go:31			0x55deff		488d442410		LEAQ 0x10(SP), AX
+  vdso_linux.go:31			0x55df04		e837ebffff		CALL coarsetime.readClockVDSO(SB)
+  vdso_linux.go:31			0x55df09		84c0			TESTL AL, AL
+  wall_opt_prototype_linux_amd64.go:13	0x55df0b		0f8480000000		JE 0x55df91
+  wall_opt_prototype_linux_amd64.go:14	0x55df11		488b542418		MOVQ 0x18(SP), DX
+  wall_opt_prototype_linux_amd64.go:14	0x55df16		488b742410		MOVQ 0x10(SP), SI
+  wall_opt_prototype_linux_amd64.go:14	0x55df1b		0f1f440000		NOPL 0(AX)(AX*1)
+  time.go:1656				0x55df20		4881fa00ca9a3b		CMPQ DX, $0x3b9aca00
+  time.go:1656				0x55df27		7246			JB 0x55df6f
+  time.go:1657				0x55df29		4889d7			MOVQ DX, DI
+  time.go:1657				0x55df2c		48c1ff3f		SARQ $0x3f, DI
+  time.go:1657				0x55df30		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  wall_opt_prototype_linux_amd64.go:14	0x55df3a		4889d1			MOVQ DX, CX
+  time.go:1657				0x55df3d		48f7ea			IMULQ DX
+  time.go:1657				0x55df40		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x55df44		4829fa			SUBQ DI, DX
+  time.go:1658				0x55df47		4801d6			ADDQ DX, SI
+  time.go:1659				0x55df4a		4869fa00ca9a3b		IMULQ $0x3b9aca00, DX, DI
+  time.go:1659				0x55df51		4829f9			SUBQ DI, CX
+  time.go:1661				0x55df54		488db900ca9a3b		LEAQ 0x3b9aca00(CX), DI
+  time.go:1660				0x55df5b		4885c9			TESTQ CX, CX
+  time.go:1660				0x55df5e		410f9cc0		SETL R8
+  time.go:1660				0x55df62		480f4ccf		CMOVL DI, CX
+  time.go:1660				0x55df66		410fb6f8		MOVZX R8, DI
+  time.go:1660				0x55df6a		4829fe			SUBQ DI, SI
+  time.go:1660				0x55df6d		eb03			JMP 0x55df72
+  wall_opt_prototype_linux_amd64.go:14	0x55df6f		4889d1			MOVQ DX, CX
+  time.go:1364				0x55df72		4863c1			MOVSXD CX, AX
+  time.go:1364				0x55df75		48ba00f791770e000000	MOVQ $0xe7791f700, DX
+  time.go:1364				0x55df7f		488d1c32		LEAQ 0(DX)(SI*1), BX
+  time.go:1364				0x55df83		488b0d762b1d00		MOVQ time.Local(SB), CX
+  time.go:1665				0x55df8a		90			NOPL
+  wall_opt_prototype_linux_amd64.go:14	0x55df8b		4883c420		ADDQ $0x20, SP
+  wall_opt_prototype_linux_amd64.go:14	0x55df8f		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:14	0x55df90		c3			RET
+  wall_opt_prototype_linux_amd64.go:16	0x55df91		e80aeaffff		CALL coarsetime.readRealtimeSyscall(SB)
+  time.go:1656				0x55df96		483d00ca9a3b		CMPQ AX, $0x3b9aca00
+  time.go:1656				0x55df9c		7246			JB 0x55dfe4
+  time.go:1657				0x55df9e		4889c2			MOVQ AX, DX
+  time.go:1657				0x55dfa1		48c1f83f		SARQ $0x3f, AX
+  time.go:1657				0x55dfa5		4889c1			MOVQ AX, CX
+  time.go:1657				0x55dfa8		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  wall_opt_prototype_linux_amd64.go:16	0x55dfb2		4889d3			MOVQ DX, BX
+  time.go:1657				0x55dfb5		48f7ea			IMULQ DX
+  time.go:1657				0x55dfb8		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x55dfbc		4829ca			SUBQ CX, DX
+  time.go:1659				0x55dfbf		4869f200ca9a3b		IMULQ $0x3b9aca00, DX, SI
+  time.go:1659				0x55dfc6		4829f3			SUBQ SI, BX
+  time.go:1661				0x55dfc9		488db300ca9a3b		LEAQ 0x3b9aca00(BX), SI
+  time.go:1660				0x55dfd0		4885db			TESTQ BX, BX
+  time.go:1660				0x55dfd3		400f9cc7		SETL DI
+  time.go:1660				0x55dfd7		480f4cde		CMOVL SI, BX
+  time.go:1660				0x55dfdb		400fb6f7		MOVZX DI, SI
+  time.go:1660				0x55dfdf		4829f2			SUBQ SI, DX
+  time.go:1660				0x55dfe2		eb05			JMP 0x55dfe9
+  wall_opt_prototype_linux_amd64.go:16	0x55dfe4		4889c3			MOVQ AX, BX
+  wall_opt_prototype_linux_amd64.go:16	0x55dfe7		31d2			XORL DX, DX
+  time.go:1364				0x55dfe9		4863c3			MOVSXD BX, AX
+  time.go:1364				0x55dfec		48be00f791770e000000	MOVQ $0xe7791f700, SI
+  time.go:1364				0x55dff6		488d1c16		LEAQ 0(SI)(DX*1), BX
+  time.go:1364				0x55dffa		488b0dff2a1d00		MOVQ time.Local(SB), CX
+  time.go:1665				0x55e001		90			NOPL
+  wall_opt_prototype_linux_amd64.go:16	0x55e002		4883c420		ADDQ $0x20, SP
+  wall_opt_prototype_linux_amd64.go:16	0x55e006		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:16	0x55e007		c3			RET
+  wall_opt_prototype_linux_amd64.go:11	0x55e008		e893b2f2ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_linux_amd64.go:11	0x55e00d		e9cefeffff		JMP coarsetime.wallOptTimespecNow(SB)
+
+TEXT coarsetime.wallOptFusedNow(SB) /Users/cody/p/coarsetime/wall_opt_prototype_linux_amd64.go
+  wall_opt_prototype_linux_amd64.go:22	0x55e020		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_linux_amd64.go:22	0x55e024		0f8631010000		JBE 0x55e15b
+  wall_opt_prototype_linux_amd64.go:22	0x55e02a		55			PUSHQ BP
+  wall_opt_prototype_linux_amd64.go:22	0x55e02b		4889e5			MOVQ SP, BP
+  wall_opt_prototype_linux_amd64.go:22	0x55e02e		4883ec28		SUBQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:23	0x55e032		488b0d2f052000		MOVQ coarsetime.coarseVDSO(SB), CX
+  wall_opt_prototype_linux_amd64.go:23	0x55e039		0f1f8000000000		NOPL 0(AX)
+  wall_opt_prototype_linux_amd64.go:24	0x55e040		4885c9			TESTQ CX, CX
+  wall_opt_prototype_linux_amd64.go:24	0x55e043		0f849b000000		JE 0x55e0e4
+  wall_opt_prototype_linux_amd64.go:25	0x55e049		48894c2410		MOVQ CX, 0x10(SP)
+  wall_opt_prototype_linux_amd64.go:25	0x55e04e		440f117c2418		MOVUPS X15, 0x18(SP)
+  wall_opt_prototype_linux_amd64.go:29	0x55e054		488b059de31d00		MOVQ coarsetime.realtimeTrampoline(SB), AX
+  wall_opt_prototype_linux_amd64.go:29	0x55e05b		488d5c2410		LEAQ 0x10(SP), BX
+  wall_opt_prototype_linux_amd64.go:29	0x55e060		e83bf0f2ff		CALL runtime.asmcgocall(SB)
+  wall_opt_prototype_linux_amd64.go:29	0x55e065		85c0			TESTL AX, AX
+  wall_opt_prototype_linux_amd64.go:29	0x55e067		757b			JNE 0x55e0e4
+  wall_opt_prototype_linux_amd64.go:30	0x55e069		488b542420		MOVQ 0x20(SP), DX
+  wall_opt_prototype_linux_amd64.go:30	0x55e06e		488b742418		MOVQ 0x18(SP), SI
+  time.go:1656				0x55e073		4881fa00ca9a3b		CMPQ DX, $0x3b9aca00
+  time.go:1656				0x55e07a		7246			JB 0x55e0c2
+  time.go:1657				0x55e07c		4889d7			MOVQ DX, DI
+  time.go:1657				0x55e07f		48c1ff3f		SARQ $0x3f, DI
+  time.go:1657				0x55e083		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  wall_opt_prototype_linux_amd64.go:30	0x55e08d		4889d1			MOVQ DX, CX
+  time.go:1657				0x55e090		48f7ea			IMULQ DX
+  time.go:1657				0x55e093		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x55e097		4829fa			SUBQ DI, DX
+  time.go:1658				0x55e09a		4801d6			ADDQ DX, SI
+  time.go:1659				0x55e09d		4869fa00ca9a3b		IMULQ $0x3b9aca00, DX, DI
+  time.go:1659				0x55e0a4		4829f9			SUBQ DI, CX
+  time.go:1661				0x55e0a7		488db900ca9a3b		LEAQ 0x3b9aca00(CX), DI
+  time.go:1660				0x55e0ae		4885c9			TESTQ CX, CX
+  time.go:1660				0x55e0b1		410f9cc0		SETL R8
+  time.go:1660				0x55e0b5		480f4ccf		CMOVL DI, CX
+  time.go:1660				0x55e0b9		410fb6f8		MOVZX R8, DI
+  time.go:1660				0x55e0bd		4829fe			SUBQ DI, SI
+  time.go:1660				0x55e0c0		eb03			JMP 0x55e0c5
+  wall_opt_prototype_linux_amd64.go:30	0x55e0c2		4889d1			MOVQ DX, CX
+  time.go:1364				0x55e0c5		4863c1			MOVSXD CX, AX
+  time.go:1364				0x55e0c8		48ba00f791770e000000	MOVQ $0xe7791f700, DX
+  time.go:1364				0x55e0d2		488d1c32		LEAQ 0(DX)(SI*1), BX
+  time.go:1364				0x55e0d6		488b0d232a1d00		MOVQ time.Local(SB), CX
+  time.go:1665				0x55e0dd		90			NOPL
+  wall_opt_prototype_linux_amd64.go:30	0x55e0de		4883c428		ADDQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:30	0x55e0e2		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:30	0x55e0e3		c3			RET
+  wall_opt_prototype_linux_amd64.go:33	0x55e0e4		e8b7e8ffff		CALL coarsetime.readRealtimeSyscall(SB)
+  time.go:1656				0x55e0e9		483d00ca9a3b		CMPQ AX, $0x3b9aca00
+  time.go:1656				0x55e0ef		7246			JB 0x55e137
+  time.go:1657				0x55e0f1		4889c2			MOVQ AX, DX
+  time.go:1657				0x55e0f4		48c1f83f		SARQ $0x3f, AX
+  time.go:1657				0x55e0f8		4889c1			MOVQ AX, CX
+  time.go:1657				0x55e0fb		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  wall_opt_prototype_linux_amd64.go:33	0x55e105		4889d3			MOVQ DX, BX
+  time.go:1657				0x55e108		48f7ea			IMULQ DX
+  time.go:1657				0x55e10b		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x55e10f		4829ca			SUBQ CX, DX
+  time.go:1659				0x55e112		4869f200ca9a3b		IMULQ $0x3b9aca00, DX, SI
+  time.go:1659				0x55e119		4829f3			SUBQ SI, BX
+  time.go:1661				0x55e11c		488db300ca9a3b		LEAQ 0x3b9aca00(BX), SI
+  time.go:1660				0x55e123		4885db			TESTQ BX, BX
+  time.go:1660				0x55e126		400f9cc7		SETL DI
+  time.go:1660				0x55e12a		480f4cde		CMOVL SI, BX
+  time.go:1660				0x55e12e		400fb6f7		MOVZX DI, SI
+  time.go:1660				0x55e132		4829f2			SUBQ SI, DX
+  time.go:1660				0x55e135		eb05			JMP 0x55e13c
+  wall_opt_prototype_linux_amd64.go:33	0x55e137		4889c3			MOVQ AX, BX
+  wall_opt_prototype_linux_amd64.go:33	0x55e13a		31d2			XORL DX, DX
+  time.go:1364				0x55e13c		4863c3			MOVSXD BX, AX
+  time.go:1364				0x55e13f		48be00f791770e000000	MOVQ $0xe7791f700, SI
+  time.go:1364				0x55e149		488d1c16		LEAQ 0(SI)(DX*1), BX
+  time.go:1364				0x55e14d		488b0dac291d00		MOVQ time.Local(SB), CX
+  time.go:1665				0x55e154		90			NOPL
+  wall_opt_prototype_linux_amd64.go:33	0x55e155		4883c428		ADDQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:33	0x55e159		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:33	0x55e15a		c3			RET
+  wall_opt_prototype_linux_amd64.go:22	0x55e15b		0f1f440000		NOPL 0(AX)(AX*1)
+  wall_opt_prototype_linux_amd64.go:22	0x55e160		e83bb1f2ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_linux_amd64.go:22	0x55e165		e9b6feffff		JMP coarsetime.wallOptFusedNow(SB)
+
+TEXT coarsetime.wallOptFusedUnixNano(SB) /Users/cody/p/coarsetime/wall_opt_prototype_linux_amd64.go
+  wall_opt_prototype_linux_amd64.go:36	0x55e180		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_linux_amd64.go:36	0x55e184		7656			JBE 0x55e1dc
+  wall_opt_prototype_linux_amd64.go:36	0x55e186		55			PUSHQ BP
+  wall_opt_prototype_linux_amd64.go:36	0x55e187		4889e5			MOVQ SP, BP
+  wall_opt_prototype_linux_amd64.go:36	0x55e18a		4883ec28		SUBQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:37	0x55e18e		488b0dd3032000		MOVQ coarsetime.coarseVDSO(SB), CX
+  wall_opt_prototype_linux_amd64.go:38	0x55e195		4885c9			TESTQ CX, CX
+  wall_opt_prototype_linux_amd64.go:38	0x55e198		7420			JE 0x55e1ba
+  wall_opt_prototype_linux_amd64.go:39	0x55e19a		48894c2410		MOVQ CX, 0x10(SP)
+  wall_opt_prototype_linux_amd64.go:39	0x55e19f		440f117c2418		MOVUPS X15, 0x18(SP)
+  wall_opt_prototype_linux_amd64.go:43	0x55e1a5		488b054ce21d00		MOVQ coarsetime.realtimeTrampoline(SB), AX
+  wall_opt_prototype_linux_amd64.go:43	0x55e1ac		488d5c2410		LEAQ 0x10(SP), BX
+  wall_opt_prototype_linux_amd64.go:43	0x55e1b1		e8eaeef2ff		CALL runtime.asmcgocall(SB)
+  wall_opt_prototype_linux_amd64.go:43	0x55e1b6		85c0			TESTL AX, AX
+  wall_opt_prototype_linux_amd64.go:43	0x55e1b8		740b			JE 0x55e1c5
+  wall_opt_prototype_linux_amd64.go:47	0x55e1ba		e8e1e7ffff		CALL coarsetime.readRealtimeSyscall(SB)
+  wall_opt_prototype_linux_amd64.go:47	0x55e1bf		4883c428		ADDQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:47	0x55e1c3		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:47	0x55e1c4		c3			RET
+  wall_opt_prototype_linux_amd64.go:44	0x55e1c5		488b4c2418		MOVQ 0x18(SP), CX
+  wall_opt_prototype_linux_amd64.go:44	0x55e1ca		4869c100ca9a3b		IMULQ $0x3b9aca00, CX, AX
+  wall_opt_prototype_linux_amd64.go:44	0x55e1d1		4803442420		ADDQ 0x20(SP), AX
+  wall_opt_prototype_linux_amd64.go:44	0x55e1d6		4883c428		ADDQ $0x28, SP
+  wall_opt_prototype_linux_amd64.go:44	0x55e1da		5d			POPQ BP
+  wall_opt_prototype_linux_amd64.go:44	0x55e1db		c3			RET
+  wall_opt_prototype_linux_amd64.go:36	0x55e1dc		0f1f4000		NOPL 0(AX)
+  wall_opt_prototype_linux_amd64.go:36	0x55e1e0		e8bbb0f2ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_linux_amd64.go:36	0x55e1e5		eb99			JMP coarsetime.wallOptFusedUnixNano(SB)

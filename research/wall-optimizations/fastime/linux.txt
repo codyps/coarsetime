@@ -1,0 +1,42 @@
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+PASS
+goos: linux
+goarch: amd64
+pkg: coarsetime/benchmarks
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkFastimeNow/1ms-16           	291108426	         2.034 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/1ms-16           	288450806	         2.067 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/1ms-16           	292254387	         2.032 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	292542973	         2.061 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	292648376	         2.070 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNow/5ms-16           	290162916	         2.093 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	337587663	         1.771 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	344394660	         1.723 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/1ms-16      	349276188	         1.691 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	351043192	         1.698 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	344805451	         1.689 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeUnixNano/5ms-16      	350642762	         1.745 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2305 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2341 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/1ms-16   	1000000000	         0.2345 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2651 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2376 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastimeNowParallel/5ms-16   	1000000000	         0.2431 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	45120670	        12.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	45232699	        13.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNow-16            	45628298	        12.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	50367226	        12.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	45209416	        13.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeUnixNano-16       	45262617	        13.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	14704597	        40.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	14541375	        40.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-16                  	14638998	        39.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	327831990	         1.694 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	348868260	         1.725 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCoarsetimeNowParallel-16    	347368386	         1.716 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	157884027	         3.829 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	153237370	         4.009 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowParallel-16          	147730956	         3.769 ns/op	       0 B/op	       0 allocs/op
+PASS

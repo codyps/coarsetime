@@ -105,7 +105,8 @@ The cached wall-time correction and its refresh requirements are unchanged.
 See the [prototype comparison](research/darwin/benchmarks/README.md) for the three
 implementations, validation, and measured differences.
 
-Adopted amd64 implementation, same host and Go 1.26.6, medians of five 500 ms
+Initial commpage adoption (before the wall-read optimizations below), same host
+and Go 1.26.6, medians of five 500 ms
 runs (all zero allocations):
 
 | Operation | ns/op |
@@ -116,6 +117,14 @@ runs (all zero allocations):
 | `Now()` | 5.050 |
 
 [Raw adoption measurements](research/darwin/benchmarks/adopted.txt).
+
+The subsequent [wall-read optimizations](research/wall-optimizations/README.md#adoption)
+combine the startup support check with a unit-timebase check, outline the generic
+fallback, and simplify time construction for nonnegative Unix timestamps. On the
+same host with Go 1.26.6, five-run medians for the current public APIs are 0.811 ns
+for `UnixNano`, 3.277 ns for `Now`, and 2.482 ns for `Instant.Time`, all without
+allocations. Negative timestamps and unexpected timebase ratios retain correct
+conversion. These changes preserve the explicit refresh requirement.
 
 ## Linux implementation
 
@@ -131,6 +140,11 @@ private runtime struct offsets or the runtime's vDSO symbol variables. Like the
 Darwin bridge, `asmcgocall` is an internal Go compatibility dependency. Profiling
 samples taken inside the vDSO may be attributed to the runtime's vDSO bucket
 rather than the calling Go stack.
+
+The amd64 wall APIs fuse vDSO argument setup with the read. `Now` constructs
+`time.Time` directly from the returned timespec. In the same Go 1.26.6 benchmark,
+`Now` improved from 18.35 to 13.65 ns and `UnixNano` from 16.68 to 13.26 ns,
+with zero allocations. See the [wall-read comparison](research/wall-optimizations/README.md#adoption).
 
 If procfs access or symbol resolution fails, or the vDSO rejects the call, the
 implementation uses a real `clock_gettime` syscall with the same clock ID and
@@ -244,20 +258,35 @@ measure read throughput with the updater active, excluding startup and shutdown;
 per-operation allocation averages do not imply that the updater allocates
 nothing or has no CPU cost. They do not measure accuracy or idle updater cost.
 
-Fastime comparison sample (2026-09-05, Intel i9-9880H, Go 1.26.6, Darwin amd64
-and Docker Linux amd64; medians of three 500 ms runs, platforms run sequentially):
+Fastime comparison after adopting the wall-read optimizations (2026-09-05,
+Intel i9-9880H, Go 1.26.6, Darwin amd64 and Docker Linux amd64; medians of three
+500 ms runs, platforms run sequentially with no concurrent builds or tests).
+The Linux vDSO fast path was explicitly verified before the comparison:
 
 | Serial read | Darwin ns/op | Linux ns/op |
 | --- | ---: | ---: |
-| `fastime.Now()`, 1 ms updater | 2.074 | 2.560 |
-| `fastime.Now()`, 5 ms updater | 2.123 | 2.536 |
-| `fastime.UnixNanoNow()`, 1 ms updater | 1.760 | 1.738 |
-| `fastime.UnixNanoNow()`, 5 ms updater | 1.731 | 1.731 |
-| `coarsetime.Now()` | 20.52 | 22.41 |
-| `coarsetime.UnixNano()` | 20.34 | 21.06 |
-| `time.Now()` | 77.21 | 49.54 |
+| `fastime.Now()`, 1 ms updater | 1.964 | 2.034 |
+| `fastime.Now()`, 5 ms updater | 1.953 | 2.070 |
+| `fastime.UnixNanoNow()`, 1 ms updater | 1.694 | 1.723 |
+| `fastime.UnixNanoNow()`, 5 ms updater | 1.688 | 1.698 |
+| `coarsetime.Now()` | 3.411 | 12.93 |
+| `coarsetime.UnixNano()` | 0.842 | 13.10 |
+| `time.Now()` | 76.92 | 40.61 |
 
-All reported zero per-operation allocations after rounding/amortization. Race
-instrumented smoke runs exercised all serial and parallel benchmarks on both
-platforms, and vet passed. Parallel ns/op reports aggregate throughput, not the
-latency of an individual read.
+| Parallel read (16 logical CPUs) | Darwin ns/op | Linux ns/op |
+| --- | ---: | ---: |
+| `fastime.Now()`, 1 ms updater | 0.2264 | 0.2341 |
+| `fastime.Now()`, 5 ms updater | 0.2164 | 0.2431 |
+| `coarsetime.Now()` | 0.3826 | 1.716 |
+| `time.Now()` | 6.237 | 3.829 |
+
+[Raw Darwin results](research/wall-optimizations/fastime/darwin.txt) and
+[raw Linux results](research/wall-optimizations/fastime/linux.txt) include all
+samples. Darwin `coarsetime.UnixNano()` now reads faster than fastime in this
+comparison; fastime retains the lower `time.Time` read cost on both platforms.
+The clocks have different freshness and correction behavior, as described above.
+
+All reported zero per-operation allocations after rounding/amortization. Earlier
+race-instrumented smoke runs exercised the benchmark harness on both platforms,
+and vet passed; the adopted library also passed its own race tests. Parallel
+ns/op reports aggregate throughput, not the latency of an individual read.

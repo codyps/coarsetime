@@ -26,16 +26,6 @@ func readCoarseSyscall(ts *syscall.Timespec) syscall.Errno {
 	return errno
 }
 
-// CLOCK_REALTIME_COARSE already includes the kernel's wall-clock correction.
-// Reading it directly is cheaper and fresher than maintaining our own offset.
-func readWallUnixNano() int64 {
-	var ts syscall.Timespec
-	if readRealtimeVDSO(&ts) {
-		return int64(ts.Sec)*1_000_000_000 + int64(ts.Nsec)
-	}
-	return readRealtimeSyscall()
-}
-
 func readRealtimeSyscall() int64 {
 	var ts syscall.Timespec
 	// Linux's legacy 32-bit timespec cannot represent wall dates after 2038.

@@ -1,0 +1,99 @@
+adopted trial 1
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	27050149	        12.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	29591695	        13.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.214 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+baseline trial 1
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	19313334	        17.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	21880944	        16.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.030 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+baseline trial 2
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	17999533	        18.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	21804072	        16.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.115 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+adopted trial 2
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	26831647	        13.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	28151806	        12.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	114402518	         3.107 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+adopted trial 3
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	26445802	        13.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	26853322	        13.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.617 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+baseline trial 3
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	15710143	        19.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	22422231	        16.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.076 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+baseline trial 4
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	19669081	        18.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	21771234	        16.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	121485279	         3.036 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+adopted trial 4
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	26521899	        14.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	26904117	        13.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.147 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+adopted trial 5
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	21729346	        15.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	26209548	        15.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.245 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+baseline trial 5
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNow-16            	18895794	        18.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-16       	20853207	        16.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime-16    	100000000	         3.171 ns/op	       0 B/op	       0 allocs/op
+PASS

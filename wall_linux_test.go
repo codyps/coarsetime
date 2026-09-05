@@ -18,11 +18,12 @@ func TestLinuxRealtimeClock(t *testing.T) {
 	for n := 0; n < 1000; n++ {
 		before := read()
 		got := UnixNano()
+		now := Now().UnixNano()
 		after := read()
 		if after < before {
 			continue
 		} // System wall time is allowed to step backward.
-		if got < before || got > after {
+		if got < before || got > after || now < before || now > after {
 			t.Fatalf("wall reading %d outside [%d,%d]", got, before, after)
 		}
 	}

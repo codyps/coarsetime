@@ -1,0 +1,8 @@
+{
+  "wall_opt_prototype_linux_amd64.go": "3cf7ce6b5e98b0221da6ed35676c27ea5ce63c1ddcb623cb8f367eea665c4a16",
+  "wall_opt_prototype.go": "d67c9904335b8776522d9edd4553e86ef19d98367af72bc620ed8a5a3c8e370a",
+  "wall_opt_prototype_test.go": "72cae6e73b4762fe9bf3f584f7f067fa6c05d2791e15b6a613afc52f1c0495a0",
+  "wall_opt_prototype_darwin_amd64_test.go": "130983b747fcc8b88efa370c25fd460e67cf4f6a7a09ada012631962a23a151a",
+  "wall_opt_prototype_linux_amd64_test.go": "cc4d34f484a61dc18810c0ddeed00e69f5fc3b699c846b352b00193e6ce58e0e",
+  "wall_opt_prototype_darwin_amd64.go": "4d1ffcf35f139180c40d53b3226157512aaf73d522638087040862c4885c0c97"
+}

@@ -1,0 +1,223 @@
+TEXT coarsetime.wallOptUnitUnixNano(SB) /Users/cody/p/coarsetime/wall_opt_prototype_darwin_amd64.go
+  wall_opt_prototype_darwin_amd64.go:13	0x1134ee0		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_darwin_amd64.go:13	0x1134ee4		763f			JBE 0x1134f25
+  wall_opt_prototype_darwin_amd64.go:13	0x1134ee6		55			PUSHQ BP
+  wall_opt_prototype_darwin_amd64.go:13	0x1134ee7		4889e5			MOVQ SP, BP
+  wall_opt_prototype_darwin_amd64.go:13	0x1134eea		4883ec08		SUBQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:14	0x1134eee		90			NOPL
+  type.go:114				0x1134eef		488b0d02a51d00		MOVQ coarsetime.wallCorrection(SB), CX
+  coarsetime_darwin_amd64.go:15		0x1134ef6		803df0a31d0000		CMPB coarsetime.approximateTimeSupported(SB), $0x0
+  coarsetime_darwin_amd64.go:19		0x1134efd		740c			JE 0x1134f0b
+  coarsetime_darwin_amd64.go:22		0x1134eff		488b15a28b1b00		MOVQ coarsetime.approximateTimePointer(SB), DX
+  coarsetime_darwin_amd64.go:22		0x1134f06		488b12			MOVQ 0(DX), DX
+  coarsetime_darwin_amd64.go:15		0x1134f09		eb10			JMP 0x1134f1b
+  type.go:114				0x1134f0b		48890c24		MOVQ CX, 0(SP)
+  coarsetime_darwin_amd64.go:24		0x1134f0f		e88cf8ffff		CALL coarsetime.readTicksFallback(SB)
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f14		488b0c24		MOVQ 0(SP), CX
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f18		4889c2			MOVQ AX, DX
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f1b		488d040a		LEAQ 0(DX)(CX*1), AX
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f1f		4883c408		ADDQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f23		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64.go:15	0x1134f24		c3			RET
+  wall_opt_prototype_darwin_amd64.go:13	0x1134f25		e81603f5ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_darwin_amd64.go:13	0x1134f2a		ebb4			JMP coarsetime.wallOptUnitUnixNano(SB)
+  :-1					0x1134f2c		cc			INT $0x3
+  :-1					0x1134f2d		cc			INT $0x3
+  :-1					0x1134f2e		cc			INT $0x3
+  :-1					0x1134f2f		cc			INT $0x3
+  :-1					0x1134f30		cc			INT $0x3
+  :-1					0x1134f31		cc			INT $0x3
+  :-1					0x1134f32		cc			INT $0x3
+  :-1					0x1134f33		cc			INT $0x3
+  :-1					0x1134f34		cc			INT $0x3
+  :-1					0x1134f35		cc			INT $0x3
+  :-1					0x1134f36		cc			INT $0x3
+  :-1					0x1134f37		cc			INT $0x3
+  :-1					0x1134f38		cc			INT $0x3
+  :-1					0x1134f39		cc			INT $0x3
+  :-1					0x1134f3a		cc			INT $0x3
+  :-1					0x1134f3b		cc			INT $0x3
+  :-1					0x1134f3c		cc			INT $0x3
+  :-1					0x1134f3d		cc			INT $0x3
+  :-1					0x1134f3e		cc			INT $0x3
+  :-1					0x1134f3f		cc			INT $0x3
+
+TEXT coarsetime.wallOptFlatUnsignedNow(SB) /Users/cody/p/coarsetime/wall_opt_prototype_darwin_amd64.go
+  wall_opt_prototype_darwin_amd64.go:29	0x11350e0		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_darwin_amd64.go:29	0x11350e4		0f86dd000000		JBE 0x11351c7
+  wall_opt_prototype_darwin_amd64.go:29	0x11350ea		55			PUSHQ BP
+  wall_opt_prototype_darwin_amd64.go:29	0x11350eb		4889e5			MOVQ SP, BP
+  wall_opt_prototype_darwin_amd64.go:29	0x11350ee		4883ec08		SUBQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:30	0x11350f2		90			NOPL
+  type.go:114				0x11350f3		488b15fea21d00		MOVQ coarsetime.wallCorrection(SB), DX
+  coarsetime_darwin_amd64.go:15		0x11350fa		803deca11d0000		CMPB coarsetime.approximateTimeSupported(SB), $0x0
+  coarsetime_darwin_amd64.go:19		0x1135101		740c			JE 0x113510f
+  coarsetime_darwin_amd64.go:22		0x1135103		488b359e891b00		MOVQ coarsetime.approximateTimePointer(SB), SI
+  coarsetime_darwin_amd64.go:22		0x113510a		488b36			MOVQ 0(SI), SI
+  coarsetime_darwin_amd64.go:15		0x113510d		eb10			JMP 0x113511f
+  type.go:114				0x113510f		48891424		MOVQ DX, 0(SP)
+  coarsetime_darwin_amd64.go:24		0x1135113		e888f6ffff		CALL coarsetime.readTicksFallback(SB)
+  wall_opt_prototype_darwin_amd64.go:31	0x1135118		488b1424		MOVQ 0(SP), DX
+  wall_opt_prototype_darwin_amd64.go:31	0x113511c		4889c6			MOVQ AX, SI
+  wall_opt_prototype_darwin_amd64.go:31	0x113511f		4801f2			ADDQ SI, DX
+  wall_opt_prototype_darwin_amd64.go:32	0x1135122		4885d2			TESTQ DX, DX
+  wall_opt_prototype_darwin_amd64.go:32	0x1135125		7d60			JGE 0x1135187
+  time.go:1657				0x1135127		4889d6			MOVQ DX, SI
+  time.go:1657				0x113512a		48c1fa3f		SARQ $0x3f, DX
+  time.go:1657				0x113512e		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  time.go:1657				0x1135138		4889d1			MOVQ DX, CX
+  time.go:1657				0x113513b		48f7ee			IMULQ SI
+  time.go:1657				0x113513e		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x1135142		4829ca			SUBQ CX, DX
+  time.go:1659				0x1135145		4869fa00ca9a3b		IMULQ $0x3b9aca00, DX, DI
+  time.go:1659				0x113514c		4829fe			SUBQ DI, SI
+  time.go:1661				0x113514f		488dbe00ca9a3b		LEAQ 0x3b9aca00(SI), DI
+  time.go:1364				0x1135156		488b0d63e21a00		MOVQ time.Local(SB), CX
+  time.go:1665				0x113515d		90			NOPL
+  time.go:1660				0x113515e		4885f6			TESTQ SI, SI
+  time.go:1660				0x1135161		480f4cf7		CMOVL DI, SI
+  time.go:1660				0x1135165		400f9cc7		SETL DI
+  time.go:1660				0x1135169		400fb6ff		MOVZX DI, DI
+  time.go:1660				0x113516d		4829fa			SUBQ DI, DX
+  time.go:1364				0x1135170		4863c6			MOVSXD SI, AX
+  time.go:1364				0x1135173		48be00f791770e000000	MOVQ $0xe7791f700, SI
+  time.go:1364				0x113517d		488d1c16		LEAQ 0(SI)(DX*1), BX
+  wall_opt_prototype_darwin_amd64.go:33	0x1135181		4883c408		ADDQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:33	0x1135185		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64.go:33	0x1135186		c3			RET
+  wall_opt_prototype_darwin_amd64.go:36	0x1135187		4889d6			MOVQ DX, SI
+  wall_opt_prototype_darwin_amd64.go:36	0x113518a		48d1ea			SHRQ $0x1, DX
+  wall_opt_prototype_darwin_amd64.go:36	0x113518d		48b898a5b436415f7089	MOVQ $0x89705f4136b4a598, AX
+  wall_opt_prototype_darwin_amd64.go:36	0x1135197		48f7e2			MULQ DX
+  wall_opt_prototype_darwin_amd64.go:36	0x113519a		48c1ea1c		SHRQ $0x1c, DX
+  wall_opt_prototype_darwin_amd64.go:36	0x113519e		4869fa00ca9a3b		IMULQ $0x3b9aca00, DX, DI
+  wall_opt_prototype_darwin_amd64.go:36	0x11351a5		4829fe			SUBQ DI, SI
+  time.go:1364				0x11351a8		4863c6			MOVSXD SI, AX
+  time.go:1364				0x11351ab		48be00f791770e000000	MOVQ $0xe7791f700, SI
+  time.go:1364				0x11351b5		488d1c32		LEAQ 0(DX)(SI*1), BX
+  time.go:1364				0x11351b9		488b0d00e21a00		MOVQ time.Local(SB), CX
+  time.go:1665				0x11351c0		90			NOPL
+  wall_opt_prototype_darwin_amd64.go:36	0x11351c1		4883c408		ADDQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:36	0x11351c5		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64.go:36	0x11351c6		c3			RET
+  wall_opt_prototype_darwin_amd64.go:29	0x11351c7		e87400f5ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_darwin_amd64.go:29	0x11351cc		e90fffffff		JMP coarsetime.wallOptFlatUnsignedNow(SB)
+  :-1					0x11351d1		cc			INT $0x3
+  :-1					0x11351d2		cc			INT $0x3
+  :-1					0x11351d3		cc			INT $0x3
+  :-1					0x11351d4		cc			INT $0x3
+  :-1					0x11351d5		cc			INT $0x3
+  :-1					0x11351d6		cc			INT $0x3
+  :-1					0x11351d7		cc			INT $0x3
+  :-1					0x11351d8		cc			INT $0x3
+  :-1					0x11351d9		cc			INT $0x3
+  :-1					0x11351da		cc			INT $0x3
+  :-1					0x11351db		cc			INT $0x3
+  :-1					0x11351dc		cc			INT $0x3
+  :-1					0x11351dd		cc			INT $0x3
+  :-1					0x11351de		cc			INT $0x3
+  :-1					0x11351df		cc			INT $0x3
+
+TEXT coarsetime.wallOptInlineUnixNano(SB) /Users/cody/p/coarsetime/wall_opt_prototype_darwin_amd64.go
+  wall_opt_prototype_darwin_amd64.go:45	0x11351e0		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_darwin_amd64.go:45	0x11351e4		763f			JBE 0x1135225
+  wall_opt_prototype_darwin_amd64.go:45	0x11351e6		55			PUSHQ BP
+  wall_opt_prototype_darwin_amd64.go:45	0x11351e7		4889e5			MOVQ SP, BP
+  wall_opt_prototype_darwin_amd64.go:45	0x11351ea		4883ec08		SUBQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:46	0x11351ee		90			NOPL
+  type.go:114				0x11351ef		488b0d02a21d00		MOVQ coarsetime.wallCorrection(SB), CX
+  wall_opt_prototype_darwin_amd64.go:48	0x11351f6		803df0a01d0000		CMPB coarsetime.approximateTimeSupported(SB), $0x0
+  wall_opt_prototype_darwin_amd64.go:48	0x11351fd		740c			JE 0x113520b
+  wall_opt_prototype_darwin_amd64.go:49	0x11351ff		488b15a2881b00		MOVQ coarsetime.approximateTimePointer(SB), DX
+  wall_opt_prototype_darwin_amd64.go:49	0x1135206		488b12			MOVQ 0(DX), DX
+  wall_opt_prototype_darwin_amd64.go:49	0x1135209		eb10			JMP 0x113521b
+  type.go:114				0x113520b		48890c24		MOVQ CX, 0(SP)
+  wall_opt_prototype_darwin_amd64.go:51	0x113520f		e88cf5ffff		CALL coarsetime.readTicksFallback(SB)
+  wall_opt_prototype_darwin_amd64.go:53	0x1135214		488b0c24		MOVQ 0(SP), CX
+  wall_opt_prototype_darwin_amd64.go:53	0x1135218		4889c2			MOVQ AX, DX
+  wall_opt_prototype_darwin_amd64.go:53	0x113521b		488d040a		LEAQ 0(DX)(CX*1), AX
+  wall_opt_prototype_darwin_amd64.go:53	0x113521f		4883c408		ADDQ $0x8, SP
+  wall_opt_prototype_darwin_amd64.go:53	0x1135223		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64.go:53	0x1135224		c3			RET
+  wall_opt_prototype_darwin_amd64.go:45	0x1135225		e81600f5ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_darwin_amd64.go:45	0x113522a		ebb4			JMP coarsetime.wallOptInlineUnixNano(SB)
+  :-1					0x113522c		cc			INT $0x3
+  :-1					0x113522d		cc			INT $0x3
+  :-1					0x113522e		cc			INT $0x3
+  :-1					0x113522f		cc			INT $0x3
+  :-1					0x1135230		cc			INT $0x3
+  :-1					0x1135231		cc			INT $0x3
+  :-1					0x1135232		cc			INT $0x3
+  :-1					0x1135233		cc			INT $0x3
+  :-1					0x1135234		cc			INT $0x3
+  :-1					0x1135235		cc			INT $0x3
+  :-1					0x1135236		cc			INT $0x3
+  :-1					0x1135237		cc			INT $0x3
+  :-1					0x1135238		cc			INT $0x3
+  :-1					0x1135239		cc			INT $0x3
+  :-1					0x113523a		cc			INT $0x3
+  :-1					0x113523b		cc			INT $0x3
+  :-1					0x113523c		cc			INT $0x3
+  :-1					0x113523d		cc			INT $0x3
+  :-1					0x113523e		cc			INT $0x3
+  :-1					0x113523f		cc			INT $0x3
+
+TEXT coarsetime.wallOptInlineNow(SB) /Users/cody/p/coarsetime/wall_opt_prototype_darwin_amd64.go
+  wall_opt_prototype_darwin_amd64.go:56	0x1135240		493b6610		CMPQ SP, 0x10(R14)
+  wall_opt_prototype_darwin_amd64.go:56	0x1135244		7677			JBE 0x11352bd
+  wall_opt_prototype_darwin_amd64.go:56	0x1135246		55			PUSHQ BP
+  wall_opt_prototype_darwin_amd64.go:56	0x1135247		4889e5			MOVQ SP, BP
+  wall_opt_prototype_darwin_amd64.go:56	0x113524a		e891ffffff		CALL coarsetime.wallOptInlineUnixNano(SB)
+  time.go:1656				0x113524f		483d00ca9a3b		CMPQ AX, $0x3b9aca00
+  time.go:1656				0x1135255		7246			JB 0x113529d
+  time.go:1657				0x1135257		4889c2			MOVQ AX, DX
+  time.go:1657				0x113525a		48c1f83f		SARQ $0x3f, AX
+  time.go:1657				0x113525e		4889c1			MOVQ AX, CX
+  time.go:1657				0x1135261		48b8cc525a9ba02fb844	MOVQ $0x44b82fa09b5a52cc, AX
+  wall_opt_prototype_darwin_amd64.go:56	0x113526b		4889d3			MOVQ DX, BX
+  time.go:1657				0x113526e		48f7ea			IMULQ DX
+  time.go:1657				0x1135271		48c1fa1c		SARQ $0x1c, DX
+  time.go:1657				0x1135275		4829ca			SUBQ CX, DX
+  time.go:1659				0x1135278		4869f200ca9a3b		IMULQ $0x3b9aca00, DX, SI
+  time.go:1659				0x113527f		4829f3			SUBQ SI, BX
+  time.go:1661				0x1135282		488db300ca9a3b		LEAQ 0x3b9aca00(BX), SI
+  time.go:1660				0x1135289		4885db			TESTQ BX, BX
+  time.go:1660				0x113528c		400f9cc7		SETL DI
+  time.go:1660				0x1135290		480f4cde		CMOVL SI, BX
+  time.go:1660				0x1135294		400fb6f7		MOVZX DI, SI
+  time.go:1660				0x1135298		4829f2			SUBQ SI, DX
+  time.go:1660				0x113529b		eb05			JMP 0x11352a2
+  wall_opt_prototype_darwin_amd64.go:56	0x113529d		4889c3			MOVQ AX, BX
+  wall_opt_prototype_darwin_amd64.go:56	0x11352a0		31d2			XORL DX, DX
+  time.go:1364				0x11352a2		4863c3			MOVSXD BX, AX
+  time.go:1364				0x11352a5		48be00f791770e000000	MOVQ $0xe7791f700, SI
+  time.go:1364				0x11352af		488d1c16		LEAQ 0(SI)(DX*1), BX
+  time.go:1364				0x11352b3		488b0d06e11a00		MOVQ time.Local(SB), CX
+  time.go:1665				0x11352ba		90			NOPL
+  wall_opt_prototype_darwin_amd64.go:56	0x11352bb		5d			POPQ BP
+  wall_opt_prototype_darwin_amd64.go:56	0x11352bc		c3			RET
+  wall_opt_prototype_darwin_amd64.go:56	0x11352bd		0f1f00			NOPL 0(AX)
+  wall_opt_prototype_darwin_amd64.go:56	0x11352c0		e87bfff4ff		CALL runtime.morestack_noctxt.abi0(SB)
+  wall_opt_prototype_darwin_amd64.go:56	0x11352c5		e976ffffff		JMP coarsetime.wallOptInlineNow(SB)
+  :-1					0x11352ca		cc			INT $0x3
+  :-1					0x11352cb		cc			INT $0x3
+  :-1					0x11352cc		cc			INT $0x3
+  :-1					0x11352cd		cc			INT $0x3
+  :-1					0x11352ce		cc			INT $0x3
+  :-1					0x11352cf		cc			INT $0x3
+  :-1					0x11352d0		cc			INT $0x3
+  :-1					0x11352d1		cc			INT $0x3
+  :-1					0x11352d2		cc			INT $0x3
+  :-1					0x11352d3		cc			INT $0x3
+  :-1					0x11352d4		cc			INT $0x3
+  :-1					0x11352d5		cc			INT $0x3
+  :-1					0x11352d6		cc			INT $0x3
+  :-1					0x11352d7		cc			INT $0x3
+  :-1					0x11352d8		cc			INT $0x3
+  :-1					0x11352d9		cc			INT $0x3
+  :-1					0x11352da		cc			INT $0x3
+  :-1					0x11352db		cc			INT $0x3
+  :-1					0x11352dc		cc			INT $0x3
+  :-1					0x11352dd		cc			INT $0x3
+  :-1					0x11352de		cc			INT $0x3
+  :-1					0x11352df		cc			INT $0x3
