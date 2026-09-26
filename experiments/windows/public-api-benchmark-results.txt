@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkNow             	80567192	         7.186 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow             	90256779	         7.648 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow             	75145593	         7.663 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow             	85978362	         7.360 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow             	76330050	         8.522 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow         	75739405	         8.950 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow         	67638404	         8.753 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow         	70985755	         8.930 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow         	72560163	         8.674 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow         	60511320	         8.898 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano        	228380371	         2.663 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano        	229378578	         2.550 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano        	225407479	         2.701 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano        	239695202	         2.550 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano        	253228237	         2.505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowUnixNano 	67424821	         9.300 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowUnixNano 	74502693	         9.172 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowUnixNano 	67100583	         8.778 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowUnixNano 	69300962	        10.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNowUnixNano 	72555697	         8.349 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/codyps/coarsetime	15.332s

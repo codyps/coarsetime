@@ -1,0 +1,15 @@
+=== RUN   TestSharedClocks
+--- PASS: TestSharedClocks (0.00s)
+=== RUN   TestResolution
+    clock_windows_amd64_test.go:137: QPC frequency: 10000000 Hz
+    clock_windows_amd64_test.go:183: TimeNow: min=401100ns median=999700ns changes=278 repeats=13213720 backwards=0
+    clock_windows_amd64_test.go:183: SharedUnixNano: min=491900ns median=1000400ns changes=244 repeats=19916160 backwards=0
+    clock_windows_amd64_test.go:183: SharedInterrupt: min=465600ns median=1000200ns changes=269 repeats=19344426 backwards=0
+    clock_windows_amd64_test.go:183: QPC: min=100ns median=100ns changes=2032163 repeats=394281 backwards=0
+    clock_windows_amd64_test.go:183: GetSystemTimeAsFileTime: min=320100ns median=544500ns changes=349 repeats=3070646 backwards=0
+    clock_windows_amd64_test.go:183: GetSystemTimePreciseAsFileTime: min=100ns median=100ns changes=2034178 repeats=301042 backwards=0
+    clock_windows_amd64_test.go:183: QueryInterruptTime: min=502900ns median=551900ns changes=324 repeats=3078749 backwards=0
+    clock_windows_amd64_test.go:183: QueryInterruptTimePrecise: min=100ns median=100ns changes=2094989 repeats=341494 backwards=0
+--- PASS: TestResolution (2.04s)
+PASS
+ok  	coarsetime.local/windowsbench	2.530s
