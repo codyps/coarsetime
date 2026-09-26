@@ -1,7 +1,7 @@
 package vvardetectors
 
 import (
-	"coarsetime"
+	"github.com/codyps/coarsetime"
 	"os"
 	"testing"
 	"time"

@@ -52,7 +52,7 @@ same vDSO bridge (or syscall fallback) as the elapsed clock. The kernel maintain
 wall corrections, including clock steps and suspend time. This is cheaper than
 adding a userspace correction and requires no periodic recalibration.
 
-On Darwin and other platforms, these functions use one coarse read plus one
+On Darwin and other non-Windows platforms, these functions use one coarse read plus one
 atomic load of a cached nanosecond correction. `Instant.Time` uses that correction
 on every platform. Calibration samples eight brackets using `time.Now` around a
 coarse read and selects the shortest precise monotonic bracket; it associates the
@@ -79,6 +79,20 @@ underlying OS clock limits. On 32-bit Linux the wall syscall uses the time64 ABI
 when available; older kernels fall back to their legacy 32-bit seconds ABI. Benchmarks
 include `Now`, `UnixNano`, conversion of an existing Instant, concurrent wall
 reads, and the separate cost of `RefreshWallClock`.
+
+## Windows implementation
+
+Windows/amd64 `UnixNano` reads the shared SystemTime clock directly, preserving
+the Windows fast path. The `purego` tag and other Windows architectures use
+`time.Now().UnixNano()`. `Now` constructs an approximate wall time from that
+reading, without a monotonic component; use `NowInstant` and `Since` for elapsed
+time. Neither Windows wall API requires `RefreshWallClock`; the cached correction
+is used only by `Instant.Time` on Windows.
+
+The shared-page implementation follows the Go runtime's Windows layout and makes
+no maximum-staleness guarantee. See the [Windows investigation](WINDOWS_PLAN.md)
+and [benchmark results](experiments/windows/public-api-benchmark-results.txt).
+Those historical `Now` benchmarks measured the earlier standard-library wrapper.
 
 ## Darwin implementation
 

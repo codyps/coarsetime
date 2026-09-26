@@ -5,7 +5,8 @@ package coarsetime
 import "time"
 
 // Now returns an approximate local wall-clock time. It reads the coarse
-// clock: Linux reads CLOCK_REALTIME_COARSE directly; other platforms apply a
+// clock: Linux reads CLOCK_REALTIME_COARSE directly; Windows reads its system
+// wall clock (coarse on amd64 unless purego is set); other platforms apply a
 // cached correction without reading the system wall clock.
 // The result has no Go monotonic component and can move backward.
 // See RefreshWallClock for the accuracy and suspend tradeoffs.

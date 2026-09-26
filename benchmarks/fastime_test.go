@@ -1,7 +1,7 @@
 package benchmarks
 
 import (
-	"coarsetime"
+	"github.com/codyps/coarsetime"
 	"context"
 	"os"
 	"runtime"

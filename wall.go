@@ -23,8 +23,8 @@ func correctedUnixNano(i Instant, correction int64) int64 {
 }
 
 // RefreshWallClock recalibrates the mapping from coarse readings to wall time.
-// Calibration runs once at package initialization. Linux Now and UnixNano
-// use the kernel wall clock directly and do not need this correction; on Linux
+// Calibration runs once at package initialization. Linux and Windows Now and UnixNano
+// use the kernel wall clock directly and do not need this correction; on those platforms
 // it is used only by Instant.Time. There is no automatic updater:
 // call this periodically or after resume/clock changes if freshness matters.
 //
