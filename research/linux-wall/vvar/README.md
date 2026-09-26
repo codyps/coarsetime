@@ -1,5 +1,9 @@
 # Direct VVAR prototype
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../../README.md#same-package-prototypes).
+
+
 2026-09-05, Go 1.26.6, Intel i9-9880H, Docker Linux amd64,
 `7.0.14-orbstack-00380-ga7e0a2dc9535`. The default library is unchanged.
 
@@ -77,7 +81,7 @@ From the repository root:
 
 ```sh
 GOCACHE=/tmp/coarsetime-prototype-go-cache GOOS=linux GOARCH=amd64 CGO_ENABLED=0 \
-  go test -tags vvarprototype -c -o /tmp/coarsetime-vvar.test .
+  python3 research/prototype.py vvar test -c -o /tmp/coarsetime-vvar.test .
 python3 research/linux-wall/vvar/run.py
 ```
 

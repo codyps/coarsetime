@@ -1,21 +1,22 @@
 # Windows timing investigation
 
-Implementation update: the root is now a buildable `github.com/codyps/coarsetime`
-module. `Now()` delegates to `time.Now()`; `UnixNano()` has a Windows/amd64
-shared-page fast path and standard-library fallbacks, including a `purego` tag.
-The unfinished Darwin sketch has been replaced by the fallback. Tests, public
-API benchmarks, and a cross-platform CI workflow have been added. Precise clocks
-and a custom elapsed-time API remain optional future work; use standard Go
-elapsed timing today. The sections below retain the pre-implementation findings.
+Historical investigation and plan, retained from the original Windows work. The
+current portable API is documented in the [root README](../../README.md): `Now`
+returns approximate wall time without a monotonic component, `UnixNano` retains
+the Windows fast path, and `NowInstant`/`Since` provide elapsed-time readings.
+The descriptions and recommendations below refer to the original implementation
+checkpoint and are not the current library contract.
 
-The repository currently has **no Windows support** and is not yet a buildable
+## Original repository state
+
+At the start of this investigation, the repository had **no Windows support** and was not yet a buildable
 Go library. At commit `75cf45e` it contains a partial Darwin Go file (no package
 or imports, unfinished `time.T` expression), an assembly trampoline, and a Nix
 development shell. The Go call names `mach_absolute_time_trampoline`, while the
 assembly defines `runtime·mach_approximate_time_trampoline`. There is no module,
 API contract, test suite, or CI configuration. The Nix input targets Darwin.
 
-The Windows experiment is a separate module in `experiments/windows`, so it can
+The Windows experiment is a separate module in `research/windows`, so it can
 run without first redesigning or completing the Darwin implementation.
 
 ## Recommendation
@@ -80,9 +81,9 @@ not establish 100 ns accuracy. No backwards readings occurred during sampling.
 test checks 10,000 reads bracketed by `time.Now()`, plus current interrupt-clock
 ordering and Unix-epoch conversion. The original root package remains unfinished.
 
-[Reproduction and methodology](experiments/windows/README.md),
-[raw benchmark output](experiments/windows/benchmark-results.txt), and
-[validation output](experiments/windows/validation-results.txt) are retained.
+[Reproduction and methodology](README.md),
+[raw benchmark output](benchmark-results.txt), and
+[validation output](validation-results.txt) are retained.
 
 ## Implementation sequence
 

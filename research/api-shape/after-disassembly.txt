@@ -1,0 +1,164 @@
+TEXT github.com/codyps/coarsetime.BenchmarkNow(SB) /Users/cody/p/coarsetime/coarsetime_bench_test.go
+  coarsetime_bench_test.go:92	0x118f9c0		493b6610		CMPQ SP, 0x10(R14)					
+  coarsetime_bench_test.go:92	0x118f9c4		7671			JBE 0x118fa37						
+  coarsetime_bench_test.go:92	0x118f9c6		55			PUSHQ BP						
+  coarsetime_bench_test.go:92	0x118f9c7		4889e5			MOVQ SP, BP						
+  coarsetime_bench_test.go:92	0x118f9ca		4883ec08		SUBQ $0x8, SP						
+  coarsetime_bench_test.go:93	0x118f9ce		4889442418		MOVQ AX, 0x18(SP)					
+  benchmark.go:193		0x118f9d3		c6805202000001		MOVB $0x1, 0x252(AX)					
+  benchmark.go:193		0x118f9da		31c9			XORL CX, CX						
+  coarsetime_bench_test.go:93	0x118f9dc		eb13			JMP 0x118f9f1						
+  coarsetime_bench_test.go:95	0x118f9de		48890d0bde2000		MOVQ CX, github.com/codyps/coarsetime.timeSink+16(SB)	
+  coarsetime_bench_test.go:94	0x118f9e5		488b0c24		MOVQ 0(SP), CX						
+  coarsetime_bench_test.go:94	0x118f9e9		48ffc1			INCQ CX							
+  coarsetime_bench_test.go:94	0x118f9ec		488b442418		MOVQ 0x18(SP), AX					
+  coarsetime_bench_test.go:94	0x118f9f1		48398810020000		CMPQ 0x210(AX), CX					
+  coarsetime_bench_test.go:94	0x118f9f8		7e37			JLE 0x118fa31						
+  coarsetime_bench_test.go:94	0x118f9fa		48890c24		MOVQ CX, 0(SP)						
+  wall_api.go:10		0x118f9fe		6690			NOPW							
+  wall_api.go:10		0x118fa00		e89be3ffff		CALL github.com/codyps/coarsetime.readWallTime(SB)	
+  coarsetime_bench_test.go:95	0x118fa05		488905d4dd2000		MOVQ AX, github.com/codyps/coarsetime.timeSink(SB)	
+  coarsetime_bench_test.go:95	0x118fa0c		48891dd5dd2000		MOVQ BX, github.com/codyps/coarsetime.timeSink+8(SB)	
+  coarsetime_bench_test.go:95	0x118fa13		833db6fa220000		CMPL runtime.writeBarrier(SB), $0x0			
+  coarsetime_bench_test.go:95	0x118fa1a		74c2			JE 0x118f9de						
+  coarsetime_bench_test.go:95	0x118fa1c		488b05cddd2000		MOVQ github.com/codyps/coarsetime.timeSink+16(SB), AX	
+  coarsetime_bench_test.go:95	0x118fa23		e8787befff		CALL runtime.gcWriteBarrier2(SB)			
+  coarsetime_bench_test.go:95	0x118fa28		49890b			MOVQ CX, 0(R11)						
+  coarsetime_bench_test.go:95	0x118fa2b		49894308		MOVQ AX, 0x8(R11)					
+  coarsetime_bench_test.go:95	0x118fa2f		ebad			JMP 0x118f9de						
+  coarsetime_bench_test.go:97	0x118fa31		4883c408		ADDQ $0x8, SP						
+  coarsetime_bench_test.go:97	0x118fa35		5d			POPQ BP							
+  coarsetime_bench_test.go:97	0x118fa36		c3			RET							
+  coarsetime_bench_test.go:92	0x118fa37		4889442408		MOVQ AX, 0x8(SP)					
+  coarsetime_bench_test.go:92	0x118fa3c		0f1f4000		NOPL 0(AX)						
+  coarsetime_bench_test.go:92	0x118fa40		e8bb61efff		CALL runtime.morestack_noctxt.abi0(SB)			
+  coarsetime_bench_test.go:92	0x118fa45		488b442408		MOVQ 0x8(SP), AX					
+  coarsetime_bench_test.go:92	0x118fa4a		e971ffffff		JMP github.com/codyps/coarsetime.BenchmarkNow(SB)	
+  :-1				0x118fa4f		cc			INT $0x3						
+  :-1				0x118fa50		cc			INT $0x3						
+  :-1				0x118fa51		cc			INT $0x3						
+  :-1				0x118fa52		cc			INT $0x3						
+  :-1				0x118fa53		cc			INT $0x3						
+  :-1				0x118fa54		cc			INT $0x3						
+  :-1				0x118fa55		cc			INT $0x3						
+  :-1				0x118fa56		cc			INT $0x3						
+  :-1				0x118fa57		cc			INT $0x3						
+  :-1				0x118fa58		cc			INT $0x3						
+  :-1				0x118fa59		cc			INT $0x3						
+  :-1				0x118fa5a		cc			INT $0x3						
+  :-1				0x118fa5b		cc			INT $0x3						
+  :-1				0x118fa5c		cc			INT $0x3						
+  :-1				0x118fa5d		cc			INT $0x3						
+  :-1				0x118fa5e		cc			INT $0x3						
+  :-1				0x118fa5f		cc			INT $0x3						
+
+TEXT github.com/codyps/coarsetime.BenchmarkUnixNano(SB) /Users/cody/p/coarsetime/coarsetime_bench_test.go
+  coarsetime_bench_test.go:99	0x118fa60		493b6610		CMPQ SP, 0x10(R14)							
+  coarsetime_bench_test.go:99	0x118fa64		7667			JBE 0x118facd								
+  coarsetime_bench_test.go:99	0x118fa66		55			PUSHQ BP								
+  coarsetime_bench_test.go:99	0x118fa67		4889e5			MOVQ SP, BP								
+  coarsetime_bench_test.go:99	0x118fa6a		4883ec08		SUBQ $0x8, SP								
+  coarsetime_bench_test.go:100	0x118fa6e		4889442418		MOVQ AX, 0x18(SP)							
+  benchmark.go:193		0x118fa73		c6805202000001		MOVB $0x1, 0x252(AX)							
+  benchmark.go:193		0x118fa7a		31c9			XORL CX, CX								
+  coarsetime_bench_test.go:100	0x118fa7c		eb0a			JMP 0x118fa88								
+  coarsetime_bench_test.go:102	0x118fa7e		488915bbf72200		MOVQ DX, github.com/codyps/coarsetime.unixNanoSink(SB)			
+  coarsetime_bench_test.go:101	0x118fa85		48ffc1			INCQ CX									
+  coarsetime_bench_test.go:101	0x118fa88		48398810020000		CMPQ 0x210(AX), CX							
+  coarsetime_bench_test.go:101	0x118fa8f		7e36			JLE 0x118fac7								
+  wall_darwin_amd64.go:14	0x118fa91		803d77f6220000		CMPB github.com/codyps/coarsetime.wallCommpageSupported(SB), $0x0	
+  wall_darwin_amd64.go:14	0x118fa98		7416			JE 0x118fab0								
+  type.go:114			0x118fa9a		488b157ff72200		MOVQ github.com/codyps/coarsetime.wallCorrection(SB), DX		
+  wall_darwin_amd64.go:16	0x118faa1		488b1d00d72000		MOVQ github.com/codyps/coarsetime.approximateTimePointer(SB), BX	
+  wall_darwin_amd64.go:16	0x118faa8		488b1b			MOVQ 0(BX), BX								
+  wall_darwin_amd64.go:16	0x118faab		4801da			ADDQ BX, DX								
+  wall_api.go:16		0x118faae		ebce			JMP 0x118fa7e								
+  coarsetime_bench_test.go:101	0x118fab0		48890c24		MOVQ CX, 0(SP)								
+  wall_darwin_amd64.go:18	0x118fab4		e867e2ffff		CALL github.com/codyps/coarsetime.wallUnixNanoFallback(SB)		
+  coarsetime_bench_test.go:101	0x118fab9		488b0c24		MOVQ 0(SP), CX								
+  coarsetime_bench_test.go:102	0x118fabd		4889c2			MOVQ AX, DX								
+  coarsetime_bench_test.go:101	0x118fac0		488b442418		MOVQ 0x18(SP), AX							
+  wall_api.go:16		0x118fac5		ebb7			JMP 0x118fa7e								
+  coarsetime_bench_test.go:104	0x118fac7		4883c408		ADDQ $0x8, SP								
+  coarsetime_bench_test.go:104	0x118facb		5d			POPQ BP									
+  coarsetime_bench_test.go:104	0x118facc		c3			RET									
+  coarsetime_bench_test.go:99	0x118facd		4889442408		MOVQ AX, 0x8(SP)							
+  coarsetime_bench_test.go:99	0x118fad2		e82961efff		CALL runtime.morestack_noctxt.abi0(SB)					
+  coarsetime_bench_test.go:99	0x118fad7		488b442408		MOVQ 0x8(SP), AX							
+  coarsetime_bench_test.go:99	0x118fadc		eb82			JMP github.com/codyps/coarsetime.BenchmarkUnixNano(SB)			
+  :-1				0x118fade		cc			INT $0x3								
+  :-1				0x118fadf		cc			INT $0x3								
+
+TEXT github.com/codyps/coarsetime.BenchmarkInstantTime(SB) /Users/cody/p/coarsetime/coarsetime_bench_test.go
+  coarsetime_bench_test.go:106	0x118fae0		493b6610		CMPQ SP, 0x10(R14)							
+  coarsetime_bench_test.go:106	0x118fae4		0f86aa000000		JBE 0x118fb94								
+  coarsetime_bench_test.go:106	0x118faea		55			PUSHQ BP								
+  coarsetime_bench_test.go:106	0x118faeb		4889e5			MOVQ SP, BP								
+  coarsetime_bench_test.go:106	0x118faee		4883ec18		SUBQ $0x18, SP								
+  coarsetime_darwin_amd64.go:19	0x118faf2		4889442428		MOVQ AX, 0x28(SP)							
+  coarsetime_bench_test.go:107	0x118faf7		90			NOPL									
+  coarsetime_darwin_amd64.go:15	0x118faf8		803d0ef6220000		CMPB github.com/codyps/coarsetime.approximateTimeSupported(SB), $0x0	
+  coarsetime_darwin_amd64.go:15	0x118faff		90			NOPL									
+  coarsetime_darwin_amd64.go:19	0x118fb00		740c			JE 0x118fb0e								
+  coarsetime_darwin_amd64.go:22	0x118fb02		488b0d9fd62000		MOVQ github.com/codyps/coarsetime.approximateTimePointer(SB), CX	
+  coarsetime_darwin_amd64.go:22	0x118fb09		488b09			MOVQ 0(CX), CX								
+  coarsetime_darwin_amd64.go:15	0x118fb0c		eb0d			JMP 0x118fb1b								
+  coarsetime_darwin_amd64.go:24	0x118fb0e		e84ddfffff		CALL github.com/codyps/coarsetime.readTicksFallback(SB)			
+  coarsetime.go:25		0x118fb13		4889c1			MOVQ AX, CX								
+  benchmark.go:193		0x118fb16		488b442428		MOVQ 0x28(SP), AX							
+  coarsetime.go:25		0x118fb1b		48894c2408		MOVQ CX, 0x8(SP)							
+  coarsetime_bench_test.go:108	0x118fb20		90			NOPL									
+  benchmark.go:193		0x118fb21		c6805202000001		MOVB $0x1, 0x252(AX)							
+  coarsetime_bench_test.go:109	0x118fb28		e8933cf5ff		CALL testing.(*B).ResetTimer(SB)					
+  coarsetime_bench_test.go:109	0x118fb2d		31c0			XORL AX, AX								
+  coarsetime_bench_test.go:110	0x118fb2f		eb0f			JMP 0x118fb40								
+  coarsetime_bench_test.go:111	0x118fb31		48890db8dc2000		MOVQ CX, github.com/codyps/coarsetime.timeSink+16(SB)			
+  coarsetime_bench_test.go:110	0x118fb38		488b442410		MOVQ 0x10(SP), AX							
+  coarsetime_bench_test.go:110	0x118fb3d		48ffc0			INCQ AX									
+  coarsetime_bench_test.go:110	0x118fb40		488b4c2428		MOVQ 0x28(SP), CX							
+  coarsetime_bench_test.go:110	0x118fb45		48398110020000		CMPQ 0x210(CX), AX							
+  coarsetime_bench_test.go:110	0x118fb4c		7e40			JLE 0x118fb8e								
+  coarsetime_bench_test.go:110	0x118fb4e		4889442410		MOVQ AX, 0x10(SP)							
+  wall_api.go:23		0x118fb53		488b442408		MOVQ 0x8(SP), AX							
+  wall_api.go:23		0x118fb58		e823e3ffff		CALL github.com/codyps/coarsetime.instantTime(SB)			
+  coarsetime_bench_test.go:111	0x118fb5d		4889057cdc2000		MOVQ AX, github.com/codyps/coarsetime.timeSink(SB)			
+  coarsetime_bench_test.go:111	0x118fb64		48891d7ddc2000		MOVQ BX, github.com/codyps/coarsetime.timeSink+8(SB)			
+  coarsetime_bench_test.go:111	0x118fb6b		833d5ef9220000		CMPL runtime.writeBarrier(SB), $0x0					
+  coarsetime_bench_test.go:111	0x118fb72		74bd			JE 0x118fb31								
+  coarsetime_bench_test.go:111	0x118fb74		488b1575dc2000		MOVQ github.com/codyps/coarsetime.timeSink+16(SB), DX			
+  coarsetime_bench_test.go:111	0x118fb7b		0f1f440000		NOPL 0(AX)(AX*1)							
+  coarsetime_bench_test.go:111	0x118fb80		e81b7aefff		CALL runtime.gcWriteBarrier2(SB)					
+  coarsetime_bench_test.go:111	0x118fb85		49890b			MOVQ CX, 0(R11)								
+  coarsetime_bench_test.go:111	0x118fb88		49895308		MOVQ DX, 0x8(R11)							
+  coarsetime_bench_test.go:111	0x118fb8c		eba3			JMP 0x118fb31								
+  coarsetime_bench_test.go:113	0x118fb8e		4883c418		ADDQ $0x18, SP								
+  coarsetime_bench_test.go:113	0x118fb92		5d			POPQ BP									
+  coarsetime_bench_test.go:113	0x118fb93		c3			RET									
+  coarsetime_bench_test.go:106	0x118fb94		4889442408		MOVQ AX, 0x8(SP)							
+  coarsetime_bench_test.go:106	0x118fb99		e86260efff		CALL runtime.morestack_noctxt.abi0(SB)					
+  coarsetime_bench_test.go:106	0x118fb9e		488b442408		MOVQ 0x8(SP), AX							
+  coarsetime_bench_test.go:106	0x118fba3		e938ffffff		JMP github.com/codyps/coarsetime.BenchmarkInstantTime(SB)		
+  :-1				0x118fba8		cc			INT $0x3								
+  :-1				0x118fba9		cc			INT $0x3								
+  :-1				0x118fbaa		cc			INT $0x3								
+  :-1				0x118fbab		cc			INT $0x3								
+  :-1				0x118fbac		cc			INT $0x3								
+  :-1				0x118fbad		cc			INT $0x3								
+  :-1				0x118fbae		cc			INT $0x3								
+  :-1				0x118fbaf		cc			INT $0x3								
+  :-1				0x118fbb0		cc			INT $0x3								
+  :-1				0x118fbb1		cc			INT $0x3								
+  :-1				0x118fbb2		cc			INT $0x3								
+  :-1				0x118fbb3		cc			INT $0x3								
+  :-1				0x118fbb4		cc			INT $0x3								
+  :-1				0x118fbb5		cc			INT $0x3								
+  :-1				0x118fbb6		cc			INT $0x3								
+  :-1				0x118fbb7		cc			INT $0x3								
+  :-1				0x118fbb8		cc			INT $0x3								
+  :-1				0x118fbb9		cc			INT $0x3								
+  :-1				0x118fbba		cc			INT $0x3								
+  :-1				0x118fbbb		cc			INT $0x3								
+  :-1				0x118fbbc		cc			INT $0x3								
+  :-1				0x118fbbd		cc			INT $0x3								
+  :-1				0x118fbbe		cc			INT $0x3								
+  :-1				0x118fbbf		cc			INT $0x3								

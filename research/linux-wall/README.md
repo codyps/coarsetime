@@ -1,5 +1,9 @@
 # Further Linux wall-read investigation
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../README.md#same-package-prototypes).
+
+
 2026-09-05, Intel i9-9880H, Docker Linux amd64, kernel
 `7.0.14-orbstack-00380-ga7e0a2dc9535`, Go 1.26.6. Production remains unchanged.
 The `linuxwallprobe` build tag enables the diagnostic assembly and benchmarks.
@@ -69,7 +73,7 @@ the dominant cost measured here.
 
 ```sh
 GOCACHE=/tmp/coarsetime-prototype-go-cache GOOS=linux GOARCH=amd64 CGO_ENABLED=0 \
-  go test -tags linuxwallprobe -c -o /tmp/coarsetime-linux-wall-probe.test .
+  python3 research/prototype.py linux-wall test -c -o /tmp/coarsetime-linux-wall-probe.test .
 docker run --rm --network none -e COARSETIME_REQUIRE_VDSO=1 \
   -v /tmp/coarsetime-linux-wall-probe.test:/test:ro python:3.12-slim \
   /test -test.run 'Test(LinuxWallProbe|VDSO)$' -test.v \

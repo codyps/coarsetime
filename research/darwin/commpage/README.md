@@ -1,5 +1,9 @@
 # Direct Darwin commpage prototypes
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../../README.md#same-package-prototypes).
+
+
 The root package has three comparison prototypes under the `commpageprototype`
 build tag. These results were collected before adoption. Darwin amd64 now uses
 the once-checked atomic reader in ordinary builds; arm64 retains the libc bridge.
@@ -27,10 +31,10 @@ calendar commpage record and do not improve sleep/NTP/clock-step freshness.
 
 Source files:
 
-* [Readers and API-equivalent wrappers](../../../commpage_prototype_darwin.go)
-* [Intel assembly](../../../commpage_prototype_darwin_amd64.s)
-* [ARM64 assembly](../../../commpage_prototype_darwin_arm64.s)
-* [Tests and benchmarks](../../../commpage_prototype_darwin_test.go)
+* [Readers and API-equivalent wrappers](../../_prototypes/darwin-commpage/commpage_prototype_darwin.go)
+* [Intel assembly](../../_prototypes/darwin-commpage/commpage_prototype_darwin_amd64.s)
+* [ARM64 assembly](../../_prototypes/darwin-commpage/commpage_prototype_darwin_arm64.s)
+* [Tests and benchmarks](../../_prototypes/darwin-commpage/commpage_prototype_darwin_test.go)
 
 ## Validation
 
@@ -59,12 +63,12 @@ From the repository root (GOCACHE is set explicitly for this workspace sandbox):
 
 ```sh
 export GOCACHE=/tmp/coarsetime-prototype-go-cache
-go test -tags commpageprototype -race .
-go test -tags commpageprototype -gcflags=all=-d=checkptr=2 .
-go vet -tags commpageprototype .
-CGO_ENABLED=0 go test -tags commpageprototype -c -o /tmp/coarsetime-prototype-amd64.test .
-GOOS=darwin GOARCH=arm64 CGO_ENABLED=0 go test -tags commpageprototype -c -o /tmp/coarsetime-prototype-arm64.test .
-python3 research/darwin/benchmarks/run.py /tmp/coarsetime-prototype-amd64.test
+python3 research/prototype.py darwin-commpage test -race .
+python3 research/prototype.py darwin-commpage test -gcflags=all=-d=checkptr=2 .
+python3 research/prototype.py darwin-commpage vet .
+CGO_ENABLED=0 python3 research/prototype.py darwin-commpage test -c -o /tmp/coarsetime-prototype-amd64.test .
+GOOS=darwin GOARCH=arm64 CGO_ENABLED=0 python3 research/prototype.py darwin-commpage test -c -o /tmp/coarsetime-prototype-arm64.test .
+python3 research/darwin/commpage/run.py /tmp/coarsetime-prototype-amd64.test
 ```
 
 The runner invokes the already-built native binary serially, shuffling all 18

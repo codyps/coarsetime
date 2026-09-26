@@ -3,7 +3,7 @@
 Standalone, Windows/amd64-only benchmark module created while the parent was an
 unfinished Darwin sketch. It compares clock sources independently of the public
 API, which now has its own benchmarks at the repository root.
-See [the implementation plan](../../WINDOWS_PLAN.md).
+See [the implementation plan](plan.md).
 
 Run from this directory in PowerShell:
 

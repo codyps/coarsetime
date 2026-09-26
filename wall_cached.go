@@ -1,6 +1,5 @@
 //go:build !linux && !windows && !(darwin && amd64)
 
-
 package coarsetime
 
 func readWallUnixNano() int64 {

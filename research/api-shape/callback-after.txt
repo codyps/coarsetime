@@ -1,0 +1,63 @@
+# sample 1, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	90364825	         3.743 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	178844745	         2.054 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100000000	         3.538 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 2, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	80306018	         3.762 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	197909748	         1.840 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100000000	         3.635 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 3, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	92825204	         3.710 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	209667825	         1.809 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100224510	         3.584 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 4, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	100000000	         3.697 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	177999730	         2.051 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100000000	         3.553 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 5, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	100000000	         3.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	176057307	         2.103 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100000000	         3.567 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 6, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	99083613	         3.725 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	206862577	         1.707 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	99056545	         3.575 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 7, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowFuncValue         	100000000	         3.779 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue    	198921849	         1.724 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTimeFuncValue 	100000000	         3.580 ns/op	       0 B/op	       0 allocs/op
+PASS

@@ -1,5 +1,9 @@
 # Detecting compatibility with direct VVAR reads
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../../../README.md#same-package-prototypes).
+
+
 The running **vDSO code** is the useful authority. Neither uname nor a timestamp
 match establishes the private data layout. This investigation adds a narrow,
 fail-closed detection mode to the existing build-tagged prototype. Production
@@ -98,7 +102,7 @@ x86-64 vDSO exposes no such contract. The documented stable interface remains th
 
 ```sh
 GOCACHE=/tmp/coarsetime-prototype-go-cache GOOS=linux GOARCH=amd64 CGO_ENABLED=0 \
-  go test -tags vvarprototype -c -o /tmp/coarsetime-vvar-detect.test .
+  python3 research/prototype.py vvar test -c -o /tmp/coarsetime-vvar-detect.test .
 docker run --rm --network none \
   -e COARSETIME_VVAR_LAYOUT=detect -e COARSETIME_REQUIRE_VDSO=1 \
   -v /tmp/coarsetime-vvar-detect.test:/test:ro python:3.12-slim /test -test.v

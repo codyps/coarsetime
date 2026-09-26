@@ -7,4 +7,4 @@ require (
 	github.com/kpango/fastime v1.1.10
 )
 
-replace github.com/codyps/coarsetime => ..
+replace github.com/codyps/coarsetime => ../..

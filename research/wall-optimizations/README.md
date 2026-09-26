@@ -1,5 +1,9 @@
 # Further wall-read optimization experiments
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../README.md#same-package-prototypes).
+
+
 These are opt-in prototypes under `-tags walloptprototype`. The default library
 is unchanged. The candidates preserve the current clock source, correction
 refresh policy, Local time zone, and absence of a Go monotonic component. No
@@ -83,9 +87,9 @@ global sinks; they do not promise an individual call latency, portable speedup,
 or clock accuracy. Helper boundaries and compiler inlining are deliberately part
 of the measurement, since they affect real API calls.
 
-Sources: [Darwin readers](../../wall_opt_prototype_darwin_amd64.go),
-[Linux readers](../../wall_opt_prototype_linux_amd64.go), and
-[normalization](../../wall_opt_prototype.go). Local generated-code evidence
+Sources: [Darwin readers](../_prototypes/wall-optimizations/wall_opt_prototype_darwin_amd64.go),
+[Linux readers](../_prototypes/wall-optimizations/wall_opt_prototype_linux_amd64.go), and
+[normalization](../_prototypes/wall-optimizations/wall_opt_prototype.go). Local generated-code evidence
 is in [Darwin disassembly](darwin-disassembly.txt) and
 [Linux disassembly](linux-disassembly.txt). Results are retained under `darwin/`
 and `linux/`. The [Darwin pilot](darwin-pilot.txt) is exploratory and should not
@@ -162,11 +166,11 @@ From the project root:
 
 ```sh
 export GOCACHE=/tmp/coarsetime-prototype-go-cache
-go test -tags walloptprototype -race .
-go vet -tags walloptprototype .
-CGO_ENABLED=0 go test -tags walloptprototype -c -o /tmp/coarsetime-wallopt-darwin.test .
+python3 research/prototype.py wall-optimizations test -race .
+python3 research/prototype.py wall-optimizations vet .
+CGO_ENABLED=0 python3 research/prototype.py wall-optimizations test -c -o /tmp/coarsetime-wallopt-darwin.test .
 python3 research/wall-optimizations/run.py /tmp/coarsetime-wallopt-darwin.test --output /tmp/wallopt-darwin
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go test -tags walloptprototype -c -o /tmp/coarsetime-wallopt-linux.test .
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 python3 research/prototype.py wall-optimizations test -c -o /tmp/coarsetime-wallopt-linux.test .
 ```
 
 Run the Linux binary and runner on Linux with `COARSETIME_REQUIRE_VDSO=1` and

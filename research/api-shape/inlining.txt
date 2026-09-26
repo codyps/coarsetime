@@ -1,0 +1,21 @@
+darwin/amd64
+./wall_darwin_amd64.go:13:6: can inline readWallUnixNano with cost 75 as: func() int64 { if wallCommpageSupported { return (*atomic.Int64).Load(wallCorrection) + int64(atomic.LoadUint64(approximateTimePointer)) }; return wallUnixNanoFallback() }
+./wall_darwin_amd64.go:27:6: cannot inline readWallTime: function too complex: cost 207 exceeds budget 80
+./wall_api.go:10:6: can inline Now with cost 60 as: func() time.Time { return readWallTime() }
+./wall_api.go:16:6: can inline UnixNano with cost 78 as: func() int64 { return readWallUnixNano() }
+./wall_darwin_amd64.go:37:6: cannot inline instantTime: function too complex: cost 220 exceeds budget 80
+./wall_api.go:23:6: can inline Instant.Time with cost 61 as: method(Instant) func() time.Time { return instantTime(i) }
+linux/amd64
+./wall_linux_amd64.go:9:6: cannot inline readWallTime: function too complex: cost 253 exceeds budget 80
+./wall_api.go:10:6: can inline Now with cost 60 as: func() time.Time { return readWallTime() }
+./wall_linux_amd64.go:25:6: cannot inline readWallUnixNano: function too complex: cost 151 exceeds budget 80
+./wall_api.go:16:6: can inline UnixNano with cost 60 as: func() int64 { return readWallUnixNano() }
+./wall_time_generic.go:7:6: cannot inline instantTime: function too complex: cost 128 exceeds budget 80
+./wall_api.go:23:6: can inline Instant.Time with cost 61 as: method(Instant) func() time.Time { return instantTime(i) }
+windows/amd64
+./wall_windows.go:3:6: can inline readWallUnixNano with cost 72 as: func() int64 { return unixNano() }
+./wall_api_generic.go:7:6: cannot inline readWallTime: function too complex: cost 128 exceeds budget 80
+./wall_api.go:10:6: can inline Now with cost 60 as: func() time.Time { return readWallTime() }
+./wall_api.go:16:6: can inline UnixNano with cost 75 as: func() int64 { return readWallUnixNano() }
+./wall_time_generic.go:7:6: cannot inline instantTime: function too complex: cost 128 exceeds budget 80
+./wall_api.go:23:6: can inline Instant.Time with cost 61 as: method(Instant) func() time.Time { return instantTime(i) }

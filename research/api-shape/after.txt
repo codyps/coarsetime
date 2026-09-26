@@ -1,0 +1,77 @@
+# sample 1, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	627059869	         0.5448 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.303 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	133785657	         2.677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	519103206	         0.6663 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	166635793	         2.219 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 2, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	673020037	         0.5505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.251 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	132161587	         2.723 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	535409794	         0.6701 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	159548191	         2.183 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 3, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	649488512	         0.5475 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.236 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	133207940	         2.711 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	532442812	         0.6641 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	162836767	         2.174 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 4, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	657385190	         0.5506 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.378 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	131665809	         2.714 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	540042776	         0.6688 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	165352585	         2.185 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 5, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	653084622	         0.5485 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.214 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	134431894	         2.726 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	466664586	         0.6771 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	162733308	         2.185 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 6, order ['after', 'before']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	654474152	         0.5548 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	97573984	         3.314 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	125933464	         2.815 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	533823097	         0.6763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	165404988	         2.204 ns/op	       0 B/op	       0 allocs/op
+PASS
+# sample 7, order ['before', 'after']
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkNowInstant  	618161162	         0.5680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince       	100000000	         3.176 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow         	131735433	         2.703 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano    	517609856	         0.6846 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantTime 	164315563	         2.233 ns/op	       0 B/op	       0 allocs/op
+PASS

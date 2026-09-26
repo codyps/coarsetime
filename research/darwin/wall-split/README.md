@@ -1,5 +1,9 @@
 # Split wall-clock base experiment
 
+Prototype sources live under `research/_prototypes/` and run through the
+[research overlay runner](../../README.md#same-package-prototypes).
+
+
 This experiment tests whether Darwin amd64 `Now()` can avoid normalizing a
 complete Unix-nanosecond timestamp on every read. It uses the adopted atomic
 commpage tick reader. It does not read the calendar commpage record or introduce
@@ -7,8 +11,8 @@ OS clock resynchronization. **The default library is unchanged.**
 
 Enable the experiment with `-tags wallsplitprototype`. Sources:
 
-* [Mapping and three readers](../../../wall_split_prototype_darwin_amd64.go)
-* [Tests and benchmarks](../../../wall_split_prototype_darwin_amd64_test.go)
+* [Mapping and three readers](../../_prototypes/darwin-wall-split/wall_split_prototype_darwin_amd64.go)
+* [Tests and benchmarks](../../_prototypes/darwin-wall-split/wall_split_prototype_darwin_amd64_test.go)
 
 ## Representation
 
@@ -87,10 +91,10 @@ From the repository root:
 
 ```sh
 export GOCACHE=/tmp/coarsetime-prototype-go-cache
-go test -tags wallsplitprototype -race .
-go test -tags wallsplitprototype -gcflags=all=-d=checkptr=2 .
-go vet -tags wallsplitprototype .
-CGO_ENABLED=0 go test -tags wallsplitprototype -c -o /tmp/coarsetime-wall-split.test .
+python3 research/prototype.py darwin-wall-split test -race .
+python3 research/prototype.py darwin-wall-split test -gcflags=all=-d=checkptr=2 .
+python3 research/prototype.py darwin-wall-split vet .
+CGO_ENABLED=0 python3 research/prototype.py darwin-wall-split test -c -o /tmp/coarsetime-wall-split.test .
 python3 research/darwin/wall-split/run.py /tmp/coarsetime-wall-split.test
 ```
 
