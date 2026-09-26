@@ -25,6 +25,9 @@ jobs:
       - name: Race detector
         if: runner.os == 'Linux'
         run: go test -race ./...
+      - name: Pure Go race detector
+        if: runner.os == 'Linux'
+        run: go test -race -tags=purego ./...
       - name: Windows experiment
         if: runner.os == 'Windows'
         working-directory: research/windows
@@ -36,15 +39,24 @@ jobs:
       matrix:
         target:
           - {os: windows, arch: arm64}
+          - {os: windows, arch: amd64}
           - {os: windows, arch: '386'}
           - {os: darwin, arch: amd64}
           - {os: darwin, arch: arm64}
+          - {os: linux, arch: amd64}
+          - {os: linux, arch: arm64}
+          - {os: linux, arch: '386'}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-go@v7
         with:
           go-version: stable
       - run: go test -c -o '${{ runner.temp }}/coarsetime.test' .
+        env:
+          GOOS: ${{ matrix.target.os }}
+          GOARCH: ${{ matrix.target.arch }}
+          CGO_ENABLED: '0'
+      - run: go test -tags=purego -c -o '${{ runner.temp }}/coarsetime-purego.test' .
         env:
           GOOS: ${{ matrix.target.os }}
           GOARCH: ${{ matrix.target.arch }}

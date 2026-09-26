@@ -33,12 +33,27 @@ there is no runtime interface dispatch.
 | `RefreshWallClock` | Refresh the correction used by `Instant.Time` | Also updates `Now`/`UnixNano` where they use that correction |
 
 `Now` never carries Go's monotonic component. Suspend behavior, resolution, and
-freshness remain platform dependent as described below. The `purego` tag selects
-the Windows standard-library wall-clock fallback; it does not disable Darwin or
-Linux native implementations. There are no platform-only exported entry points.
+freshness remain platform dependent as described below. There are no platform-only
+exported entry points.
+
+Build with `-tags=purego` to use standard-library clocks on **every platform**:
+
+- `NowInstant` and `Since` use Go's monotonic clock (`time.Since` from a process-local origin).
+- `Now` and `UnixNano` read `time.Now().UnixNano()` directly. `Now` still has no
+  monotonic component, preserving the public contract.
+- `Instant.Time` still uses the cached correction; `RefreshWallClock` updates
+  that correction but does not affect direct wall reads.
+
+This disables this package's assembly, shared-page reads, native syscalls, and
+private runtime bridges. The standard library may itself use native code.
+It is a compatibility and diagnostic fallback, not a requirement for disabling
+cgo: normal builds already work with `CGO_ENABLED=0`. Resolution, speed, and
+suspend behavior follow Go's clocks and can differ from the native coarse clocks.
+The platform implementation descriptions below refer to builds without `purego`.
 
 The API surface test checks 12 OS/architecture combinations, both with and
-without `purego`. See the [API refactor measurements](research/api-shape/README.md)
+without `purego`, and ensures purego selects no package assembly or native access
+imports/directives. See the [API refactor measurements](research/api-shape/README.md)
 for before/after timings and validation limits.
 
 ## Clock contract

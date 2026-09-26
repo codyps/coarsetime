@@ -38,11 +38,28 @@ func TestPortableAPISurface(t *testing.T) {
 				if err != nil {
 					t.Fatal(err)
 				}
+				if pure && (len(pkg.SFiles) != 0 || len(pkg.CgoFiles) != 0) {
+					t.Fatalf("purego selected native sources: assembly=%v cgo=%v", pkg.SFiles, pkg.CgoFiles)
+				}
 				var got []string
 				for _, file := range pkg.GoFiles {
-					f, err := parser.ParseFile(token.NewFileSet(), file, nil, 0)
+					f, err := parser.ParseFile(token.NewFileSet(), file, nil, parser.ParseComments)
 					if err != nil {
 						t.Fatal(err)
+					}
+					if pure {
+						for _, imp := range f.Imports {
+							if imp.Path.Value == `"unsafe"` || imp.Path.Value == `"syscall"` {
+								t.Errorf("purego selected native access import %s in %s", imp.Path.Value, file)
+							}
+						}
+						for _, group := range f.Comments {
+							for _, comment := range group.List {
+								if strings.HasPrefix(comment.Text, "//go:linkname") || strings.HasPrefix(comment.Text, "//go:cgo_") {
+									t.Errorf("purego selected native bridge directive in %s: %s", file, comment.Text)
+								}
+							}
+						}
 					}
 					add := func(name string) {
 						got = append(got, name)

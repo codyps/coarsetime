@@ -1,4 +1,4 @@
-//go:build !(darwin && amd64)
+//go:build purego || !(darwin && amd64)
 
 package coarsetime
 

@@ -1,3 +1,5 @@
+//go:build !purego
+
 #include "textflag.h"
 
 TEXT ·approximateTimeAddress(SB),NOSPLIT,$0-8

@@ -23,15 +23,16 @@ func correctedUnixNano(i Instant, correction int64) int64 {
 }
 
 // RefreshWallClock recalibrates the mapping from coarse readings to wall time.
-// Calibration runs once at package initialization. Linux and Windows Now and UnixNano
-// use the kernel wall clock directly and do not need this correction; on those platforms
-// it is used only by Instant.Time. There is no automatic updater:
+// Calibration runs once at package initialization. On Linux, Windows, and all
+// purego builds, Now and UnixNano read wall time directly and do not need this
+// correction; it is used only by Instant.Time. There is no automatic updater:
 // call this periodically or after resume/clock changes if freshness matters.
 //
 // Between refreshes the mapping ignores wall-clock steps and accumulated drift.
-// Clocks that pause during suspend (including Darwin and Linux) leave wall reads
-// behind by the suspended duration until refreshed. Coarse-clock staleness and
-// calibration sampling add error; no maximum error is promised. A refresh can
+// Clocks that pause during suspend (including native Darwin and Linux clocks)
+// leave cached wall translations behind by the suspended duration until
+// refreshed. Coarse-clock staleness and calibration sampling add error;
+// no maximum error is promised. A refresh can
 // make subsequent wall readings jump in either direction. Instant comparisons
 // and duration measurements are unaffected.
 //

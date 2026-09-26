@@ -4,9 +4,9 @@ import "time"
 
 // Now returns approximate local wall time, without a Go monotonic component.
 // Readings may repeat or move backward; use NowInstant and Since for elapsed time.
-// Linux and Windows read the system wall clock. Other platforms apply a cached
-// correction; see RefreshWallClock for refresh requirements. No maximum staleness
-// or accuracy is promised.
+// Linux, Windows, and all purego builds read the system wall clock. Other builds
+// apply a cached correction; see RefreshWallClock for refresh requirements.
+// No maximum staleness or accuracy is promised.
 func Now() time.Time { return readWallTime() }
 
 // UnixNano returns approximate current wall time as Unix nanoseconds, using the
