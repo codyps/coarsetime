@@ -1,0 +1,334 @@
+0000000000000af0 <__vdso_clock_gettime@@LINUX_2.6>:
+     af0:	55                   	push   rbp
+     af1:	48 89 e5             	mov    rbp,rsp
+     af4:	41 57                	push   r15
+     af6:	41 56                	push   r14
+     af8:	41 55                	push   r13
+     afa:	41 54                	push   r12
+     afc:	53                   	push   rbx
+     afd:	48 83 ec 50          	sub    rsp,0x50
+     b01:	83 ff 17             	cmp    edi,0x17
+     b04:	0f 87 00 02 00 00    	ja     d0a <__vdso_clock_gettime@@LINUX_2.6+0x21a>
+     b0a:	b8 01 00 00 00       	mov    eax,0x1
+     b0f:	89 f9                	mov    ecx,edi
+     b11:	d3 e0                	shl    eax,cl
+     b13:	a9 83 08 00 00       	test   eax,0x883
+     b18:	0f 84 94 01 00 00    	je     cb2 <__vdso_clock_gettime@@LINUX_2.6+0x1c2>
+     b1e:	4c 8d 35 db 94 ff ff 	lea    r14,[rip+0xffffffffffff94db]        # ffffffffffffa000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f90>
+     b25:	49 b8 ff ff ff ff ff 	movabs r8,0x7fffffffffffffff
+     b2c:	ff ff 7f
+     b2f:	89 fb                	mov    ebx,edi
+     b31:	48 c1 e3 04          	shl    rbx,0x4
+     b35:	4d 8d 0c 1e          	lea    r9,[r14+rbx*1]
+     b39:	49 83 c1 28          	add    r9,0x28
+     b3d:	49 ba ff ff ff ff ff 	movabs r10,0x3fffffffffffffff
+     b44:	ff ff 3f
+     b47:	4d 8d 5a 01          	lea    r11,[r10+0x1]
+     b4b:	45 8b 3e             	mov    r15d,DWORD PTR [r14]
+     b4e:	41 f6 c7 01          	test   r15b,0x1
+     b52:	75 4f                	jne    ba3 <__vdso_clock_gettime@@LINUX_2.6+0xb3>
+     b54:	41 8b 46 04          	mov    eax,DWORD PTR [r14+0x4]
+     b58:	83 f8 01             	cmp    eax,0x1
+     b5b:	75 58                	jne    bb5 <__vdso_clock_gettime@@LINUX_2.6+0xc5>
+     b5d:	0f 01 f9             	rdtscp
+     b60:	66 90                	xchg   ax,ax
+     b62:	48 c1 e2 20          	shl    rdx,0x20
+     b66:	48 09 c2             	or     rdx,rax
+     b69:	4c 21 c2             	and    rdx,r8
+     b6c:	4d 8b 61 08          	mov    r12,QWORD PTR [r9+0x8]
+     b70:	49 2b 56 08          	sub    rdx,QWORD PTR [r14+0x8]
+     b74:	49 3b 56 10          	cmp    rdx,QWORD PTR [r14+0x10]
+     b78:	0f 87 c2 00 00 00    	ja     c40 <__vdso_clock_gettime@@LINUX_2.6+0x150>
+     b7e:	41 8b 46 20          	mov    eax,DWORD PTR [r14+0x20]
+     b82:	48 0f af d0          	imul   rdx,rax
+     b86:	4c 01 e2             	add    rdx,r12
+     b89:	41 8a 4e 24          	mov    cl,BYTE PTR [r14+0x24]
+     b8d:	48 d3 ea             	shr    rdx,cl
+     b90:	49 89 d4             	mov    r12,rdx
+     b93:	49 8b 09             	mov    rcx,QWORD PTR [r9]
+     b96:	41 8b 06             	mov    eax,DWORD PTR [r14]
+     b99:	44 39 f8             	cmp    eax,r15d
+     b9c:	75 ad                	jne    b4b <__vdso_clock_gettime@@LINUX_2.6+0x5b>
+     b9e:	e9 d6 00 00 00       	jmp    c79 <__vdso_clock_gettime@@LINUX_2.6+0x189>
+     ba3:	41 81 7e 04 ff ff ff 	cmp    DWORD PTR [r14+0x4],0x7fffffff
+     baa:	7f
+     bab:	0f 84 f8 01 00 00    	je     da9 <__vdso_clock_gettime@@LINUX_2.6+0x2b9>
+     bb1:	f3 90                	pause
+     bb3:	eb 96                	jmp    b4b <__vdso_clock_gettime@@LINUX_2.6+0x5b>
+     bb5:	83 f8 02             	cmp    eax,0x2
+     bb8:	0f 85 4c 01 00 00    	jne    d0a <__vdso_clock_gettime@@LINUX_2.6+0x21a>
+     bbe:	44 8b 25 3b d4 ff ff 	mov    r12d,DWORD PTR [rip+0xffffffffffffd43b]        # ffffffffffffe000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf90>
+     bc5:	f6 05 51 d4 ff ff 01 	test   BYTE PTR [rip+0xffffffffffffd451],0x1        # ffffffffffffe01d <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfad>
+     bcc:	0f 84 38 01 00 00    	je     d0a <__vdso_clock_gettime@@LINUX_2.6+0x21a>
+     bd2:	41 83 e4 fe          	and    r12d,0xfffffffe
+     bd6:	0f 01 f9             	rdtscp
+     bd9:	66 90                	xchg   ax,ax
+     bdb:	48 c1 e2 20          	shl    rdx,0x20
+     bdf:	48 09 d0             	or     rax,rdx
+     be2:	48 2b 05 1f d4 ff ff 	sub    rax,QWORD PTR [rip+0xffffffffffffd41f]        # ffffffffffffe008 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf98>
+     be9:	8b 0d 29 d4 ff ff    	mov    ecx,DWORD PTR [rip+0xffffffffffffd429]        # ffffffffffffe018 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfa8>
+     bef:	48 89 4d c0          	mov    QWORD PTR [rbp-0x40],rcx
+     bf3:	44 8a 2d 22 d4 ff ff 	mov    r13b,BYTE PTR [rip+0xffffffffffffd422]        # ffffffffffffe01c <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfac>
+     bfa:	44 89 e9             	mov    ecx,r13d
+     bfd:	f6 d9                	neg    cl
+     bff:	48 89 c2             	mov    rdx,rax
+     c02:	48 d3 ea             	shr    rdx,cl
+     c05:	44 89 e9             	mov    ecx,r13d
+     c08:	48 d3 e0             	shl    rax,cl
+     c0b:	45 84 ed             	test   r13b,r13b
+     c0e:	48 0f 48 c2          	cmovs  rax,rdx
+     c12:	48 8b 4d c0          	mov    rcx,QWORD PTR [rbp-0x40]
+     c16:	48 89 4d 90          	mov    QWORD PTR [rbp-0x70],rcx
+     c1a:	48 f7 65 90          	mul    QWORD PTR [rbp-0x70]
+     c1e:	48 0f ac d0 20       	shrd   rax,rdx,0x20
+     c23:	48 8b 15 e6 d3 ff ff 	mov    rdx,QWORD PTR [rip+0xffffffffffffd3e6]        # ffffffffffffe010 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfa0>
+     c2a:	8b 0d d0 d3 ff ff    	mov    ecx,DWORD PTR [rip+0xffffffffffffd3d0]        # ffffffffffffe000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf90>
+     c30:	41 39 cc             	cmp    r12d,ecx
+     c33:	41 89 cc             	mov    r12d,ecx
+     c36:	75 8d                	jne    bc5 <__vdso_clock_gettime@@LINUX_2.6+0xd5>
+     c38:	48 01 c2             	add    rdx,rax
+     c3b:	e9 29 ff ff ff       	jmp    b69 <__vdso_clock_gettime@@LINUX_2.6+0x79>
+     c40:	4c 85 da             	test   rdx,r11
+     c43:	74 0c                	je     c51 <__vdso_clock_gettime@@LINUX_2.6+0x161>
+     c45:	41 8a 4e 24          	mov    cl,BYTE PTR [r14+0x24]
+     c49:	49 d3 ec             	shr    r12,cl
+     c4c:	e9 42 ff ff ff       	jmp    b93 <__vdso_clock_gettime@@LINUX_2.6+0xa3>
+     c51:	4c 21 d2             	and    rdx,r10
+     c54:	41 8b 46 20          	mov    eax,DWORD PTR [r14+0x20]
+     c58:	41 8a 4e 24          	mov    cl,BYTE PTR [r14+0x24]
+     c5c:	48 f7 e2             	mul    rdx
+     c5f:	4c 01 e0             	add    rax,r12
+     c62:	48 83 d2 00          	adc    rdx,0x0
+     c66:	48 0f ad d0          	shrd   rax,rdx,cl
+     c6a:	48 d3 ea             	shr    rdx,cl
+     c6d:	f6 c1 40             	test   cl,0x40
+     c70:	48 0f 44 d0          	cmove  rdx,rax
+     c74:	e9 17 ff ff ff       	jmp    b90 <__vdso_clock_gettime@@LINUX_2.6+0xa0>
+     c79:	4c 89 65 c8          	mov    QWORD PTR [rbp-0x38],r12
+     c7d:	31 c0                	xor    eax,eax
+     c7f:	49 81 fc 00 ca 9a 3b 	cmp    r12,0x3b9aca00
+     c86:	72 1c                	jb     ca4 <__vdso_clock_gettime@@LINUX_2.6+0x1b4>
+     c88:	31 d2                	xor    edx,edx
+     c8a:	49 81 c4 00 36 65 c4 	add    r12,0xffffffffc4653600
+     c91:	4c 89 65 c8          	mov    QWORD PTR [rbp-0x38],r12
+     c95:	ff c2                	inc    edx
+     c97:	49 81 fc ff c9 9a 3b 	cmp    r12,0x3b9ac9ff
+     c9e:	77 ea                	ja     c8a <__vdso_clock_gettime@@LINUX_2.6+0x19a>
+     ca0:	89 d2                	mov    edx,edx
+     ca2:	eb 02                	jmp    ca6 <__vdso_clock_gettime@@LINUX_2.6+0x1b6>
+     ca4:	31 d2                	xor    edx,edx
+     ca6:	48 01 d1             	add    rcx,rdx
+     ca9:	48 89 0e             	mov    QWORD PTR [rsi],rcx
+     cac:	4c 89 66 08          	mov    QWORD PTR [rsi+0x8],r12
+     cb0:	eb 62                	jmp    d14 <__vdso_clock_gettime@@LINUX_2.6+0x224>
+     cb2:	a8 60                	test   al,0x60
+     cb4:	74 50                	je     d06 <__vdso_clock_gettime@@LINUX_2.6+0x216>
+     cb6:	89 fa                	mov    edx,edi
+     cb8:	48 c1 e2 04          	shl    rdx,0x4
+     cbc:	48 8d 3d 3d 93 ff ff 	lea    rdi,[rip+0xffffffffffff933d]        # ffffffffffffa000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f90>
+     cc3:	48 8d 0c 3a          	lea    rcx,[rdx+rdi*1]
+     cc7:	48 83 c1 28          	add    rcx,0x28
+     ccb:	44 8b 05 2e 93 ff ff 	mov    r8d,DWORD PTR [rip+0xffffffffffff932e]        # ffffffffffffa000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f90>
+     cd2:	41 f6 c0 01          	test   r8b,0x1
+     cd6:	74 10                	je     ce8 <__vdso_clock_gettime@@LINUX_2.6+0x1f8>
+     cd8:	81 3d 22 93 ff ff ff 	cmp    DWORD PTR [rip+0xffffffffffff9322],0x7fffffff        # ffffffffffffa004 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f94>
+     cdf:	ff ff 7f
+     ce2:	74 4b                	je     d2f <__vdso_clock_gettime@@LINUX_2.6+0x23f>
+     ce4:	f3 90                	pause
+     ce6:	eb e3                	jmp    ccb <__vdso_clock_gettime@@LINUX_2.6+0x1db>
+     ce8:	48 8b 01             	mov    rax,QWORD PTR [rcx]
+     ceb:	48 89 06             	mov    QWORD PTR [rsi],rax
+     cee:	48 8b 41 08          	mov    rax,QWORD PTR [rcx+0x8]
+     cf2:	48 89 46 08          	mov    QWORD PTR [rsi+0x8],rax
+     cf6:	44 8b 0d 03 93 ff ff 	mov    r9d,DWORD PTR [rip+0xffffffffffff9303]        # ffffffffffffa000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f90>
+     cfd:	31 c0                	xor    eax,eax
+     cff:	45 39 c1             	cmp    r9d,r8d
+     d02:	75 c7                	jne    ccb <__vdso_clock_gettime@@LINUX_2.6+0x1db>
+     d04:	eb 0e                	jmp    d14 <__vdso_clock_gettime@@LINUX_2.6+0x224>
+     d06:	a8 10                	test   al,0x10
+     d08:	75 19                	jne    d23 <__vdso_clock_gettime@@LINUX_2.6+0x233>
+     d0a:	48 63 ff             	movsxd rdi,edi
+     d0d:	b8 e4 00 00 00       	mov    eax,0xe4
+     d12:	0f 05                	syscall
+     d14:	48 83 c4 50          	add    rsp,0x50
+     d18:	5b                   	pop    rbx
+     d19:	41 5c                	pop    r12
+     d1b:	41 5d                	pop    r13
+     d1d:	41 5e                	pop    r14
+     d1f:	41 5f                	pop    r15
+     d21:	5d                   	pop    rbp
+     d22:	c3                   	ret
+     d23:	4c 8d 35 be 93 ff ff 	lea    r14,[rip+0xffffffffffff93be]        # ffffffffffffa0e8 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff9078>
+     d2a:	e9 f6 fd ff ff       	jmp    b25 <__vdso_clock_gettime@@LINUX_2.6+0x35>
+     d2f:	48 8d 04 3a          	lea    rax,[rdx+rdi*1]
+     d33:	48 05 28 10 00 00    	add    rax,0x1028
+     d39:	44 8b 05 c0 a2 ff ff 	mov    r8d,DWORD PTR [rip+0xffffffffffffa2c0]        # ffffffffffffb000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff9f90>
+     d40:	41 f6 c0 01          	test   r8b,0x1
+     d44:	75 15                	jne    d5b <__vdso_clock_gettime@@LINUX_2.6+0x26b>
+     d46:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+     d49:	48 8b 50 08          	mov    rdx,QWORD PTR [rax+0x8]
+     d4d:	44 8b 0d ac a2 ff ff 	mov    r9d,DWORD PTR [rip+0xffffffffffffa2ac]        # ffffffffffffb000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff9f90>
+     d54:	45 39 c1             	cmp    r9d,r8d
+     d57:	75 e0                	jne    d39 <__vdso_clock_gettime@@LINUX_2.6+0x249>
+     d59:	eb 04                	jmp    d5f <__vdso_clock_gettime@@LINUX_2.6+0x26f>
+     d5b:	f3 90                	pause
+     d5d:	eb da                	jmp    d39 <__vdso_clock_gettime@@LINUX_2.6+0x249>
+     d5f:	48 03 51 08          	add    rdx,QWORD PTR [rcx+0x8]
+     d63:	48 8b 09             	mov    rcx,QWORD PTR [rcx]
+     d66:	48 89 55 c8          	mov    QWORD PTR [rbp-0x38],rdx
+     d6a:	31 c0                	xor    eax,eax
+     d6c:	48 81 fa 00 ca 9a 3b 	cmp    rdx,0x3b9aca00
+     d73:	72 1f                	jb     d94 <__vdso_clock_gettime@@LINUX_2.6+0x2a4>
+     d75:	45 31 c0             	xor    r8d,r8d
+     d78:	48 81 c2 00 36 65 c4 	add    rdx,0xffffffffc4653600
+     d7f:	48 89 55 c8          	mov    QWORD PTR [rbp-0x38],rdx
+     d83:	41 ff c0             	inc    r8d
+     d86:	48 81 fa ff c9 9a 3b 	cmp    rdx,0x3b9ac9ff
+     d8d:	77 e9                	ja     d78 <__vdso_clock_gettime@@LINUX_2.6+0x288>
+     d8f:	45 89 c0             	mov    r8d,r8d
+     d92:	eb 03                	jmp    d97 <__vdso_clock_gettime@@LINUX_2.6+0x2a7>
+     d94:	45 31 c0             	xor    r8d,r8d
+     d97:	48 01 f9             	add    rcx,rdi
+     d9a:	4c 01 c1             	add    rcx,r8
+     d9d:	48 89 0e             	mov    QWORD PTR [rsi],rcx
+     da0:	48 89 56 08          	mov    QWORD PTR [rsi+0x8],rdx
+     da4:	e9 6b ff ff ff       	jmp    d14 <__vdso_clock_gettime@@LINUX_2.6+0x224>
+     da9:	83 ff 04             	cmp    edi,0x4
+     dac:	b8 e8 10 00 00       	mov    eax,0x10e8
+     db1:	41 be 00 10 00 00    	mov    r14d,0x1000
+     db7:	4c 0f 44 f0          	cmove  r14,rax
+     dbb:	48 8d 05 4e a3 ff ff 	lea    rax,[rip+0xffffffffffffa34e]        # ffffffffffffb110 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffa0a0>
+     dc2:	4c 8d 3d 5f a2 ff ff 	lea    r15,[rip+0xffffffffffffa25f]        # ffffffffffffb028 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff9fb8>
+     dc9:	4c 0f 44 f8          	cmove  r15,rax
+     dcd:	b8 ec 10 00 00       	mov    eax,0x10ec
+     dd2:	b9 04 10 00 00       	mov    ecx,0x1004
+     dd7:	48 0f 44 c8          	cmove  rcx,rax
+     ddb:	48 89 4d 98          	mov    QWORD PTR [rbp-0x68],rcx
+     ddf:	b8 f0 10 00 00       	mov    eax,0x10f0
+     de4:	b9 08 10 00 00       	mov    ecx,0x1008
+     de9:	48 0f 44 c8          	cmove  rcx,rax
+     ded:	48 89 4d a0          	mov    QWORD PTR [rbp-0x60],rcx
+     df1:	b8 f8 10 00 00       	mov    eax,0x10f8
+     df6:	b9 10 10 00 00       	mov    ecx,0x1010
+     dfb:	48 0f 44 c8          	cmove  rcx,rax
+     dff:	48 89 4d a8          	mov    QWORD PTR [rbp-0x58],rcx
+     e03:	b8 08 11 00 00       	mov    eax,0x1108
+     e08:	b9 20 10 00 00       	mov    ecx,0x1020
+     e0d:	48 0f 44 c8          	cmove  rcx,rax
+     e11:	48 89 4d b8          	mov    QWORD PTR [rbp-0x48],rcx
+     e15:	b8 0c 11 00 00       	mov    eax,0x110c
+     e1a:	41 bc 24 10 00 00    	mov    r12d,0x1024
+     e20:	4c 0f 44 e0          	cmove  r12,rax
+     e24:	49 01 df             	add    r15,rbx
+     e27:	48 8d 1d d2 91 ff ff 	lea    rbx,[rip+0xffffffffffff91d2]        # ffffffffffffa000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffff8f90>
+     e2e:	41 8b 04 1e          	mov    eax,DWORD PTR [r14+rbx*1]
+     e32:	89 45 c0             	mov    DWORD PTR [rbp-0x40],eax
+     e35:	a8 01                	test   al,0x1
+     e37:	75 5e                	jne    e97 <__vdso_clock_gettime@@LINUX_2.6+0x3a7>
+     e39:	48 8b 45 98          	mov    rax,QWORD PTR [rbp-0x68]
+     e3d:	8b 04 18             	mov    eax,DWORD PTR [rax+rbx*1]
+     e40:	83 f8 01             	cmp    eax,0x1
+     e43:	75 56                	jne    e9b <__vdso_clock_gettime@@LINUX_2.6+0x3ab>
+     e45:	0f 01 f9             	rdtscp
+     e48:	66 90                	xchg   ax,ax
+     e4a:	48 c1 e2 20          	shl    rdx,0x20
+     e4e:	48 09 c2             	or     rdx,rax
+     e51:	4c 21 c2             	and    rdx,r8
+     e54:	4d 8b 6f 08          	mov    r13,QWORD PTR [r15+0x8]
+     e58:	48 8b 45 a0          	mov    rax,QWORD PTR [rbp-0x60]
+     e5c:	48 2b 14 18          	sub    rdx,QWORD PTR [rax+rbx*1]
+     e60:	48 8b 45 a8          	mov    rax,QWORD PTR [rbp-0x58]
+     e64:	48 3b 14 18          	cmp    rdx,QWORD PTR [rax+rbx*1]
+     e68:	0f 87 b8 00 00 00    	ja     f26 <__vdso_clock_gettime@@LINUX_2.6+0x436>
+     e6e:	48 8b 45 b8          	mov    rax,QWORD PTR [rbp-0x48]
+     e72:	8b 04 18             	mov    eax,DWORD PTR [rax+rbx*1]
+     e75:	48 0f af d0          	imul   rdx,rax
+     e79:	4c 01 ea             	add    rdx,r13
+     e7c:	41 8a 0c 1c          	mov    cl,BYTE PTR [r12+rbx*1]
+     e80:	48 d3 ea             	shr    rdx,cl
+     e83:	49 89 d5             	mov    r13,rdx
+     e86:	49 8b 0f             	mov    rcx,QWORD PTR [r15]
+     e89:	41 8b 04 1e          	mov    eax,DWORD PTR [r14+rbx*1]
+     e8d:	3b 45 c0             	cmp    eax,DWORD PTR [rbp-0x40]
+     e90:	75 9c                	jne    e2e <__vdso_clock_gettime@@LINUX_2.6+0x33e>
+     e92:	e9 ce 00 00 00       	jmp    f65 <__vdso_clock_gettime@@LINUX_2.6+0x475>
+     e97:	f3 90                	pause
+     e99:	eb 93                	jmp    e2e <__vdso_clock_gettime@@LINUX_2.6+0x33e>
+     e9b:	83 f8 02             	cmp    eax,0x2
+     e9e:	0f 85 66 fe ff ff    	jne    d0a <__vdso_clock_gettime@@LINUX_2.6+0x21a>
+     ea4:	44 8b 2d 55 d1 ff ff 	mov    r13d,DWORD PTR [rip+0xffffffffffffd155]        # ffffffffffffe000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf90>
+     eab:	f6 05 6b d1 ff ff 01 	test   BYTE PTR [rip+0xffffffffffffd16b],0x1        # ffffffffffffe01d <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfad>
+     eb2:	0f 84 52 fe ff ff    	je     d0a <__vdso_clock_gettime@@LINUX_2.6+0x21a>
+     eb8:	41 83 e5 fe          	and    r13d,0xfffffffe
+     ebc:	0f 01 f9             	rdtscp
+     ebf:	66 90                	xchg   ax,ax
+     ec1:	48 c1 e2 20          	shl    rdx,0x20
+     ec5:	48 09 d0             	or     rax,rdx
+     ec8:	48 2b 05 39 d1 ff ff 	sub    rax,QWORD PTR [rip+0xffffffffffffd139]        # ffffffffffffe008 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf98>
+     ecf:	8b 0d 43 d1 ff ff    	mov    ecx,DWORD PTR [rip+0xffffffffffffd143]        # ffffffffffffe018 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfa8>
+     ed5:	48 89 4d b0          	mov    QWORD PTR [rbp-0x50],rcx
+     ed9:	8a 0d 3d d1 ff ff    	mov    cl,BYTE PTR [rip+0xffffffffffffd13d]        # ffffffffffffe01c <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfac>
+     edf:	88 4d d7             	mov    BYTE PTR [rbp-0x29],cl
+     ee2:	f6 d9                	neg    cl
+     ee4:	48 89 c2             	mov    rdx,rax
+     ee7:	48 d3 ea             	shr    rdx,cl
+     eea:	8a 4d d7             	mov    cl,BYTE PTR [rbp-0x29]
+     eed:	48 d3 e0             	shl    rax,cl
+     ef0:	80 7d d7 00          	cmp    BYTE PTR [rbp-0x29],0x0
+     ef4:	48 0f 48 c2          	cmovs  rax,rdx
+     ef8:	48 8b 4d b0          	mov    rcx,QWORD PTR [rbp-0x50]
+     efc:	48 89 4d 88          	mov    QWORD PTR [rbp-0x78],rcx
+     f00:	48 f7 65 88          	mul    QWORD PTR [rbp-0x78]
+     f04:	48 0f ac d0 20       	shrd   rax,rdx,0x20
+     f09:	48 8b 15 00 d1 ff ff 	mov    rdx,QWORD PTR [rip+0xffffffffffffd100]        # ffffffffffffe010 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcfa0>
+     f10:	8b 0d ea d0 ff ff    	mov    ecx,DWORD PTR [rip+0xffffffffffffd0ea]        # ffffffffffffe000 <__vdso_getrandom@@LINUX_2.6+0xffffffffffffcf90>
+     f16:	41 39 cd             	cmp    r13d,ecx
+     f19:	41 89 cd             	mov    r13d,ecx
+     f1c:	75 8d                	jne    eab <__vdso_clock_gettime@@LINUX_2.6+0x3bb>
+     f1e:	48 01 c2             	add    rdx,rax
+     f21:	e9 2b ff ff ff       	jmp    e51 <__vdso_clock_gettime@@LINUX_2.6+0x361>
+     f26:	4c 85 da             	test   rdx,r11
+     f29:	74 0c                	je     f37 <__vdso_clock_gettime@@LINUX_2.6+0x447>
+     f2b:	41 8a 0c 1c          	mov    cl,BYTE PTR [r12+rbx*1]
+     f2f:	49 d3 ed             	shr    r13,cl
+     f32:	e9 4f ff ff ff       	jmp    e86 <__vdso_clock_gettime@@LINUX_2.6+0x396>
+     f37:	4c 21 d2             	and    rdx,r10
+     f3a:	48 8b 45 b8          	mov    rax,QWORD PTR [rbp-0x48]
+     f3e:	8b 04 18             	mov    eax,DWORD PTR [rax+rbx*1]
+     f41:	41 8a 0c 1c          	mov    cl,BYTE PTR [r12+rbx*1]
+     f45:	48 f7 e2             	mul    rdx
+     f48:	4c 01 e8             	add    rax,r13
+     f4b:	49 89 d5             	mov    r13,rdx
+     f4e:	49 83 d5 00          	adc    r13,0x0
+     f52:	4c 0f ad e8          	shrd   rax,r13,cl
+     f56:	49 d3 ed             	shr    r13,cl
+     f59:	f6 c1 40             	test   cl,0x40
+     f5c:	4c 0f 44 e8          	cmove  r13,rax
+     f60:	e9 21 ff ff ff       	jmp    e86 <__vdso_clock_gettime@@LINUX_2.6+0x396>
+     f65:	49 03 09             	add    rcx,QWORD PTR [r9]
+     f68:	4d 03 69 08          	add    r13,QWORD PTR [r9+0x8]
+     f6c:	4c 89 6d c8          	mov    QWORD PTR [rbp-0x38],r13
+     f70:	31 c0                	xor    eax,eax
+     f72:	49 81 fd 00 ca 9a 3b 	cmp    r13,0x3b9aca00
+     f79:	72 1c                	jb     f97 <__vdso_clock_gettime@@LINUX_2.6+0x4a7>
+     f7b:	31 d2                	xor    edx,edx
+     f7d:	49 81 c5 00 36 65 c4 	add    r13,0xffffffffc4653600
+     f84:	4c 89 6d c8          	mov    QWORD PTR [rbp-0x38],r13
+     f88:	ff c2                	inc    edx
+     f8a:	49 81 fd ff c9 9a 3b 	cmp    r13,0x3b9ac9ff
+     f91:	77 ea                	ja     f7d <__vdso_clock_gettime@@LINUX_2.6+0x48d>
+     f93:	89 d2                	mov    edx,edx
+     f95:	eb 02                	jmp    f99 <__vdso_clock_gettime@@LINUX_2.6+0x4a9>
+     f97:	31 d2                	xor    edx,edx
+     f99:	48 01 d1             	add    rcx,rdx
+     f9c:	48 89 0e             	mov    QWORD PTR [rsi],rcx
+     f9f:	4c 89 6e 08          	mov    QWORD PTR [rsi+0x8],r13
+     fa3:	e9 6c fd ff ff       	jmp    d14 <__vdso_clock_gettime@@LINUX_2.6+0x224>
+     fa8:	90                   	nop
+     fa9:	90                   	nop
+     faa:	90                   	nop
+     fab:	90                   	nop
+     fac:	90                   	nop
+     fad:	90                   	nop
+     fae:	90                   	nop
+     faf:	90                   	nop

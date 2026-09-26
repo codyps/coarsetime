@@ -1,0 +1,76 @@
+=== RUN   TestCorpusInstructions
+=== RUN   TestCorpusInstructions/arch
+    detectors_test.go:29: layout {Seq:-24576 Sec:-24456 Nsec:-24448}
+=== RUN   TestCorpusInstructions/debian-6.1
+    detectors_test.go:29: layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+=== RUN   TestCorpusInstructions/debian-6.12
+    detectors_test.go:29: layout {Seq:-16256 Sec:-16136 Nsec:-16128}
+=== RUN   TestCorpusInstructions/fedora-43
+    detectors_test.go:29: layout {Seq:-24576 Sec:-24456 Nsec:-24448}
+=== RUN   TestCorpusInstructions/ubuntu-5.15
+    detectors_test.go:29: layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+=== RUN   TestCorpusInstructions/ubuntu-6.8
+    detectors_test.go:29: layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+--- PASS: TestCorpusInstructions (0.01s)
+    --- PASS: TestCorpusInstructions/arch (0.00s)
+    --- PASS: TestCorpusInstructions/debian-6.1 (0.00s)
+    --- PASS: TestCorpusInstructions/debian-6.12 (0.00s)
+    --- PASS: TestCorpusInstructions/fedora-43 (0.00s)
+    --- PASS: TestCorpusInstructions/ubuntu-5.15 (0.00s)
+    --- PASS: TestCorpusInstructions/ubuntu-6.8 (0.00s)
+=== RUN   TestBTFImages
+=== RUN   TestBTFImages/ubuntu-5.15
+    detectors_test.go:75: BTF matches instruction layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+=== RUN   TestBTFImages/ubuntu-6.8
+    detectors_test.go:75: BTF matches instruction layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+=== RUN   TestBTFImages/debian-6.1
+    detectors_test.go:75: BTF matches instruction layout {Seq:-16256 Sec:-16144 Nsec:-16136}
+=== RUN   TestBTFImages/debian-6.12
+    detectors_test.go:75: BTF matches instruction layout {Seq:-16256 Sec:-16136 Nsec:-16128}
+=== RUN   TestBTFImages/fedora-43
+    detectors_test.go:75: BTF matches instruction layout {Seq:-24576 Sec:-24456 Nsec:-24448}
+--- PASS: TestBTFImages (1.28s)
+    --- PASS: TestBTFImages/ubuntu-5.15 (0.32s)
+    --- PASS: TestBTFImages/ubuntu-6.8 (0.30s)
+    --- PASS: TestBTFImages/debian-6.1 (0.20s)
+    --- PASS: TestBTFImages/debian-6.12 (0.20s)
+    --- PASS: TestBTFImages/fedora-43 (0.26s)
+=== RUN   TestInstructionRejection
+=== RUN   TestInstructionRejection/missing_even_guard
+=== RUN   TestInstructionRejection/compare_wrong_sequence
+=== RUN   TestInstructionRejection/byte_sequence_comparison
+=== RUN   TestInstructionRejection/alias_sec_and_nsec
+=== RUN   TestInstructionRejection/return_on_changed_sequence
+=== RUN   TestInstructionRejection/overwrite_seconds_output
+--- PASS: TestInstructionRejection (0.00s)
+    --- PASS: TestInstructionRejection/missing_even_guard (0.00s)
+    --- PASS: TestInstructionRejection/compare_wrong_sequence (0.00s)
+    --- PASS: TestInstructionRejection/byte_sequence_comparison (0.00s)
+    --- PASS: TestInstructionRejection/alias_sec_and_nsec (0.00s)
+    --- PASS: TestInstructionRejection/return_on_changed_sequence (0.00s)
+    --- PASS: TestInstructionRejection/overwrite_seconds_output (0.00s)
+=== RUN   TestBTFRejection
+=== RUN   TestBTFRejection/wrong_seq_width
+=== RUN   TestBTFRejection/unaligned_seq
+=== RUN   TestBTFRejection/missing_clock_index
+=== RUN   TestBTFRejection/oversized_stride
+=== RUN   TestBTFRejection/bad_reference
+=== RUN   TestBTFRejection/alias_fields
+--- PASS: TestBTFRejection (0.00s)
+    --- PASS: TestBTFRejection/wrong_seq_width (0.00s)
+    --- PASS: TestBTFRejection/unaligned_seq (0.00s)
+    --- PASS: TestBTFRejection/missing_clock_index (0.00s)
+    --- PASS: TestBTFRejection/oversized_stride (0.00s)
+    --- PASS: TestBTFRejection/bad_reference (0.00s)
+    --- PASS: TestBTFRejection/alias_fields (0.00s)
+=== RUN   TestLive
+=== RUN   TestLive/btf
+    live_linux_amd64_test.go:20: active: {Seq:-24576 Sec:-24456 Nsec:-24448}
+=== RUN   TestLive/instructions
+    live_linux_amd64_test.go:20: active: {Seq:-24576 Sec:-24456 Nsec:-24448}
+--- PASS: TestLive (0.10s)
+    --- PASS: TestLive/btf (0.10s)
+    --- PASS: TestLive/instructions (0.00s)
+=== RUN   TestReadFallback
+--- PASS: TestReadFallback (0.00s)
+PASS

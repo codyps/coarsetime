@@ -1,0 +1,116 @@
+{
+  "arch_vdso_time_data": {
+    "size": 0,
+    "members": []
+  },
+  "vdso_clock": {
+    "size": 232,
+    "members": [
+      {
+        "name": "seq",
+        "type_id": 115604,
+        "bit_offset": 0
+      },
+      {
+        "name": "clock_mode",
+        "type_id": 105640,
+        "bit_offset": 32
+      },
+      {
+        "name": "cycle_last",
+        "type_id": 115635,
+        "bit_offset": 64
+      },
+      {
+        "name": "max_cycles",
+        "type_id": 115635,
+        "bit_offset": 128
+      },
+      {
+        "name": "mask",
+        "type_id": 115635,
+        "bit_offset": 192
+      },
+      {
+        "name": "mult",
+        "type_id": 115604,
+        "bit_offset": 256
+      },
+      {
+        "name": "shift",
+        "type_id": 115604,
+        "bit_offset": 288
+      },
+      {
+        "name": "",
+        "type_id": 7129,
+        "bit_offset": 320
+      },
+      {
+        "name": "basetime",
+        "type_id": 7130,
+        "bit_offset": 320
+      },
+      {
+        "name": "offset",
+        "type_id": 7131,
+        "bit_offset": 320
+      }
+    ]
+  },
+  "vdso_time_data": {
+    "size": 2368,
+    "members": [
+      {
+        "name": "arch_data",
+        "type_id": 65269,
+        "bit_offset": 0
+      },
+      {
+        "name": "clock_data",
+        "type_id": 7133,
+        "bit_offset": 0
+      },
+      {
+        "name": "aux_clock_data",
+        "type_id": 7134,
+        "bit_offset": 3712
+      },
+      {
+        "name": "tz_minuteswest",
+        "type_id": 105640,
+        "bit_offset": 18560
+      },
+      {
+        "name": "tz_dsttime",
+        "type_id": 105640,
+        "bit_offset": 18592
+      },
+      {
+        "name": "hrtimer_res",
+        "type_id": 115604,
+        "bit_offset": 18624
+      },
+      {
+        "name": "__unused",
+        "type_id": 115604,
+        "bit_offset": 18656
+      }
+    ]
+  },
+  "vdso_timestamp": {
+    "size": 16,
+    "members": [
+      {
+        "name": "sec",
+        "type_id": 115635,
+        "bit_offset": 0
+      },
+      {
+        "name": "nsec",
+        "type_id": 115635,
+        "bit_offset": 64
+      }
+    ]
+  }
+}

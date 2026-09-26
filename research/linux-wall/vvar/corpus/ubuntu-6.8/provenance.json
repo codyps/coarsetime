@@ -1,0 +1,15 @@
+{
+  "name": "ubuntu-6.8",
+  "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+  "effective_url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+  "status": 0,
+  "size": 15155392,
+  "sha256": "35115ceb5ddc1e73034a73d6b064b9c6d38c534f20279fd7229c510515b931d8",
+  "extraction": [
+    {
+      "offset": 32698368,
+      "size": 5488,
+      "sha256": "3347ee776d319356d8a6570cf51265c619153df21cae2311daec646b8cc06da7"
+    }
+  ]
+}

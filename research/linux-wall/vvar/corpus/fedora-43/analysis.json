@@ -1,0 +1,11 @@
+{
+  "sample": "fedora-43",
+  "elf_sha256": "ff56e54b78000b0656bd978010a7846cfd21d744b4d5c259057d247c7de9f2b1",
+  "entry": "0x1100",
+  "symbol_size": 9,
+  "entry_jump_target": "0x8a0",
+  "symbol_sha256": "834e27169fe3c59203015699304cad096b3413c426e4208c5042194a5b1ef711",
+  "text_sha256": "ab1901a3f70bc412461cd6bd2745661ea66fb01338cd35268b4859026afef0cd",
+  "has_alternatives": true,
+  "full_symbol_table": false
+}

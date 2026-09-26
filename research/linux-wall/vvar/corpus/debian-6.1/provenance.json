@@ -1,0 +1,15 @@
+{
+  "name": "debian-6.1",
+  "url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.1.0-47-amd64-unsigned_6.1.170-3_amd64.deb",
+  "effective_url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.1.0-47-amd64-unsigned_6.1.170-3_amd64.deb",
+  "status": 0,
+  "size": 70226932,
+  "sha256": "cb9a263a6d0d2debe8ac20eadc1065ffb8b22d27f4a6471ac1c0314db341dfb0",
+  "extraction": [
+    {
+      "offset": 23150592,
+      "size": 4648,
+      "sha256": "75889308dc97dde5c606cc697b55ff9421cdb90b564f5bc12d9845c881c1a8e3"
+    }
+  ]
+}

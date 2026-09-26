@@ -1,0 +1,15 @@
+{
+  "name": "fedora-43",
+  "url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Everything/x86_64/os/Packages/k/kernel-core-6.17.1-300.fc43.x86_64.rpm",
+  "effective_url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Everything/x86_64/os/Packages/k/kernel-core-6.17.1-300.fc43.x86_64.rpm",
+  "status": 0,
+  "size": 20713689,
+  "sha256": "ab1418c266e2b4b26090ab13e96c249a6bbe7a6fadca09c4e98c9ff477a5d58f",
+  "extraction": [
+    {
+      "offset": 35442688,
+      "size": 7568,
+      "sha256": "ff56e54b78000b0656bd978010a7846cfd21d744b4d5c259057d247c7de9f2b1"
+    }
+  ]
+}

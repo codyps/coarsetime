@@ -1,0 +1,68 @@
+[
+  {
+    "sample": "arch",
+    "elf_sha256": "a9d98a19748a50c101ffe180378d7e1333253f46ae8f33c4dbe0db5cedb08179",
+    "entry": "0xd00",
+    "symbol_size": 1345,
+    "entry_jump_target": null,
+    "symbol_sha256": "824a87459413f92247cbf7f5ab18adaf20fe1f4c0d017180f9dbb777f5eed028",
+    "text_sha256": "c14179451400c7571770442481e7ef910e4a9a8387c6256d25f0f1ea862a5ad6",
+    "has_alternatives": true,
+    "full_symbol_table": true
+  },
+  {
+    "sample": "debian-6.1",
+    "elf_sha256": "75889308dc97dde5c606cc697b55ff9421cdb90b564f5bc12d9845c881c1a8e3",
+    "entry": "0x960",
+    "symbol_size": 608,
+    "entry_jump_target": null,
+    "symbol_sha256": "0bcf7c8734a388a1d0d828b691200856f2f5009c8e5abf163e1d71825cda2e3e",
+    "text_sha256": "308e35a36a1067d7ef7f1a3d3cbbff9a0e6288ffadf91ea67d496bf7b142a51a",
+    "has_alternatives": true,
+    "full_symbol_table": false
+  },
+  {
+    "sample": "debian-6.12",
+    "elf_sha256": "4e049d20226e77a8777e842dcdef319a409073afdd3585da611e229226c76662",
+    "entry": "0xbd0",
+    "symbol_size": 961,
+    "entry_jump_target": null,
+    "symbol_sha256": "02db9ac5b6f0e9024c06d28dbdacf6df6fedaf51bd17f1e724b5609c077baaf3",
+    "text_sha256": "461e0853b0a3a1ff2e6f491d33695f02ebf14391de64cac95d699cbc69dbb885",
+    "has_alternatives": true,
+    "full_symbol_table": false
+  },
+  {
+    "sample": "fedora-43",
+    "elf_sha256": "ff56e54b78000b0656bd978010a7846cfd21d744b4d5c259057d247c7de9f2b1",
+    "entry": "0x1100",
+    "symbol_size": 9,
+    "entry_jump_target": "0x8a0",
+    "symbol_sha256": "834e27169fe3c59203015699304cad096b3413c426e4208c5042194a5b1ef711",
+    "text_sha256": "ab1901a3f70bc412461cd6bd2745661ea66fb01338cd35268b4859026afef0cd",
+    "has_alternatives": true,
+    "full_symbol_table": false
+  },
+  {
+    "sample": "ubuntu-5.15",
+    "elf_sha256": "919dc5635942ecc1a6c8c350e69f86a544c12d5ebf863f05caf34aa861410bd5",
+    "entry": "0xc10",
+    "symbol_size": 5,
+    "entry_jump_target": "0x7b0",
+    "symbol_sha256": "4ee929c6da7156a3b1e634d383733f3c1806083f2f98ec4267a3e6aae2251a46",
+    "text_sha256": "22322ab2ce682c14f9bfba8f2e92557da043255450ed80dc32e611c1bc4e949b",
+    "has_alternatives": true,
+    "full_symbol_table": false
+  },
+  {
+    "sample": "ubuntu-6.8",
+    "elf_sha256": "3347ee776d319356d8a6570cf51265c619153df21cae2311daec646b8cc06da7",
+    "entry": "0xe40",
+    "symbol_size": 5,
+    "entry_jump_target": "0xab0",
+    "symbol_sha256": "250110ca50e5dad71ab68d7eb34d41f5434e212c164c3cfa2695d5ac3bd45695",
+    "text_sha256": "ac595df6c9191ec8da80e829985b17b0f25401915124dee84af905f977392d3a",
+    "has_alternatives": true,
+    "full_symbol_table": false
+  }
+]

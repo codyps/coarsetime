@@ -1,0 +1,8 @@
+{
+  "name": "arch",
+  "url": "https://archlinux.org/packages/core/x86_64/linux-headers/download/",
+  "effective_url": "https://mirror.moson.org/arch/core/os/x86_64/linux-headers-7.2.3.arch1-2-x86_64.pkg.tar.zst",
+  "status": 0,
+  "size": 71103395,
+  "sha256": "0de972919c3ad2090039975ea22bb3722627df6f386c0591f581453a7705dda5"
+}

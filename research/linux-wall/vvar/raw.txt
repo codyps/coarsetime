@@ -1,0 +1,449 @@
+Round 1, CurrentUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentUnixNano
+BenchmarkVvarCurrentUnixNano-16    	18972408	        18.13 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1, GoNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoNow
+BenchmarkVvarGoNow-16    	75618384	         4.943 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1, ASMUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMUnixNano
+BenchmarkVvarASMUnixNano-16    	66360559	         5.162 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1, CurrentNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentNow
+BenchmarkVvarCurrentNow-16    	15824842	        19.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1, ASMNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMNow
+BenchmarkVvarASMNow-16    	53412850	         6.526 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 1, GoUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoUnixNano
+BenchmarkVvarGoUnixNano-16    	100000000	         3.579 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, ASMNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMNow
+BenchmarkVvarASMNow-16    	61716891	         6.114 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, ASMUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMUnixNano
+BenchmarkVvarASMUnixNano-16    	77187956	         4.410 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, GoUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoUnixNano
+BenchmarkVvarGoUnixNano-16    	100000000	         3.763 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, GoNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoNow
+BenchmarkVvarGoNow-16    	68120830	         5.265 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, CurrentNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentNow
+BenchmarkVvarCurrentNow-16    	21633230	        17.23 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 2, CurrentUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentUnixNano
+BenchmarkVvarCurrentUnixNano-16    	17976958	        17.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, GoUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoUnixNano
+BenchmarkVvarGoUnixNano-16    	94195022	         3.748 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, CurrentUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentUnixNano
+BenchmarkVvarCurrentUnixNano-16    	21218202	        16.66 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, ASMNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMNow
+BenchmarkVvarASMNow-16    	58577474	         6.171 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, CurrentNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentNow
+BenchmarkVvarCurrentNow-16    	21052638	        16.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, ASMUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMUnixNano
+BenchmarkVvarASMUnixNano-16    	84211353	         4.380 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 3, GoNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoNow
+BenchmarkVvarGoNow-16    	80695975	         4.584 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, CurrentUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentUnixNano
+BenchmarkVvarCurrentUnixNano-16    	22393092	        16.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, GoUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoUnixNano
+BenchmarkVvarGoUnixNano-16    	100000000	         3.567 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, ASMNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMNow
+BenchmarkVvarASMNow-16    	61595001	         5.882 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, GoNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoNow
+BenchmarkVvarGoNow-16    	78621554	         4.617 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, ASMUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMUnixNano
+BenchmarkVvarASMUnixNano-16    	79514529	         4.379 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 4, CurrentNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentNow
+BenchmarkVvarCurrentNow-16    	21385052	        16.92 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, GoUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoUnixNano
+BenchmarkVvarGoUnixNano-16    	100000000	         3.552 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, ASMUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMUnixNano
+BenchmarkVvarASMUnixNano-16    	84701476	         4.494 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, CurrentUnixNano
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentUnixNano
+BenchmarkVvarCurrentUnixNano-16    	21747828	        19.59 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, CurrentNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.01s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarCurrentNow
+BenchmarkVvarCurrentNow-16    	18802311	        16.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, ASMNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarASMNow
+BenchmarkVvarASMNow-16    	61252312	         5.877 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Round 5, GoNow
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestVvarPrototype
+    vvar_prototype_linux_amd64_test.go:24: direct VVAR reader active; modern layout explicitly selected
+--- PASS: TestVvarPrototype (0.02s)
+goos: linux
+goarch: amd64
+pkg: coarsetime
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkVvarGoNow
+BenchmarkVvarGoNow-16    	70751740	         4.738 ns/op	       0 B/op	       0 allocs/op
+PASS

@@ -1,0 +1,6 @@
+CurrentNow: 16.9200 ns/op; samples=[19.91, 17.23, 16.48, 16.92, 16.56]
+GoNow: 4.7380 ns/op; samples=[4.943, 5.265, 4.584, 4.617, 4.738]
+ASMNow: 6.1140 ns/op; samples=[6.526, 6.114, 6.171, 5.882, 5.877]
+CurrentUnixNano: 17.4100 ns/op; samples=[18.13, 17.41, 16.66, 16.2, 19.59]
+GoUnixNano: 3.5790 ns/op; samples=[3.579, 3.763, 3.748, 3.567, 3.552]
+ASMUnixNano: 4.4100 ns/op; samples=[5.162, 4.41, 4.38, 4.379, 4.494]

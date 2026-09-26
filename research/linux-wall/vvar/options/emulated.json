@@ -1,0 +1,566 @@
+{
+  "arch": [
+    {
+      "instruction_count": 36,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -24576,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xf3c",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xf48",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xf4f",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xf57",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 46,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -24576,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xf3c",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xf48",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xf4f",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xf57",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xf3c",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xf48",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xf4f",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xf57",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "debian-6.1": [
+    {
+      "instruction_count": 37,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0xa62",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xa6a",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xa71",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xa7a",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 48,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0xa62",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xa6a",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xa71",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xa7a",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xa62",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xa6a",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xa71",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xa7a",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "debian-6.12": [
+    {
+      "instruction_count": 44,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xd6c",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xd74",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xd7b",
+          "address_relative_to_elf": -16128,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xd83",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 55,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xd6c",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xd74",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xd7b",
+          "address_relative_to_elf": -16128,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xd83",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xd6c",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xd74",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xd7b",
+          "address_relative_to_elf": -16128,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xd83",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "fedora-43": [
+    {
+      "instruction_count": 39,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -24576,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xad5",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xadd",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xae4",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xaec",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 50,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -24576,
+      "sec_relative_to_seq": 120,
+      "nsec_relative_to_seq": 128,
+      "reads": [
+        {
+          "ip": "0xad5",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xadd",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xae4",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xaec",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xad5",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xadd",
+          "address_relative_to_elf": -24456,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xae4",
+          "address_relative_to_elf": -24448,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xaec",
+          "address_relative_to_elf": -24576,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "ubuntu-5.15": [
+    {
+      "instruction_count": 43,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0x8bc",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0x8c4",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0x8cb",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0x8d4",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 53,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0x8bc",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0x8c4",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0x8cb",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0x8d4",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0x8bc",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0x8c4",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0x8cb",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0x8d4",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "ubuntu-6.8": [
+    {
+      "instruction_count": 46,
+      "alternative_overlaps": [],
+      "retry": false,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0xc11",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xc19",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xc1f",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xc27",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "instruction_count": 57,
+      "alternative_overlaps": [],
+      "retry": true,
+      "seq_relative_to_elf": -16256,
+      "sec_relative_to_seq": 112,
+      "nsec_relative_to_seq": 120,
+      "reads": [
+        {
+          "ip": "0xc11",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 2
+        },
+        {
+          "ip": "0xc19",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xc1f",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xc27",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xc11",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        },
+        {
+          "ip": "0xc19",
+          "address_relative_to_elf": -16144,
+          "size": 8,
+          "value": 1700000000
+        },
+        {
+          "ip": "0xc1f",
+          "address_relative_to_elf": -16136,
+          "size": 8,
+          "value": 123456789
+        },
+        {
+          "ip": "0xc27",
+          "address_relative_to_elf": -16256,
+          "size": 4,
+          "value": 4
+        }
+      ]
+    }
+  ]
+}

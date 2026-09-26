@@ -79,3 +79,15 @@ docker run --rm --network none -e COARSETIME_REQUIRE_VDSO=1 \
 Correctness checks verify the dummy bridge output and bracket the conversion
 candidate with realtime syscalls. The cache benchmark runs its updater alongside
 reads; race-instrumented smoke benchmarks cover all four candidates.
+
+Follow-up: the [x86-64 layout history](layout-history.md) finds substantially
+less churn in the specific coarse wall fields than in the full structure.
+The 6.15 refactor and 6.17 auxiliary-clock additions do not move those fields
+on x86-64. Three actual offset-changing transitions were identified between
+3.17 and 7.0, plus the separate time-namespace protocol change.
+
+A subsequent [direct VVAR prototype](vvar/README.md) now implements and measures
+Go-atomic and assembly readers for an explicitly selected modern x86-64 layout.
+The Go reader reduces Now from 16.92 to 4.738 ns in its comparison run, without
+adding a timer or userspace timestamp cache. This demonstrates the opportunity;
+production layout detection and broader kernel coverage remain separate work.

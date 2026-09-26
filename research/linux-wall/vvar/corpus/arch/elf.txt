@@ -1,0 +1,113 @@
+There are 29 section headers, starting at offset 0xd360:
+
+Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .hash             HASH            0000000000000190 000190 000058 04   A  3   0  8
+  [ 2] .gnu.hash         GNU_HASH        00000000000001e8 0001e8 00006c 00   A  3   0  8
+  [ 3] .dynsym           DYNSYM          0000000000000258 000258 000198 18   A  4   1  8
+  [ 4] .dynstr           STRTAB          00000000000003f0 0003f0 0000e8 00   A  0   0  1
+  [ 5] .gnu.version      VERSYM          00000000000004d8 0004d8 000022 02   A  3   0  2
+  [ 6] .gnu.version_d    VERDEF          0000000000000500 000500 000038 00   A  4   2  8
+  [ 7] .dynamic          DYNAMIC         0000000000000538 000538 000120 10  WA  4   0  8
+  [ 8] .rodata           PROGBITS        0000000000000660 000660 000028 08  WA  0   0 16
+  [ 9] .note.gnu.property NOTE            0000000000000688 000688 000030 00   A  0   0  8
+  [10] .note             NOTE            00000000000006b8 0006b8 000054 00   A  0   0  4
+  [11] .eh_frame_hdr     PROGBITS        000000000000070c 00070c 000064 00   A  0   0  4
+  [12] .eh_frame         PROGBITS        0000000000000770 000770 0001b8 00   A  0   0  8
+  [13] .text             PROGBITS        0000000000000940 000940 000f8e 00  AX  0   0 32
+  [14] .altinstructions  PROGBITS        00000000000018ce 0018ce 0000d2 0e  AM  0   0  1
+  [15] .altinstr_replacement PROGBITS        00000000000019a0 0019a0 00003c 00  AX  0   0  1
+  [16] __ex_table        PROGBITS        00000000000019dc 0019dc 000008 00   A  0   0  1
+  [17] .debug_info       PROGBITS        0000000000000000 0019e4 003ed7 00      0   0  1
+  [18] .debug_abbrev     PROGBITS        0000000000000000 0058bb 000b30 00      0   0  1
+  [19] .debug_loclists   PROGBITS        0000000000000000 0063eb 00263a 00      0   0  1
+  [20] .debug_aranges    PROGBITS        0000000000000000 008a30 000120 00      0   0 16
+  [21] .debug_rnglists   PROGBITS        0000000000000000 008b50 0003e4 00      0   0  1
+  [22] .debug_line       PROGBITS        0000000000000000 008f34 002011 00      0   0  1
+  [23] .debug_str        PROGBITS        0000000000000000 00af45 0018a8 01  MS  0   0  1
+  [24] .debug_line_str   PROGBITS        0000000000000000 00c7ed 000362 01  MS  0   0  1
+  [25] .comment          PROGBITS        0000000000000000 00cb4f 00001b 01  MS  0   0  1
+  [26] .symtab           SYMTAB          0000000000000000 00cb70 0003f0 18     27  26  8
+  [27] .strtab           STRTAB          0000000000000000 00cf60 0002ba 00      0   0  1
+  [28] .shstrtab         STRTAB          0000000000000000 00d21a 000144 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), l (large), p (processor specific)
+
+Symbol table '.dynsym' contains 17 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND
+     1: 0000000000000d00  1345 FUNC    WEAK   DEFAULT   13 clock_gettime@@LINUX_2.6
+     2: 0000000000000a00   711 FUNC    GLOBAL DEFAULT   13 __vdso_gettimeofday@@LINUX_2.6
+     3: 0000000000001250   112 FUNC    WEAK   DEFAULT   13 clock_getres@@LINUX_2.6
+     4: 0000000000001250   112 FUNC    GLOBAL DEFAULT   13 __vdso_clock_getres@@LINUX_2.6
+     5: 0000000000000a00   711 FUNC    WEAK   DEFAULT   13 gettimeofday@@LINUX_2.6
+     6: 00000000000018b0    15 FUNC    GLOBAL DEFAULT   13 __vdso_futex_robust_list64_try_unlock@@LINUX_2.6
+     7: 0000000000000cd0    42 FUNC    GLOBAL DEFAULT   13 __vdso_time@@LINUX_2.6
+     8: 0000000000001810   157 FUNC    GLOBAL DEFAULT   13 __vdso_sgx_enter_enclave@@LINUX_2.6
+     9: 0000000000001300   901 FUNC    GLOBAL DEFAULT   13 __vdso_getrandom@@LINUX_2.6
+    10: 0000000000000cd0    42 FUNC    WEAK   DEFAULT   13 time@@LINUX_2.6
+    11: 0000000000000d00  1345 FUNC    GLOBAL DEFAULT   13 __vdso_clock_gettime@@LINUX_2.6
+    12: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  ABS LINUX_2.6
+    13: 00000000000018c0    14 FUNC    GLOBAL DEFAULT   13 __vdso_futex_robust_list32_try_unlock@@LINUX_2.6
+    14: 00000000000012c0    39 FUNC    GLOBAL DEFAULT   13 __vdso_getcpu@@LINUX_2.6
+    15: 00000000000012c0    39 FUNC    WEAK   DEFAULT   13 getcpu@@LINUX_2.6
+    16: 0000000000001300   901 FUNC    WEAK   DEFAULT   13 getrandom@@LINUX_2.6
+
+Symbol table '.symtab' contains 42 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS vgetrandom-chacha.o
+     2: 0000000000000660     0 NOTYPE  LOCAL  DEFAULT    8 CONSTANTS
+     3: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS vclock_gettime.c
+     4: 0000000000000940    65 FUNC    LOCAL  DEFAULT   13 vread_hvclock
+     5: 0000000000000990   108 FUNC    LOCAL  DEFAULT   13 vread_pvclock
+     6: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS vgetcpu.c
+     7: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS vgetrandom.c
+     8: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS vfutex.c
+     9: 00000000000018b8     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list64_try_unlock_cs_start
+    10: 00000000000018bd     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list64_try_unlock_cs_end
+    11: 00000000000018ba     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list64_try_unlock_cs_success
+    12: 00000000000018c8     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list32_try_unlock_cs_start
+    13: 00000000000018cc     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list32_try_unlock_cs_end
+    14: 00000000000018ca     0 NOTYPE  LOCAL  DEFAULT   13 __futex_list32_try_unlock_cs_success
+    15: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS
+    16: 0000000000000538     0 OBJECT  LOCAL  DEFAULT    7 _DYNAMIC
+    17: ffffffffffffe000     0 NOTYPE  LOCAL  DEFAULT  ABS pvclock_page
+    18: ffffffffffffa000     0 NOTYPE  LOCAL  DEFAULT    1 vdso_u_data
+    19: fffffffffffff000     0 NOTYPE  LOCAL  DEFAULT  ABS hvclock_page
+    20: 0000000000001690   380 FUNC    LOCAL  DEFAULT   13 __arch_chacha20_blocks_nostack
+    21: 000000000000070c     0 NOTYPE  LOCAL  DEFAULT   11 __GNU_EH_FRAME_HDR
+    22: ffffffffffffa000     0 NOTYPE  LOCAL  DEFAULT  ABS vdso_u_time_data
+    23: ffffffffffffe000     0 NOTYPE  LOCAL  DEFAULT  ABS vclock_pages
+    24: ffffffffffffc000     0 NOTYPE  LOCAL  DEFAULT  ABS vdso_u_rng_data
+    25: 0000000000000670     0 OBJECT  LOCAL  DEFAULT    8 _GLOBAL_OFFSET_TABLE_
+    26: 0000000000000d00  1345 FUNC    WEAK   DEFAULT   13 clock_gettime
+    27: 0000000000001810   157 FUNC    GLOBAL DEFAULT   13 __vdso_sgx_enter_enclave
+    28: 0000000000000000     0 OBJECT  GLOBAL DEFAULT  ABS LINUX_2.6
+    29: 0000000000000a00   711 FUNC    GLOBAL DEFAULT   13 __vdso_gettimeofday
+    30: 0000000000001250   112 FUNC    WEAK   DEFAULT   13 clock_getres
+    31: 0000000000001300   901 FUNC    GLOBAL DEFAULT   13 __vdso_getrandom
+    32: 00000000000018c0    14 FUNC    GLOBAL DEFAULT   13 __vdso_futex_robust_list32_try_unlock
+    33: 00000000000012c0    39 FUNC    GLOBAL DEFAULT   13 __vdso_getcpu
+    34: 0000000000001250   112 FUNC    GLOBAL DEFAULT   13 __vdso_clock_getres
+    35: 0000000000000a00   711 FUNC    WEAK   DEFAULT   13 gettimeofday
+    36: 0000000000000cd0    42 FUNC    WEAK   DEFAULT   13 time
+    37: 00000000000012c0    39 FUNC    WEAK   DEFAULT   13 getcpu
+    38: 0000000000000d00  1345 FUNC    GLOBAL DEFAULT   13 __vdso_clock_gettime
+    39: 0000000000001300   901 FUNC    WEAK   DEFAULT   13 getrandom
+    40: 00000000000018b0    15 FUNC    GLOBAL DEFAULT   13 __vdso_futex_robust_list64_try_unlock
+    41: 0000000000000cd0    42 FUNC    GLOBAL DEFAULT   13 __vdso_time
+
+Displaying notes found in: .note.gnu.property
+  Owner                Data size 	Description
+  GNU                  0x00000020	NT_GNU_PROPERTY_TYPE_0	      Properties: x86 feature used: x86, XMM, x86 ISA used: x86-64-baseline
+
+Displaying notes found in: .note
+  Owner                Data size 	Description
+  Linux                0x00000004	Unknown note type: (0x00000000)	   description data: 03 02 07 00
+  Linux                0x00000001	OPEN	   description data: 00
+  GNU                  0x00000014	NT_GNU_BUILD_ID (unique build ID bitstring)	    Build ID: a52d3ec8f01edebd0677558b1ba016330fbadb65

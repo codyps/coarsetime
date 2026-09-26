@@ -1,0 +1,491 @@
+{
+  "debian-6.1": {
+    "vdso_timestamp": {
+      "size": 16,
+      "members": [
+        {
+          "name": "sec",
+          "type_id": 45,
+          "bit_offset": 0
+        },
+        {
+          "name": "nsec",
+          "type_id": 45,
+          "bit_offset": 64
+        }
+      ]
+    },
+    "vdso_data": {
+      "size": 240,
+      "members": [
+        {
+          "name": "seq",
+          "type_id": 42,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_mode",
+          "type_id": 40,
+          "bit_offset": 32
+        },
+        {
+          "name": "cycle_last",
+          "type_id": 45,
+          "bit_offset": 64
+        },
+        {
+          "name": "mask",
+          "type_id": 45,
+          "bit_offset": 128
+        },
+        {
+          "name": "mult",
+          "type_id": 42,
+          "bit_offset": 192
+        },
+        {
+          "name": "shift",
+          "type_id": 42,
+          "bit_offset": 224
+        },
+        {
+          "name": "",
+          "type_id": 8711,
+          "bit_offset": 256
+        },
+        {
+          "name": "tz_minuteswest",
+          "type_id": 40,
+          "bit_offset": 1792
+        },
+        {
+          "name": "tz_dsttime",
+          "type_id": 40,
+          "bit_offset": 1824
+        },
+        {
+          "name": "hrtimer_res",
+          "type_id": 42,
+          "bit_offset": 1856
+        },
+        {
+          "name": "__unused",
+          "type_id": 42,
+          "bit_offset": 1888
+        },
+        {
+          "name": "arch_data",
+          "type_id": 8709,
+          "bit_offset": 1920
+        },
+        {
+          "name": "basetime",
+          "type_id": 8712,
+          "bit_offset": 256
+        },
+        {
+          "name": "offset",
+          "type_id": 8713,
+          "bit_offset": 256
+        }
+      ]
+    }
+  },
+  "debian-6.12": {
+    "vdso_timestamp": {
+      "size": 16,
+      "members": [
+        {
+          "name": "sec",
+          "type_id": 38,
+          "bit_offset": 0
+        },
+        {
+          "name": "nsec",
+          "type_id": 38,
+          "bit_offset": 64
+        }
+      ]
+    },
+    "vdso_data": {
+      "size": 248,
+      "members": [
+        {
+          "name": "seq",
+          "type_id": 36,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_mode",
+          "type_id": 34,
+          "bit_offset": 32
+        },
+        {
+          "name": "cycle_last",
+          "type_id": 38,
+          "bit_offset": 64
+        },
+        {
+          "name": "max_cycles",
+          "type_id": 38,
+          "bit_offset": 128
+        },
+        {
+          "name": "mask",
+          "type_id": 38,
+          "bit_offset": 192
+        },
+        {
+          "name": "mult",
+          "type_id": 36,
+          "bit_offset": 256
+        },
+        {
+          "name": "shift",
+          "type_id": 36,
+          "bit_offset": 288
+        },
+        {
+          "name": "",
+          "type_id": 4835,
+          "bit_offset": 320
+        },
+        {
+          "name": "tz_minuteswest",
+          "type_id": 34,
+          "bit_offset": 1856
+        },
+        {
+          "name": "tz_dsttime",
+          "type_id": 34,
+          "bit_offset": 1888
+        },
+        {
+          "name": "hrtimer_res",
+          "type_id": 36,
+          "bit_offset": 1920
+        },
+        {
+          "name": "__unused",
+          "type_id": 36,
+          "bit_offset": 1952
+        },
+        {
+          "name": "arch_data",
+          "type_id": 4833,
+          "bit_offset": 1984
+        },
+        {
+          "name": "basetime",
+          "type_id": 4836,
+          "bit_offset": 320
+        },
+        {
+          "name": "offset",
+          "type_id": 4837,
+          "bit_offset": 320
+        }
+      ]
+    }
+  },
+  "fedora-43": {
+    "arch_vdso_time_data": {
+      "size": 0,
+      "members": []
+    },
+    "vdso_timestamp": {
+      "size": 16,
+      "members": [
+        {
+          "name": "sec",
+          "type_id": 38,
+          "bit_offset": 0
+        },
+        {
+          "name": "nsec",
+          "type_id": 38,
+          "bit_offset": 64
+        }
+      ]
+    },
+    "vdso_clock": {
+      "size": 232,
+      "members": [
+        {
+          "name": "seq",
+          "type_id": 35,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_mode",
+          "type_id": 34,
+          "bit_offset": 32
+        },
+        {
+          "name": "cycle_last",
+          "type_id": 38,
+          "bit_offset": 64
+        },
+        {
+          "name": "max_cycles",
+          "type_id": 38,
+          "bit_offset": 128
+        },
+        {
+          "name": "mask",
+          "type_id": 38,
+          "bit_offset": 192
+        },
+        {
+          "name": "mult",
+          "type_id": 35,
+          "bit_offset": 256
+        },
+        {
+          "name": "shift",
+          "type_id": 35,
+          "bit_offset": 288
+        },
+        {
+          "name": "",
+          "type_id": 12673,
+          "bit_offset": 320
+        },
+        {
+          "name": "basetime",
+          "type_id": 12674,
+          "bit_offset": 320
+        },
+        {
+          "name": "offset",
+          "type_id": 12675,
+          "bit_offset": 320
+        }
+      ]
+    },
+    "vdso_time_data": {
+      "size": 2368,
+      "members": [
+        {
+          "name": "arch_data",
+          "type_id": 12671,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_data",
+          "type_id": 12678,
+          "bit_offset": 0
+        },
+        {
+          "name": "aux_clock_data",
+          "type_id": 12679,
+          "bit_offset": 3712
+        },
+        {
+          "name": "tz_minuteswest",
+          "type_id": 34,
+          "bit_offset": 18560
+        },
+        {
+          "name": "tz_dsttime",
+          "type_id": 34,
+          "bit_offset": 18592
+        },
+        {
+          "name": "hrtimer_res",
+          "type_id": 35,
+          "bit_offset": 18624
+        },
+        {
+          "name": "__unused",
+          "type_id": 35,
+          "bit_offset": 18656
+        }
+      ]
+    }
+  },
+  "ubuntu-5.15": {
+    "vdso_timestamp": {
+      "size": 16,
+      "members": [
+        {
+          "name": "sec",
+          "type_id": 29,
+          "bit_offset": 0
+        },
+        {
+          "name": "nsec",
+          "type_id": 29,
+          "bit_offset": 64
+        }
+      ]
+    },
+    "vdso_data": {
+      "size": 240,
+      "members": [
+        {
+          "name": "seq",
+          "type_id": 27,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_mode",
+          "type_id": 26,
+          "bit_offset": 32
+        },
+        {
+          "name": "cycle_last",
+          "type_id": 29,
+          "bit_offset": 64
+        },
+        {
+          "name": "mask",
+          "type_id": 29,
+          "bit_offset": 128
+        },
+        {
+          "name": "mult",
+          "type_id": 27,
+          "bit_offset": 192
+        },
+        {
+          "name": "shift",
+          "type_id": 27,
+          "bit_offset": 224
+        },
+        {
+          "name": "",
+          "type_id": 4478,
+          "bit_offset": 256
+        },
+        {
+          "name": "tz_minuteswest",
+          "type_id": 26,
+          "bit_offset": 1792
+        },
+        {
+          "name": "tz_dsttime",
+          "type_id": 26,
+          "bit_offset": 1824
+        },
+        {
+          "name": "hrtimer_res",
+          "type_id": 27,
+          "bit_offset": 1856
+        },
+        {
+          "name": "__unused",
+          "type_id": 27,
+          "bit_offset": 1888
+        },
+        {
+          "name": "arch_data",
+          "type_id": 4476,
+          "bit_offset": 1920
+        },
+        {
+          "name": "basetime",
+          "type_id": 4479,
+          "bit_offset": 256
+        },
+        {
+          "name": "offset",
+          "type_id": 4480,
+          "bit_offset": 256
+        }
+      ]
+    }
+  },
+  "ubuntu-6.8": {
+    "vdso_timestamp": {
+      "size": 16,
+      "members": [
+        {
+          "name": "sec",
+          "type_id": 23,
+          "bit_offset": 0
+        },
+        {
+          "name": "nsec",
+          "type_id": 23,
+          "bit_offset": 64
+        }
+      ]
+    },
+    "vdso_data": {
+      "size": 240,
+      "members": [
+        {
+          "name": "seq",
+          "type_id": 21,
+          "bit_offset": 0
+        },
+        {
+          "name": "clock_mode",
+          "type_id": 368,
+          "bit_offset": 32
+        },
+        {
+          "name": "cycle_last",
+          "type_id": 23,
+          "bit_offset": 64
+        },
+        {
+          "name": "mask",
+          "type_id": 23,
+          "bit_offset": 128
+        },
+        {
+          "name": "mult",
+          "type_id": 21,
+          "bit_offset": 192
+        },
+        {
+          "name": "shift",
+          "type_id": 21,
+          "bit_offset": 224
+        },
+        {
+          "name": "",
+          "type_id": 2681,
+          "bit_offset": 256
+        },
+        {
+          "name": "tz_minuteswest",
+          "type_id": 368,
+          "bit_offset": 1792
+        },
+        {
+          "name": "tz_dsttime",
+          "type_id": 368,
+          "bit_offset": 1824
+        },
+        {
+          "name": "hrtimer_res",
+          "type_id": 21,
+          "bit_offset": 1856
+        },
+        {
+          "name": "__unused",
+          "type_id": 21,
+          "bit_offset": 1888
+        },
+        {
+          "name": "arch_data",
+          "type_id": 2679,
+          "bit_offset": 1920
+        },
+        {
+          "name": "basetime",
+          "type_id": 2682,
+          "bit_offset": 256
+        },
+        {
+          "name": "offset",
+          "type_id": 2683,
+          "bit_offset": 256
+        }
+      ]
+    }
+  }
+}

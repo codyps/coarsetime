@@ -1,0 +1,15 @@
+{
+  "name": "ubuntu-5.15",
+  "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-5.15.0-25-generic_5.15.0-25.25_amd64.deb",
+  "effective_url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-5.15.0-25-generic_5.15.0-25.25_amd64.deb",
+  "status": 0,
+  "size": 11172032,
+  "sha256": "ac69df20790c48217eb1386ef81fd10d3f20a4ede4dab81cc107c65d29549fa0",
+  "extraction": [
+    {
+      "offset": 26087424,
+      "size": 4736,
+      "sha256": "919dc5635942ecc1a6c8c350e69f86a544c12d5ebf863f05caf34aa861410bd5"
+    }
+  ]
+}

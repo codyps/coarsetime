@@ -1,0 +1,15 @@
+{
+  "name": "debian-6.12",
+  "url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.12.43+deb12-amd64-unsigned_6.12.43-1~bpo12+1_amd64.deb",
+  "effective_url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.12.43+deb12-amd64-unsigned_6.12.43-1~bpo12+1_amd64.deb",
+  "status": 0,
+  "size": 106039072,
+  "sha256": "413f312f868662a7021279f5484d496561df72aa81dca3f183daa855435c6fec",
+  "extraction": [
+    {
+      "offset": 24944640,
+      "size": 7184,
+      "sha256": "4e049d20226e77a8777e842dcdef319a409073afdd3585da611e229226c76662"
+    }
+  ]
+}

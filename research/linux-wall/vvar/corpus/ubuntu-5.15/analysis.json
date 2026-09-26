@@ -1,0 +1,11 @@
+{
+  "sample": "ubuntu-5.15",
+  "elf_sha256": "919dc5635942ecc1a6c8c350e69f86a544c12d5ebf863f05caf34aa861410bd5",
+  "entry": "0xc10",
+  "symbol_size": 5,
+  "entry_jump_target": "0x7b0",
+  "symbol_sha256": "4ee929c6da7156a3b1e634d383733f3c1806083f2f98ec4267a3e6aae2251a46",
+  "text_sha256": "22322ab2ce682c14f9bfba8f2e92557da043255450ed80dc32e611c1bc4e949b",
+  "has_alternatives": true,
+  "full_symbol_table": false
+}

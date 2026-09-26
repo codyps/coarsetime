@@ -1,0 +1,11 @@
+{
+  "sample": "arch",
+  "elf_sha256": "a9d98a19748a50c101ffe180378d7e1333253f46ae8f33c4dbe0db5cedb08179",
+  "entry": "0xd00",
+  "symbol_size": 1345,
+  "entry_jump_target": null,
+  "symbol_sha256": "824a87459413f92247cbf7f5ab18adaf20fe1f4c0d017180f9dbb777f5eed028",
+  "text_sha256": "c14179451400c7571770442481e7ef910e4a9a8387c6256d25f0f1ea862a5ad6",
+  "has_alternatives": true,
+  "full_symbol_table": true
+}

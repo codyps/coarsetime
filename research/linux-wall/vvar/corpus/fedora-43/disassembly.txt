@@ -1,0 +1,1119 @@
+
+/corpus/fedora-43/vdso.so:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000007e0 <__vdso_gettimeofday@@LINUX_2.6-0x8e0>:
+     7e0:	48 8d 35 19 e8 ff ff 	lea    rsi,[rip+0xffffffffffffe819]        # fffffffffffff000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffd930>
+     7e7:	eb 13                	jmp    7fc <LINUX_2.6@@LINUX_2.6+0x7fc>
+     7e9:	4c 8b 4e 08          	mov    r9,QWORD PTR [rsi+0x8]
+     7ed:	4c 8b 46 10          	mov    r8,QWORD PTR [rsi+0x10]
+     7f1:	0f 31                	rdtsc
+     7f3:	90                   	nop
+     7f4:	90                   	nop
+     7f5:	90                   	nop
+     7f6:	8b 0e                	mov    ecx,DWORD PTR [rsi]
+     7f8:	39 cf                	cmp    edi,ecx
+     7fa:	74 0f                	je     80b <LINUX_2.6@@LINUX_2.6+0x80b>
+     7fc:	8b 3e                	mov    edi,DWORD PTR [rsi]
+     7fe:	85 ff                	test   edi,edi
+     800:	75 e7                	jne    7e9 <LINUX_2.6@@LINUX_2.6+0x7e9>
+     802:	48 c7 c0 ff ff ff ff 	mov    rax,0xffffffffffffffff
+     809:	c3                   	ret
+     80a:	cc                   	int3
+     80b:	48 c1 e2 20          	shl    rdx,0x20
+     80f:	48 09 c2             	or     rdx,rax
+     812:	48 89 d0             	mov    rax,rdx
+     815:	49 f7 e1             	mul    r9
+     818:	49 8d 04 10          	lea    rax,[r8+rdx*1]
+     81c:	48 0f ba f0 3f       	btr    rax,0x3f
+     821:	c3                   	ret
+     822:	cc                   	int3
+     823:	66 90                	xchg   ax,ax
+     825:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+     82c:	00 00 00 00
+     830:	8b 15 ca d7 ff ff    	mov    edx,DWORD PTR [rip+0xffffffffffffd7ca]        # ffffffffffffe000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffc930>
+     836:	48 8d 35 c3 d7 ff ff 	lea    rsi,[rip+0xffffffffffffd7c3]        # ffffffffffffe000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffc930>
+     83d:	f6 46 1d 01          	test   BYTE PTR [rsi+0x1d],0x1
+     841:	74 50                	je     893 <LINUX_2.6@@LINUX_2.6+0x893>
+     843:	89 d7                	mov    edi,edx
+     845:	83 e7 fe             	and    edi,0xfffffffe
+     848:	0f 31                	rdtsc
+     84a:	90                   	nop
+     84b:	90                   	nop
+     84c:	90                   	nop
+     84d:	48 c1 e2 20          	shl    rdx,0x20
+     851:	48 09 c2             	or     rdx,rax
+     854:	48 89 d0             	mov    rax,rdx
+     857:	0f be 56 1c          	movsx  edx,BYTE PTR [rsi+0x1c]
+     85b:	48 2b 46 08          	sub    rax,QWORD PTR [rsi+0x8]
+     85f:	49 89 c0             	mov    r8,rax
+     862:	89 d1                	mov    ecx,edx
+     864:	f7 d9                	neg    ecx
+     866:	49 d3 e8             	shr    r8,cl
+     869:	89 d1                	mov    ecx,edx
+     86b:	48 d3 e0             	shl    rax,cl
+     86e:	85 d2                	test   edx,edx
+     870:	48 8b 4e 10          	mov    rcx,QWORD PTR [rsi+0x10]
+     874:	8b 56 18             	mov    edx,DWORD PTR [rsi+0x18]
+     877:	49 0f 48 c0          	cmovs  rax,r8
+     87b:	48 f7 e2             	mul    rdx
+     87e:	48 0f ac d0 20       	shrd   rax,rdx,0x20
+     883:	8b 16                	mov    edx,DWORD PTR [rsi]
+     885:	39 d7                	cmp    edi,edx
+     887:	75 b4                	jne    83d <LINUX_2.6@@LINUX_2.6+0x83d>
+     889:	48 01 c8             	add    rax,rcx
+     88c:	48 0f ba f0 3f       	btr    rax,0x3f
+     891:	c3                   	ret
+     892:	cc                   	int3
+     893:	48 c7 c0 ff ff ff ff 	mov    rax,0xffffffffffffffff
+     89a:	c3                   	ret
+     89b:	cc                   	int3
+     89c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     8a0:	55                   	push   rbp
+     8a1:	48 89 e5             	mov    rbp,rsp
+     8a4:	41 56                	push   r14
+     8a6:	53                   	push   rbx
+     8a7:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+     8ab:	48 83 ec 20          	sub    rsp,0x20
+     8af:	83 ff 17             	cmp    edi,0x17
+     8b2:	0f 87 c4 00 00 00    	ja     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     8b8:	b8 01 00 00 00       	mov    eax,0x1
+     8bd:	89 f9                	mov    ecx,edi
+     8bf:	4c 8d 1d 3a 97 ff ff 	lea    r11,[rip+0xffffffffffff973a]        # ffffffffffffa000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8930>
+     8c6:	d3 e0                	shl    eax,cl
+     8c8:	89 c2                	mov    edx,eax
+     8ca:	81 e2 83 08 00 00    	and    edx,0x883
+     8d0:	0f 84 cc 00 00 00    	je     9a2 <LINUX_2.6@@LINUX_2.6+0x9a2>
+     8d6:	45 8b 0b             	mov    r9d,DWORD PTR [r11]
+     8d9:	45 89 ca             	mov    r10d,r9d
+     8dc:	41 83 e2 01          	and    r10d,0x1
+     8e0:	0f 85 a7 00 00 00    	jne    98d <LINUX_2.6@@LINUX_2.6+0x98d>
+     8e6:	41 8b 43 04          	mov    eax,DWORD PTR [r11+0x4]
+     8ea:	83 f8 01             	cmp    eax,0x1
+     8ed:	75 7b                	jne    96a <LINUX_2.6@@LINUX_2.6+0x96a>
+     8ef:	0f 31                	rdtsc
+     8f1:	90                   	nop
+     8f2:	90                   	nop
+     8f3:	90                   	nop
+     8f4:	48 c1 e2 20          	shl    rdx,0x20
+     8f8:	48 09 c2             	or     rdx,rax
+     8fb:	48 0f ba f2 3f       	btr    rdx,0x3f
+     900:	4c 63 c7             	movsxd r8,edi
+     903:	41 8b 4b 24          	mov    ecx,DWORD PTR [r11+0x24]
+     907:	49 2b 53 08          	sub    rdx,QWORD PTR [r11+0x8]
+     90b:	49 c1 e0 04          	shl    r8,0x4
+     90f:	4d 01 d8             	add    r8,r11
+     912:	49 8b 58 30          	mov    rbx,QWORD PTR [r8+0x30]
+     916:	49 39 53 10          	cmp    QWORD PTR [r11+0x10],rdx
+     91a:	0f 82 30 01 00 00    	jb     a50 <LINUX_2.6@@LINUX_2.6+0xa50>
+     920:	41 8b 43 20          	mov    eax,DWORD PTR [r11+0x20]
+     924:	48 0f af c2          	imul   rax,rdx
+     928:	48 01 d8             	add    rax,rbx
+     92b:	48 d3 e8             	shr    rax,cl
+     92e:	49 8b 50 28          	mov    rdx,QWORD PTR [r8+0x28]
+     932:	41 8b 0b             	mov    ecx,DWORD PTR [r11]
+     935:	41 39 c9             	cmp    r9d,ecx
+     938:	75 9c                	jne    8d6 <LINUX_2.6@@LINUX_2.6+0x8d6>
+     93a:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     940:	76 15                	jbe    957 <LINUX_2.6@@LINUX_2.6+0x957>
+     942:	48 2d 00 ca 9a 3b    	sub    rax,0x3b9aca00
+     948:	41 83 c2 01          	add    r10d,0x1
+     94c:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     952:	77 ee                	ja     942 <LINUX_2.6@@LINUX_2.6+0x942>
+     954:	4c 01 d2             	add    rdx,r10
+     957:	48 89 16             	mov    QWORD PTR [rsi],rdx
+     95a:	48 89 46 08          	mov    QWORD PTR [rsi+0x8],rax
+     95e:	48 8d 65 f0          	lea    rsp,[rbp-0x10]
+     962:	31 c0                	xor    eax,eax
+     964:	5b                   	pop    rbx
+     965:	41 5e                	pop    r14
+     967:	5d                   	pop    rbp
+     968:	c3                   	ret
+     969:	cc                   	int3
+     96a:	83 f8 02             	cmp    eax,0x2
+     96d:	0f 84 ac 01 00 00    	je     b1f <LINUX_2.6@@LINUX_2.6+0xb1f>
+     973:	83 f8 03             	cmp    eax,0x3
+     976:	0f 84 18 01 00 00    	je     a94 <LINUX_2.6@@LINUX_2.6+0xa94>
+     97c:	b8 e4 00 00 00       	mov    eax,0xe4
+     981:	0f 05                	syscall
+     983:	48 8d 65 f0          	lea    rsp,[rbp-0x10]
+     987:	5b                   	pop    rbx
+     988:	41 5e                	pop    r14
+     98a:	5d                   	pop    rbp
+     98b:	c3                   	ret
+     98c:	cc                   	int3
+     98d:	41 81 7b 04 ff ff ff 	cmp    DWORD PTR [r11+0x4],0x7fffffff
+     994:	7f
+     995:	0f 84 a3 01 00 00    	je     b3e <LINUX_2.6@@LINUX_2.6+0xb3e>
+     99b:	f3 90                	pause
+     99d:	e9 34 ff ff ff       	jmp    8d6 <LINUX_2.6@@LINUX_2.6+0x8d6>
+     9a2:	a8 60                	test   al,0x60
+     9a4:	0f 85 1d 01 00 00    	jne    ac7 <LINUX_2.6@@LINUX_2.6+0xac7>
+     9aa:	83 ff 04             	cmp    edi,0x4
+     9ad:	0f 84 d5 00 00 00    	je     a88 <LINUX_2.6@@LINUX_2.6+0xa88>
+     9b3:	a9 00 00 ff 00       	test   eax,0xff0000
+     9b8:	74 c2                	je     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     9ba:	8d 47 f0             	lea    eax,[rdi-0x10]
+     9bd:	4d 89 de             	mov    r14,r11
+     9c0:	4c 69 c8 e8 00 00 00 	imul   r9,rax,0xe8
+     9c7:	4b 8d 9c 0b d0 01 00 	lea    rbx,[r11+r9*1+0x1d0]
+     9ce:	00
+     9cf:	44 8b 1b             	mov    r11d,DWORD PTR [rbx]
+     9d2:	45 89 da             	mov    r10d,r11d
+     9d5:	41 83 e2 01          	and    r10d,0x1
+     9d9:	0f 85 2c 01 00 00    	jne    b0b <LINUX_2.6@@LINUX_2.6+0xb0b>
+     9df:	8b 43 04             	mov    eax,DWORD PTR [rbx+0x4]
+     9e2:	85 c0                	test   eax,eax
+     9e4:	74 96                	je     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     9e6:	83 f8 01             	cmp    eax,0x1
+     9e9:	0f 85 2f 02 00 00    	jne    c1e <LINUX_2.6@@LINUX_2.6+0xc1e>
+     9ef:	0f 31                	rdtsc
+     9f1:	90                   	nop
+     9f2:	90                   	nop
+     9f3:	90                   	nop
+     9f4:	48 c1 e2 20          	shl    rdx,0x20
+     9f8:	48 09 c2             	or     rdx,rax
+     9fb:	48 0f ba f2 3f       	btr    rdx,0x3f
+     a00:	4c 8b 43 30          	mov    r8,QWORD PTR [rbx+0x30]
+     a04:	8b 4b 24             	mov    ecx,DWORD PTR [rbx+0x24]
+     a07:	48 2b 53 08          	sub    rdx,QWORD PTR [rbx+0x8]
+     a0b:	48 39 53 10          	cmp    QWORD PTR [rbx+0x10],rdx
+     a0f:	0f 82 f3 01 00 00    	jb     c08 <LINUX_2.6@@LINUX_2.6+0xc08>
+     a15:	8b 43 20             	mov    eax,DWORD PTR [rbx+0x20]
+     a18:	48 0f af c2          	imul   rax,rdx
+     a1c:	4c 01 c0             	add    rax,r8
+     a1f:	48 d3 e8             	shr    rax,cl
+     a22:	48 8b 53 28          	mov    rdx,QWORD PTR [rbx+0x28]
+     a26:	8b 0b                	mov    ecx,DWORD PTR [rbx]
+     a28:	41 39 cb             	cmp    r11d,ecx
+     a2b:	75 a2                	jne    9cf <LINUX_2.6@@LINUX_2.6+0x9cf>
+     a2d:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     a33:	0f 86 1e ff ff ff    	jbe    957 <LINUX_2.6@@LINUX_2.6+0x957>
+     a39:	48 2d 00 ca 9a 3b    	sub    rax,0x3b9aca00
+     a3f:	41 83 c2 01          	add    r10d,0x1
+     a43:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     a49:	77 ee                	ja     a39 <LINUX_2.6@@LINUX_2.6+0xa39>
+     a4b:	e9 04 ff ff ff       	jmp    954 <LINUX_2.6@@LINUX_2.6+0x954>
+     a50:	48 0f ba e2 3e       	bt     rdx,0x3e
+     a55:	73 0b                	jae    a62 <LINUX_2.6@@LINUX_2.6+0xa62>
+     a57:	48 89 d8             	mov    rax,rbx
+     a5a:	48 d3 e8             	shr    rax,cl
+     a5d:	e9 cc fe ff ff       	jmp    92e <LINUX_2.6@@LINUX_2.6+0x92e>
+     a62:	41 8b 43 20          	mov    eax,DWORD PTR [r11+0x20]
+     a66:	48 0f ba f2 3f       	btr    rdx,0x3f
+     a6b:	48 f7 e2             	mul    rdx
+     a6e:	48 01 d8             	add    rax,rbx
+     a71:	48 83 d2 00          	adc    rdx,0x0
+     a75:	48 0f ad d0          	shrd   rax,rdx,cl
+     a79:	48 d3 ea             	shr    rdx,cl
+     a7c:	83 e1 40             	and    ecx,0x40
+     a7f:	48 0f 45 c2          	cmovne rax,rdx
+     a83:	e9 a6 fe ff ff       	jmp    92e <LINUX_2.6@@LINUX_2.6+0x92e>
+     a88:	49 81 c3 e8 00 00 00 	add    r11,0xe8
+     a8f:	e9 42 fe ff ff       	jmp    8d6 <LINUX_2.6@@LINUX_2.6+0x8d6>
+     a94:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+     a99:	89 7c 24 10          	mov    DWORD PTR [rsp+0x10],edi
+     a9d:	44 89 4c 24 1c       	mov    DWORD PTR [rsp+0x1c],r9d
+     aa2:	e8 39 fd ff ff       	call   7e0 <LINUX_2.6@@LINUX_2.6+0x7e0>
+     aa7:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+     aac:	8b 7c 24 10          	mov    edi,DWORD PTR [rsp+0x10]
+     ab0:	44 8b 4c 24 1c       	mov    r9d,DWORD PTR [rsp+0x1c]
+     ab5:	48 89 c2             	mov    rdx,rax
+     ab8:	48 83 fa ff          	cmp    rdx,0xffffffffffffffff
+     abc:	0f 84 ba fe ff ff    	je     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     ac2:	e9 39 fe ff ff       	jmp    900 <LINUX_2.6@@LINUX_2.6+0x900>
+     ac7:	4c 63 c7             	movsxd r8,edi
+     aca:	49 8d 40 02          	lea    rax,[r8+0x2]
+     ace:	48 c1 e0 04          	shl    rax,0x4
+     ad2:	4c 01 d8             	add    rax,r11
+     ad5:	41 8b 0b             	mov    ecx,DWORD PTR [r11]
+     ad8:	f6 c1 01             	test   cl,0x1
+     adb:	75 1c                	jne    af9 <LINUX_2.6@@LINUX_2.6+0xaf9>
+     add:	48 8b 78 08          	mov    rdi,QWORD PTR [rax+0x8]
+     ae1:	48 89 3e             	mov    QWORD PTR [rsi],rdi
+     ae4:	48 8b 78 10          	mov    rdi,QWORD PTR [rax+0x10]
+     ae8:	48 89 7e 08          	mov    QWORD PTR [rsi+0x8],rdi
+     aec:	41 8b 3b             	mov    edi,DWORD PTR [r11]
+     aef:	39 f9                	cmp    ecx,edi
+     af1:	0f 84 67 fe ff ff    	je     95e <LINUX_2.6@@LINUX_2.6+0x95e>
+     af7:	eb dc                	jmp    ad5 <LINUX_2.6@@LINUX_2.6+0xad5>
+     af9:	41 81 7b 04 ff ff ff 	cmp    DWORD PTR [r11+0x4],0x7fffffff
+     b00:	7f
+     b01:	0f 84 5c 01 00 00    	je     c63 <LINUX_2.6@@LINUX_2.6+0xc63>
+     b07:	f3 90                	pause
+     b09:	eb ca                	jmp    ad5 <LINUX_2.6@@LINUX_2.6+0xad5>
+     b0b:	81 7b 04 ff ff ff 7f 	cmp    DWORD PTR [rbx+0x4],0x7fffffff
+     b12:	0f 84 d9 00 00 00    	je     bf1 <LINUX_2.6@@LINUX_2.6+0xbf1>
+     b18:	f3 90                	pause
+     b1a:	e9 b0 fe ff ff       	jmp    9cf <LINUX_2.6@@LINUX_2.6+0x9cf>
+     b1f:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     b24:	89 7c 24 1c          	mov    DWORD PTR [rsp+0x1c],edi
+     b28:	e8 03 fd ff ff       	call   830 <LINUX_2.6@@LINUX_2.6+0x830>
+     b2d:	8b 7c 24 1c          	mov    edi,DWORD PTR [rsp+0x1c]
+     b31:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     b36:	48 89 c2             	mov    rdx,rax
+     b39:	e9 7a ff ff ff       	jmp    ab8 <LINUX_2.6@@LINUX_2.6+0xab8>
+     b3e:	4c 8d 15 a3 a5 ff ff 	lea    r10,[rip+0xffffffffffffa5a3]        # ffffffffffffb0e8 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff9a18>
+     b45:	83 ff 04             	cmp    edi,0x4
+     b48:	49 8d 82 18 ff ff ff 	lea    rax,[r10-0xe8]
+     b4f:	4c 0f 45 d0          	cmovne r10,rax
+     b53:	41 8b 1a             	mov    ebx,DWORD PTR [r10]
+     b56:	f6 c3 01             	test   bl,0x1
+     b59:	0f 85 ee 01 00 00    	jne    d4d <LINUX_2.6@@LINUX_2.6+0xd4d>
+     b5f:	41 8b 42 04          	mov    eax,DWORD PTR [r10+0x4]
+     b63:	83 f8 01             	cmp    eax,0x1
+     b66:	0f 85 a6 01 00 00    	jne    d12 <LINUX_2.6@@LINUX_2.6+0xd12>
+     b6c:	0f 31                	rdtsc
+     b6e:	90                   	nop
+     b6f:	90                   	nop
+     b70:	90                   	nop
+     b71:	48 c1 e2 20          	shl    rdx,0x20
+     b75:	48 09 c2             	or     rdx,rax
+     b78:	48 0f ba f2 3f       	btr    rdx,0x3f
+     b7d:	4c 63 c7             	movsxd r8,edi
+     b80:	41 8b 4a 24          	mov    ecx,DWORD PTR [r10+0x24]
+     b84:	49 2b 52 08          	sub    rdx,QWORD PTR [r10+0x8]
+     b88:	4c 89 c0             	mov    rax,r8
+     b8b:	48 c1 e0 04          	shl    rax,0x4
+     b8f:	4d 8b 4c 02 30       	mov    r9,QWORD PTR [r10+rax*1+0x30]
+     b94:	4d 8d 34 02          	lea    r14,[r10+rax*1]
+     b98:	49 39 52 10          	cmp    QWORD PTR [r10+0x10],rdx
+     b9c:	0f 82 5e 01 00 00    	jb     d00 <LINUX_2.6@@LINUX_2.6+0xd00>
+     ba2:	41 8b 42 20          	mov    eax,DWORD PTR [r10+0x20]
+     ba6:	48 0f af c2          	imul   rax,rdx
+     baa:	4c 01 c8             	add    rax,r9
+     bad:	48 d3 e8             	shr    rax,cl
+     bb0:	49 8b 4e 28          	mov    rcx,QWORD PTR [r14+0x28]
+     bb4:	41 8b 12             	mov    edx,DWORD PTR [r10]
+     bb7:	39 da                	cmp    edx,ebx
+     bb9:	75 98                	jne    b53 <LINUX_2.6@@LINUX_2.6+0xb53>
+     bbb:	49 c1 e0 04          	shl    r8,0x4
+     bbf:	4d 01 c3             	add    r11,r8
+     bc2:	49 03 43 30          	add    rax,QWORD PTR [r11+0x30]
+     bc6:	49 03 4b 28          	add    rcx,QWORD PTR [r11+0x28]
+     bca:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     bd0:	0f 86 23 01 00 00    	jbe    cf9 <LINUX_2.6@@LINUX_2.6+0xcf9>
+     bd6:	31 d2                	xor    edx,edx
+     bd8:	48 2d 00 ca 9a 3b    	sub    rax,0x3b9aca00
+     bde:	83 c2 01             	add    edx,0x1
+     be1:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     be7:	77 ef                	ja     bd8 <LINUX_2.6@@LINUX_2.6+0xbd8>
+     be9:	48 01 ca             	add    rdx,rcx
+     bec:	e9 66 fd ff ff       	jmp    957 <LINUX_2.6@@LINUX_2.6+0x957>
+     bf1:	49 8d 86 00 10 00 00 	lea    rax,[r14+0x1000]
+     bf8:	49 89 c6             	mov    r14,rax
+     bfb:	4a 8d 9c 08 d0 01 00 	lea    rbx,[rax+r9*1+0x1d0]
+     c02:	00
+     c03:	e9 c7 fd ff ff       	jmp    9cf <LINUX_2.6@@LINUX_2.6+0x9cf>
+     c08:	48 0f ba e2 3e       	bt     rdx,0x3e
+     c0d:	0f 83 be 00 00 00    	jae    cd1 <LINUX_2.6@@LINUX_2.6+0xcd1>
+     c13:	4c 89 c0             	mov    rax,r8
+     c16:	48 d3 e8             	shr    rax,cl
+     c19:	e9 04 fe ff ff       	jmp    a22 <LINUX_2.6@@LINUX_2.6+0xa22>
+     c1e:	83 f8 02             	cmp    eax,0x2
+     c21:	0f 84 34 01 00 00    	je     d5b <LINUX_2.6@@LINUX_2.6+0xd5b>
+     c27:	83 f8 03             	cmp    eax,0x3
+     c2a:	0f 85 4c fd ff ff    	jne    97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     c30:	4c 89 4c 24 08       	mov    QWORD PTR [rsp+0x8],r9
+     c35:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     c3a:	89 7c 24 1c          	mov    DWORD PTR [rsp+0x1c],edi
+     c3e:	e8 9d fb ff ff       	call   7e0 <LINUX_2.6@@LINUX_2.6+0x7e0>
+     c43:	4c 8b 4c 24 08       	mov    r9,QWORD PTR [rsp+0x8]
+     c48:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     c4d:	8b 7c 24 1c          	mov    edi,DWORD PTR [rsp+0x1c]
+     c51:	48 89 c2             	mov    rdx,rax
+     c54:	48 83 fa ff          	cmp    rdx,0xffffffffffffffff
+     c58:	0f 84 1e fd ff ff    	je     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     c5e:	e9 9d fd ff ff       	jmp    a00 <LINUX_2.6@@LINUX_2.6+0xa00>
+     c63:	49 8d 40 02          	lea    rax,[r8+0x2]
+     c67:	48 c1 e0 04          	shl    rax,0x4
+     c6b:	4c 01 d8             	add    rax,r11
+     c6e:	41 8b bb 00 10 00 00 	mov    edi,DWORD PTR [r11+0x1000]
+     c75:	40 f6 c7 01          	test   dil,0x1
+     c79:	0f 85 d5 00 00 00    	jne    d54 <LINUX_2.6@@LINUX_2.6+0xd54>
+     c7f:	4c 8b 80 08 10 00 00 	mov    r8,QWORD PTR [rax+0x1008]
+     c86:	48 8b 88 10 10 00 00 	mov    rcx,QWORD PTR [rax+0x1010]
+     c8d:	45 8b 8b 00 10 00 00 	mov    r9d,DWORD PTR [r11+0x1000]
+     c94:	41 39 f9             	cmp    r9d,edi
+     c97:	75 d5                	jne    c6e <LINUX_2.6@@LINUX_2.6+0xc6e>
+     c99:	48 8b 78 08          	mov    rdi,QWORD PTR [rax+0x8]
+     c9d:	48 03 48 10          	add    rcx,QWORD PTR [rax+0x10]
+     ca1:	4c 01 c7             	add    rdi,r8
+     ca4:	48 81 f9 ff c9 9a 3b 	cmp    rcx,0x3b9ac9ff
+     cab:	76 13                	jbe    cc0 <LINUX_2.6@@LINUX_2.6+0xcc0>
+     cad:	48 81 e9 00 ca 9a 3b 	sub    rcx,0x3b9aca00
+     cb4:	83 c2 01             	add    edx,0x1
+     cb7:	48 81 f9 ff c9 9a 3b 	cmp    rcx,0x3b9ac9ff
+     cbe:	77 ed                	ja     cad <LINUX_2.6@@LINUX_2.6+0xcad>
+     cc0:	89 d0                	mov    eax,edx
+     cc2:	48 89 4e 08          	mov    QWORD PTR [rsi+0x8],rcx
+     cc6:	48 01 f8             	add    rax,rdi
+     cc9:	48 89 06             	mov    QWORD PTR [rsi],rax
+     ccc:	e9 8d fc ff ff       	jmp    95e <LINUX_2.6@@LINUX_2.6+0x95e>
+     cd1:	48 89 d0             	mov    rax,rdx
+     cd4:	8b 53 20             	mov    edx,DWORD PTR [rbx+0x20]
+     cd7:	48 0f ba f0 3f       	btr    rax,0x3f
+     cdc:	48 f7 e2             	mul    rdx
+     cdf:	4c 01 c0             	add    rax,r8
+     ce2:	48 83 d2 00          	adc    rdx,0x0
+     ce6:	48 0f ad d0          	shrd   rax,rdx,cl
+     cea:	48 d3 ea             	shr    rdx,cl
+     ced:	80 e1 40             	and    cl,0x40
+     cf0:	48 0f 45 c2          	cmovne rax,rdx
+     cf4:	e9 29 fd ff ff       	jmp    a22 <LINUX_2.6@@LINUX_2.6+0xa22>
+     cf9:	31 d2                	xor    edx,edx
+     cfb:	e9 e9 fe ff ff       	jmp    be9 <LINUX_2.6@@LINUX_2.6+0xbe9>
+     d00:	48 0f ba e2 3e       	bt     rdx,0x3e
+     d05:	73 73                	jae    d7a <LINUX_2.6@@LINUX_2.6+0xd7a>
+     d07:	4c 89 c8             	mov    rax,r9
+     d0a:	48 d3 e8             	shr    rax,cl
+     d0d:	e9 9e fe ff ff       	jmp    bb0 <LINUX_2.6@@LINUX_2.6+0xbb0>
+     d12:	83 f8 02             	cmp    eax,0x2
+     d15:	0f 84 88 00 00 00    	je     da3 <LINUX_2.6@@LINUX_2.6+0xda3>
+     d1b:	83 f8 03             	cmp    eax,0x3
+     d1e:	0f 85 58 fc ff ff    	jne    97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     d24:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     d29:	89 7c 24 1c          	mov    DWORD PTR [rsp+0x1c],edi
+     d2d:	e8 ae fa ff ff       	call   7e0 <LINUX_2.6@@LINUX_2.6+0x7e0>
+     d32:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     d37:	8b 7c 24 1c          	mov    edi,DWORD PTR [rsp+0x1c]
+     d3b:	48 89 c2             	mov    rdx,rax
+     d3e:	48 83 fa ff          	cmp    rdx,0xffffffffffffffff
+     d42:	0f 84 34 fc ff ff    	je     97c <LINUX_2.6@@LINUX_2.6+0x97c>
+     d48:	e9 30 fe ff ff       	jmp    b7d <LINUX_2.6@@LINUX_2.6+0xb7d>
+     d4d:	f3 90                	pause
+     d4f:	e9 ff fd ff ff       	jmp    b53 <LINUX_2.6@@LINUX_2.6+0xb53>
+     d54:	f3 90                	pause
+     d56:	e9 13 ff ff ff       	jmp    c6e <LINUX_2.6@@LINUX_2.6+0xc6e>
+     d5b:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     d60:	89 7c 24 1c          	mov    DWORD PTR [rsp+0x1c],edi
+     d64:	e8 c7 fa ff ff       	call   830 <LINUX_2.6@@LINUX_2.6+0x830>
+     d69:	8b 7c 24 1c          	mov    edi,DWORD PTR [rsp+0x1c]
+     d6d:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     d72:	48 89 c2             	mov    rdx,rax
+     d75:	e9 da fe ff ff       	jmp    c54 <LINUX_2.6@@LINUX_2.6+0xc54>
+     d7a:	48 89 d0             	mov    rax,rdx
+     d7d:	41 8b 52 20          	mov    edx,DWORD PTR [r10+0x20]
+     d81:	48 0f ba f0 3f       	btr    rax,0x3f
+     d86:	48 f7 e2             	mul    rdx
+     d89:	4c 01 c8             	add    rax,r9
+     d8c:	48 83 d2 00          	adc    rdx,0x0
+     d90:	48 0f ad d0          	shrd   rax,rdx,cl
+     d94:	48 d3 ea             	shr    rdx,cl
+     d97:	80 e1 40             	and    cl,0x40
+     d9a:	48 0f 45 c2          	cmovne rax,rdx
+     d9e:	e9 0d fe ff ff       	jmp    bb0 <LINUX_2.6@@LINUX_2.6+0xbb0>
+     da3:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     da8:	89 7c 24 1c          	mov    DWORD PTR [rsp+0x1c],edi
+     dac:	e8 7f fa ff ff       	call   830 <LINUX_2.6@@LINUX_2.6+0x830>
+     db1:	8b 7c 24 1c          	mov    edi,DWORD PTR [rsp+0x1c]
+     db5:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     dba:	48 89 c2             	mov    rdx,rax
+     dbd:	e9 7c ff ff ff       	jmp    d3e <LINUX_2.6@@LINUX_2.6+0xd3e>
+     dc2:	0f 1f 00             	nop    DWORD PTR [rax]
+     dc5:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+     dcc:	00 00 00 00
+     dd0:	55                   	push   rbp
+     dd1:	4c 8d 1d 28 92 ff ff 	lea    r11,[rip+0xffffffffffff9228]        # ffffffffffffa000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8930>
+     dd8:	48 89 e5             	mov    rbp,rsp
+     ddb:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+     ddf:	48 83 ec 20          	sub    rsp,0x20
+     de3:	48 85 ff             	test   rdi,rdi
+     de6:	0f 84 91 00 00 00    	je     e7d <LINUX_2.6@@LINUX_2.6+0xe7d>
+     dec:	45 8b 03             	mov    r8d,DWORD PTR [r11]
+     def:	45 89 c2             	mov    r10d,r8d
+     df2:	41 83 e2 01          	and    r10d,0x1
+     df6:	0f 85 b9 00 00 00    	jne    eb5 <LINUX_2.6@@LINUX_2.6+0xeb5>
+     dfc:	41 8b 43 04          	mov    eax,DWORD PTR [r11+0x4]
+     e00:	83 f8 01             	cmp    eax,0x1
+     e03:	0f 85 bd 00 00 00    	jne    ec6 <LINUX_2.6@@LINUX_2.6+0xec6>
+     e09:	0f 31                	rdtsc
+     e0b:	90                   	nop
+     e0c:	90                   	nop
+     e0d:	90                   	nop
+     e0e:	48 c1 e2 20          	shl    rdx,0x20
+     e12:	48 09 c2             	or     rdx,rax
+     e15:	48 0f ba f2 3f       	btr    rdx,0x3f
+     e1a:	4d 8b 4b 30          	mov    r9,QWORD PTR [r11+0x30]
+     e1e:	41 8b 4b 24          	mov    ecx,DWORD PTR [r11+0x24]
+     e22:	49 2b 53 08          	sub    rdx,QWORD PTR [r11+0x8]
+     e26:	49 39 53 10          	cmp    QWORD PTR [r11+0x10],rdx
+     e2a:	0f 82 b2 00 00 00    	jb     ee2 <LINUX_2.6@@LINUX_2.6+0xee2>
+     e30:	41 8b 43 20          	mov    eax,DWORD PTR [r11+0x20]
+     e34:	48 0f af c2          	imul   rax,rdx
+     e38:	4c 01 c8             	add    rax,r9
+     e3b:	48 d3 e8             	shr    rax,cl
+     e3e:	49 8b 53 28          	mov    rdx,QWORD PTR [r11+0x28]
+     e42:	41 8b 0b             	mov    ecx,DWORD PTR [r11]
+     e45:	41 39 c8             	cmp    r8d,ecx
+     e48:	75 a2                	jne    dec <LINUX_2.6@@LINUX_2.6+0xdec>
+     e4a:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     e50:	76 15                	jbe    e67 <LINUX_2.6@@LINUX_2.6+0xe67>
+     e52:	48 2d 00 ca 9a 3b    	sub    rax,0x3b9aca00
+     e58:	41 83 c2 01          	add    r10d,0x1
+     e5c:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     e62:	77 ee                	ja     e52 <LINUX_2.6@@LINUX_2.6+0xe52>
+     e64:	4c 01 d2             	add    rdx,r10
+     e67:	89 c0                	mov    eax,eax
+     e69:	48 89 17             	mov    QWORD PTR [rdi],rdx
+     e6c:	48 69 c0 d3 4d 62 10 	imul   rax,rax,0x10624dd3
+     e73:	48 c1 e8 26          	shr    rax,0x26
+     e77:	89 c0                	mov    eax,eax
+     e79:	48 89 47 08          	mov    QWORD PTR [rdi+0x8],rax
+     e7d:	48 85 f6             	test   rsi,rsi
+     e80:	75 05                	jne    e87 <LINUX_2.6@@LINUX_2.6+0xe87>
+     e82:	31 c0                	xor    eax,eax
+     e84:	c9                   	leave
+     e85:	c3                   	ret
+     e86:	cc                   	int3
+     e87:	81 3d 73 91 ff ff ff 	cmp    DWORD PTR [rip+0xffffffffffff9173],0x7fffffff        # ffffffffffffa004 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8934>
+     e8e:	ff ff 7f
+     e91:	48 8d 05 68 a1 ff ff 	lea    rax,[rip+0xffffffffffffa168]        # ffffffffffffb000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff9930>
+     e98:	74 06                	je     ea0 <LINUX_2.6@@LINUX_2.6+0xea0>
+     e9a:	48 2d 00 10 00 00    	sub    rax,0x1000
+     ea0:	8b 90 10 09 00 00    	mov    edx,DWORD PTR [rax+0x910]
+     ea6:	89 16                	mov    DWORD PTR [rsi],edx
+     ea8:	8b 80 14 09 00 00    	mov    eax,DWORD PTR [rax+0x914]
+     eae:	89 46 04             	mov    DWORD PTR [rsi+0x4],eax
+     eb1:	31 c0                	xor    eax,eax
+     eb3:	eb cf                	jmp    e84 <LINUX_2.6@@LINUX_2.6+0xe84>
+     eb5:	41 81 7b 04 ff ff ff 	cmp    DWORD PTR [r11+0x4],0x7fffffff
+     ebc:	7f
+     ebd:	74 60                	je     f1f <LINUX_2.6@@LINUX_2.6+0xf1f>
+     ebf:	f3 90                	pause
+     ec1:	e9 26 ff ff ff       	jmp    dec <LINUX_2.6@@LINUX_2.6+0xdec>
+     ec6:	83 f8 02             	cmp    eax,0x2
+     ec9:	0f 84 2a 01 00 00    	je     ff9 <LINUX_2.6@@LINUX_2.6+0xff9>
+     ecf:	83 f8 03             	cmp    eax,0x3
+     ed2:	0f 84 ec 00 00 00    	je     fc4 <LINUX_2.6@@LINUX_2.6+0xfc4>
+     ed8:	b8 60 00 00 00       	mov    eax,0x60
+     edd:	0f 05                	syscall
+     edf:	c9                   	leave
+     ee0:	c3                   	ret
+     ee1:	cc                   	int3
+     ee2:	48 0f ba e2 3e       	bt     rdx,0x3e
+     ee7:	73 0b                	jae    ef4 <LINUX_2.6@@LINUX_2.6+0xef4>
+     ee9:	4c 89 c8             	mov    rax,r9
+     eec:	48 d3 e8             	shr    rax,cl
+     eef:	e9 4a ff ff ff       	jmp    e3e <LINUX_2.6@@LINUX_2.6+0xe3e>
+     ef4:	48 89 d0             	mov    rax,rdx
+     ef7:	41 8b 53 20          	mov    edx,DWORD PTR [r11+0x20]
+     efb:	48 0f ba f0 3f       	btr    rax,0x3f
+     f00:	48 f7 e2             	mul    rdx
+     f03:	4c 01 c8             	add    rax,r9
+     f06:	48 83 d2 00          	adc    rdx,0x0
+     f0a:	48 0f ad d0          	shrd   rax,rdx,cl
+     f0e:	48 d3 ea             	shr    rdx,cl
+     f11:	83 e1 40             	and    ecx,0x40
+     f14:	48 0f 45 c2          	cmovne rax,rdx
+     f18:	e9 21 ff ff ff       	jmp    e3e <LINUX_2.6@@LINUX_2.6+0xe3e>
+     f1d:	f3 90                	pause
+     f1f:	45 8b 93 00 10 00 00 	mov    r10d,DWORD PTR [r11+0x1000]
+     f26:	41 f6 c2 01          	test   r10b,0x1
+     f2a:	75 f1                	jne    f1d <LINUX_2.6@@LINUX_2.6+0xf1d>
+     f2c:	41 8b 83 04 10 00 00 	mov    eax,DWORD PTR [r11+0x1004]
+     f33:	83 f8 01             	cmp    eax,0x1
+     f36:	0f 85 fb 00 00 00    	jne    1037 <LINUX_2.6@@LINUX_2.6+0x1037>
+     f3c:	0f 31                	rdtsc
+     f3e:	90                   	nop
+     f3f:	90                   	nop
+     f40:	90                   	nop
+     f41:	48 c1 e2 20          	shl    rdx,0x20
+     f45:	48 09 c2             	or     rdx,rax
+     f48:	48 0f ba f2 3f       	btr    rdx,0x3f
+     f4d:	4d 8b 83 30 10 00 00 	mov    r8,QWORD PTR [r11+0x1030]
+     f54:	41 8b 8b 24 10 00 00 	mov    ecx,DWORD PTR [r11+0x1024]
+     f5b:	49 2b 93 08 10 00 00 	sub    rdx,QWORD PTR [r11+0x1008]
+     f62:	49 39 93 10 10 00 00 	cmp    QWORD PTR [r11+0x1010],rdx
+     f69:	0f 82 b6 00 00 00    	jb     1025 <LINUX_2.6@@LINUX_2.6+0x1025>
+     f6f:	41 8b 83 20 10 00 00 	mov    eax,DWORD PTR [r11+0x1020]
+     f76:	48 0f af c2          	imul   rax,rdx
+     f7a:	4c 01 c0             	add    rax,r8
+     f7d:	48 d3 e8             	shr    rax,cl
+     f80:	49 8b 8b 28 10 00 00 	mov    rcx,QWORD PTR [r11+0x1028]
+     f87:	41 8b 93 00 10 00 00 	mov    edx,DWORD PTR [r11+0x1000]
+     f8e:	44 39 d2             	cmp    edx,r10d
+     f91:	75 8c                	jne    f1f <LINUX_2.6@@LINUX_2.6+0xf1f>
+     f93:	48 03 05 96 90 ff ff 	add    rax,QWORD PTR [rip+0xffffffffffff9096]        # ffffffffffffa030 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8960>
+     f9a:	48 03 0d 87 90 ff ff 	add    rcx,QWORD PTR [rip+0xffffffffffff9087]        # ffffffffffffa028 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8958>
+     fa1:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     fa7:	76 78                	jbe    1021 <LINUX_2.6@@LINUX_2.6+0x1021>
+     fa9:	31 d2                	xor    edx,edx
+     fab:	48 2d 00 ca 9a 3b    	sub    rax,0x3b9aca00
+     fb1:	83 c2 01             	add    edx,0x1
+     fb4:	48 3d ff c9 9a 3b    	cmp    rax,0x3b9ac9ff
+     fba:	77 ef                	ja     fab <LINUX_2.6@@LINUX_2.6+0xfab>
+     fbc:	48 01 ca             	add    rdx,rcx
+     fbf:	e9 a3 fe ff ff       	jmp    e67 <LINUX_2.6@@LINUX_2.6+0xe67>
+     fc4:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+     fc9:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     fce:	44 89 44 24 18       	mov    DWORD PTR [rsp+0x18],r8d
+     fd3:	e8 08 f8 ff ff       	call   7e0 <LINUX_2.6@@LINUX_2.6+0x7e0>
+     fd8:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+     fdd:	48 8b 7c 24 10       	mov    rdi,QWORD PTR [rsp+0x10]
+     fe2:	44 8b 44 24 18       	mov    r8d,DWORD PTR [rsp+0x18]
+     fe7:	48 89 c2             	mov    rdx,rax
+     fea:	48 83 fa ff          	cmp    rdx,0xffffffffffffffff
+     fee:	0f 84 e4 fe ff ff    	je     ed8 <LINUX_2.6@@LINUX_2.6+0xed8>
+     ff4:	e9 21 fe ff ff       	jmp    e1a <LINUX_2.6@@LINUX_2.6+0xe1a>
+     ff9:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+     ffe:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+    1003:	44 89 44 24 18       	mov    DWORD PTR [rsp+0x18],r8d
+    1008:	e8 23 f8 ff ff       	call   830 <LINUX_2.6@@LINUX_2.6+0x830>
+    100d:	44 8b 44 24 18       	mov    r8d,DWORD PTR [rsp+0x18]
+    1012:	48 8b 7c 24 10       	mov    rdi,QWORD PTR [rsp+0x10]
+    1017:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+    101c:	48 89 c2             	mov    rdx,rax
+    101f:	eb c9                	jmp    fea <LINUX_2.6@@LINUX_2.6+0xfea>
+    1021:	31 d2                	xor    edx,edx
+    1023:	eb 97                	jmp    fbc <LINUX_2.6@@LINUX_2.6+0xfbc>
+    1025:	48 0f ba e2 3e       	bt     rdx,0x3e
+    102a:	73 44                	jae    1070 <LINUX_2.6@@LINUX_2.6+0x1070>
+    102c:	4c 89 c0             	mov    rax,r8
+    102f:	48 d3 e8             	shr    rax,cl
+    1032:	e9 49 ff ff ff       	jmp    f80 <LINUX_2.6@@LINUX_2.6+0xf80>
+    1037:	83 f8 02             	cmp    eax,0x2
+    103a:	74 60                	je     109c <LINUX_2.6@@LINUX_2.6+0x109c>
+    103c:	83 f8 03             	cmp    eax,0x3
+    103f:	0f 85 93 fe ff ff    	jne    ed8 <LINUX_2.6@@LINUX_2.6+0xed8>
+    1045:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+    104a:	48 89 7c 24 18       	mov    QWORD PTR [rsp+0x18],rdi
+    104f:	e8 8c f7 ff ff       	call   7e0 <LINUX_2.6@@LINUX_2.6+0x7e0>
+    1054:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+    1059:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    105e:	48 89 c2             	mov    rdx,rax
+    1061:	48 83 fa ff          	cmp    rdx,0xffffffffffffffff
+    1065:	0f 84 6d fe ff ff    	je     ed8 <LINUX_2.6@@LINUX_2.6+0xed8>
+    106b:	e9 dd fe ff ff       	jmp    f4d <LINUX_2.6@@LINUX_2.6+0xf4d>
+    1070:	48 89 d0             	mov    rax,rdx
+    1073:	41 8b 93 20 10 00 00 	mov    edx,DWORD PTR [r11+0x1020]
+    107a:	48 0f ba f0 3f       	btr    rax,0x3f
+    107f:	48 f7 e2             	mul    rdx
+    1082:	4c 01 c0             	add    rax,r8
+    1085:	48 83 d2 00          	adc    rdx,0x0
+    1089:	48 0f ad d0          	shrd   rax,rdx,cl
+    108d:	48 d3 ea             	shr    rdx,cl
+    1090:	80 e1 40             	and    cl,0x40
+    1093:	48 0f 45 c2          	cmovne rax,rdx
+    1097:	e9 e4 fe ff ff       	jmp    f80 <LINUX_2.6@@LINUX_2.6+0xf80>
+    109c:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+    10a1:	48 89 7c 24 18       	mov    QWORD PTR [rsp+0x18],rdi
+    10a6:	e8 85 f7 ff ff       	call   830 <LINUX_2.6@@LINUX_2.6+0x830>
+    10ab:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    10b0:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+    10b5:	48 89 c2             	mov    rdx,rax
+    10b8:	eb a7                	jmp    1061 <LINUX_2.6@@LINUX_2.6+0x1061>
+    10ba:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+00000000000010c0 <__vdso_gettimeofday@@LINUX_2.6>:
+    10c0:	f3 0f 1e fa          	endbr64
+    10c4:	e9 07 fd ff ff       	jmp    dd0 <LINUX_2.6@@LINUX_2.6+0xdd0>
+    10c9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+00000000000010d0 <__vdso_time@@LINUX_2.6>:
+    10d0:	f3 0f 1e fa          	endbr64
+    10d4:	81 3d 26 8f ff ff ff 	cmp    DWORD PTR [rip+0xffffffffffff8f26],0x7fffffff        # ffffffffffffa004 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8934>
+    10db:	ff ff 7f
+    10de:	48 8d 05 1b 9f ff ff 	lea    rax,[rip+0xffffffffffff9f1b]        # ffffffffffffb000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff9930>
+    10e5:	74 06                	je     10ed <__vdso_time@@LINUX_2.6+0x1d>
+    10e7:	48 2d 00 10 00 00    	sub    rax,0x1000
+    10ed:	48 8b 40 28          	mov    rax,QWORD PTR [rax+0x28]
+    10f1:	48 85 ff             	test   rdi,rdi
+    10f4:	74 03                	je     10f9 <__vdso_time@@LINUX_2.6+0x29>
+    10f6:	48 89 07             	mov    QWORD PTR [rdi],rax
+    10f9:	c3                   	ret
+    10fa:	cc                   	int3
+    10fb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001100 <__vdso_clock_gettime@@LINUX_2.6>:
+    1100:	f3 0f 1e fa          	endbr64
+    1104:	e9 97 f7 ff ff       	jmp    8a0 <LINUX_2.6@@LINUX_2.6+0x8a0>
+    1109:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+0000000000001110 <__vdso_clock_getres@@LINUX_2.6>:
+    1110:	f3 0f 1e fa          	endbr64
+    1114:	83 ff 17             	cmp    edi,0x17
+    1117:	77 5d                	ja     1176 <__vdso_clock_getres@@LINUX_2.6+0x66>
+    1119:	81 3d e1 8e ff ff ff 	cmp    DWORD PTR [rip+0xffffffffffff8ee1],0x7fffffff        # ffffffffffffa004 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff8934>
+    1120:	ff ff 7f
+    1123:	48 8d 15 d6 9e ff ff 	lea    rdx,[rip+0xffffffffffff9ed6]        # ffffffffffffb000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffff9930>
+    112a:	74 07                	je     1133 <__vdso_clock_getres@@LINUX_2.6+0x23>
+    112c:	48 81 ea 00 10 00 00 	sub    rdx,0x1000
+    1133:	b8 01 00 00 00       	mov    eax,0x1
+    1138:	89 f9                	mov    ecx,edi
+    113a:	d3 e0                	shl    eax,cl
+    113c:	a9 93 08 00 00       	test   eax,0x893
+    1141:	74 1a                	je     115d <__vdso_clock_getres@@LINUX_2.6+0x4d>
+    1143:	8b 82 18 09 00 00    	mov    eax,DWORD PTR [rdx+0x918]
+    1149:	48 85 f6             	test   rsi,rsi
+    114c:	74 0b                	je     1159 <__vdso_clock_getres@@LINUX_2.6+0x49>
+    114e:	48 c7 06 00 00 00 00 	mov    QWORD PTR [rsi],0x0
+    1155:	48 89 46 08          	mov    QWORD PTR [rsi+0x8],rax
+    1159:	31 c0                	xor    eax,eax
+    115b:	c3                   	ret
+    115c:	cc                   	int3
+    115d:	a8 60                	test   al,0x60
+    115f:	75 0e                	jne    116f <__vdso_clock_getres@@LINUX_2.6+0x5f>
+    1161:	a9 00 00 ff 00       	test   eax,0xff0000
+    1166:	74 0e                	je     1176 <__vdso_clock_getres@@LINUX_2.6+0x66>
+    1168:	b8 01 00 00 00       	mov    eax,0x1
+    116d:	eb da                	jmp    1149 <__vdso_clock_getres@@LINUX_2.6+0x39>
+    116f:	b8 40 42 0f 00       	mov    eax,0xf4240
+    1174:	eb d3                	jmp    1149 <__vdso_clock_getres@@LINUX_2.6+0x39>
+    1176:	b8 e5 00 00 00       	mov    eax,0xe5
+    117b:	0f 05                	syscall
+    117d:	c3                   	ret
+    117e:	cc                   	int3
+    117f:	90                   	nop
+
+0000000000001180 <__vdso_getcpu@@LINUX_2.6>:
+    1180:	f3 0f 1e fa          	endbr64
+    1184:	b8 7b 00 00 00       	mov    eax,0x7b
+    1189:	0f 03 c0             	lsl    eax,eax
+    118c:	90                   	nop
+    118d:	48 85 ff             	test   rdi,rdi
+    1190:	74 0a                	je     119c <__vdso_getcpu@@LINUX_2.6+0x1c>
+    1192:	89 c2                	mov    edx,eax
+    1194:	81 e2 ff 0f 00 00    	and    edx,0xfff
+    119a:	89 17                	mov    DWORD PTR [rdi],edx
+    119c:	48 85 f6             	test   rsi,rsi
+    119f:	74 05                	je     11a6 <__vdso_getcpu@@LINUX_2.6+0x26>
+    11a1:	c1 e8 0c             	shr    eax,0xc
+    11a4:	89 06                	mov    DWORD PTR [rsi],eax
+    11a6:	31 c0                	xor    eax,eax
+    11a8:	c3                   	ret
+    11a9:	cc                   	int3
+    11aa:	90                   	nop
+    11ab:	90                   	nop
+    11ac:	90                   	nop
+    11ad:	90                   	nop
+    11ae:	90                   	nop
+    11af:	90                   	nop
+    11b0:	90                   	nop
+    11b1:	90                   	nop
+    11b2:	90                   	nop
+    11b3:	90                   	nop
+    11b4:	90                   	nop
+    11b5:	90                   	nop
+    11b6:	90                   	nop
+    11b7:	90                   	nop
+    11b8:	90                   	nop
+    11b9:	90                   	nop
+    11ba:	90                   	nop
+    11bb:	90                   	nop
+    11bc:	90                   	nop
+    11bd:	90                   	nop
+    11be:	90                   	nop
+    11bf:	90                   	nop
+
+00000000000011c0 <__vdso_getrandom@@LINUX_2.6>:
+    11c0:	f3 0f 1e fa          	endbr64
+    11c4:	55                   	push   rbp
+    11c5:	49 89 f1             	mov    r9,rsi
+    11c8:	48 89 e5             	mov    rbp,rsp
+    11cb:	41 57                	push   r15
+    11cd:	41 56                	push   r14
+    11cf:	41 55                	push   r13
+    11d1:	41 54                	push   r12
+    11d3:	53                   	push   rbx
+    11d4:	48 89 cb             	mov    rbx,rcx
+    11d7:	48 83 ec 30          	sub    rsp,0x30
+    11db:	48 c7 45 d0 00 00 00 	mov    QWORD PTR [rbp-0x30],0x0
+    11e2:	00
+    11e3:	49 83 f8 ff          	cmp    r8,0xffffffffffffffff
+    11e7:	75 09                	jne    11f2 <__vdso_getrandom@@LINUX_2.6+0x32>
+    11e9:	48 85 ff             	test   rdi,rdi
+    11ec:	0f 84 33 02 00 00    	je     1425 <__vdso_getrandom@@LINUX_2.6+0x265>
+    11f2:	48 89 d8             	mov    rax,rbx
+    11f5:	25 ff 0f 00 00       	and    eax,0xfff
+    11fa:	48 05 90 00 00 00    	add    rax,0x90
+    1200:	48 3d 00 10 00 00    	cmp    rax,0x1000
+    1206:	0f 87 89 02 00 00    	ja     1495 <__vdso_getrandom@@LINUX_2.6+0x2d5>
+    120c:	83 fa 07             	cmp    edx,0x7
+    120f:	0f 87 32 02 00 00    	ja     1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    1215:	49 81 f8 90 00 00 00 	cmp    r8,0x90
+    121c:	0f 85 25 02 00 00    	jne    1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    1222:	0f b6 05 df ad ff ff 	movzx  eax,BYTE PTR [rip+0xffffffffffffaddf]        # ffffffffffffc008 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffa938>
+    1229:	84 c0                	test   al,al
+    122b:	0f 84 16 02 00 00    	je     1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    1231:	4d 85 c9             	test   r9,r9
+    1234:	0f 84 c6 02 00 00    	je     1500 <__vdso_getrandom@@LINUX_2.6+0x340>
+    123a:	0f b6 83 89 00 00 00 	movzx  eax,BYTE PTR [rbx+0x89]
+    1241:	84 c0                	test   al,al
+    1243:	0f 85 fe 01 00 00    	jne    1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    1249:	c6 83 89 00 00 00 01 	mov    BYTE PTR [rbx+0x89],0x1
+    1250:	c7 45 ac 02 00 00 00 	mov    DWORD PTR [rbp-0x54],0x2
+    1257:	48 89 7d b8          	mov    QWORD PTR [rbp-0x48],rdi
+    125b:	89 55 a8             	mov    DWORD PTR [rbp-0x58],edx
+    125e:	48 8d 05 9b ad ff ff 	lea    rax,[rip+0xffffffffffffad9b]        # ffffffffffffc000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffa930>
+    1265:	48 8b 00             	mov    rax,QWORD PTR [rax]
+    1268:	48 3b 83 80 00 00 00 	cmp    rax,QWORD PTR [rbx+0x80]
+    126f:	0f 85 ec 01 00 00    	jne    1461 <__vdso_getrandom@@LINUX_2.6+0x2a1>
+    1275:	0f b6 b3 88 00 00 00 	movzx  esi,BYTE PTR [rbx+0x88]
+    127c:	41 b8 00 f0 ff 7f    	mov    r8d,0x7ffff000
+    1282:	49 89 de             	mov    r14,rbx
+    1285:	4c 89 4d b0          	mov    QWORD PTR [rbp-0x50],r9
+    1289:	4c 8b 65 b8          	mov    r12,QWORD PTR [rbp-0x48]
+    128d:	4d 39 c1             	cmp    r9,r8
+    1290:	4d 0f 46 c1          	cmovbe r8,r9
+    1294:	4c 89 c3             	mov    rbx,r8
+    1297:	eb 35                	jmp    12ce <__vdso_getrandom@@LINUX_2.6+0x10e>
+    1299:	48 85 db             	test   rbx,rbx
+    129c:	0f 84 11 01 00 00    	je     13b3 <__vdso_getrandom@@LINUX_2.6+0x1f3>
+    12a2:	49 89 df             	mov    r15,rbx
+    12a5:	49 8d 76 60          	lea    rsi,[r14+0x60]
+    12a9:	48 8d 55 d0          	lea    rdx,[rbp-0x30]
+    12ad:	49 c1 ef 06          	shr    r15,0x6
+    12b1:	0f 85 41 01 00 00    	jne    13f8 <__vdso_getrandom@@LINUX_2.6+0x238>
+    12b7:	b9 02 00 00 00       	mov    ecx,0x2
+    12bc:	4c 89 f7             	mov    rdi,r14
+    12bf:	e8 8c 02 00 00       	call   1550 <__vdso_getrandom@@LINUX_2.6+0x390>
+    12c4:	41 c6 86 88 00 00 00 	mov    BYTE PTR [r14+0x88],0x0
+    12cb:	00
+    12cc:	31 f6                	xor    esi,esi
+    12ce:	b9 60 00 00 00       	mov    ecx,0x60
+    12d3:	48 29 f1             	sub    rcx,rsi
+    12d6:	48 39 d9             	cmp    rcx,rbx
+    12d9:	48 0f 47 cb          	cmova  rcx,rbx
+    12dd:	48 85 c9             	test   rcx,rcx
+    12e0:	74 b7                	je     1299 <__vdso_getrandom@@LINUX_2.6+0xd9>
+    12e2:	4c 01 f6             	add    rsi,r14
+    12e5:	48 83 f9 07          	cmp    rcx,0x7
+    12e9:	0f 86 b2 01 00 00    	jbe    14a1 <__vdso_getrandom@@LINUX_2.6+0x2e1>
+    12ef:	48 89 c8             	mov    rax,rcx
+    12f2:	4c 89 e2             	mov    rdx,r12
+    12f5:	48 c1 e8 03          	shr    rax,0x3
+    12f9:	4c 8d 50 ff          	lea    r10,[rax-0x1]
+    12fd:	4d 8d 0c c4          	lea    r9,[r12+rax*8]
+    1301:	48 89 f0             	mov    rax,rsi
+    1304:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    130a:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    1311:	00 00 00 00
+    1315:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    131c:	00 00 00 00
+    1320:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+    1323:	48 83 c2 08          	add    rdx,0x8
+    1327:	48 83 c0 08          	add    rax,0x8
+    132b:	48 89 7a f8          	mov    QWORD PTR [rdx-0x8],rdi
+    132f:	48 c7 40 f8 00 00 00 	mov    QWORD PTR [rax-0x8],0x0
+    1336:	00
+    1337:	49 39 d1             	cmp    r9,rdx
+    133a:	75 e4                	jne    1320 <__vdso_getrandom@@LINUX_2.6+0x160>
+    133c:	4a 8d 14 d5 00 00 00 	lea    rdx,[r10*8+0x0]
+    1343:	00
+    1344:	48 89 c8             	mov    rax,rcx
+    1347:	48 8d 74 16 08       	lea    rsi,[rsi+rdx*1+0x8]
+    134c:	83 e0 07             	and    eax,0x7
+    134f:	49 8d 54 14 08       	lea    rdx,[r12+rdx*1+0x8]
+    1354:	f6 c1 04             	test   cl,0x4
+    1357:	74 18                	je     1371 <__vdso_getrandom@@LINUX_2.6+0x1b1>
+    1359:	8b 3e                	mov    edi,DWORD PTR [rsi]
+    135b:	48 83 c2 04          	add    rdx,0x4
+    135f:	48 83 c6 04          	add    rsi,0x4
+    1363:	48 83 e8 04          	sub    rax,0x4
+    1367:	89 7a fc             	mov    DWORD PTR [rdx-0x4],edi
+    136a:	c7 46 fc 00 00 00 00 	mov    DWORD PTR [rsi-0x4],0x0
+    1371:	48 83 f8 01          	cmp    rax,0x1
+    1375:	76 19                	jbe    1390 <__vdso_getrandom@@LINUX_2.6+0x1d0>
+    1377:	0f b7 3e             	movzx  edi,WORD PTR [rsi]
+    137a:	48 83 c2 02          	add    rdx,0x2
+    137e:	48 83 c6 02          	add    rsi,0x2
+    1382:	48 83 e8 02          	sub    rax,0x2
+    1386:	66 89 7a fe          	mov    WORD PTR [rdx-0x2],di
+    138a:	31 ff                	xor    edi,edi
+    138c:	66 89 7e fe          	mov    WORD PTR [rsi-0x2],di
+    1390:	48 85 c0             	test   rax,rax
+    1393:	74 08                	je     139d <__vdso_getrandom@@LINUX_2.6+0x1dd>
+    1395:	0f b6 06             	movzx  eax,BYTE PTR [rsi]
+    1398:	88 02                	mov    BYTE PTR [rdx],al
+    139a:	c6 06 00             	mov    BYTE PTR [rsi],0x0
+    139d:	48 29 cb             	sub    rbx,rcx
+    13a0:	41 00 8e 88 00 00 00 	add    BYTE PTR [r14+0x88],cl
+    13a7:	49 01 cc             	add    r12,rcx
+    13aa:	48 85 db             	test   rbx,rbx
+    13ad:	0f 85 ef fe ff ff    	jne    12a2 <__vdso_getrandom@@LINUX_2.6+0xe2>
+    13b3:	4c 8b 4d b0          	mov    r9,QWORD PTR [rbp-0x50]
+    13b7:	4c 89 f3             	mov    rbx,r14
+    13ba:	48 8d 05 3f ac ff ff 	lea    rax,[rip+0xffffffffffffac3f]        # ffffffffffffc000 <__vdso_sgx_enter_enclave@@LINUX_2.6+0xffffffffffffa930>
+    13c1:	49 8b 96 80 00 00 00 	mov    rdx,QWORD PTR [r14+0x80]
+    13c8:	48 8b 00             	mov    rax,QWORD PTR [rax]
+    13cb:	48 39 c2             	cmp    rdx,rax
+    13ce:	0f 85 33 01 00 00    	jne    1507 <__vdso_getrandom@@LINUX_2.6+0x347>
+    13d4:	b8 00 f0 ff 7f       	mov    eax,0x7ffff000
+    13d9:	41 c6 86 89 00 00 00 	mov    BYTE PTR [r14+0x89],0x0
+    13e0:	00
+    13e1:	49 39 c1             	cmp    r9,rax
+    13e4:	49 0f 46 c1          	cmovbe rax,r9
+    13e8:	48 83 c4 30          	add    rsp,0x30
+    13ec:	5b                   	pop    rbx
+    13ed:	41 5c                	pop    r12
+    13ef:	41 5d                	pop    r13
+    13f1:	41 5e                	pop    r14
+    13f3:	41 5f                	pop    r15
+    13f5:	5d                   	pop    rbp
+    13f6:	c3                   	ret
+    13f7:	cc                   	int3
+    13f8:	4c 89 e7             	mov    rdi,r12
+    13fb:	4c 89 f9             	mov    rcx,r15
+    13fe:	48 89 55 c0          	mov    QWORD PTR [rbp-0x40],rdx
+    1402:	48 89 75 c8          	mov    QWORD PTR [rbp-0x38],rsi
+    1406:	e8 45 01 00 00       	call   1550 <__vdso_getrandom@@LINUX_2.6+0x390>
+    140b:	4c 89 f8             	mov    rax,r15
+    140e:	48 8b 55 c0          	mov    rdx,QWORD PTR [rbp-0x40]
+    1412:	48 8b 75 c8          	mov    rsi,QWORD PTR [rbp-0x38]
+    1416:	48 c1 e0 06          	shl    rax,0x6
+    141a:	49 01 c4             	add    r12,rax
+    141d:	48 29 c3             	sub    rbx,rax
+    1420:	e9 92 fe ff ff       	jmp    12b7 <__vdso_getrandom@@LINUX_2.6+0xf7>
+    1425:	48 85 f6             	test   rsi,rsi
+    1428:	75 08                	jne    1432 <__vdso_getrandom@@LINUX_2.6+0x272>
+    142a:	85 d2                	test   edx,edx
+    142c:	0f 84 95 00 00 00    	je     14c7 <__vdso_getrandom@@LINUX_2.6+0x307>
+    1432:	81 e3 ff 0f 00 00    	and    ebx,0xfff
+    1438:	48 8d 83 90 00 00 00 	lea    rax,[rbx+0x90]
+    143f:	48 3d 00 10 00 00    	cmp    rax,0x1000
+    1445:	77 4e                	ja     1495 <__vdso_getrandom@@LINUX_2.6+0x2d5>
+    1447:	b8 3e 01 00 00       	mov    eax,0x13e
+    144c:	4c 89 ce             	mov    rsi,r9
+    144f:	0f 05                	syscall
+    1451:	48 83 c4 30          	add    rsp,0x30
+    1455:	5b                   	pop    rbx
+    1456:	41 5c                	pop    r12
+    1458:	41 5d                	pop    r13
+    145a:	41 5e                	pop    r14
+    145c:	41 5f                	pop    r15
+    145e:	5d                   	pop    rbp
+    145f:	c3                   	ret
+    1460:	cc                   	int3
+    1461:	48 89 83 80 00 00 00 	mov    QWORD PTR [rbx+0x80],rax
+    1468:	b8 3e 01 00 00       	mov    eax,0x13e
+    146d:	48 8d 7b 60          	lea    rdi,[rbx+0x60]
+    1471:	be 20 00 00 00       	mov    esi,0x20
+    1476:	31 d2                	xor    edx,edx
+    1478:	0f 05                	syscall
+    147a:	48 83 f8 20          	cmp    rax,0x20
+    147e:	0f 85 a9 00 00 00    	jne    152d <__vdso_getrandom@@LINUX_2.6+0x36d>
+    1484:	c6 83 88 00 00 00 60 	mov    BYTE PTR [rbx+0x88],0x60
+    148b:	be 60 00 00 00       	mov    esi,0x60
+    1490:	e9 e7 fd ff ff       	jmp    127c <__vdso_getrandom@@LINUX_2.6+0xbc>
+    1495:	48 c7 c0 f2 ff ff ff 	mov    rax,0xfffffffffffffff2
+    149c:	e9 47 ff ff ff       	jmp    13e8 <__vdso_getrandom@@LINUX_2.6+0x228>
+    14a1:	48 83 f9 03          	cmp    rcx,0x3
+    14a5:	77 15                	ja     14bc <__vdso_getrandom@@LINUX_2.6+0x2fc>
+    14a7:	4c 89 e2             	mov    rdx,r12
+    14aa:	48 83 f9 01          	cmp    rcx,0x1
+    14ae:	0f 84 e1 fe ff ff    	je     1395 <__vdso_getrandom@@LINUX_2.6+0x1d5>
+    14b4:	48 89 c8             	mov    rax,rcx
+    14b7:	e9 bb fe ff ff       	jmp    1377 <__vdso_getrandom@@LINUX_2.6+0x1b7>
+    14bc:	4c 89 e2             	mov    rdx,r12
+    14bf:	48 89 c8             	mov    rax,rcx
+    14c2:	e9 92 fe ff ff       	jmp    1359 <__vdso_getrandom@@LINUX_2.6+0x199>
+    14c7:	48 8d 79 14          	lea    rdi,[rcx+0x14]
+    14cb:	c7 41 08 28 00 00 00 	mov    DWORD PTR [rcx+0x8],0x28
+    14d2:	48 b8 90 00 00 00 03 	movabs rax,0x300000090
+    14d9:	00 00 00
+    14dc:	48 83 e7 f8          	and    rdi,0xfffffffffffffff8
+    14e0:	48 89 01             	mov    QWORD PTR [rcx],rax
+    14e3:	31 c0                	xor    eax,eax
+    14e5:	29 fb                	sub    ebx,edi
+    14e7:	48 c7 41 0c 00 00 00 	mov    QWORD PTR [rcx+0xc],0x0
+    14ee:	00
+    14ef:	48 c7 41 38 00 00 00 	mov    QWORD PTR [rcx+0x38],0x0
+    14f6:	00
+    14f7:	8d 4b 40             	lea    ecx,[rbx+0x40]
+    14fa:	c1 e9 03             	shr    ecx,0x3
+    14fd:	f3 48 ab             	rep stos QWORD PTR es:[rdi],rax
+    1500:	31 c0                	xor    eax,eax
+    1502:	e9 e1 fe ff ff       	jmp    13e8 <__vdso_getrandom@@LINUX_2.6+0x228>
+    1507:	83 7d ac 01          	cmp    DWORD PTR [rbp-0x54],0x1
+    150b:	75 14                	jne    1521 <__vdso_getrandom@@LINUX_2.6+0x361>
+    150d:	48 8b 7d b8          	mov    rdi,QWORD PTR [rbp-0x48]
+    1511:	8b 55 a8             	mov    edx,DWORD PTR [rbp-0x58]
+    1514:	41 c6 86 89 00 00 00 	mov    BYTE PTR [r14+0x89],0x0
+    151b:	00
+    151c:	e9 26 ff ff ff       	jmp    1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    1521:	c7 45 ac 01 00 00 00 	mov    DWORD PTR [rbp-0x54],0x1
+    1528:	e9 31 fd ff ff       	jmp    125e <__vdso_getrandom@@LINUX_2.6+0x9e>
+    152d:	48 c7 83 80 00 00 00 	mov    QWORD PTR [rbx+0x80],0x0
+    1534:	00 00 00 00
+    1538:	48 8b 7d b8          	mov    rdi,QWORD PTR [rbp-0x48]
+    153c:	8b 55 a8             	mov    edx,DWORD PTR [rbp-0x58]
+    153f:	c6 83 89 00 00 00 00 	mov    BYTE PTR [rbx+0x89],0x0
+    1546:	e9 fc fe ff ff       	jmp    1447 <__vdso_getrandom@@LINUX_2.6+0x287>
+    154b:	90                   	nop
+    154c:	90                   	nop
+    154d:	90                   	nop
+    154e:	90                   	nop
+    154f:	90                   	nop
+    1550:	0f 28 2d 09 f0 ff ff 	movaps xmm5,XMMWORD PTR [rip+0xfffffffffffff009]        # 560 <LINUX_2.6@@LINUX_2.6+0x560>
+    1557:	0f 10 36             	movups xmm6,XMMWORD PTR [rsi]
+    155a:	0f 10 7e 10          	movups xmm7,XMMWORD PTR [rsi+0x10]
+    155e:	f3 44 0f 7e 02       	movq   xmm8,QWORD PTR [rdx]
+    1563:	48 c7 c0 01 00 00 00 	mov    rax,0x1
+    156a:	66 4c 0f 6e c8       	movq   xmm9,rax
+    156f:	66 0f 6f cd          	movdqa xmm1,xmm5
+    1573:	66 0f 6f d6          	movdqa xmm2,xmm6
+    1577:	66 0f 6f df          	movdqa xmm3,xmm7
+    157b:	66 41 0f 6f e0       	movdqa xmm4,xmm8
+    1580:	b0 0a                	mov    al,0xa
+    1582:	66 0f fe ca          	paddd  xmm1,xmm2
+    1586:	66 0f ef e1          	pxor   xmm4,xmm1
+    158a:	66 0f 6f c4          	movdqa xmm0,xmm4
+    158e:	66 0f 72 f0 10       	pslld  xmm0,0x10
+    1593:	66 0f 72 d4 10       	psrld  xmm4,0x10
+    1598:	66 0f eb e0          	por    xmm4,xmm0
+    159c:	66 0f fe dc          	paddd  xmm3,xmm4
+    15a0:	66 0f ef d3          	pxor   xmm2,xmm3
+    15a4:	66 0f 6f c2          	movdqa xmm0,xmm2
+    15a8:	66 0f 72 f0 0c       	pslld  xmm0,0xc
+    15ad:	66 0f 72 d2 14       	psrld  xmm2,0x14
+    15b2:	66 0f eb d0          	por    xmm2,xmm0
+    15b6:	66 0f fe ca          	paddd  xmm1,xmm2
+    15ba:	66 0f ef e1          	pxor   xmm4,xmm1
+    15be:	66 0f 6f c4          	movdqa xmm0,xmm4
+    15c2:	66 0f 72 f0 08       	pslld  xmm0,0x8
+    15c7:	66 0f 72 d4 18       	psrld  xmm4,0x18
+    15cc:	66 0f eb e0          	por    xmm4,xmm0
+    15d0:	66 0f fe dc          	paddd  xmm3,xmm4
+    15d4:	66 0f ef d3          	pxor   xmm2,xmm3
+    15d8:	66 0f 6f c2          	movdqa xmm0,xmm2
+    15dc:	66 0f 72 f0 07       	pslld  xmm0,0x7
+    15e1:	66 0f 72 d2 19       	psrld  xmm2,0x19
+    15e6:	66 0f eb d0          	por    xmm2,xmm0
+    15ea:	66 0f 70 d2 39       	pshufd xmm2,xmm2,0x39
+    15ef:	66 0f 70 db 4e       	pshufd xmm3,xmm3,0x4e
+    15f4:	66 0f 70 e4 93       	pshufd xmm4,xmm4,0x93
+    15f9:	66 0f fe ca          	paddd  xmm1,xmm2
+    15fd:	66 0f ef e1          	pxor   xmm4,xmm1
+    1601:	66 0f 6f c4          	movdqa xmm0,xmm4
+    1605:	66 0f 72 f0 10       	pslld  xmm0,0x10
+    160a:	66 0f 72 d4 10       	psrld  xmm4,0x10
+    160f:	66 0f eb e0          	por    xmm4,xmm0
+    1613:	66 0f fe dc          	paddd  xmm3,xmm4
+    1617:	66 0f ef d3          	pxor   xmm2,xmm3
+    161b:	66 0f 6f c2          	movdqa xmm0,xmm2
+    161f:	66 0f 72 f0 0c       	pslld  xmm0,0xc
+    1624:	66 0f 72 d2 14       	psrld  xmm2,0x14
+    1629:	66 0f eb d0          	por    xmm2,xmm0
+    162d:	66 0f fe ca          	paddd  xmm1,xmm2
+    1631:	66 0f ef e1          	pxor   xmm4,xmm1
+    1635:	66 0f 6f c4          	movdqa xmm0,xmm4
+    1639:	66 0f 72 f0 08       	pslld  xmm0,0x8
+    163e:	66 0f 72 d4 18       	psrld  xmm4,0x18
+    1643:	66 0f eb e0          	por    xmm4,xmm0
+    1647:	66 0f fe dc          	paddd  xmm3,xmm4
+    164b:	66 0f ef d3          	pxor   xmm2,xmm3
+    164f:	66 0f 6f c2          	movdqa xmm0,xmm2
+    1653:	66 0f 72 f0 07       	pslld  xmm0,0x7
+    1658:	66 0f 72 d2 19       	psrld  xmm2,0x19
+    165d:	66 0f eb d0          	por    xmm2,xmm0
+    1661:	66 0f 70 d2 93       	pshufd xmm2,xmm2,0x93
+    1666:	66 0f 70 db 4e       	pshufd xmm3,xmm3,0x4e
+    166b:	66 0f 70 e4 39       	pshufd xmm4,xmm4,0x39
+    1670:	fe c8                	dec    al
+    1672:	0f 85 0a ff ff ff    	jne    1582 <__vdso_getrandom@@LINUX_2.6+0x3c2>
+    1678:	66 0f fe cd          	paddd  xmm1,xmm5
+    167c:	0f 11 0f             	movups XMMWORD PTR [rdi],xmm1
+    167f:	66 0f fe d6          	paddd  xmm2,xmm6
+    1683:	0f 11 57 10          	movups XMMWORD PTR [rdi+0x10],xmm2
+    1687:	66 0f fe df          	paddd  xmm3,xmm7
+    168b:	0f 11 5f 20          	movups XMMWORD PTR [rdi+0x20],xmm3
+    168f:	66 41 0f fe e0       	paddd  xmm4,xmm8
+    1694:	0f 11 67 30          	movups XMMWORD PTR [rdi+0x30],xmm4
+    1698:	66 45 0f d4 c1       	paddq  xmm8,xmm9
+    169d:	48 83 c7 40          	add    rdi,0x40
+    16a1:	48 ff c9             	dec    rcx
+    16a4:	0f 85 c5 fe ff ff    	jne    156f <__vdso_getrandom@@LINUX_2.6+0x3af>
+    16aa:	66 44 0f d6 02       	movq   QWORD PTR [rdx],xmm8
+    16af:	66 0f ef c9          	pxor   xmm1,xmm1
+    16b3:	66 0f ef d2          	pxor   xmm2,xmm2
+    16b7:	66 0f ef db          	pxor   xmm3,xmm3
+    16bb:	66 0f ef e4          	pxor   xmm4,xmm4
+    16bf:	66 0f ef f6          	pxor   xmm6,xmm6
+    16c3:	66 0f ef ff          	pxor   xmm7,xmm7
+    16c7:	66 0f ef c0          	pxor   xmm0,xmm0
+    16cb:	c3                   	ret
+    16cc:	90                   	nop
+    16cd:	90                   	nop
+    16ce:	90                   	nop
+    16cf:	90                   	nop
+
+00000000000016d0 <__vdso_sgx_enter_enclave@@LINUX_2.6>:
+    16d0:	55                   	push   rbp
+    16d1:	48 89 e5             	mov    rbp,rsp
+    16d4:	53                   	push   rbx
+    16d5:	89 c8                	mov    eax,ecx
+    16d7:	83 f8 02             	cmp    eax,0x2
+    16da:	72 49                	jb     1725 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x55>
+    16dc:	83 f8 03             	cmp    eax,0x3
+    16df:	77 44                	ja     1725 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x55>
+    16e1:	48 8b 4d 10          	mov    rcx,QWORD PTR [rbp+0x10]
+    16e5:	48 c7 c3 28 00 00 00 	mov    rbx,0x28
+    16ec:	48 83 3c 19 00       	cmp    QWORD PTR [rcx+rbx*1],0x0
+    16f1:	75 32                	jne    1725 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x55>
+    16f3:	48 83 c3 08          	add    rbx,0x8
+    16f7:	48 81 fb 00 01 00 00 	cmp    rbx,0x100
+    16fe:	75 ec                	jne    16ec <__vdso_sgx_enter_enclave@@LINUX_2.6+0x1c>
+    1700:	48 8b 19             	mov    rbx,QWORD PTR [rcx]
+    1703:	48 8d 0d 00 00 00 00 	lea    rcx,[rip+0x0]        # 170a <__vdso_sgx_enter_enclave@@LINUX_2.6+0x3a>
+    170a:	0f 01 d7             	enclu
+    170d:	48 8b 5d 10          	mov    rbx,QWORD PTR [rbp+0x10]
+    1711:	c7 43 08 04 00 00 00 	mov    DWORD PTR [rbx+0x8],0x4
+    1718:	48 83 7b 18 00       	cmp    QWORD PTR [rbx+0x18],0x0
+    171d:	75 22                	jne    1741 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x71>
+    171f:	31 c0                	xor    eax,eax
+    1721:	5b                   	pop    rbx
+    1722:	c9                   	leave
+    1723:	c3                   	ret
+    1724:	cc                   	int3
+    1725:	b8 ea ff ff ff       	mov    eax,0xffffffea
+    172a:	eb f5                	jmp    1721 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x51>
+    172c:	48 8b 5d 10          	mov    rbx,QWORD PTR [rbp+0x10]
+    1730:	89 43 08             	mov    DWORD PTR [rbx+0x8],eax
+    1733:	66 89 7b 0c          	mov    WORD PTR [rbx+0xc],di
+    1737:	66 89 73 0e          	mov    WORD PTR [rbx+0xe],si
+    173b:	48 89 53 10          	mov    QWORD PTR [rbx+0x10],rdx
+    173f:	eb d7                	jmp    1718 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x48>
+    1741:	48 89 e1             	mov    rcx,rsp
+    1744:	48 89 d8             	mov    rax,rbx
+    1747:	48 89 e3             	mov    rbx,rsp
+    174a:	48 83 e3 0f          	and    rbx,0xf
+    174e:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+    1752:	50                   	push   rax
+    1753:	50                   	push   rax
+    1754:	fc                   	cld
+    1755:	48 8b 40 18          	mov    rax,QWORD PTR [rax+0x18]
+    1759:	0f ae e8             	lfence
+    175c:	ff d0                	call   rax
+    175e:	48 8d 64 1c 10       	lea    rsp,[rsp+rbx*1+0x10]
+    1763:	83 f8 00             	cmp    eax,0x0
+    1766:	7e b9                	jle    1721 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x51>
+    1768:	e9 6a ff ff ff       	jmp    16d7 <__vdso_sgx_enter_enclave@@LINUX_2.6+0x7>
+
+Disassembly of section .altinstr_replacement:
+
+000000000000183f <.altinstr_replacement>:
+    183f:	0f ae e8             	lfence
+    1842:	0f 31                	rdtsc
+    1844:	0f 01 f9             	rdtscp
+    1847:	0f ae e8             	lfence
+    184a:	0f 31                	rdtsc
+    184c:	0f 01 f9             	rdtscp
+    184f:	0f ae e8             	lfence
+    1852:	0f 31                	rdtsc
+    1854:	0f 01 f9             	rdtscp
+    1857:	0f ae e8             	lfence
+    185a:	0f 31                	rdtsc
+    185c:	0f 01 f9             	rdtscp
+    185f:	0f ae e8             	lfence
+    1862:	0f 31                	rdtsc
+    1864:	0f 01 f9             	rdtscp
+    1867:	0f ae e8             	lfence
+    186a:	0f 31                	rdtsc
+    186c:	0f 01 f9             	rdtscp
+    186f:	0f ae e8             	lfence
+    1872:	0f 31                	rdtsc
+    1874:	0f 01 f9             	rdtscp
+    1877:	f3 0f c7 f8          	rdpid  rax

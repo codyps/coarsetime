@@ -1,0 +1,50 @@
+[
+  {
+    "name": "ubuntu-5.15",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-5.15.0-25-generic_5.15.0-25.25_amd64.deb",
+    "effective_url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-5.15.0-25-generic_5.15.0-25.25_amd64.deb",
+    "status": 0,
+    "size": 11172032,
+    "sha256": "ac69df20790c48217eb1386ef81fd10d3f20a4ede4dab81cc107c65d29549fa0"
+  },
+  {
+    "name": "ubuntu-6.8",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+    "effective_url": "https://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-6.8.0-31-generic_6.8.0-31.31_amd64.deb",
+    "status": 0,
+    "size": 15155392,
+    "sha256": "35115ceb5ddc1e73034a73d6b064b9c6d38c534f20279fd7229c510515b931d8"
+  },
+  {
+    "name": "debian-6.1",
+    "url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.1.0-47-amd64-unsigned_6.1.170-3_amd64.deb",
+    "effective_url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.1.0-47-amd64-unsigned_6.1.170-3_amd64.deb",
+    "status": 0,
+    "size": 70226932,
+    "sha256": "cb9a263a6d0d2debe8ac20eadc1065ffb8b22d27f4a6471ac1c0314db341dfb0"
+  },
+  {
+    "name": "debian-6.12",
+    "url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.12.43+deb12-amd64-unsigned_6.12.43-1~bpo12+1_amd64.deb",
+    "effective_url": "https://deb.debian.org/debian/pool/main/l/linux/linux-image-6.12.43+deb12-amd64-unsigned_6.12.43-1~bpo12+1_amd64.deb",
+    "status": 0,
+    "size": 106039072,
+    "sha256": "413f312f868662a7021279f5484d496561df72aa81dca3f183daa855435c6fec"
+  },
+  {
+    "name": "fedora-43",
+    "url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Everything/x86_64/os/Packages/k/kernel-core-6.17.1-300.fc43.x86_64.rpm",
+    "effective_url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Everything/x86_64/os/Packages/k/kernel-core-6.17.1-300.fc43.x86_64.rpm",
+    "status": 0,
+    "size": 20713689,
+    "sha256": "ab1418c266e2b4b26090ab13e96c249a6bbe7a6fadca09c4e98c9ff477a5d58f"
+  },
+  {
+    "name": "arch",
+    "url": "https://archlinux.org/packages/core/x86_64/linux-headers/download/",
+    "effective_url": "https://mirror.moson.org/arch/core/os/x86_64/linux-headers-7.2.3.arch1-2-x86_64.pkg.tar.zst",
+    "status": 0,
+    "size": 71103395,
+    "sha256": "0de972919c3ad2090039975ea22bb3722627df6f386c0591f581453a7705dda5"
+  }
+]

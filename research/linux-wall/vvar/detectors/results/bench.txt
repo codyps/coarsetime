@@ -1,0 +1,20 @@
+goos: linux
+goarch: amd64
+pkg: coarsetime/vvardetectors
+cpu: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz
+BenchmarkCurrentNow-16         	21832483	        15.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurrentNow-16         	25343420	        14.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurrentNow-16         	21489316	        16.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurrentNow-16         	22842810	        15.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurrentNow-16         	22158116	        15.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBTFNow-16             	93745605	         4.113 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBTFNow-16             	86111092	         4.883 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBTFNow-16             	87590174	         3.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBTFNow-16             	83281860	         5.518 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBTFNow-16             	83473711	         3.989 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstructionsNow-16    	92477637	         4.129 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstructionsNow-16    	83577273	         4.125 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstructionsNow-16    	89591350	         4.060 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstructionsNow-16    	91849316	         4.061 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstructionsNow-16    	90196334	         4.220 ns/op	       0 B/op	       0 allocs/op
+PASS

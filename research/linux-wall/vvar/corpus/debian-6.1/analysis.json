@@ -1,0 +1,11 @@
+{
+  "sample": "debian-6.1",
+  "elf_sha256": "75889308dc97dde5c606cc697b55ff9421cdb90b564f5bc12d9845c881c1a8e3",
+  "entry": "0x960",
+  "symbol_size": 608,
+  "entry_jump_target": null,
+  "symbol_sha256": "0bcf7c8734a388a1d0d828b691200856f2f5009c8e5abf163e1d71825cda2e3e",
+  "text_sha256": "308e35a36a1067d7ef7f1a3d3cbbff9a0e6288ffadf91ea67d496bf7b142a51a",
+  "has_alternatives": true,
+  "full_symbol_table": false
+}
