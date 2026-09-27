@@ -1,4 +1,4 @@
-//go:build !purego
+//go:build !purego && linux && (amd64 || arm64)
 
 package coarsetime
 
@@ -73,7 +73,7 @@ func resolveAsmcgocall(f *elf.File, anchorPC uintptr) (uintptr, error) {
 		file, _, _ := table.PCToLine(fn.Entry)
 		// The ABIInternal wrapper shares the same name in pclntab. Only the
 		// assembly implementation has this source file; the wrapper is generated.
-		if file != "runtime/asm_amd64.s" && !strings.HasSuffix(file, "/runtime/asm_amd64.s") {
+		if file != "runtime/asm_"+runtime.GOARCH+".s" && !strings.HasSuffix(file, "/runtime/asm_"+runtime.GOARCH+".s") {
 			continue
 		}
 		pc := uintptr(fn.Entry) + bias

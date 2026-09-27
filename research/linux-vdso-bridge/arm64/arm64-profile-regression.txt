@@ -1,0 +1,112 @@
+=== RUN   TestVDSOProfileAttribution
+    vdso_profile_linux_arm64_test.go:58: vDSO samples lost their Go caller:
+        PeriodType: cpu nanoseconds
+        Period: 10000000
+        Time: 2026-09-27 17:58:30.233263847 +0000 UTC
+        Duration: 999.
+        Samples:
+        samples/count cpu/nanoseconds
+                  2   20000000: 1 2 
+                  3   30000000: 3 4 5 6 
+                 47  470000000: 7 8 
+                  1   10000000: 9 
+                  1   10000000: 10 2 
+                  1   10000000: 11 2 
+                  1   10000000: 12 13 5 6 
+                  1   10000000: 14 15 
+                  2   20000000: 16 15 
+                  1   10000000: 17 
+                  1   10000000: 18 19 4 5 6 
+                  1   10000000: 20 5 6 
+                  1   10000000: 21 
+                  2   20000000: 22 2 
+                  1   10000000: 23 19 4 5 6 
+                  1   10000000: 24 5 6 
+                  1   10000000: 25 5 6 
+                  1   10000000: 26 27 5 6 
+                  1   10000000: 28 15 
+                  1   10000000: 29 
+                  1   10000000: 30 27 5 6 
+                  1   10000000: 31 
+                  1   10000000: 32 19 4 5 6 
+                  2   20000000: 33 2 
+                  4   40000000: 34 2 
+                  2   20000000: 35 19 4 5 6 
+                  2   20000000: 36 2 
+                  1   10000000: 37 
+                  1   10000000: 38 2 
+                  1   10000000: 39 15 
+                  2   20000000: 40 
+                  1   10000000: 41 2 
+                  1   10000000: 42 2 
+                  1   10000000: 43 
+                  1   10000000: 44 15 
+                  1   10000000: 45 
+                  1   10000000: 46 27 5 6 
+                  1   10000000: 47 27 5 6 
+                  1   10000000: 48 13 5 6 
+                  1   10000000: 49 2 
+                  1   10000000: 50 
+                  1   10000000: 51 
+        Locations
+             1: 0x1b7f04 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:39:0 s=30
+             2: 0x977db M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:820:0 s=768
+             3: 0x1b2990 M=1 github.com/codyps/coarsetime.readTicks /home/runner/work/_temp/pre-review/instant_linux.go:21:0 s=13
+             4: 0x1b5c9f M=1 github.com/codyps/coarsetime.NowInstant /home/runner/work/_temp/pre-review/instant.go:15:0 s=15
+                     github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:20:0 s=16
+             5: 0x1b5e77 M=1 github.com/codyps/coarsetime.TestVDSOProfileAttribution /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:44:0 s=27
+             6: 0x1015f3 M=1 testing.tRunner /opt/hostedtoolcache/go/1.27.1/arm64/src/testing/testing.go:2193:0 s=2030
+             7: 0x649b3 M=1 runtime._VDSO /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/proc.go:5793:0 s=5793
+             8: 0x64833 M=1 runtime._System /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/proc.go:5787:0 s=5787
+             9: 0x97764 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:768:0 s=768
+            10: 0x1b7efc M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:37:0 s=30
+            11: 0x1b7ed4 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:30:0 s=30
+            12: 0x1b2d20 M=1 github.com/codyps/coarsetime.readWallUnixNano /home/runner/work/_temp/pre-review/wall_linux_vdso.go:27:0 s=27
+            13: 0x1b5c7f M=1 github.com/codyps/coarsetime.UnixNano /home/runner/work/_temp/pre-review/wall.go:15:0 s=15
+                     github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:22:0 s=16
+            14: 0x95294 M=1 gosave_systemstack_switch /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:749:0 s=739
+            15: 0x977a3 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:802:0 s=768
+            16: 0x9528c M=1 gosave_systemstack_switch /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:746:0 s=739
+            17: 0x977b4 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:807:0 s=768
+            18: 0x1b2a58 M=1 github.com/codyps/coarsetime.readClockVDSO /home/runner/work/_temp/pre-review/vdso_linux.go:49:0 s=37
+            19: 0x1b296b M=1 github.com/codyps/coarsetime.readCoarseVDSO /home/runner/work/_temp/pre-review/vdso_linux.go:34:0 s=34
+                     github.com/codyps/coarsetime.readTicks /home/runner/work/_temp/pre-review/instant_linux.go:15:0 s=13
+            20: 0x1b5c90 M=1 github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:19:0 s=16
+            21: 0x977cc M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:817:0 s=768
+            22: 0x1b7f10 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:43:0 s=30
+            23: 0x1b2a18 M=1 github.com/codyps/coarsetime.readClockVDSO /home/runner/work/_temp/pre-review/vdso_linux.go:41:0 s=37
+            24: 0x1b5c74 M=1 github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:21:0 s=16
+            25: 0x1b5cbc M=1 github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:21:0 s=16
+            26: 0x1b2be0 M=1 github.com/codyps/coarsetime.readWallTime /home/runner/work/_temp/pre-review/wall_linux_vdso.go:20:0 s=11
+            27: 0x1b5cab M=1 github.com/codyps/coarsetime.Now /home/runner/work/_temp/pre-review/wall.go:9:0 s=9
+                     github.com/codyps/coarsetime.profileVDSOReads /home/runner/work/_temp/pre-review/vdso_profile_linux_arm64_test.go:21:0 s=16
+            28: 0x95290 M=1 gosave_systemstack_switch /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:748:0 s=739
+            29: 0x97804 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:833:0 s=768
+            30: 0x1b2bb4 M=1 github.com/codyps/coarsetime.readWallTime /home/runner/work/_temp/pre-review/wall_linux_vdso.go:11:0 s=11
+            31: 0x977e4 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:825:0 s=768
+            32: 0x1b29f4 M=1 github.com/codyps/coarsetime.readClockVDSO /home/runner/work/_temp/pre-review/vdso_linux.go:37:0 s=37
+            33: 0x1b7f34 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:55:0 s=30
+            34: 0x1b7f14 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:45:0 s=30
+            35: 0x1b2a44 M=1 github.com/codyps/coarsetime.readClockVDSO /home/runner/work/_temp/pre-review/vdso_linux.go:48:0 s=37
+            36: 0x1b7f00 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:38:0 s=30
+            37: 0x977dc M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:821:0 s=768
+            38: 0x1b7ee0 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:32:0 s=30
+            39: 0x95284 M=1 gosave_systemstack_switch /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:744:0 s=739
+            40: 0x977ac M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:805:0 s=768
+            41: 0x1b7eb0 M=1 coarseClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:21:0 s=20
+            42: 0x1b7ee4 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:33:0 s=30
+            43: 0x97768 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:768:0 s=768
+            44: 0x9527c M=1 gosave_systemstack_switch /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:742:0 s=739
+            45: 0x9779c M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:801:0 s=768
+            46: 0x1b2bcc M=1 github.com/codyps/coarsetime.readWallTime /home/runner/work/_temp/pre-review/wall_linux_vdso.go:14:0 s=11
+            47: 0x1b2bfc M=1 time.Unix /opt/hostedtoolcache/go/1.27.1/arm64/src/time/time.go:1656:0 s=1655
+                     github.com/codyps/coarsetime.readWallTime /home/runner/work/_temp/pre-review/wall_linux_vdso.go:21:0 s=11
+            48: 0x1b2d54 M=1 github.com/codyps/coarsetime.readWallUnixNano /home/runner/work/_temp/pre-review/wall_linux_vdso.go:34:0 s=27
+            49: 0x1b7f28 M=1 vdsoClock /home/runner/work/_temp/pre-review/vdso_linux_arm64.s:51:0 s=30
+            50: 0x97808 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:833:0 s=768
+            51: 0x977a0 M=1 runtime.asmcgocall /opt/hostedtoolcache/go/1.27.1/arm64/src/runtime/asm_arm64.s:802:0 s=768
+        Mappings
+        1: 0x10000/0x1c3000/0x0 /home/runner/work/_temp/pre-review.test ac5bfbae29ceb65b39b59c40cd43e5b20fb93865 [FN]
+        2: 0xff9b9d8c5000/0xff9b9d8c7000/0x0 [vdso]  
+--- FAIL: TestVDSOProfileAttribution (6.83s)
+FAIL

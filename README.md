@@ -46,7 +46,8 @@ for each row.
 Other architectures, syscall fallbacks, and `purego` builds may offer no speedup
 or be slower than the standard library. See [elapsed-time measurements](research/measurements.md),
 [current macOS captures](research/darwin/calendar/benchmarks-2026-09-27/README.md),
-[Linux measurements](research/linux-vdso-bridge/README.md), and
+[Linux amd64 measurements](research/linux-vdso-bridge/README.md),
+[Linux ARM64 measurements](research/linux-vdso-bridge/arm64/README.md), and
 [Windows comparisons](research/windows/README.md). Benchmark your workload.
 
 ## Wall time
@@ -84,7 +85,7 @@ in native ticks until duration conversion.
 The macOS wall reader uses XNU's calendar mapping, falling back to Go when a
 snapshot is unusable. See the [calendar reader notes](research/darwin/calendar/README.md).
 
-Linux amd64 uses the kernel vDSO through a verified Go runtime bridge, with
+Linux amd64/arm64 uses the kernel vDSO through a verified Go runtime bridge, with
 standard-library clock fallbacks. Initialization requires `/proc/self/exe` and panics if bridge
 verification fails. Stripped and PIE executables are supported; custom packers,
 obfuscation, and shared-library builds are unvalidated. Other Linux architectures
@@ -92,7 +93,9 @@ use Go clocks. The monotonic source is selected once at startup: when the coarse
 vDSO clock is unavailable, `Instant` uses `time.Since` from a fixed `time.Now()`
 origin. A coarse read failure after successful selection panics instead of
 changing epochs beneath existing Instants. Wall reads can fall back per call;
-`Now` always removes Go's monotonic component. See the [bridge notes](research/linux-vdso-bridge/README.md).
+`Now` always removes Go's monotonic component. ARM64 also publishes the original
+goroutine and caller traceback metadata; its runtime layout operands are verified
+at startup. See the [bridge notes](research/linux-vdso-bridge/README.md).
 
 ## Tests and benchmarks
 
@@ -103,7 +106,7 @@ go vet ./...
 go test -run '^$' -bench . -benchmem -count=5
 ```
 
-On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
+On Linux amd64/arm64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
 `BenchmarkLinuxCoarseSyscall` measures the former syscall implementation.
 `BenchmarkLinuxWallFallback` and `BenchmarkLinuxInstantFallback` compare the old
 syscalls with Go clocks on native GitHub Linux amd64 and arm64 runners.
@@ -122,7 +125,7 @@ by clock family, with OS and architecture suffixes selecting native implementati
 - `doc.go`: package documentation.
 - `instant.go` and `instant_*`: elapsed-time API, tick conversion, and platform readers.
 - `wall.go` and `wall_*`: wall-time API, platform readers, and standard-library fallbacks.
-- `vdso_linux_*` and `asmcgocall_linux_amd64.go`: Linux bridge shared by both clock families.
+- `vdso_linux_*` and `asmcgocall_linux*.go`: Linux bridge shared by both clock families.
 - `internal/darwinwall/`: portable XNU calendar arithmetic, tested with synthetic mappings.
 - `*_test.go`: adjacent correctness tests; `coarsetime_bench_test.go` covers both public clock families.
 - `research/`: experiments and retained evidence, indexed by topic and adoption status.

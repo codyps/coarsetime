@@ -1,0 +1,18 @@
+3420  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3420  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3423  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3424  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3422  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3424  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3422  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3420  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3423  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3423  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3422  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3422  --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=3420, si_uid=1001} ---
+3425  +++ exited with 0 +++
+3423  +++ exited with 0 +++
+3422  +++ exited with 0 +++
+3421  +++ exited with 0 +++
+3424  +++ exited with 0 +++
+3420  +++ exited with 0 +++
