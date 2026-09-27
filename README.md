@@ -1,7 +1,8 @@
 # coarsetime
 
-Inexpensive elapsed-time and approximate wall-time readings for Go. Uses coarse
-platform clocks where available, trading resolution and freshness for speed.
+Inexpensive functions for measuring elapsed time and obtaining approximate wall
+time in Go. Uses coarse platform clocks where available, trading resolution and
+freshness for speed.
 Requires Go 1.23 or newer; cgo is not required.
 
 ```sh

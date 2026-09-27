@@ -3,7 +3,7 @@
 Historical investigation and plan, retained from the original Windows work. The
 current portable API is documented in the [root README](../../README.md): `Now`
 returns approximate wall time without a monotonic component, `UnixNano` retains
-the Windows fast path, and `NowInstant`/`Since` provide elapsed-time readings.
+the Windows fast path, and `NowInstant`/`Since` measure elapsed time.
 The descriptions and recommendations below refer to the original implementation
 checkpoint and are not the current library contract.
 
