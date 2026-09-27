@@ -42,7 +42,9 @@ def main():
     args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     config = json.loads((HERE / "config.json").read_text())
-    harness = (HERE / "harness_test.go.txt").read_bytes()
+    # Windows checkouts may use CRLF. Hash and inject one canonical byte stream
+    # so all native matrix cells identify the same harness.
+    harness = (HERE / "harness_test.go.txt").read_text(encoding="utf-8").encode("utf-8")
     env = dict(os.environ, CGO_ENABLED="0", GOTOOLCHAIN="local", GOMAXPROCS="1")
     goenv = json.loads(command(["go", "env", "-json", "GOOS", "GOARCH", "GOAMD64", "GOARM", "GOEXPERIMENT", "GOVERSION"], env=env))
     record = {"schema": 1, "run_id": int(os.environ.get("GITHUB_RUN_ID", "0")),
