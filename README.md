@@ -84,11 +84,12 @@ in native ticks until duration conversion.
 The macOS wall reader uses XNU's calendar mapping, falling back to Go when a
 snapshot is unusable. See the [calendar reader notes](research/darwin/calendar/README.md).
 
-Linux amd64 uses the kernel vDSO through a verified Go runtime bridge, with a
+Linux amd64/arm64 uses the kernel vDSO through a verified Go runtime bridge, with a
 syscall fallback. Initialization requires `/proc/self/exe` and panics if bridge
 verification fails. Stripped and PIE executables are supported; custom packers,
 obfuscation, and shared-library builds are unvalidated. Other Linux architectures
-use syscalls. See the [bridge notes](research/linux-vdso-bridge/README.md).
+use syscalls. ARM64 also publishes the system goroutine on the signal stack;
+its runtime layout operands are verified at startup. See the [bridge notes](research/linux-vdso-bridge/README.md).
 
 ## Tests and benchmarks
 
@@ -99,7 +100,7 @@ go vet ./...
 go test -run '^$' -bench . -benchmem -count=5
 ```
 
-On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
+On Linux amd64/arm64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
 `BenchmarkLinuxCoarseSyscall` measures the syscall fallback.
 
 Run benchmarks on an otherwise idle machine. Compare `BenchmarkSince` with
@@ -116,7 +117,7 @@ by clock family, with OS and architecture suffixes selecting native implementati
 - `doc.go`: package documentation.
 - `instant.go` and `instant_*`: elapsed-time API, tick conversion, and platform readers.
 - `wall.go` and `wall_*`: wall-time API, platform readers, and standard-library fallbacks.
-- `vdso_linux_*` and `asmcgocall_linux_amd64.go`: Linux bridge shared by both clock families.
+- `vdso_linux_*` and `asmcgocall_linux*.go`: Linux bridge shared by both clock families.
 - `internal/darwinwall/`: portable XNU calendar arithmetic, tested with synthetic mappings.
 - `*_test.go`: adjacent correctness tests; `coarsetime_bench_test.go` covers both public clock families.
 - `research/`: experiments and retained evidence, indexed by topic and adoption status.

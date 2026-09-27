@@ -1,4 +1,4 @@
-//go:build !purego && linux && amd64
+//go:build !purego && linux && (amd64 || arm64)
 
 package coarsetime
 
@@ -9,8 +9,9 @@ import (
 
 // The local ABI0 trampoline tail-jumps to the runtime bridge resolved at startup.
 // The runtime switches to an ABI-aligned system stack and restores Go's stack
-// and g afterwards. vDSO functions cannot call back into Go. No private runtime
-// struct offsets or static references to runtime.asmcgocall are used.
+// and g afterwards. vDSO functions cannot call back into Go. ARM64 additionally
+// publishes g on the signal stack using verified runtime layout operands.
+// There are no static references to runtime.asmcgocall.
 //
 //go:noescape
 func asmcgocall(fn, arg unsafe.Pointer) int32

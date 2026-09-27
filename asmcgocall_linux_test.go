@@ -1,4 +1,4 @@
-//go:build !purego
+//go:build !purego && linux && (amd64 || arm64)
 
 package coarsetime
 
@@ -28,7 +28,7 @@ func TestAsmcgocallResolution(t *testing.T) {
 	}
 	fn := runtime.FuncForPC(pc)
 	file, _ := fn.FileLine(pc)
-	if fn.Name() != "runtime.asmcgocall" || !strings.HasSuffix(file, "runtime/asm_amd64.s") {
+	if fn.Name() != "runtime.asmcgocall" || !strings.HasSuffix(file, "runtime/asm_"+runtime.GOARCH+".s") {
 		t.Fatalf("resolved %s in %s instead of the ABI0 assembly implementation", fn.Name(), file)
 	}
 	if pc, err := resolveAsmcgocall(f, 0); pc != 0 || err == nil {
