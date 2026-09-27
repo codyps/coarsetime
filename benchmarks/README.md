@@ -6,6 +6,32 @@ It contains main-branch measurements and raw evidence, separated by runner,
 exact Go version, benchmark harness, and OS/CPU/image environment. CI runs on
 Linux, macOS, and Windows, each on amd64 and arm64.
 
+## Comparing multiple benchmarks
+
+Select any combination of **Platforms** and **Operations** with the checkboxes;
+the **All** buttons select a complete group. The chart and tables show each
+selected platform/operation separately. **Combine operations** can instead show
+their **sum**, **mean (average)**, or **median** for each platform. **Chart metric**
+switches between time and stdlib/coarsetime speedup. Time charts use solid lines
+for coarsetime and matching dashed lines for stdlib.
+
+Aggregates operate on each selected operation's recorded median ns/op, with equal
+weights, within one platform and CI run. Each operation contributes its stdlib
+alternative, so `time.Now()` counts twice when both `NowInstant` and `Now` are
+selected. Aggregate speedup divides the aggregated stdlib time by aggregated
+coarsetime time; it does not average the individual speedups. These summaries do
+not measure a combined workload. Individual-operation speedups retain the stored
+median of per-round ratios.
+Allocation columns remain available for individual operations; aggregate views
+leave these columns blank rather than imply a measured combined workload.
+
+The default environment filter uses the latest environment for each selected
+platform. **All environments** keeps older images/CPUs visible as separate series,
+without joining measurements from different environments into one line. Go
+version and harness remain exact selections. Points from the same CI run align
+on the chart, and a platform with missing data is reported rather than filled
+with zero or an older Go version. Clearing either checkbox group clears results.
+
 ## Workflows
 
 - `Benchmarks` runs on main pushes, pull requests, manual dispatch, and Monday's
@@ -94,6 +120,7 @@ Run local checks with:
 ```sh
 python -m unittest discover -s benchmarks -p 'test_*.py' -v
 node --check benchmarks/dashboard.js
+node --test benchmarks/dashboard-data.test.js
 ```
 
 For a native end-to-end smoke run, provide two separate checkouts (or the same

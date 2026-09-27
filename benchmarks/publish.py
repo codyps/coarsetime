@@ -161,7 +161,7 @@ def save_history(records, sources, run, repo):
                     entries.append({key: record[key] for key in ("timestamp", "runner", "go_selector", "environment", "harness", "commits", "summary", "run_url", "run_id", "run_attempt")} | {"file": path.name})
                 entries.sort(key=lambda e: (e["run_id"], e["run_attempt"]))
                 (data / "index.json").write_text(json.dumps(entries), encoding="utf-8")
-                for asset in ("index.html", "dashboard.js"):
+                for asset in ("index.html", "dashboard-data.js", "dashboard.js"):
                     shutil.copyfile(HERE / asset, worktree / asset)
                 (worktree / ".nojekyll").touch()
                 git("add", "--all", cwd=worktree)

@@ -28,6 +28,7 @@ jobs:
           python-version: '3.13'
       - run: python -m unittest discover -s benchmarks -p 'test_*.py' -v
       - run: node --check benchmarks/dashboard.js
+      - run: node --test benchmarks/dashboard-data.test.js
 
   measure:
     name: ${{ matrix.runner }} / Go ${{ matrix.go }}

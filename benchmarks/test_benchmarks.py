@@ -132,6 +132,7 @@ class AnalysisTests(unittest.TestCase):
                 run, record = fixture()
                 publish.save_history([record], [source], run, "owner/repo")
                 first = git("--git-dir", str(remote), "rev-parse", "benchmarks").strip()
+                self.assertIn("BenchmarkData", git("--git-dir", str(remote), "show", "benchmarks:dashboard-data.js"))
                 publish.save_history([record], [source], run, "owner/repo")
                 self.assertEqual(first, git("--git-dir", str(remote), "rev-parse", "benchmarks").strip())
                 run["id"] = 43
