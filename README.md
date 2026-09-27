@@ -82,7 +82,7 @@ concurrent updates, or an out-of-window approximate sample. No polling loop is
 used. Switching back from a precise fallback to an approximate sample can also
 move wall time backward without an OS clock adjustment. See the
 [calendar reader notes](research/darwin/calendar/README.md) for
-source evidence and validation limits; live Darwin performance is not yet measured.
+source evidence, native Intel measurements, and validation limits.
 
 ## Tests and benchmarks
 

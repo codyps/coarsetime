@@ -73,16 +73,26 @@ is compared with an independent arbitrary-precision calculation.
 
 Darwin-specific tests exercise the production selection/fallback paths with
 synthetic records, and sample the real shared page against Go wall time. The
-live test logs the acceptance count; setting `COARSETIME_REQUIRE_DARWIN_WALL=1`
+live test spreads ten sampling bursts across more than one second, covering
+more than one interpolation window rather than just a tight startup loop. It
+logs the acceptance count; setting `COARSETIME_REQUIRE_DARWIN_WALL=1`
 requires at least one accepted snapshot rather than allowing a fallback-only run.
 
-This change was developed on Windows. Cross-compilation and portable tests do
-not validate a live Darwin mapping, real suspend/resume, NTP slews, or clock
-steps. **Native Darwin latency and fallback rates remain unmeasured.** Do not
-reuse the historical cached-wall benchmark numbers for this implementation.
-CI is configured to require a live accepted snapshot on both Apple Silicon
-(`macos-latest`) and Intel (`macos-15-intel`), but those jobs have not run for
-this uncommitted change.
+The initial change was developed on Windows; native validation followed on
+2026-09-27. On Intel macOS 15.7.9 (24G830), Core i7-4960HQ, Go 1.26.6, the
+extended live test accepted 10000/10000 snapshots. Default, purego, race (both
+build modes), checkptr=2, cgo-disabled tests, and default/purego vet passed.
+Darwin/arm64 default and purego test binaries also cross-compiled successfully.
+
+[CI for the initial implementation](https://github.com/codyps/coarsetime/actions/runs/36325441150)
+also passed all four native Darwin jobs: Intel and Apple Silicon with Go
+1.23.12 and 1.27.1, including race detection and required live calendar reads.
+Intel accepted 10000/10000 samples in both jobs; ARM64 accepted 9990/10000
+and 9982/10000 respectively. CI now also runs checkptr=2 on both architectures.
+The run's Linux/amd64 Go 1.27.1 linker failures are unrelated to the Darwin reader.
+
+These checks do not validate real suspend/resume, NTP slews, or clock steps.
+Do not reuse historical cached-wall benchmark numbers for this implementation.
 
 On each Intel and Apple Silicon Mac, from the repository root:
 
@@ -100,6 +110,24 @@ Compare the ordinary public `BenchmarkUnixNano` to the standard-library control;
 the diagnostic benchmark adds miss-count bookkeeping. Also exercise idle time,
 CPU load, sleep/resume, and controlled clock changes on a disposable test host.
 No system clock settings were changed during development.
+
+On the Intel host above, five 500 ms samples with `GOMAXPROCS=1` gave these
+medians, all with zero allocations:
+
+| Benchmark | Median ns/op |
+| --- | ---: |
+| `UnixNano` | 10.19 |
+| `Now` | 15.11 |
+| `DarwinCalendarRead` (includes fallback accounting) | 8.971 |
+| `DarwinStandardUnixNano` | 91.21 |
+| `TimeNow` | 93.23 |
+
+Calendar fallback rates ranged from 0.001330% to 0.002326% in this tight-loop
+workload. [Raw output](native-intel.txt) was collected with the benchmark command
+above, adding `GOMAXPROCS=1 -benchtime=500ms -count=5` (the environment assignment
+precedes `go test`). Results were noisy, especially `TimeNow` (89.41–294.1 ns/op),
+and are host/workload observations, not a latency or fallback-rate guarantee.
+Apple Silicon latency and fallback rates remain unmeasured.
 
 `BenchmarkSyntheticRead` measures Go-owned test memory only. It is useful for
 the snapshot/arithmetic cost but cannot establish Darwin latency or hit rate:

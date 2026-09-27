@@ -30,6 +30,9 @@ jobs:
       - name: Race detector
         if: runner.os == 'Linux' || runner.os == 'macOS'
         run: go test -race ./...
+      - name: Darwin pointer checks
+        if: runner.os == 'macOS'
+        run: go test -gcflags=all=-d=checkptr=2 ./...
       - name: Pure Go race detector
         if: runner.os == 'Linux'
         run: go test -race -tags=purego ./...
