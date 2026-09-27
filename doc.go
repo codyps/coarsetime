@@ -5,7 +5,8 @@
 // independently. No calibration, polling goroutine, or manual refresh is needed.
 //
 // Default Darwin builds use the Mach approximate clock; Linux uses
-// CLOCK_MONOTONIC_COARSE. Both exclude system sleep. Windows/amd64 reads shared
+// CLOCK_MONOTONIC_COARSE via vDSO where supported, otherwise Go's monotonic clock.
+// Both exclude system sleep. Windows/amd64 reads shared
 // interrupt time, which includes system sleep. Other platforms use Go's monotonic
 // clock, whose sleep behavior depends on the platform.
 // With the purego build tag, all platforms use Go's monotonic clock for Instants

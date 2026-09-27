@@ -1,0 +1,116 @@
+Linux runnervmoyp6c 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:12:01 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+Architecture:                            aarch64
+CPU op-mode(s):                          32-bit, 64-bit
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               ARM
+Model name:                              Neoverse-N2
+Model:                                   0
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                r0p0
+BogoMIPS:                                2000.00
+Flags:                                   fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm uscat ilrcpc flagm sb paca pacg dcpodp sve2 sveaes svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16
+L1d cache:                               256 KiB (4 instances)
+L1i cache:                               256 KiB (4 instances)
+L2 cache:                                4 MiB (4 instances)
+L3 cache:                                128 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; CSV2, BHB
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+go version go1.27.1 linux/arm64
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3381987	       177.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3384350	       177.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3376597	       177.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3385774	       177.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3380562	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3384658	       177.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3379894	       177.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3385837	       177.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3372436	       177.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallNow-4         	 3380194	       177.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8285620	        72.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8285968	        72.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8292032	        72.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8288613	        72.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8287591	        72.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8282437	        72.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8284011	        73.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8279744	        72.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8226954	        72.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNow-4            	 8282136	        72.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3433789	       175.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3425322	       175.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3430410	       175.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3435508	       174.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3432030	       174.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3433674	       174.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3426456	       175.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3438717	       174.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3431046	       174.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/SyscallUnixNano-4    	 3432926	       174.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8355956	        71.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8377915	        71.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8381454	        71.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8376573	        71.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8339644	        71.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8384622	        71.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8369584	        71.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8387325	        71.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8383023	        71.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxWallFallback/TimeNowUnixNano-4    	 8387992	        71.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3409827	       175.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3410138	       176.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3412216	       176.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3403021	       175.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3407640	       176.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3406065	       175.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3408812	       176.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3411379	       175.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3406364	       175.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/Syscall-4         	 3408945	       176.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16381233	        36.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16335284	        36.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16349732	        36.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16329334	        36.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16396644	        36.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16386838	        36.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16326974	        36.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16352206	        36.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16104590	        36.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/TimeSince-4       	16358713	        36.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15579640	        38.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15598740	        38.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15598768	        38.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15594248	        38.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15612094	        38.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15561079	        38.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15595227	        38.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15595654	        38.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15587658	        38.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxInstantFallback/NowInstant-4      	15603348	        38.46 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/codyps/coarsetime	49.634s
