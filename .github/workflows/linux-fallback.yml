@@ -21,6 +21,17 @@ jobs:
       - uses: actions/setup-go@v7
         with:
           go-version: ${{ matrix.go }}
+      - name: Validate native Linux
+        run: |
+          go test ./...
+          go test -tags=purego ./...
+          go vet ./...
+          go test -gcflags=all=-d=checkptr=2 ./...
+      - name: Validate 32-bit Linux fallback
+        if: matrix.os == 'ubuntu-latest'
+        env:
+          GOARCH: '386'
+        run: go test ./...
       - name: Measure syscall and Go wall clocks
         shell: bash
         run: |
@@ -29,7 +40,7 @@ jobs:
             uname -a
             lscpu
             go version
-            go test -run '^$' -bench '^BenchmarkLinuxWallFallback$' -benchmem -benchtime=500ms -count=10 .
+            go test -run '^$' -bench '^BenchmarkLinux(Wall|Instant)Fallback$' -benchmem -benchtime=500ms -count=10 .
           } 2>&1 | tee results.txt
       - uses: actions/upload-artifact@v7
         with:

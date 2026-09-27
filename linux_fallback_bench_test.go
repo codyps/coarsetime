@@ -31,3 +31,18 @@ func BenchmarkLinuxWallFallback(b *testing.B) {
 		}
 	})
 }
+
+func BenchmarkLinuxInstantFallback(b *testing.B) {
+	b.Run("Syscall", BenchmarkLinuxCoarseSyscall)
+	b.Run("TimeSince", func(b *testing.B) {
+		for n := 0; n < b.N; n++ {
+			durationSink = time.Since(linuxOrigin)
+		}
+	})
+	b.Run("NowInstant", func(b *testing.B) {
+		saved := linuxCoarseClock
+		linuxCoarseClock = false
+		defer func() { linuxCoarseClock = saved }()
+		BenchmarkNowInstant(b)
+	})
+}
