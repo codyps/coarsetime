@@ -66,6 +66,10 @@ Sources checked against XNU `xnu-12377.1.9`:
 
 ## Validation and performance
 
+A full current-production Intel benchmark run (default, purego, and synthetic
+calendar reads) is recorded in [2026-09-27 benchmark results](benchmarks-2026-09-27/README.md),
+including raw samples, ranges, fallback metrics, and reproduction commands.
+
 Portable tests cover the five-field layout, changed/invalidated anchors, samples
 older than an anchor, expiry, zero rates, fractional carry, overflow, simulated
 wall steps and rate changes, and concurrent publication. Randomized arithmetic

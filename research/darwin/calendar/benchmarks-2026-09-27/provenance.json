@@ -1,0 +1,151 @@
+{
+  "commit": "408e5aefbb0a6a541ae07cffd4c00e7ca7aac6a3",
+  "go": "go1.26.6 darwin/amd64",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t15.7.9\nBuildVersion:\t\t24G830\n",
+  "cpu": "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz",
+  "GOMAXPROCS": 1,
+  "rounds": 5,
+  "benchtime": "500ms",
+  "binary_sha256": {
+    "default": "00a58def6ca73e676bc854faf29a5e3fdabdaeacf7de4f661e10cf41205cece2",
+    "purego": "6039b928a59f563f09f14b54114ec66d507b53e1020a10e2ccabcc3590a9d69e",
+    "synthetic": "3a0a6c6efba92c2a3fc550c8d451a59f324c56e60b8a17f0ede75b281b955c0d"
+  },
+  "commands": [
+    [
+      "/tmp/coarsetime-darwin-amd64.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64-purego.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwinwall.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwinwall.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64-purego.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64-purego.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwinwall.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwinwall.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64-purego.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwin-amd64-purego.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ],
+    [
+      "/tmp/coarsetime-darwinwall.test",
+      "-test.run=^$",
+      "-test.bench=.",
+      "-test.benchmem",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=1"
+    ]
+  ]
+}

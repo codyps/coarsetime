@@ -1,0 +1,100 @@
+# Round 1
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkNowInstant             	901545126	         0.6690 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince                  	160550618	         3.721 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince              	15946100	        38.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 7154593	        76.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstantParallel     	334715034	         1.787 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSinceParallel      	17120768	        38.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkClockProgress          	137000862	         4.479 ns/op	    588657 max-step-ns	        99.96 repeat-%	       0 B/op	       0 allocs/op
+BenchmarkNow                    	47262444	        13.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	57624819	         9.704 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowParallel            	44957272	        15.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowFuncValue           	46271846	        14.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue      	60171856	         9.578 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	75349518	         7.906 ns/op	         0.001857 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7517080	        78.11 ns/op	       0 B/op	       0 allocs/op
+PASS
+# Round 2
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkNowInstant             	887612292	         0.6664 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince                  	162896733	         3.809 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince              	16736209	        36.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 7563861	        77.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstantParallel     	335685777	         1.807 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSinceParallel      	16376194	        36.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkClockProgress          	164699856	         3.679 ns/op	   8252834 max-step-ns	        99.99 repeat-%	       0 B/op	       0 allocs/op
+BenchmarkNow                    	50074009	        12.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	68709789	         8.959 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowParallel            	45138578	        13.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowFuncValue           	45693010	        13.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue      	67105581	        11.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	74083420	         9.330 ns/op	         0.003566 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7251925	        84.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+# Round 3
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkNowInstant             	835136101	         0.7958 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince                  	145848252	         4.221 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince              	15755418	        36.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 7663734	        76.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstantParallel     	331323454	         1.798 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSinceParallel      	16263992	        36.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkClockProgress          	166887258	         3.714 ns/op	   8706294 max-step-ns	        99.99 repeat-%	       0 B/op	       0 allocs/op
+BenchmarkNow                    	43933513	        11.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	70649017	         8.792 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowParallel            	45546064	        13.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowFuncValue           	45900092	        13.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue      	63749644	         9.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	77235404	         7.694 ns/op	         0.0009516 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7682575	        79.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+# Round 4
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkNowInstant             	847326123	         0.6619 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince                  	162362860	         3.675 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince              	16827762	        36.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 7858134	        82.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstantParallel     	319986802	         1.889 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSinceParallel      	16172710	        37.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkClockProgress          	154314339	         4.672 ns/op	   1383796 max-step-ns	        99.96 repeat-%	       0 B/op	       0 allocs/op
+BenchmarkNow                    	48637330	        12.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	67649958	         9.209 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowParallel            	40851218	        14.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowFuncValue           	45963067	        15.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue      	55757078	        10.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	80410867	         7.974 ns/op	         0.02900 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7580881	        79.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+# Round 5
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkNowInstant             	885581066	         0.6667 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince                  	164044963	         3.666 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince              	16313268	        36.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 7734986	        77.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstantParallel     	335636469	         1.799 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSinceParallel      	16548147	        37.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkClockProgress          	145712442	         3.870 ns/op	   7477294 max-step-ns	        99.99 repeat-%	       0 B/op	       0 allocs/op
+BenchmarkNow                    	47033133	        13.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	68182879	         9.480 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowParallel            	44022602	        13.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowFuncValue           	46633191	        13.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNanoFuncValue      	64311673	         9.543 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	79068769	         7.848 ns/op	         0.001762 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7594867	        79.00 ns/op	       0 B/op	       0 allocs/op
+PASS
