@@ -5,6 +5,40 @@ unfinished Darwin sketch. It compares clock sources independently of the public
 API, which now has its own benchmarks at the repository root.
 See [the implementation plan](plan.md).
 
+## Interrupt-time adoption
+
+The parent package now uses the shared interrupt counter for Windows/amd64
+`NowInstant`, retaining 100 ns ticks until duration conversion. Other Windows
+architectures and `purego` builds retain the Go monotonic fallback. See the
+[platform documentation](../../README.md#platforms) for source links and semantics.
+
+Public API measurements on 2026-09-27, Go 1.27.0, Windows/amd64,
+AMD Ryzen 9 7940HS (medians, ns/op):
+
+| Operation | Native (5 runs) | purego / previous elapsed path (3 runs) |
+| --- | ---: | ---: |
+| `NowInstant` | 2.003 | 7.198 |
+| `Since` | 5.320 | 11.06 |
+| `time.Since` | 7.228 | 7.352 |
+
+Both builds used `go test -run '^$' -bench
+'^(BenchmarkNowInstant|BenchmarkSince|BenchmarkTimeSince)$' -benchmem
+-benchtime=300ms -cpu=1`, with `-count=5` for native and
+`-tags=purego -count=3` for the fallback. Runs were sequential, with no concurrent
+builds or tests; no CPU affinity or power-policy changes. All reported zero
+allocations. These are host-specific observations, not performance guarantees.
+
+Native and purego tests and vet passed. The native test brackets shared-counter
+reads with the Windows `QueryInterruptTime` API; generic tests exercise progress,
+concurrent reads, signed differences, and saturation. Suspend/resume and live
+wall-clock changes were not exercised.
+
+Windows arm64/386 and Darwin amd64/arm64 test binaries cross-compiled with and
+without `purego`. Linux amd64 cross-linking failed on `runtime.asmcgocall` with
+this toolchain; the same failure was reproduced from unchanged `HEAD`.
+
+## Standalone experiment
+
 Run from this directory in PowerShell:
 
 ```powershell

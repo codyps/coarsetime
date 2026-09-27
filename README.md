@@ -56,13 +56,14 @@ Default builds use these clock sources:
 | --- | --- | --- |
 | Darwin amd64/arm64 | Mach approximate clock | XNU calendar mapping plus approximate ticks; Go fallback |
 | Linux | Kernel coarse monotonic clock | Kernel coarse realtime clock |
-| Windows amd64 | Go monotonic clock | Shared SystemTime page |
+| Windows amd64 | Shared InterruptTime counter | Shared SystemTime page |
 | Other Windows architectures | Go monotonic clock | Go wall clock |
 | Other platforms | Go monotonic clock | Go wall clock |
 
-The native Darwin and Linux elapsed clocks exclude suspend time. Elsewhere,
-suspend behavior follows Go's clock. This is not a portable clock for deadlines
-that must include time spent asleep. Some optimized paths depend on OS layouts
+The native Darwin and Linux elapsed clocks exclude suspend time. The native
+Windows amd64 clock includes it. Elsewhere, suspend behavior follows Go's clock.
+This is not a portable clock for deadlines that must include time spent asleep.
+Some optimized paths depend on OS layouts
 or private Go runtime bridges; compatibility can vary with the toolchain.
 
 Build with `-tags=purego` to use Go's standard-library clocks on every platform.
@@ -86,6 +87,17 @@ If the vDSO is unavailable or rejects a call, Linux amd64 uses a syscall with
 the same clock ID. Other Linux architectures use syscalls directly. See the
 [bridge investigation](research/linux-vdso-bridge/README.md) for implementation
 details, compatibility tests, and measurements.
+On Windows amd64, `NowInstant` directly reads `KUSER_SHARED_DATA.InterruptTime`
+at `0x7ffe0008`, using the atomic 64-bit load described in
+[Go's shared-page definitions](https://go.dev/src/runtime/time_windows.h) and
+used by [Go's monotonic reader](https://go.dev/src/runtime/sys_windows_amd64.s).
+Instants retain native 100 ns ticks; `Sub` and `Since` convert differences to
+nanoseconds. The counter is unaffected by wall-clock adjustments, and its units
+do not imply 100 ns resolution. See Microsoft's
+[QueryInterruptTime documentation](https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryinterrupttime)
+and [interrupt-time overview](https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time).
+This is a direct OS-layout dependency, not a call to the documented Windows API.
+
 
 ## Tests and benchmarks
 
