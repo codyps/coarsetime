@@ -45,13 +45,8 @@ monotonic component**. Wall time can jump backwards or forwards; use Instants
 for elapsed-time measurements. Wall timestamps have the signed Unix-nanosecond
 range, roughly 1678–2262, subject to OS clock limits.
 
-Wall time comes from the OS on every platform. There is no local calibration,
-background polling, or application-managed refresh. Instants cannot be converted
-to wall time: capture `Now()` separately when you need a calendar timestamp.
-
-**API change:** `Instant.Time()` and `RefreshWallClock()` have been removed.
-Replace the former with a wall timestamp captured at the event; remove refresh
-calls. The old conversion depended on a mutable global clock correction.
+Wall time comes from the OS on every call. Capture `Now()` separately when you
+need a calendar timestamp; Instants cannot be converted to wall time.
 
 ## Platforms
 
@@ -70,38 +65,27 @@ suspend behavior follows Go's clock. This is not a portable clock for deadlines
 that must include time spent asleep. Some optimized paths depend on OS layouts
 or private Go runtime bridges; compatibility can vary with the toolchain.
 
-Build with `-tags=purego` for a standard-library fallback on **every platform**.
-It disables this package's assembly and native clock access. Instants use Go's
-monotonic clock; `Now` and `UnixNano` read Go's wall clock directly, without
-requiring refreshes. The API is unchanged, but speed, resolution, and suspend
-behavior may differ.
+Build with `-tags=purego` to use Go's standard-library clocks on every platform.
+This disables the package's assembly and native clock access. The API is
+unchanged, but speed, resolution, and suspend behavior may differ.
 
-The Darwin reader makes one attempt to read a consistent, usable calendar
-mapping from XNU's shared page. It falls back to Go's wall clock on invalidation,
-concurrent updates, or an out-of-window approximate sample. No polling loop is
-used. Switching back from a precise fallback to an approximate sample can also
-move wall time backward without an OS clock adjustment. See the
-[calendar reader notes](research/darwin/calendar/README.md) for
-source evidence, native Intel measurements, and validation limits.
+Darwin reads XNU's shared calendar page once per call and falls back to Go's
+wall clock if the sample is unusable. Switching between these sources can move
+wall time backward even without an OS clock adjustment. See the
+[calendar reader notes](research/darwin/calendar/README.md) for implementation
+details and validation limits.
 
-Linux amd64 uses the vDSO address already resolved by Go's runtime through the
-compatibility linkname `runtime.vdsoClockgettimeSym`. It does not read
-`/proc/self/maps` or `/proc/self/mem` to discover the vDSO. Calls use Go's
-`runtime.asmcgocall` system-stack bridge. On every supported Go version,
-initialization resolves the bridge's
-assembly entry from `/proc/self/exe`, verifies it against the running process,
-and caches its address for indirect calls. This avoids the direct runtime-symbol
-references rejected by Go 1.27 and works with stripped and PIE executables,
-without cgo or special linker flags. Reads remain allocation-free.
+Linux amd64 reads the coarse clocks through the kernel vDSO, using Go's runtime
+to locate and call it. Initialization requires `/proc/self/exe` to resolve and
+verify the runtime bridge, and panics if verification fails. This path depends
+on Go's private runtime ABI and executable metadata. Stripped and PIE executables
+are supported; custom packers, obfuscation, and shared-library builds are not
+validated. Clock reads are allocation-free.
 
-This depends on Go's private runtime ABI, vDSO variable, and executable metadata.
-The bridge resolver still requires `/proc/self/exe`. Initialization
-panics if the bridge cannot be verified; a Go compatibility failure does not
-silently select a syscall. Custom packers, obfuscation, and shared-library builds
-are not validated. If the kernel vDSO itself is unavailable or rejects a call,
-Linux uses a syscall with the same clock ID; other Linux architectures use that
-syscall path directly. See the [bridge investigation](research/linux-vdso-bridge/README.md)
-for implementation details, compatibility tests, and measurements.
+If the vDSO is unavailable or rejects a call, Linux amd64 uses a syscall with
+the same clock ID. Other Linux architectures use syscalls directly. See the
+[bridge investigation](research/linux-vdso-bridge/README.md) for implementation
+details, compatibility tests, and measurements.
 
 ## Tests and benchmarks
 
