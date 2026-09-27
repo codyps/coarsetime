@@ -8,24 +8,29 @@ error retain the syscall fallback. `purego` retains standard-library clocks.
 
 The shared ELF/pclntab resolver locates and verifies the ABI0 implementation of
 `runtime.asmcgocall` in `runtime/asm_arm64.s`, including relocation in PIE
-executables. An indirect tail branch enters that bridge with its original Go
-argument frame. The runtime switches to its system stack and restores the
-goroutine stack afterwards.
+executables. A local ABI0 wrapper invokes that bridge indirectly. The runtime
+switches to its system stack and restores the goroutine stack afterwards.
 
 Unlike amd64, ARM64 also needs to publish `g` at the bottom of the signal stack
 while executing vDSO code. Without cgo, `runtime.sigFetchG` recovers `g` from
-that slot when a signal interrupts the vDSO. The C ABI trampoline saves the
-previous slot value, publishes the current system goroutine, calls the vDSO,
-then restores the slot. It skips publication if there is no signal goroutine
+that slot when a signal interrupts the vDSO. Before the stack switch, the ABI0
+wrapper saves the previous slot value and publishes the original goroutine.
+It restores the slot after returning from the runtime bridge. It skips publication if there is no signal goroutine
 or execution is already on that goroutine. With cgo, signal handling uses TLS;
 publishing and restoring the slot is harmless.
 
-The trampoline preserves the C ABI's callee-saved registers, including Go's
+The wrapper also saves and publishes `m.vdsoPC` and `m.vdsoSP` with the original
+Go caller PC/SP, restoring both on return. This lets CPU profiling unwind the
+user stack when a signal interrupts the vDSO instead of reporting `_VDSO`.
+
+The C ABI tail-call trampolines preserve the C ABI's callee-saved registers, including Go's
 assembler scratch register R27, and uses an aligned runtime system stack.
 It does not call the vDSO on a growable goroutine stack.
 
 The `g.m` and `m.gsignal` offsets are decoded from the verified runtime bridge's
-initial adjacent loads, register comparison, and conditional branch. Unknown
+initial adjacent loads, register comparison, and conditional branch. The
+`m.vdsoPC` and `m.vdsoSP` offsets come from the checked save/publish sequence in
+`runtime.nanotime1`, including matching load/store operands. Unknown
 instruction sequences fail initialization rather than guessing a layout.
 `g.stack.lo` remains the first word of `g`, also a runtime/cgo layout dependency.
 This is still a private runtime ABI dependency, not an exported Go guarantee.
@@ -48,6 +53,9 @@ The shared Linux tests bracket readings with the corresponding kernel syscall
 and force the package-local fallback without changing the runtime's vDSO
 symbol. Profiling stress combines concurrent reads, recursive stack growth,
 GC, and all-goroutine stack traces. The benchmark job repeats it 20 times.
+A separate test inspects CPU profiles for caller attribution, rejecting lost
+`runtime._VDSO` samples. CI verifies that this test fails on the pre-review
+bridge, then passes five times on the corrected implementation.
 
 The benchmark job also traces 100,000 reads of each public clock reader and
 rejects any `clock_gettime` syscall. A traced baseline read loop must contain

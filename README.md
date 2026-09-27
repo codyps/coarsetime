@@ -89,7 +89,7 @@ Linux amd64/arm64 uses the kernel vDSO through a verified Go runtime bridge, wit
 syscall fallback. Initialization requires `/proc/self/exe` and panics if bridge
 verification fails. Stripped and PIE executables are supported; custom packers,
 obfuscation, and shared-library builds are unvalidated. Other Linux architectures
-use syscalls. ARM64 also publishes the system goroutine on the signal stack;
+use syscalls. ARM64 also publishes the original goroutine and caller traceback metadata;
 its runtime layout operands are verified at startup. See the [bridge notes](research/linux-vdso-bridge/README.md).
 
 ## Tests and benchmarks

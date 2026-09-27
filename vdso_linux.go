@@ -7,10 +7,10 @@ import (
 	"unsafe"
 )
 
-// The local ABI0 trampoline tail-jumps to the runtime bridge resolved at startup.
+// The local ABI0 wrapper invokes the runtime bridge resolved at startup.
 // The runtime switches to an ABI-aligned system stack and restores Go's stack
 // and g afterwards. vDSO functions cannot call back into Go. ARM64 additionally
-// publishes g on the signal stack using verified runtime layout operands.
+// publishes the original g and caller PC/SP using verified runtime layout operands.
 // There are no static references to runtime.asmcgocall.
 //
 //go:noescape

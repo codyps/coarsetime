@@ -161,7 +161,7 @@ jobs:
         shell: bash
         run: |
           git worktree add --detach "$RUNNER_TEMP/pre-review" b58100fca23f174a1c4b5e114b910e2b2300cfb1
-          cp vdso_linux_arm64_profile_test.go "$RUNNER_TEMP/pre-review/"
+          cp vdso_profile_linux_arm64_test.go "$RUNNER_TEMP/pre-review/"
           (cd "$RUNNER_TEMP/pre-review" && go test -c -o "$RUNNER_TEMP/pre-review.test" .)
           if "$RUNNER_TEMP/pre-review.test" -test.run '^TestVDSOProfileAttribution$' -test.v > arm64-profile-regression.txt 2>&1; then
             echo 'Old bridge unexpectedly passed the profiling regression test'
