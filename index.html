@@ -7,18 +7,27 @@
   <title>coarsetime benchmarks</title>
   <style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
-    body { max-width: 1100px; margin: 40px auto; padding: 0 20px; line-height: 1.5; }
+    body { max-width: 1250px; margin: 40px auto; padding: 0 20px; line-height: 1.5; }
     h1 { letter-spacing: -.04em; margin-bottom: 0; } p { max-width: 85ch; }
     .filters { display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0; }
     label { display: flex; flex-direction: column; gap: 5px; font-size: .9rem; }
     select { padding: 8px; max-width: 340px; } a { color: #328ad6; }
+    .choices { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+    fieldset { flex: 1; min-width: 240px; border: 1px solid #8886; border-radius: 8px; padding: 12px 16px; }
+    legend { font-weight: 600; } .checks { display: grid; gap: 8px; margin-top: 12px; }
+    .checks label { flex-direction: row; align-items: center; }
+    button { cursor: pointer; padding: 5px 10px; margin-right: 6px; }
+    #legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .85rem; }
+    #legend li { display: flex; align-items: center; gap: 7px; }
+    .swatch { width: 14px; height: 14px; flex-shrink: 0; border-radius: 3px; }
     table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
     th, td { padding: 10px; border-bottom: 1px solid #8886; text-align: right; }
     th:first-child, td:first-child { text-align: left; }
-    .scroll { overflow-x: auto; } canvas { width: 100%; height: 280px; }
+    .scroll { overflow-x: auto; } canvas { width: 100%; height: 320px; }
     .muted { opacity: .75; } #status { font-weight: 600; }
     details { margin: 20px 0; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   </style>
+  <script src="dashboard-data.js" defer></script>
   <script src="dashboard.js" defer></script>
 </head>
 <body>
@@ -26,20 +35,37 @@
   <p>Native clock reads compared with Go's standard library. Measurements are specific to the selected runner, exact Go version, harness, and environment. Lower ns/op is better; higher stdlib/coarsetime speedup is better.</p>
   <p class="muted">These APIs trade precision and semantics for speed. Timings do not establish clock accuracy or freshness. Historical charts can reflect runner changes; PR comments compare base and head within the same job.</p>
   <p id="status" role="status">Loading measurements…</p>
+  <div class="choices">
+    <fieldset><legend>Platforms</legend>
+      <button type="button" data-target="runners" data-select="all">All platforms</button>
+      <button type="button" data-target="runners" data-select="none">Clear platforms</button>
+      <div id="runners" class="checks"></div>
+    </fieldset>
+    <fieldset><legend>Operations</legend>
+      <button type="button" data-target="operations" data-select="all">All operations</button>
+      <button type="button" data-target="operations" data-select="none">Clear operations</button>
+      <div id="operations" class="checks"></div>
+    </fieldset>
+  </div>
   <div class="filters">
-    <label>Runner<select id="runner"></select></label>
     <label>Go version<select id="go"></select></label>
     <label>Harness<select id="harness"></select></label>
     <label>Environment<select id="environment"></select></label>
-    <label>Operation<select id="operation"></select></label>
+    <label>Combine operations<select id="aggregation">
+      <option value="individual">Show separately</option><option value="sum">Sum</option>
+      <option value="mean">Mean (average)</option><option value="median">Median</option>
+    </select></label>
+    <label>Chart metric<select id="metric"><option value="time">Time (ns)</option><option value="speedup">Speedup (×)</option></select></label>
   </div>
+  <p id="aggregation-note" class="muted"></p>
   <h2>Latest measurements</h2>
   <p id="latest"></p>
-  <div class="scroll"><table><thead><tr><th>Operation</th><th>coarsetime ns/op</th><th>Stdlib ns/op</th><th>Speedup</th><th>B/op</th><th>allocs/op</th></tr></thead><tbody id="measurements"></tbody></table></div>
+  <div class="scroll"><table><thead><tr><th>Platform / operation</th><th>coarsetime ns</th><th>Stdlib ns</th><th>Speedup</th><th>B/op</th><th>allocs/op</th><th>Date / commit</th></tr></thead><tbody id="measurements"></tbody></table></div>
   <h2>History</h2>
-  <p><span style="color:#328ad6">● coarsetime</span> &nbsp; <span style="color:#de8c35">● stdlib</span> · Median ns/op; samples ordered by run. Exact values and raw samples are in the table.</p>
+  <p id="chart-note"></p>
+  <ul id="legend" aria-label="Chart series"></ul>
   <canvas id="chart" role="img" aria-label="Benchmark history chart. Values are available in the following table."></canvas>
-  <div class="scroll"><table><thead><tr><th>Date / commit</th><th>coarsetime ns/op</th><th>Stdlib ns/op</th><th>Speedup</th><th>Evidence</th></tr></thead><tbody id="history"></tbody></table></div>
-  <details><summary>Latest environment metadata</summary><pre id="metadata"></pre></details>
+  <div class="scroll"><table><thead><tr><th>Date / commit</th><th>Platform / operation</th><th>coarsetime ns</th><th>Stdlib ns</th><th>Speedup</th><th>Evidence</th></tr></thead><tbody id="history"></tbody></table></div>
+  <details><summary>Selected environment metadata</summary><pre id="metadata"></pre></details>
 </body>
 </html>
