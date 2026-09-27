@@ -109,7 +109,7 @@ See [research](research/README.md) for implementation details and experiments.
 
 ## License
 
-Copyright (c) 2026 coarsetime contributors.
+Copyright 2026 coarsetime contributors.
 Licensed under the Open Software License version 3.0 (OSL-3.0).
 See [LICENSE](LICENSE) for the full license text.
 
