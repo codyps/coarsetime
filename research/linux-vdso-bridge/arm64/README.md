@@ -72,19 +72,19 @@ steady-state reads, not initialization, and are specific to the hosted VM.
 
 ## Results: 2026-09-27
 
-[GitHub Actions run](https://github.com/codyps/coarsetime/actions/runs/36338015400),
-candidate `ba52f42`, Go 1.27.1, Neoverse-N2 (4 vCPUs), Linux
+[GitHub Actions run](https://github.com/codyps/coarsetime/actions/runs/36338885399),
+candidate `8469f56`, Go 1.27.1, Neoverse-N2 (4 vCPUs), Linux
 `6.17.0-1022-azure`. Medians of five samples, in ns/op:
 
 | Operation | Syscall baseline | vDSO candidate | Speedup |
 | --- | ---: | ---: | ---: |
-| `NowInstant` | 178.6 | 17.68 | 10.1x |
-| `Since` | 182.4 | 20.56 | 8.9x |
-| `Now` | 177.7 | 14.40 | 12.3x |
-| `UnixNano` | 175.2 | 14.37 | 12.2x |
-| `time.Since` (control) | 36.58 | 36.50 | — |
-| `time.Now` (control) | 71.66 | 71.96 | — |
-| Explicit coarse syscall (control) | 175.8 | 175.4 | — |
+| `NowInstant` | 178.7 | 19.47 | 9.2x |
+| `Since` | 182.3 | 22.04 | 8.3x |
+| `Now` | 177.7 | 18.36 | 9.7x |
+| `UnixNano` | 175.1 | 18.38 | 9.5x |
+| `time.Since` (control) | 36.63 | 36.44 | — |
+| `time.Now` (control) | 71.81 | 71.63 | — |
+| Explicit coarse syscall (control) | 175.7 | 175.5 | — |
 
 Every row reported zero allocations. The performance advantage is substantial
 on this host, but the small differences between control samples are noise, not
@@ -92,7 +92,10 @@ evidence of a change to the standard library or syscall cost.
 
 All five native ARM64 Go-version jobs passed, including race detection and
 the required cgo-disabled vDSO checks. The 20 profiling/GC/stack-growth stress
-runs passed. The [vDSO trace](arm64-vdso.trace) contains zero `clock_gettime`
+runs passed. The [profile regression output](arm64-profile-regression.txt)
+shows lost caller samples on the pre-review bridge; the corrected bridge passed
+five consecutive attribution checks. These measurements include the added
+caller-metadata handling. The [vDSO trace](arm64-vdso.trace) contains zero `clock_gettime`
 syscalls across the read benchmarks; the [baseline trace](arm64-syscall.trace)
 contains 101 (100 requested reads plus benchmark calibration).
 

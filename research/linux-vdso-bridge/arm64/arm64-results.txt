@@ -91,12 +91,14 @@ go version go1.27.1 linux/arm64
     --- PASS: TestPortableAPISurface/js/wasm/purego (0.00s)
 === RUN   TestSignalOffsets
 --- PASS: TestSignalOffsets (0.00s)
+=== RUN   TestVDSOTracebackOffsets
+--- PASS: TestVDSOTracebackOffsets (0.00s)
 === RUN   TestAsmcgocallResolution
---- PASS: TestAsmcgocallResolution (0.00s)
+--- PASS: TestAsmcgocallResolution (0.01s)
 === RUN   TestAsmcgocallMissingMetadata
 --- PASS: TestAsmcgocallMissingMetadata (0.00s)
 === RUN   TestVDSOConcurrentProfiling
---- PASS: TestVDSOConcurrentProfiling (0.26s)
+--- PASS: TestVDSOConcurrentProfiling (0.29s)
 === RUN   TestLinuxCoarseClock
 --- PASS: TestLinuxCoarseClock (0.00s)
 === RUN   TestScaleTicks
@@ -114,6 +116,8 @@ go version go1.27.1 linux/arm64
 --- PASS: TestVDSO (0.00s)
 === RUN   TestLinuxSyscallFallback
 --- PASS: TestLinuxSyscallFallback (0.00s)
+=== RUN   TestVDSOProfileAttribution
+--- PASS: TestVDSOProfileAttribution (1.06s)
 === RUN   TestLinuxRealtimeClock
 --- PASS: TestLinuxRealtimeClock (0.00s)
 === RUN   TestLinuxWallSyscallFallback
@@ -130,119 +134,119 @@ case=baseline round=1
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	 3348007	       178.6 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	 3289918	       182.4 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16427965	        36.67 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8379129	        71.67 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	 3376135	       177.6 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	 3424588	       175.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3413286	       175.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	 3360307	       178.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3286306	       183.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16296381	        36.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8358177	        71.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3364491	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3392782	       175.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3410180	       175.8 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=vdso round=1
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	33682090	        17.67 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	29132692	        20.56 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16367415	        36.50 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8358278	        71.62 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	41799481	        14.40 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	41729079	        14.37 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3418951	       175.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	30796804	        19.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	27202264	        22.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16356166	        36.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8365420	        71.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	32693305	        18.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	32341327	        18.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3412689	       175.5 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=vdso round=2
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	33747428	        17.76 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	29120238	        20.58 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16414177	        36.51 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8328354	        72.09 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	41452360	        14.37 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	42159759	        14.34 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3398233	       175.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	30959670	        19.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	27284940	        22.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16336144	        36.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8288800	        71.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	32657044	        18.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	32460378	        18.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3408718	       175.8 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=baseline round=2
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	 3350226	       178.6 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	 3291969	       182.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16288597	        36.56 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8345079	        71.58 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	 3372355	       177.8 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	 3427557	       175.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3415746	       175.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	 3359938	       178.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3289477	       182.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16442810	        36.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8353248	        71.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3373726	       177.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3423294	       175.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3412922	       175.7 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=baseline round=3
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	 3356181	       178.6 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	 3290136	       182.4 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16370576	        36.58 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8377989	        71.60 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	 3375866	       177.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	 3421338	       175.4 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3412269	       175.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	 3356228	       178.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3288759	       182.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16324370	        36.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8379075	        71.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3375411	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3423278	       175.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3416019	       175.7 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=vdso round=3
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	33900014	        17.76 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	29141389	        20.57 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16527578	        37.10 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8326315	        71.96 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	41449700	        14.46 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	41782711	        14.36 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3405344	       175.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	30786385	        19.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	27196501	        22.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16377224	        36.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8353719	        71.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	32691691	        18.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	32761666	        18.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3418132	       175.5 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=vdso round=4
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	33694210	        17.33 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	29658789	        20.23 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16467579	        36.46 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8367528	        71.70 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	41445253	        14.29 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	41976672	        14.47 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3417451	       175.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	30969015	        19.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	26965150	        21.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16346985	        36.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8357437	        71.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	32623155	        18.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	32767171	        18.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3419806	       175.3 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=baseline round=4
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	 3355612	       178.9 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	 3220923	       186.1 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16399224	        36.51 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8375611	        71.68 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	 3378100	       177.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	 3424178	       175.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3412642	       176.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	 3351037	       178.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3284835	       183.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16320984	        36.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8368779	        71.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3365088	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3424042	       175.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3400272	       175.6 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=baseline round=5
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	 3359251	       178.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	 3291068	       182.4 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16370350	        36.79 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8383323	        71.66 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	 3307034	       177.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	 3424209	       175.1 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3411810	       175.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	 3356190	       178.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3291589	       182.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16374433	        36.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8366414	        71.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3377499	       177.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3419392	       175.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3413289	       175.7 ns/op	       0 B/op	       0 allocs/op
 PASS
 case=vdso round=5
 goos: linux
 goarch: arm64
 pkg: github.com/codyps/coarsetime
-BenchmarkNowInstant-4           	33797748	        17.68 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSince-4                	29160626	        20.53 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeSince-4            	16468760	        36.48 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTimeNow-4              	 8339793	        71.97 ns/op	       0 B/op	       0 allocs/op
-BenchmarkNow-4                  	38358400	        14.49 ns/op	       0 B/op	       0 allocs/op
-BenchmarkUnixNano-4             	41843031	        14.45 ns/op	       0 B/op	       0 allocs/op
-BenchmarkLinuxCoarseSyscall-4   	 3393223	       175.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant-4           	30389923	        19.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	27198078	        22.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16484263	        36.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8345882	        71.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	32512137	        18.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	32680986	        18.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3420766	       175.6 ns/op	       0 B/op	       0 allocs/op
 PASS
