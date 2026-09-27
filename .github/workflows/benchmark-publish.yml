@@ -1,0 +1,68 @@
+name: Publish benchmarks
+
+on:
+  workflow_run:
+    workflows: [Benchmarks]
+    types: [completed]
+
+permissions: {}
+
+jobs:
+  publish:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    outputs:
+      deploy: ${{ steps.publish.outputs.deploy }}
+    steps:
+      # workflow_run uses the default branch. Never check out or execute PR
+      # scripts in this privileged job. Artifacts are parsed only as data.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v8
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+          pattern: benchmark-*
+          path: incoming
+      - name: Store history or update PR comment
+        id: publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python benchmarks/publish.py incoming
+
+  pages:
+    needs: publish
+    if: needs.publish.outputs.deploy == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: benchmark-pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Read the latest accumulated branch even if runs finish out of order.
+      - uses: actions/checkout@v7
+        with:
+          ref: benchmarks
+          persist-credentials: false
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: deployment

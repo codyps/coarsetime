@@ -16,6 +16,7 @@ validation commands are documented [here](darwin/calendar/README.md).
 
 | Directory | Status | Contents | How to run code |
 | --- | --- | --- | --- |
+| [continuous-benchmarking.md](continuous-benchmarking.md) | Proposed CI design | Service comparison, native platform coverage, stdlib baselines, and measurement protocol | Design only; includes an existing-suite smoke command |
 | [darwin](darwin/README.md) | Current implementation background | Apple clock source investigation and release history | Documentation and acquisition records |
 | [darwin/calendar](darwin/calendar/README.md) | Current implementation evidence | OS-owned calendar mapping, without local correction | Root Darwin tests; portable arithmetic tests |
 | [darwin/commpage](darwin/commpage/README.md) | Adopted elapsed reader; historical measurements | Commpage reader comparisons and adoption measurements | Overlay profile `darwin-commpage` |

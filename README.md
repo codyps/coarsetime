@@ -31,6 +31,11 @@ Instants are process-local; their zero value is uninitialized. Use `Before` and
 
 ## Performance
 
+[Continuous benchmark dashboard](https://codyps.github.io/coarsetime/) ·
+[measurement protocol and PR reports](benchmarks/README.md).
+CI records native Linux, macOS, and Windows results on amd64 and arm64, with
+standard-library comparisons. PR reports measure base and head on the same worker.
+
 General guidance from measured amd64 fast paths; results depend on the OS,
 toolchain, and workload. The standard-library column provides the comparison
 for each row.
