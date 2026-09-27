@@ -1,0 +1,10 @@
+warning: Git tree '/home/nixos/p/coarsetime' is dirty
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkResolveRuntimeBridge-16    	     194	   1735271 ns/op	 2743776 B/op	    4541 allocs/op
+BenchmarkResolveRuntimeBridge-16    	     200	   1725321 ns/op	 2744656 B/op	    4541 allocs/op
+BenchmarkResolveRuntimeBridge-16    	     204	   1562592 ns/op	 2744949 B/op	    4541 allocs/op
+PASS
+ok  	github.com/codyps/coarsetime/research/linux-vdso-bridge	1.567s

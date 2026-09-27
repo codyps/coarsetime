@@ -12,6 +12,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
         go: ['1.23.x', stable]
+        include:
+          - {os: ubuntu-latest, go: '1.24.x'}
+          - {os: ubuntu-latest, go: '1.25.x'}
+          - {os: ubuntu-latest, go: '1.26.x'}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
@@ -36,6 +40,16 @@ jobs:
       - name: Pure Go race detector
         if: runner.os == 'Linux'
         run: go test -race -tags=purego ./...
+      - name: Linux vDSO bridge
+        if: runner.os == 'Linux'
+        env:
+          CGO_ENABLED: '0'
+          COARSETIME_REQUIRE_VDSO: '1'
+        run: |
+          go test -count=1 ./...
+          go test -count=1 -ldflags='-s -w' ./...
+          go test -count=1 -buildmode=pie -trimpath -ldflags='-s -w' ./...
+          go test -count=1 -gcflags=all=-d=checkptr=2 ./...
       - name: Windows experiment
         if: runner.os == 'Windows'
         working-directory: research/windows

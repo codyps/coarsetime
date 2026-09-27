@@ -1,49 +1,15 @@
-//go:build !purego && linux && amd64
+//go:build linux && amd64
 
-package coarsetime
+package bridge
 
+// The vDSO resolver below is copied from the production vdso_linux.go.
 import (
 	"debug/elf"
 	"io"
 	"os"
 	"strconv"
 	"strings"
-	"syscall"
-	"unsafe"
 )
-
-// The local ABI0 trampoline tail-jumps to the runtime bridge resolved at startup.
-// The runtime switches to an ABI-aligned system stack and restores Go's stack
-// and g afterwards. vDSO functions cannot call back into Go. No private runtime
-// struct offsets or static references to runtime.asmcgocall are used.
-//
-//go:noescape
-func asmcgocall(fn, arg unsafe.Pointer) int32
-
-func coarseTrampolineAddress() unsafe.Pointer
-func realtimeTrampolineAddress() unsafe.Pointer
-
-var coarseTrampoline = coarseTrampolineAddress()
-var realtimeTrampoline = realtimeTrampolineAddress()
-var coarseVDSO = resolveCoarseVDSO()
-
-func readCoarseVDSO(ts *syscall.Timespec) bool   { return readClockVDSO(ts, coarseTrampoline) }
-func readRealtimeVDSO(ts *syscall.Timespec) bool { return readClockVDSO(ts, realtimeTrampoline) }
-
-func readClockVDSO(ts *syscall.Timespec, trampoline unsafe.Pointer) bool {
-	if coarseVDSO == 0 {
-		return false
-	}
-	args := struct {
-		fn uintptr
-		ts syscall.Timespec
-	}{fn: coarseVDSO}
-	if asmcgocall(trampoline, unsafe.Pointer(&args)) != 0 {
-		return false
-	}
-	*ts = args.ts
-	return true
-}
 
 // Resolve only at initialization. Read through /proc/self/mem rather than
 // dereferencing unbounded ELF pointers. Restricted procfs or an unfamiliar ELF

@@ -2,6 +2,12 @@
 
 #include "textflag.h"
 
+// Same ABI0 arguments and result slot as runtime.asmcgocall. The tail jump
+// preserves the caller's return PC and adds no frame around the stack switch.
+TEXT ·asmcgocall(SB),NOSPLIT|NOFRAME,$0-20
+ MOVQ ·runtimeAsmcgocall(SB), AX
+ JMP AX
+
 TEXT ·coarseTrampolineAddress(SB),NOSPLIT,$0-8
  MOVQ $coarseClock<>(SB), AX
  MOVQ AX, ret+0(FP)

@@ -1,0 +1,10 @@
+94209 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=94209, si_uid=1000} ---
+94212 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=94209, si_uid=1000} ---
+94209 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=94209, si_uid=1000} ---
+94215 +++ exited with 0 +++
+94214 +++ exited with 0 +++
+94213 +++ exited with 0 +++
+94212 +++ exited with 0 +++
+94211 +++ exited with 0 +++
+94210 +++ exited with 0 +++
+94209 +++ exited with 0 +++

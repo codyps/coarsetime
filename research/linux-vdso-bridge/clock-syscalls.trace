@@ -1,0 +1,38 @@
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71628 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71630 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71630 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71630 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71630 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71627 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71633 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71631 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71631 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71631 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71624 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71629 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71629 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71633 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=71624, si_uid=1000} ---
+71631 +++ exited with 0 +++
+71632 +++ exited with 0 +++
+71630 +++ exited with 0 +++
+71628 +++ exited with 0 +++
+71625 +++ exited with 0 +++
+71633 +++ exited with 0 +++
+71629 +++ exited with 0 +++
+71627 +++ exited with 0 +++
+71626 +++ exited with 0 +++
+71624 +++ exited with 0 +++

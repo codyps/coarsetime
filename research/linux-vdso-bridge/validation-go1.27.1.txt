@@ -1,0 +1,154 @@
+Artifacts: /tmp/coarsetime-bridge-validation-OGuqlg
+go version go1.27.1 linux/amd64
+linux
+amd64
+
+Linux 6.18.33.2-microsoft-standard-WSL2
+
+CASE default
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x48ce00 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.44s)
+    --- PASS: TestBrackets/indirect (0.22s)
+    --- PASS: TestBrackets/dedicated (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/indirect (0.75s)
+    --- PASS: TestStress/dedicated (0.75s)
+=== RUN   TestDedicatedLayout
+--- PASS: TestDedicatedLayout (0.05s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE stripped
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x48ce00 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.45s)
+    --- PASS: TestBrackets/indirect (0.22s)
+    --- PASS: TestBrackets/dedicated (0.23s)
+=== RUN   TestStress
+=== RUN   TestStress/dedicated
+=== RUN   TestStress/indirect
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/dedicated (0.75s)
+    --- PASS: TestStress/indirect (0.75s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:23: DWARF unavailable (stripped test): decoding dwarf section info at offset 0x0: too short
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE pie
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x5555555e11e0 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.44s)
+    --- PASS: TestBrackets/indirect (0.22s)
+    --- PASS: TestBrackets/dedicated (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/indirect (0.75s)
+    --- PASS: TestStress/dedicated (0.75s)
+=== RUN   TestDedicatedLayout
+--- PASS: TestDedicatedLayout (0.05s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE pie-stripped
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x5555555e11e0 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.44s)
+    --- PASS: TestBrackets/indirect (0.23s)
+    --- PASS: TestBrackets/dedicated (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/indirect (0.75s)
+    --- PASS: TestStress/dedicated (0.76s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:23: DWARF unavailable (stripped test): decoding dwarf section info at offset 0x0: too short
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE checkptr
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x48eb00 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.51s)
+    --- PASS: TestBrackets/indirect (0.26s)
+    --- PASS: TestBrackets/dedicated (0.25s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/indirect (0.76s)
+    --- PASS: TestStress/dedicated (0.75s)
+=== RUN   TestDedicatedLayout
+--- PASS: TestDedicatedLayout (0.05s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE vet
+
+CASE race (race detector requires CGO_ENABLED=1)
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7fc2b70 runtime.asmcgocall=0x4c51a0 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.45s)
+    --- PASS: TestBrackets/indirect (0.22s)
+    --- PASS: TestBrackets/dedicated (0.23s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.52s)
+    --- PASS: TestStress/indirect (0.76s)
+    --- PASS: TestStress/dedicated (0.76s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:23: DWARF unavailable (stripped test): decoding dwarf section info at offset 0x0: too short
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+ok  	github.com/codyps/coarsetime/research/linux-vdso-bridge	3.019s
+
+CASE benchmark
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkRead/indirect-16         	24735231	        12.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	27482426	        12.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	25779632	        12.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	25275270	        12.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	26877388	        13.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/dedicated-16        	28727014	        12.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/dedicated-16        	29498637	        12.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/dedicated-16        	29944178	        12.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/dedicated-16        	26282694	        12.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/dedicated-16        	27446588	        12.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  706935	       543.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  696278	       523.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  738016	       517.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  731804	       504.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  721420	       543.2 ns/op	       0 B/op	       0 allocs/op
+PASS

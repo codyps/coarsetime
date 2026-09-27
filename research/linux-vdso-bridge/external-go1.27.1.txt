@@ -1,0 +1,41 @@
+warning: Git tree '/home/nixos/p/coarsetime' is dirty
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7fc2b70 runtime.asmcgocall=0x48e9e0 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.45s)
+    --- PASS: TestBrackets/indirect (0.23s)
+    --- PASS: TestBrackets/dedicated (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+=== RUN   TestStress/dedicated
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/indirect (0.76s)
+    --- PASS: TestStress/dedicated (0.75s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:23: DWARF unavailable (stripped test): decoding dwarf section info at offset 0x0: too short
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+ok  	github.com/codyps/coarsetime/research/linux-vdso-bridge	1.973s
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.27.1: vDSO=0x7ffff7fc2b70 runtime.asmcgocall=0x555555645dc0 dedicated=true
+=== RUN   TestBrackets/indirect
+=== RUN   TestBrackets/dedicated
+--- PASS: TestBrackets (0.45s)
+    --- PASS: TestBrackets/indirect (0.22s)
+    --- PASS: TestBrackets/dedicated (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/dedicated
+=== RUN   TestStress/indirect
+--- PASS: TestStress (1.51s)
+    --- PASS: TestStress/dedicated (0.76s)
+    --- PASS: TestStress/indirect (0.75s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:23: DWARF unavailable (stripped test): decoding dwarf section info at offset 0x0: too short
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+ok  	github.com/codyps/coarsetime/research/linux-vdso-bridge	1.970s

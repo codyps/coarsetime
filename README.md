@@ -84,6 +84,21 @@ move wall time backward without an OS clock adjustment. See the
 [calendar reader notes](research/darwin/calendar/README.md) for
 source evidence, native Intel measurements, and validation limits.
 
+Linux amd64 calls the kernel vDSO through Go's `runtime.asmcgocall` system-stack
+bridge. On every supported Go version, initialization resolves the bridge's
+assembly entry from `/proc/self/exe`, verifies it against the running process,
+and caches its address for indirect calls. This avoids the direct runtime-symbol
+references rejected by Go 1.27 and works with stripped and PIE executables,
+without cgo or special linker flags. Reads remain allocation-free.
+
+This depends on Go's private runtime ABI and executable metadata. Initialization
+panics if the bridge cannot be verified; a Go compatibility failure does not
+silently select a syscall. Custom packers, obfuscation, and shared-library builds
+are not validated. If the kernel vDSO itself is unavailable or rejects a call,
+Linux uses a syscall with the same clock ID; other Linux architectures use that
+syscall path directly. See the [bridge investigation](research/linux-vdso-bridge/README.md)
+for implementation details, compatibility tests, and measurements.
+
 ## Tests and benchmarks
 
 ```sh
@@ -92,6 +107,10 @@ go test -tags=purego ./...
 go vet ./...
 go test -run '^$' -bench . -benchmem -count=5
 ```
+
+On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires a working
+vDSO path. Tests also force the syscall fallback to check clock consistency;
+`BenchmarkLinuxCoarseSyscall` measures that fallback separately.
 
 Run benchmarks on an otherwise idle machine, separately from builds and race
 tests. Compare `BenchmarkSince` with `BenchmarkTimeSince` for elapsed timing;
