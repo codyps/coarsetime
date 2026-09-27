@@ -124,3 +124,13 @@ clock updates, not read latency or an accuracy guarantee.
 See [research](research/README.md) for platform investigations, implementation
 details, prototypes, and [retained measurements](research/measurements.md).
 Research code is separate from ordinary `go test ./...` runs.
+
+## License
+
+Copyright (c) 2026 coarsetime contributors.
+Licensed under the Open Software License version 3.0 (OSL-3.0).
+See [LICENSE](LICENSE) for the full license text.
+
+This license applies to original code in this repository. Third-party code retains
+its existing notices and license terms, including the Go-derived code in
+`research/linux-vdso-bridge`, covered by its [GO-LICENSE](research/linux-vdso-bridge/GO-LICENSE).
