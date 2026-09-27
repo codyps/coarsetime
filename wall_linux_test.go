@@ -30,10 +30,3 @@ func TestLinuxRealtimeClock(t *testing.T) {
 		}
 	}
 }
-
-func TestLinuxWallIgnoresCachedCorrection(t *testing.T) {
-	saved := wallCorrection.Load()
-	wallCorrection.Add(86_400_000_000_000)
-	defer wallCorrection.Store(saved)
-	TestLinuxRealtimeClock(t)
-}

@@ -103,15 +103,6 @@ func BenchmarkUnixNano(b *testing.B) {
 	}
 }
 
-func BenchmarkInstantTime(b *testing.B) {
-	instant := NowInstant()
-	b.ReportAllocs()
-	b.ResetTimer()
-	for n := 0; n < b.N; n++ {
-		timeSink = instant.Time()
-	}
-}
-
 func BenchmarkNowParallel(b *testing.B) {
 	b.ReportAllocs()
 	b.RunParallel(func(pb *testing.PB) {
@@ -123,18 +114,10 @@ func BenchmarkNowParallel(b *testing.B) {
 	})
 }
 
-func BenchmarkRefreshWallClock(b *testing.B) {
-	b.ReportAllocs()
-	for n := 0; n < b.N; n++ {
-		RefreshWallClock()
-	}
-}
-
 // Mutable function variables model callers that retain the public API as a
 // callback. These calls cannot inline the generic API wrappers.
 var nowFuncValue = Now
 var unixNanoFuncValue = UnixNano
-var instantTimeFuncValue = Instant.Time
 
 func BenchmarkNowFuncValue(b *testing.B) {
 	b.ReportAllocs()
@@ -147,14 +130,5 @@ func BenchmarkUnixNanoFuncValue(b *testing.B) {
 	b.ReportAllocs()
 	for n := 0; n < b.N; n++ {
 		unixNanoSink = unixNanoFuncValue()
-	}
-}
-
-func BenchmarkInstantTimeFuncValue(b *testing.B) {
-	instant := NowInstant()
-	b.ReportAllocs()
-	b.ResetTimer()
-	for n := 0; n < b.N; n++ {
-		timeSink = instantTimeFuncValue(instant)
 	}
 }

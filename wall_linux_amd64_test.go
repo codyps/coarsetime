@@ -9,5 +9,4 @@ func TestLinuxWallSyscallFallback(t *testing.T) {
 	defer func() { coarseVDSO = saved }()
 	coarseVDSO = 0
 	TestLinuxRealtimeClock(t)
-	TestLinuxWallIgnoresCachedCorrection(t)
 }

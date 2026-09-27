@@ -37,6 +37,11 @@ def main():
         ["go", "env", "GOOS", "GOARCH"], cwd=ROOT, text=True).split())
     if target not in TARGETS[args.prototype]:
         parser.error(f"{args.prototype} requires one of {sorted(TARGETS[args.prototype])}; got {target}")
+    if target.startswith("darwin/") and args.prototype in {
+        "darwin-commpage", "darwin-wall-split", "wall-optimizations"
+    }:
+        parser.error("this historical profile requires the removed cached-wall API; "
+                     "run it from a separate checkout of commit 0393b48")
     source = ROOT / "research" / "_prototypes" / args.prototype
     replacements = {}
     for path in sorted(source.iterdir()):

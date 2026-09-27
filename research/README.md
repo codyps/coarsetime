@@ -5,11 +5,19 @@ investigations, comparative benchmarks, and retained measurements. The repositor
 root contains the production library, correctness tests, and public API benchmarks.
 Research does not change the default library build.
 
+The cached-wall API was removed after commit `0393b48`. Darwin's historical
+`darwin-commpage`, `darwin-wall-split`, and `wall-optimizations` profiles require
+that revision; the runner reports this instead of attempting a broken build.
+Use a separate checkout of `0393b48` to reproduce those results. Their sources
+and raw measurements remain unchanged. The current calendar reader and its
+validation commands are documented [here](darwin/calendar/README.md).
+
 ## Topics
 
 | Directory | Contents | How to run code |
 | --- | --- | --- |
 | [darwin](darwin/README.md) | Apple clock source investigation and release history | Documentation and acquisition records |
+| [darwin/calendar](darwin/calendar/README.md) | OS-owned calendar mapping, without local correction | Root Darwin tests; portable arithmetic tests |
 | [darwin/commpage](darwin/commpage/README.md) | Commpage reader comparisons and adoption measurements | Overlay profile `darwin-commpage` |
 | [darwin/wall-split](darwin/wall-split/README.md) | Split timestamp and rebasing experiment | Overlay profile `darwin-wall-split` |
 | [linux-wall](linux-wall/README.md) | Bridge-cost probes, timestamp cache experiment, layout history | Overlay profile `linux-wall` |

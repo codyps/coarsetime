@@ -1,5 +1,10 @@
 # Darwin wall-clock implementation: source investigation
 
+Implementation update (2026-09-27): the production calendar reader now uses the
+kernel mapping described below. See [calendar reader notes](calendar/README.md)
+for its approximation contract, fallback behavior, and current validation limits.
+Earlier cached-wall measurements are historical.
+
 Examined 2026-09-05. Apple source was downloaded as shallow Git clones:
 
 | Repository | Release tag | Commit | Local directory |

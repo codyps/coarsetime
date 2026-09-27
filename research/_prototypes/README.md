@@ -6,6 +6,10 @@ standalone Go packages. The underscore directory is excluded from normal Go
 package discovery. Build them using [`../prototype.py`](../prototype.py), as
 explained in the [research index](../README.md#same-package-prototypes).
 
+Darwin profiles that use the removed cached-wall API must be run from revision
+`0393b48`; the current runner reports that requirement. They are retained as
+historical experiments, not adapted to imply equivalent current wall semantics.
+
 | Source directory / profile | Supported target | Notes and measurements |
 | --- | --- | --- |
 | [darwin-commpage](darwin-commpage) | Darwin amd64 or arm64 | [Commpage](../darwin/commpage/README.md) |

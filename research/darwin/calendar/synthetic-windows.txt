@@ -1,0 +1,11 @@
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime/internal/darwinwall
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkSyntheticRead 	72026216	         7.598 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyntheticRead 	100000000	         6.349 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyntheticRead 	94240344	         6.483 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyntheticRead 	86908658	         6.535 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSyntheticRead 	100000000	         7.336 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/codyps/coarsetime/internal/darwinwall	3.686s

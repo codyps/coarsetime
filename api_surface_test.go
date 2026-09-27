@@ -19,7 +19,7 @@ func TestPortableAPISurface(t *testing.T) {
 		t.Skip("source checkout required for API surface inspection")
 	}
 	targets := []string{"darwin/amd64", "darwin/arm64", "linux/amd64", "linux/arm64", "linux/386", "linux/arm", "linux/riscv64", "windows/amd64", "windows/arm64", "windows/386", "freebsd/amd64", "js/wasm"}
-	want := []string{"Instant", "Instant.After", "Instant.Before", "Instant.Sub", "Instant.Time", "Now", "NowInstant", "RefreshWallClock", "Since", "UnixNano"}
+	want := []string{"Instant", "Instant.After", "Instant.Before", "Instant.Sub", "Now", "NowInstant", "Since", "UnixNano"}
 	for _, target := range targets {
 		for _, pure := range []bool{false, true} {
 			name := target
@@ -63,7 +63,7 @@ func TestPortableAPISurface(t *testing.T) {
 					}
 					add := func(name string) {
 						got = append(got, name)
-						if file != "coarsetime.go" && file != "wall.go" && file != "wall_api.go" {
+						if file != "coarsetime.go" && file != "wall_api.go" {
 							t.Errorf("public declaration %s in platform implementation %s", name, file)
 						}
 					}

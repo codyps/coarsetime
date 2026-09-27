@@ -1,8 +1,8 @@
 // Package coarsetime provides inexpensive clock readings for measuring elapsed
 // time and approximate wall time. Readings may repeat and have platform-dependent
 // resolution and staleness; no maximum error is promised. Instant readings are
-// not calendar timestamps; Now reads approximate wall time and Instant.Time
-// translates an Instant using a cached wall correction.
+// not calendar timestamps; Now reads approximate OS-maintained wall time
+// independently. No calibration, polling goroutine, or manual refresh is needed.
 //
 // Default Darwin builds use the Mach approximate clock; Linux uses
 // CLOCK_MONOTONIC_COARSE. Both exclude system sleep. Other platforms use Go's
