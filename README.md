@@ -84,14 +84,18 @@ move wall time backward without an OS clock adjustment. See the
 [calendar reader notes](research/darwin/calendar/README.md) for
 source evidence, native Intel measurements, and validation limits.
 
-Linux amd64 calls the kernel vDSO through Go's `runtime.asmcgocall` system-stack
-bridge. On every supported Go version, initialization resolves the bridge's
+Linux amd64 uses the vDSO address already resolved by Go's runtime through the
+compatibility linkname `runtime.vdsoClockgettimeSym`. It does not read
+`/proc/self/maps` or `/proc/self/mem` to discover the vDSO. Calls use Go's
+`runtime.asmcgocall` system-stack bridge. On every supported Go version,
+initialization resolves the bridge's
 assembly entry from `/proc/self/exe`, verifies it against the running process,
 and caches its address for indirect calls. This avoids the direct runtime-symbol
 references rejected by Go 1.27 and works with stripped and PIE executables,
 without cgo or special linker flags. Reads remain allocation-free.
 
-This depends on Go's private runtime ABI and executable metadata. Initialization
+This depends on Go's private runtime ABI, vDSO variable, and executable metadata.
+The bridge resolver still requires `/proc/self/exe`. Initialization
 panics if the bridge cannot be verified; a Go compatibility failure does not
 silently select a syscall. Custom packers, obfuscation, and shared-library builds
 are not validated. If the kernel vDSO itself is unavailable or rejects a call,
