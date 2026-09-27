@@ -1,0 +1,128 @@
+Artifacts: /tmp/coarsetime-bridge-validation-ZAKT17
+go version go1.23.12 linux/amd64
+linux
+amd64
+
+Linux 6.18.33.2-microsoft-standard-WSL2
+
+CASE default
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x474480 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.23s)
+    --- PASS: TestBrackets/indirect (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.92s)
+    --- PASS: TestStress/indirect (0.92s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE stripped
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x474480 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.23s)
+    --- PASS: TestBrackets/indirect (0.23s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.93s)
+    --- PASS: TestStress/indirect (0.93s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE pie
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x5555555c8860 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.22s)
+    --- PASS: TestBrackets/indirect (0.22s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.93s)
+    --- PASS: TestStress/indirect (0.93s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE pie-stripped
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x5555555c8860 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.23s)
+    --- PASS: TestBrackets/indirect (0.23s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.94s)
+    --- PASS: TestStress/indirect (0.94s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE checkptr
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7ffdb70 runtime.asmcgocall=0x475240 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.27s)
+    --- PASS: TestBrackets/indirect (0.27s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.92s)
+    --- PASS: TestStress/indirect (0.92s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+
+CASE vet
+
+CASE race (race detector requires CGO_ENABLED=1)
+=== RUN   TestBrackets
+    bridge_linux_amd64_test.go:42: go1.23.12: vDSO=0x7ffff7fc2b70 runtime.asmcgocall=0x4ae620 dedicated=false
+=== RUN   TestBrackets/indirect
+--- PASS: TestBrackets (0.25s)
+    --- PASS: TestBrackets/indirect (0.25s)
+=== RUN   TestStress
+=== RUN   TestStress/indirect
+--- PASS: TestStress (0.93s)
+    --- PASS: TestStress/indirect (0.93s)
+=== RUN   TestDedicatedLayout
+    layout_linux_amd64_test.go:14: dedicated bridge not enabled
+--- SKIP: TestDedicatedLayout (0.00s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS
+ok  	github.com/codyps/coarsetime/research/linux-vdso-bridge	2.212s
+
+CASE benchmark
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkRead/indirect-16         	23453560	        14.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	22156261	        13.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	31869687	        12.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	24261254	        13.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/indirect-16         	27688224	        13.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  732231	       546.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  733137	       554.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  598890	       586.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  566331	       575.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRead/syscall-16          	  749932	       576.7 ns/op	       0 B/op	       0 allocs/op
+PASS

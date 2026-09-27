@@ -32,6 +32,7 @@ func TestLinuxSyscallFallback(t *testing.T) {
 	// Tests are deliberately serial: change the initialization-time selection only
 	// while no clock readers are running, and restore it before subsequent tests.
 	saved := coarseVDSO
+	runtimeSaved := runtimeVDSOClockgettime
 	before := NowInstant()
 	coarseVDSO = 0
 	defer func() { coarseVDSO = saved }()
@@ -40,24 +41,7 @@ func TestLinuxSyscallFallback(t *testing.T) {
 	if NowInstant().Before(before) {
 		t.Fatal("fallback changed the clock epoch")
 	}
-}
-
-func TestVDSOMapping(t *testing.T) {
-	tests := []struct {
-		maps       string
-		base, size uint64
-	}{
-		{"7ffe0000-7ffe2000 r-xp 00000000 00:00 0 [vdso]\n", 0x7ffe0000, 0x2000},
-		{"7ffe0000-7ffe2000 r--p 00000000 00:00 0 [vdso]\n", 0, 0},
-		{"7ffe0000-7ffe2000 r-xp 00000000 00:00 0 [vvar]\n", 0, 0},
-		{"broken r-xp 00000000 00:00 0 [vdso]\n", 0, 0},
-		{"7ffe2000-7ffe0000 r-xp 00000000 00:00 0 [vdso]\n", 0, 0},
-		{"0-200000 r-xp 00000000 00:00 0 [vdso]\n", 0, 0},
-	}
-	for _, tt := range tests {
-		base, size := vdsoMapping(tt.maps)
-		if base != tt.base || size != tt.size {
-			t.Errorf("vdsoMapping(%q) = %#x,%#x", tt.maps, base, size)
-		}
+	if runtimeVDSOClockgettime != runtimeSaved {
+		t.Fatal("forcing the package fallback changed the runtime's vDSO address")
 	}
 }

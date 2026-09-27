@@ -1,0 +1,98 @@
+Integration directory: /tmp/coarsetime-bridge-integration-M4EMHL
+go version go1.27.1 linux/amd64
+=== RUN   TestPortableAPISurface
+=== RUN   TestPortableAPISurface/darwin/amd64
+=== RUN   TestPortableAPISurface/darwin/amd64/purego
+=== RUN   TestPortableAPISurface/darwin/arm64
+=== RUN   TestPortableAPISurface/darwin/arm64/purego
+=== RUN   TestPortableAPISurface/linux/amd64
+=== RUN   TestPortableAPISurface/linux/amd64/purego
+=== RUN   TestPortableAPISurface/linux/arm64
+=== RUN   TestPortableAPISurface/linux/arm64/purego
+=== RUN   TestPortableAPISurface/linux/386
+=== RUN   TestPortableAPISurface/linux/386/purego
+=== RUN   TestPortableAPISurface/linux/arm
+=== RUN   TestPortableAPISurface/linux/arm/purego
+=== RUN   TestPortableAPISurface/linux/riscv64
+=== RUN   TestPortableAPISurface/linux/riscv64/purego
+=== RUN   TestPortableAPISurface/windows/amd64
+=== RUN   TestPortableAPISurface/windows/amd64/purego
+=== RUN   TestPortableAPISurface/windows/arm64
+=== RUN   TestPortableAPISurface/windows/arm64/purego
+=== RUN   TestPortableAPISurface/windows/386
+=== RUN   TestPortableAPISurface/windows/386/purego
+=== RUN   TestPortableAPISurface/freebsd/amd64
+=== RUN   TestPortableAPISurface/freebsd/amd64/purego
+=== RUN   TestPortableAPISurface/js/wasm
+=== RUN   TestPortableAPISurface/js/wasm/purego
+--- PASS: TestPortableAPISurface (0.03s)
+    --- PASS: TestPortableAPISurface/darwin/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/386 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/386/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/riscv64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/riscv64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/386 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/386/purego (0.00s)
+    --- PASS: TestPortableAPISurface/freebsd/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/freebsd/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/js/wasm (0.00s)
+    --- PASS: TestPortableAPISurface/js/wasm/purego (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.01s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.25s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.01s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxSyscallFallback
+--- PASS: TestLinuxSyscallFallback (0.00s)
+=== RUN   TestVDSOMapping
+--- PASS: TestVDSOMapping (0.00s)
+=== RUN   TestLinuxWallSyscallFallback
+--- PASS: TestLinuxWallSyscallFallback (0.00s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallIgnoresCachedCorrection
+--- PASS: TestLinuxWallIgnoresCachedCorrection (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestWallCorrection
+--- PASS: TestWallCorrection (0.00s)
+=== RUN   TestWallRefresh
+--- PASS: TestWallRefresh (0.00s)
+=== RUN   TestConcurrentWallRefresh
+--- PASS: TestConcurrentWallRefresh (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+ok  	github.com/codyps/coarsetime	0.323s
+ok  	github.com/codyps/coarsetime	1.499s
+ok  	github.com/codyps/coarsetime	0.320s
+Integration binary: /tmp/coarsetime-bridge-integration-M4EMHL/integration.test

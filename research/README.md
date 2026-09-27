@@ -21,6 +21,7 @@ validation commands are documented [here](darwin/calendar/README.md).
 | [darwin/commpage](darwin/commpage/README.md) | Commpage reader comparisons and adoption measurements | Overlay profile `darwin-commpage` |
 | [darwin/wall-split](darwin/wall-split/README.md) | Split timestamp and rebasing experiment | Overlay profile `darwin-wall-split` |
 | [linux-wall](linux-wall/README.md) | Bridge-cost probes, timestamp cache experiment, layout history | Overlay profile `linux-wall` |
+| [linux-vdso-bridge](linux-vdso-bridge/README.md) | Cgo-free Go 1.27 vDSO bridges, linker probes, and integration evidence | Standalone module and validation scripts |
 | [linux-wall/vvar](linux-wall/vvar/README.md) | Direct VVAR readers and exact-code recognition | Overlay profile `vvar` |
 | [linux-wall/vvar/detectors](linux-wall/vvar/detectors/README.md) | BTF and instruction-analysis detector module | `go -C research/linux-wall/vvar/detectors test ./...` |
 | [wall-optimizations](wall-optimizations/README.md) | Conversion and wall-read optimization comparisons | Overlay profile `wall-optimizations` |

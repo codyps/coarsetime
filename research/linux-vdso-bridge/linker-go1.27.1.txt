@@ -1,0 +1,20 @@
+Probe directory: /tmp/coarsetime-linker-probes-NWNbjZ
+go version go1.27.1 linux/amd64
+
+CASE linkname (expected link failure on Go 1.27)
+# example.com/bridgeprobe
+link: main: invalid reference to runtime.asmcgocall
+
+CASE linkname with -checklinkname=0 (build only)
+
+CASE assembly (expected link failure on Go 1.27)
+# example.com/bridgeprobe
+link: main: invalid reference to runtime.asmcgocall
+
+CASE assembly with -checklinkname=0 (build only)
+
+CASE address (expected link failure on Go 1.27)
+# example.com/bridgeprobe
+link: main: invalid reference to runtime.asmcgocall
+
+CASE address with -checklinkname=0 (build only)

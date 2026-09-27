@@ -1,0 +1,6 @@
+warning: Git tree '/home/nixos/p/coarsetime' is dirty
+=== RUN   TestDedicatedLayout
+--- PASS: TestDedicatedLayout (0.05s)
+=== RUN   TestSystemStack
+--- PASS: TestSystemStack (0.00s)
+PASS

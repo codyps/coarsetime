@@ -45,13 +45,8 @@ monotonic component**. Wall time can jump backwards or forwards; use Instants
 for elapsed-time measurements. Wall timestamps have the signed Unix-nanosecond
 range, roughly 1678–2262, subject to OS clock limits.
 
-Wall time comes from the OS on every platform. There is no local calibration,
-background polling, or application-managed refresh. Instants cannot be converted
-to wall time: capture `Now()` separately when you need a calendar timestamp.
-
-**API change:** `Instant.Time()` and `RefreshWallClock()` have been removed.
-Replace the former with a wall timestamp captured at the event; remove refresh
-calls. The old conversion depended on a mutable global clock correction.
+Wall time comes from the OS on every call. Capture `Now()` separately when you
+need a calendar timestamp; Instants cannot be converted to wall time.
 
 ## Platforms
 
@@ -70,19 +65,27 @@ suspend behavior follows Go's clock. This is not a portable clock for deadlines
 that must include time spent asleep. Some optimized paths depend on OS layouts
 or private Go runtime bridges; compatibility can vary with the toolchain.
 
-Build with `-tags=purego` for a standard-library fallback on **every platform**.
-It disables this package's assembly and native clock access. Instants use Go's
-monotonic clock; `Now` and `UnixNano` read Go's wall clock directly, without
-requiring refreshes. The API is unchanged, but speed, resolution, and suspend
-behavior may differ.
+Build with `-tags=purego` to use Go's standard-library clocks on every platform.
+This disables the package's assembly and native clock access. The API is
+unchanged, but speed, resolution, and suspend behavior may differ.
 
-The Darwin reader makes one attempt to read a consistent, usable calendar
-mapping from XNU's shared page. It falls back to Go's wall clock on invalidation,
-concurrent updates, or an out-of-window approximate sample. No polling loop is
-used. Switching back from a precise fallback to an approximate sample can also
-move wall time backward without an OS clock adjustment. See the
-[calendar reader notes](research/darwin/calendar/README.md) for
-source evidence and validation limits; live Darwin performance is not yet measured.
+Darwin reads XNU's shared calendar page once per call and falls back to Go's
+wall clock if the sample is unusable. Switching between these sources can move
+wall time backward even without an OS clock adjustment. See the
+[calendar reader notes](research/darwin/calendar/README.md) for implementation
+details and validation limits.
+
+Linux amd64 reads the coarse clocks through the kernel vDSO, using Go's runtime
+to locate and call it. Initialization requires `/proc/self/exe` to resolve and
+verify the runtime bridge, and panics if verification fails. This path depends
+on Go's private runtime ABI and executable metadata. Stripped and PIE executables
+are supported; custom packers, obfuscation, and shared-library builds are not
+validated. Clock reads are allocation-free.
+
+If the vDSO is unavailable or rejects a call, Linux amd64 uses a syscall with
+the same clock ID. Other Linux architectures use syscalls directly. See the
+[bridge investigation](research/linux-vdso-bridge/README.md) for implementation
+details, compatibility tests, and measurements.
 
 ## Tests and benchmarks
 
@@ -93,6 +96,10 @@ go vet ./...
 go test -run '^$' -bench . -benchmem -count=5
 ```
 
+On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires a working
+vDSO path. Tests also force the syscall fallback to check clock consistency;
+`BenchmarkLinuxCoarseSyscall` measures that fallback separately.
+
 Run benchmarks on an otherwise idle machine, separately from builds and race
 tests. Compare `BenchmarkSince` with `BenchmarkTimeSince` for elapsed timing;
 `time.Now()` also reads wall time. `BenchmarkClockProgress` measures observed
@@ -101,3 +108,13 @@ clock updates, not read latency or an accuracy guarantee.
 See [research](research/README.md) for platform investigations, implementation
 details, prototypes, and [retained measurements](research/measurements.md).
 Research code is separate from ordinary `go test ./...` runs.
+
+## License
+
+Copyright (c) 2026 coarsetime contributors.
+Licensed under the Open Software License version 3.0 (OSL-3.0).
+See [LICENSE](LICENSE) for the full license text.
+
+This license applies to original code in this repository. Third-party code retains
+its existing notices and license terms, including the Go-derived code in
+`research/linux-vdso-bridge`, covered by its [GO-LICENSE](research/linux-vdso-bridge/GO-LICENSE).

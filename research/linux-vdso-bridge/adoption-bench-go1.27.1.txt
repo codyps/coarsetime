@@ -1,0 +1,14 @@
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkNowInstant 	26485138	        13.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant 	27010603	        13.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNowInstant 	29354683	        13.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow        	27645796	        11.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow        	30889172	        11.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow        	27962476	        12.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano   	32874055	        12.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano   	32337621	        11.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano   	31932739	        11.51 ns/op	       0 B/op	       0 allocs/op
+PASS

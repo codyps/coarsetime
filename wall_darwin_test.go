@@ -62,6 +62,12 @@ func TestDarwinCalendarLive(t *testing.T) {
 	}
 	hits := 0
 	for i := 0; i < 10000; i++ {
+		if i%1000 == 0 && i != 0 {
+			// Spread bursts across more than the one-second interpolation
+			// window. Yield so approximate ticks can catch up with a newly
+			// published calendar anchor instead of testing only one snapshot.
+			time.Sleep(125 * time.Millisecond)
+		}
 		before := time.Now().UnixNano()
 		got, ok := darwinwall.Read(darwinCalendarPage, darwinCalendarApproximate)
 		after := time.Now().UnixNano()

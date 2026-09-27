@@ -1,0 +1,231 @@
+Artifacts: /tmp/coarsetime-direct-comparison-66WsuI
+=== RUN   TestComparisonClocks
+=== RUN   TestComparisonClocks/direct
+=== RUN   TestComparisonClocks/resolved
+--- PASS: TestComparisonClocks (0.05s)
+    --- PASS: TestComparisonClocks/direct (0.02s)
+    --- PASS: TestComparisonClocks/resolved (0.02s)
+PASS
+=== RUN   TestComparisonClocks
+=== RUN   TestComparisonClocks/direct
+=== RUN   TestComparisonClocks/resolved
+--- PASS: TestComparisonClocks (0.05s)
+    --- PASS: TestComparisonClocks/direct (0.02s)
+    --- PASS: TestComparisonClocks/resolved (0.02s)
+PASS
+=== RUN   TestComparisonClocks
+=== RUN   TestComparisonClocks/resolved
+--- PASS: TestComparisonClocks (0.02s)
+    --- PASS: TestComparisonClocks/resolved (0.02s)
+PASS
+Linux 6.18.33.2-microsoft-standard-WSL2
+
+ROUND 1 VERSION go1.23.12 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	28643625	        13.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	26818208	        13.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 1 VERSION go1.26.6 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	30938253	        12.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	29412038	        13.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 1 VERSION go1.27.1 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	28193664	        12.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 2 VERSION go1.27.1 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	29399694	        12.45 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 2 VERSION go1.26.6 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	24568375	        13.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	29486158	        12.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 2 VERSION go1.23.12 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	26865602	        12.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	29045040	        12.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 3 VERSION go1.23.12 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	28943378	        12.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	28761114	        13.72 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 3 VERSION go1.26.6 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	29965141	        12.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	24581769	        12.80 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 3 VERSION go1.27.1 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	25219420	        12.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 4 VERSION go1.27.1 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	30534699	        12.34 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 4 VERSION go1.26.6 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	28070617	        13.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	32429502	        12.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 4 VERSION go1.23.12 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	26156830	        13.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	25834642	        12.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 5 VERSION go1.23.12 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	27355150	        12.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	27962808	        12.92 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 5 VERSION go1.26.6 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	28358413	        12.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	25079560	        12.65 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 5 VERSION go1.27.1 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	32132184	        12.92 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 6 VERSION go1.27.1 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	30061590	        12.50 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 6 VERSION go1.26.6 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	26772765	        12.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	29022914	        14.15 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 6 VERSION go1.23.12 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	23825055	        15.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	30766695	        13.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 7 VERSION go1.23.12 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	25852191	        13.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	30557762	        12.50 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 7 VERSION go1.26.6 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	29260446	        12.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/direct           	26077384	        13.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 7 VERSION go1.27.1 REVERSE 1
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	27047785	        12.30 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 8 VERSION go1.27.1 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/resolved         	31489857	        13.58 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 8 VERSION go1.26.6 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	26276193	        12.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	30473481	        12.21 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+ROUND 8 VERSION go1.23.12 REVERSE 0
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime/research/linux-vdso-bridge
+cpu: AMD Ryzen 9 7940HS w/ Radeon 780M Graphics
+BenchmarkBridgeComparison/direct         	24142647	        12.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBridgeComparison/resolved       	27218311	        12.52 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+Disassembly: /tmp/coarsetime-direct-comparison-66WsuI/call-paths-go1.26.6.txt

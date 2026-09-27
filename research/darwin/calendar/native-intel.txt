@@ -1,0 +1,32 @@
+go version go1.26.6 darwin/amd64
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz
+BenchmarkTimeNow                	 2871451	       294.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 5356084	       109.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 6118022	        93.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 6649209	        89.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow                	 6963058	        91.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow                    	36748746	        14.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow                    	30255748	        22.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow                    	39941124	        16.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow                    	41432734	        15.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow                    	51664434	        14.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	68078902	        10.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	62727733	         9.627 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	55749376	        10.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	69900366	        10.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano               	63002682	        10.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	74563356	         8.971 ns/op	         0.001330 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	64740060	         8.797 ns/op	         0.001582 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	72820208	         9.059 ns/op	         0.001629 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	62530274	         8.896 ns/op	         0.001831 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinCalendarRead     	63418792	        10.38 ns/op	         0.002326 fallback-%	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7000708	        82.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7130640	        91.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 7014759	       107.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 4657930	       129.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDarwinStandardUnixNano 	 6052005	        83.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/codyps/coarsetime	18.838s
