@@ -46,7 +46,8 @@ for each row.
 Other architectures, syscall fallbacks, and `purego` builds may offer no speedup
 or be slower than the standard library. See [elapsed-time measurements](research/measurements.md),
 [current macOS captures](research/darwin/calendar/benchmarks-2026-09-27/README.md),
-[Linux measurements](research/linux-vdso-bridge/README.md), and
+[Linux amd64 measurements](research/linux-vdso-bridge/README.md),
+[Linux ARM64 measurements](research/linux-vdso-bridge/arm64/README.md), and
 [Windows comparisons](research/windows/README.md). Benchmark your workload.
 
 ## Wall time

@@ -1,0 +1,248 @@
+Linux runnervmoyp6c 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:12:01 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+Architecture:                            aarch64
+CPU op-mode(s):                          32-bit, 64-bit
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               ARM
+Model name:                              Neoverse-N2
+Model:                                   0
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                r0p0
+BogoMIPS:                                2000.00
+Flags:                                   fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm uscat ilrcpc flagm sb paca pacg dcpodp sve2 sveaes svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16
+L1d cache:                               256 KiB (4 instances)
+L1i cache:                               256 KiB (4 instances)
+L2 cache:                                4 MiB (4 instances)
+L3 cache:                                128 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; CSV2, BHB
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+go version go1.27.1 linux/arm64
+=== RUN   TestPortableAPISurface
+=== RUN   TestPortableAPISurface/darwin/amd64
+=== RUN   TestPortableAPISurface/darwin/amd64/purego
+=== RUN   TestPortableAPISurface/darwin/arm64
+=== RUN   TestPortableAPISurface/darwin/arm64/purego
+=== RUN   TestPortableAPISurface/linux/amd64
+=== RUN   TestPortableAPISurface/linux/amd64/purego
+=== RUN   TestPortableAPISurface/linux/arm64
+=== RUN   TestPortableAPISurface/linux/arm64/purego
+=== RUN   TestPortableAPISurface/linux/386
+=== RUN   TestPortableAPISurface/linux/386/purego
+=== RUN   TestPortableAPISurface/linux/arm
+=== RUN   TestPortableAPISurface/linux/arm/purego
+=== RUN   TestPortableAPISurface/linux/riscv64
+=== RUN   TestPortableAPISurface/linux/riscv64/purego
+=== RUN   TestPortableAPISurface/windows/amd64
+=== RUN   TestPortableAPISurface/windows/amd64/purego
+=== RUN   TestPortableAPISurface/windows/arm64
+=== RUN   TestPortableAPISurface/windows/arm64/purego
+=== RUN   TestPortableAPISurface/windows/386
+=== RUN   TestPortableAPISurface/windows/386/purego
+=== RUN   TestPortableAPISurface/freebsd/amd64
+=== RUN   TestPortableAPISurface/freebsd/amd64/purego
+=== RUN   TestPortableAPISurface/js/wasm
+=== RUN   TestPortableAPISurface/js/wasm/purego
+--- PASS: TestPortableAPISurface (0.01s)
+    --- PASS: TestPortableAPISurface/darwin/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/darwin/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/386 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/386/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm (0.00s)
+    --- PASS: TestPortableAPISurface/linux/arm/purego (0.00s)
+    --- PASS: TestPortableAPISurface/linux/riscv64 (0.00s)
+    --- PASS: TestPortableAPISurface/linux/riscv64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/arm64 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/arm64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/windows/386 (0.00s)
+    --- PASS: TestPortableAPISurface/windows/386/purego (0.00s)
+    --- PASS: TestPortableAPISurface/freebsd/amd64 (0.00s)
+    --- PASS: TestPortableAPISurface/freebsd/amd64/purego (0.00s)
+    --- PASS: TestPortableAPISurface/js/wasm (0.00s)
+    --- PASS: TestPortableAPISurface/js/wasm/purego (0.00s)
+=== RUN   TestSignalOffsets
+--- PASS: TestSignalOffsets (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.00s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.26s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxSyscallFallback
+--- PASS: TestLinuxSyscallFallback (0.00s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallSyscallFallback
+--- PASS: TestLinuxWallSyscallFallback (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+PASS
+case=baseline round=1
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	 3348007	       178.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3289918	       182.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16427965	        36.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8379129	        71.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3376135	       177.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3424588	       175.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3413286	       175.8 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=vdso round=1
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	33682090	        17.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	29132692	        20.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16367415	        36.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8358278	        71.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	41799481	        14.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	41729079	        14.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3418951	       175.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=vdso round=2
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	33747428	        17.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	29120238	        20.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16414177	        36.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8328354	        72.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	41452360	        14.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	42159759	        14.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3398233	       175.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=baseline round=2
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	 3350226	       178.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3291969	       182.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16288597	        36.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8345079	        71.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3372355	       177.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3427557	       175.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3415746	       175.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=baseline round=3
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	 3356181	       178.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3290136	       182.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16370576	        36.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8377989	        71.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3375866	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3421338	       175.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3412269	       175.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=vdso round=3
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	33900014	        17.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	29141389	        20.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16527578	        37.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8326315	        71.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	41449700	        14.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	41782711	        14.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3405344	       175.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=vdso round=4
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	33694210	        17.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	29658789	        20.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16467579	        36.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8367528	        71.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	41445253	        14.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	41976672	        14.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3417451	       175.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=baseline round=4
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	 3355612	       178.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3220923	       186.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16399224	        36.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8375611	        71.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3378100	       177.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3424178	       175.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3412642	       176.7 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=baseline round=5
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	 3359251	       178.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	 3291068	       182.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16370350	        36.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8383323	        71.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	 3307034	       177.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	 3424209	       175.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3411810	       175.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+case=vdso round=5
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkNowInstant-4           	33797748	        17.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSince-4                	29160626	        20.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeSince-4            	16468760	        36.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeNow-4              	 8339793	        71.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNow-4                  	38358400	        14.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUnixNano-4             	41843031	        14.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLinuxCoarseSyscall-4   	 3393223	       175.7 ns/op	       0 B/op	       0 allocs/op
+PASS

@@ -9,6 +9,10 @@ initialization failure if the runtime bridge cannot be verified. Production
 does not import this research module. The measurements below retain the original
 investigation results.
 
+Linux ARM64 now uses the same resolved runtime bridge with additional
+signal-stack handling. See the [ARM64 implementation and native-runner
+measurements](arm64/README.md); the investigation below is specific to amd64.
+
 **Recommendation: resolve the runtime's existing `asmcgocall` assembly entry at
 initialization and invoke it through a tiny indirect ABI0 trampoline.** This
 worked on Go 1.23.12, 1.26.6, and 1.27.1, including stripped PIE builds. It avoids
