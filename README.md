@@ -36,24 +36,31 @@ Instants are process-local; their zero value is uninitialized. Use `Before` and
 CI records native Linux, macOS, and Windows results on amd64 and arm64, with
 standard-library comparisons. PR reports measure base and head on the same worker.
 
-General guidance from measured amd64 fast paths; results depend on the OS,
-toolchain, and workload. The standard-library column provides the comparison
-for each row.
+The standard-library column provides the comparison for each operation:
 
-| Operation | coarsetime | Standard library | Relative cost |
+| Operation | coarsetime | Standard library | Notes |
 | --- | --- | --- | --- |
-| Capture an elapsed-time start | `NowInstant()` | `time.Now()` | Much cheaper on macOS and Windows; cheaper on Linux. Only reads elapsed time. |
-| Measure elapsed time | `Since(start)` | `time.Since(start)` | Much cheaper on macOS; cheaper on Linux and Windows. |
-| Read a wall timestamp | `UnixNano()` | `time.Now().UnixNano()` | Much cheaper on macOS; cheaper on Linux and Windows. Avoids constructing a `time.Time`. |
-| Read calendar time | `Now()` | `time.Now()` | Much cheaper on macOS; cheaper on Linux, with a smaller gain on Windows. Omits Go's monotonic component. |
-| Subtract stored readings | `end.Sub(start)` | `end.Sub(start)` on `time.Time` | Neither reads a clock; both are inexpensive arithmetic. |
+| Capture an elapsed-time start | `NowInstant()` | `time.Now()` | Only reads elapsed time. |
+| Measure elapsed time | `Since(start)` | `time.Since(start)` | Reads elapsed time and subtracts the start. |
+| Read a wall timestamp | `UnixNano()` | `time.Now().UnixNano()` | Avoids constructing a `time.Time`. |
+| Read calendar time | `Now()` | `time.Now()` | Omits Go's monotonic component. |
+| Subtract stored readings | `end.Sub(start)` | `end.Sub(start)` on `time.Time` | Neither reads a clock; not tracked in the continuous dashboard. |
 
-Other architectures, syscall fallbacks, and `purego` builds may offer no speedup
-or be slower than the standard library. See [elapsed-time measurements](research/measurements.md),
-[current macOS captures](research/darwin/calendar/benchmarks-2026-09-27/README.md),
-[Linux amd64 measurements](research/linux-vdso-bridge/README.md),
-[Linux ARM64 measurements](research/linux-vdso-bridge/arm64/README.md), and
-[Windows comparisons](research/windows/README.md). Benchmark your workload.
+Native CI results captured on September 27, 2026 with Go 1.23.12 and 1.27.1 show:
+
+- Linux amd64/arm64 and macOS amd64/arm64 are faster for all four clock-reading
+  operations. macOS amd64 has particularly large elapsed-time gains; the `Since`
+  gain on macOS arm64 is more modest.
+- Windows amd64 is faster for all four operations, with smaller gains for
+  `Since` and `Now` than for `NowInstant` and `UnixNano`.
+- Windows arm64 uses Go clock fallbacks: `NowInstant` is modestly faster, but
+  `Since`, `Now`, and `UnixNano` are slower than their standard-library comparisons.
+
+See the dashboard for exact measurements and subsequent runs. Results depend on
+the runner hardware, OS, toolchain, and workload; differences between separate CI
+jobs do not isolate the effect of a code or Go version change. Other targets,
+fallbacks, and `purego` builds may offer no speedup or be slower than the standard
+library. Benchmark your workload.
 
 ## Wall time
 
@@ -73,8 +80,9 @@ Default builds use these clock sources:
 | Platform | Elapsed time | Wall time (`Now`, `UnixNano`) |
 | --- | --- | --- |
 | Darwin amd64/arm64 | Mach approximate clock | XNU calendar mapping plus approximate ticks; Go fallback |
-| Linux | Kernel coarse monotonic clock; Go fallback selected at startup | Kernel coarse realtime clock; Go fallback |
+| Linux amd64/arm64 | Kernel coarse monotonic clock; Go fallback selected at startup | Kernel coarse realtime clock; Go fallback |
 | Windows amd64 | Shared InterruptTime counter | Shared SystemTime page |
+| Windows arm64 | Go monotonic clock | Go wall clock |
 | Other targets | Go monotonic clock | Go wall clock |
 
 Suspend accounting matches Go's current clocks: Linux and macOS exclude system
@@ -83,7 +91,7 @@ sleep; Windows includes it. Other targets follow Go's clock.
 Build with `-tags=purego` to use standard-library clocks on every platform,
 disabling this package's assembly and native clock access.
 
-Windows uses the same [shared clocks as Go](https://go.dev/src/runtime/time_windows.h),
+Windows amd64 uses the same [shared clocks as Go](https://go.dev/src/runtime/time_windows.h),
 keeping [interrupt time](https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time)
 in native ticks until duration conversion.
 
