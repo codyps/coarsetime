@@ -6,6 +6,40 @@ permissions:
   contents: read
 
 jobs:
+  discover:
+    name: Request pkg.go.dev discovery
+    needs: [test, cross-compile]
+    if: >-
+      github.event_name == 'push' &&
+      startsWith(github.ref, 'refs/tags/v') &&
+      github.repository == 'codyps/coarsetime' &&
+      github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+      # The proxy feeds pkg.go.dev; request the exact release after CI passes.
+      # https://go.dev/doc/modules/publishing
+      - name: Fetch tagged module through the public Go proxy
+        env:
+          GOPROXY: https://proxy.golang.org
+          MODULE_VERSION: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            if go list -m "github.com/codyps/coarsetime@${MODULE_VERSION}"; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              sleep 15
+            fi
+          done
+          echo "::error::Could not request module discovery; rerun this job to retry."
+          exit 1
+
   test:
     strategy:
       fail-fast: false
