@@ -21,22 +21,32 @@ stamp := coarsetime.Now()         // Approximate local time.Time.
 unixNS := coarsetime.UnixNano()   // Same wall clock, as int64 nanoseconds.
 ```
 
-Every platform exposes the same API:
-
-| API | Purpose |
-| --- | --- |
-| `NowInstant()` | Read an opaque, process-local `Instant` |
-| `Since(start)`, `end.Sub(start)` | Measure elapsed time |
-| `Before`, `After` | Compare Instants |
-| `Now()`, `UnixNano()` | Read approximate wall time |
-
 Readings may repeat; short intervals may measure zero. There is no guaranteed
-resolution or maximum staleness, and nanosecond units do not imply nanosecond
-accuracy. Benchmark your workload before choosing this over Go's `time` package.
+resolution or maximum staleness. Nanosecond units do not imply nanosecond accuracy.
 
-Instants are meaningful only within the process that created them. Their zero
-value is uninitialized; do not persist them or exchange them between processes.
+Instants are process-local; their zero value is uninitialized. Use `Before` and
+`After` to compare them, and `Sub` or `Since` to measure elapsed time.
 `Sub` truncates fractional nanoseconds and saturates at `time.Duration` limits.
+
+## Performance
+
+General guidance from measured amd64 fast paths; results depend on the OS,
+toolchain, and workload. The standard-library column provides the comparison
+for each row.
+
+| Operation | coarsetime | Standard library | Relative cost |
+| --- | --- | --- | --- |
+| Capture an elapsed-time start | `NowInstant()` | `time.Now()` | Much cheaper on macOS and Windows; cheaper on Linux. Only reads elapsed time. |
+| Measure elapsed time | `Since(start)` | `time.Since(start)` | Much cheaper on macOS; cheaper on Linux and Windows. |
+| Read a wall timestamp | `UnixNano()` | `time.Now().UnixNano()` | Much cheaper on macOS; cheaper on Linux and Windows. Avoids constructing a `time.Time`. |
+| Read calendar time | `Now()` | `time.Now()` | Much cheaper on macOS; cheaper on Linux, with a smaller gain on Windows. Omits Go's monotonic component. |
+| Subtract stored readings | `end.Sub(start)` | `end.Sub(start)` on `time.Time` | Neither reads a clock; both are inexpensive arithmetic. |
+
+Other architectures, syscall fallbacks, and `purego` builds may offer no speedup
+or be slower than the standard library. See [elapsed-time measurements](research/measurements.md),
+[current macOS captures](research/darwin/calendar/benchmarks-2026-09-27/README.md),
+[Linux measurements](research/linux-vdso-bridge/README.md), and
+[Windows comparisons](research/windows/README.md). Benchmark your workload.
 
 ## Wall time
 
@@ -45,8 +55,9 @@ monotonic component**. Wall time can jump backwards or forwards; use Instants
 for elapsed-time measurements. Wall timestamps have the signed Unix-nanosecond
 range, roughly 1678–2262, subject to OS clock limits.
 
-Wall time comes from the OS on every call. Capture `Now()` separately when you
-need a calendar timestamp; Instants cannot be converted to wall time.
+Wall time comes from the OS, with no calibration, background polling, or manual
+refresh. Capture `Now()` separately when you need a calendar timestamp;
+Instants cannot be converted to wall time.
 
 ## Platforms
 
@@ -57,47 +68,26 @@ Default builds use these clock sources:
 | Darwin amd64/arm64 | Mach approximate clock | XNU calendar mapping plus approximate ticks; Go fallback |
 | Linux | Kernel coarse monotonic clock | Kernel coarse realtime clock |
 | Windows amd64 | Shared InterruptTime counter | Shared SystemTime page |
-| Other Windows architectures | Go monotonic clock | Go wall clock |
-| Other platforms | Go monotonic clock | Go wall clock |
+| Other targets | Go monotonic clock | Go wall clock |
 
-The native Darwin and Linux elapsed clocks exclude suspend time. The native
-Windows amd64 clock includes it. Elsewhere, suspend behavior follows Go's clock.
-This is not a portable clock for deadlines that must include time spent asleep.
-Some optimized paths depend on OS layouts
-or private Go runtime bridges; compatibility can vary with the toolchain.
+Suspend accounting matches Go's current clocks: Linux and macOS exclude system
+sleep; Windows includes it. Other targets follow Go's clock.
 
-Build with `-tags=purego` to use Go's standard-library clocks on every platform.
-This disables the package's assembly and native clock access. The API is
-unchanged, but speed, resolution, and suspend behavior may differ.
+Build with `-tags=purego` to use standard-library clocks on every platform,
+disabling this package's assembly and native clock access.
 
-Darwin reads XNU's shared calendar page once per call and falls back to Go's
-wall clock if the sample is unusable. Switching between these sources can move
-wall time backward even without an OS clock adjustment. See the
-[calendar reader notes](research/darwin/calendar/README.md) for implementation
-details and validation limits.
+Windows uses the same [shared clocks as Go](https://go.dev/src/runtime/time_windows.h),
+keeping [interrupt time](https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time)
+in native ticks until duration conversion.
 
-Linux amd64 reads the coarse clocks through the kernel vDSO, using Go's runtime
-to locate and call it. Initialization requires `/proc/self/exe` to resolve and
-verify the runtime bridge, and panics if verification fails. This path depends
-on Go's private runtime ABI and executable metadata. Stripped and PIE executables
-are supported; custom packers, obfuscation, and shared-library builds are not
-validated. Clock reads are allocation-free.
+The macOS wall reader uses XNU's calendar mapping, falling back to Go when a
+snapshot is unusable. See the [calendar reader notes](research/darwin/calendar/README.md).
 
-If the vDSO is unavailable or rejects a call, Linux amd64 uses a syscall with
-the same clock ID. Other Linux architectures use syscalls directly. See the
-[bridge investigation](research/linux-vdso-bridge/README.md) for implementation
-details, compatibility tests, and measurements.
-On Windows amd64, `NowInstant` directly reads `KUSER_SHARED_DATA.InterruptTime`
-at `0x7ffe0008`, using the atomic 64-bit load described in
-[Go's shared-page definitions](https://go.dev/src/runtime/time_windows.h) and
-used by [Go's monotonic reader](https://go.dev/src/runtime/sys_windows_amd64.s).
-Instants retain native 100 ns ticks; `Sub` and `Since` convert differences to
-nanoseconds. The counter is unaffected by wall-clock adjustments, and its units
-do not imply 100 ns resolution. See Microsoft's
-[QueryInterruptTime documentation](https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryinterrupttime)
-and [interrupt-time overview](https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time).
-This is a direct OS-layout dependency, not a call to the documented Windows API.
-
+Linux amd64 uses the kernel vDSO through a verified Go runtime bridge, with a
+syscall fallback. Initialization requires `/proc/self/exe` and panics if bridge
+verification fails. Stripped and PIE executables are supported; custom packers,
+obfuscation, and shared-library builds are unvalidated. Other Linux architectures
+use syscalls. See the [bridge notes](research/linux-vdso-bridge/README.md).
 
 ## Tests and benchmarks
 
@@ -108,18 +98,14 @@ go vet ./...
 go test -run '^$' -bench . -benchmem -count=5
 ```
 
-On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires a working
-vDSO path. Tests also force the syscall fallback to check clock consistency;
-`BenchmarkLinuxCoarseSyscall` measures that fallback separately.
+On Linux amd64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
+`BenchmarkLinuxCoarseSyscall` measures the syscall fallback.
 
-Run benchmarks on an otherwise idle machine, separately from builds and race
-tests. Compare `BenchmarkSince` with `BenchmarkTimeSince` for elapsed timing;
-`time.Now()` also reads wall time. `BenchmarkClockProgress` measures observed
-clock updates, not read latency or an accuracy guarantee.
+Run benchmarks on an otherwise idle machine. Compare `BenchmarkSince` with
+`BenchmarkTimeSince` for elapsed timing; `BenchmarkClockProgress` measures clock
+updates rather than read speed.
 
-See [research](research/README.md) for platform investigations, implementation
-details, prototypes, and [retained measurements](research/measurements.md).
-Research code is separate from ordinary `go test ./...` runs.
+See [research](research/README.md) for implementation details and experiments.
 
 ## License
 
