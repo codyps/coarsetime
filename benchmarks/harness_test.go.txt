@@ -1,0 +1,40 @@
+// Copied unchanged into both revisions by run.py. Keep compatible with Go 1.23.
+package coarsetime_test
+
+import (
+	"testing"
+	"time"
+
+	coarse "github.com/codyps/coarsetime"
+)
+
+var ciInstant coarse.Instant
+var ciTime time.Time
+var ciDuration time.Duration
+var ciNano int64
+
+func BenchmarkCINowInstant(b *testing.B) {
+	for i := 0; i < b.N; i++ { ciInstant = coarse.NowInstant() }
+}
+func BenchmarkCISince(b *testing.B) {
+	start := coarse.NowInstant()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ { ciDuration = coarse.Since(start) }
+}
+func BenchmarkCINow(b *testing.B) {
+	for i := 0; i < b.N; i++ { ciTime = coarse.Now() }
+}
+func BenchmarkCIUnixNano(b *testing.B) {
+	for i := 0; i < b.N; i++ { ciNano = coarse.UnixNano() }
+}
+func BenchmarkCITimeNow(b *testing.B) {
+	for i := 0; i < b.N; i++ { ciTime = time.Now() }
+}
+func BenchmarkCITimeSince(b *testing.B) {
+	start := time.Now()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ { ciDuration = time.Since(start) }
+}
+func BenchmarkCITimeUnixNano(b *testing.B) {
+	for i := 0; i < b.N; i++ { ciNano = time.Now().UnixNano() }
+}

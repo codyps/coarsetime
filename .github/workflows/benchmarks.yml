@@ -1,0 +1,85 @@
+name: Benchmarks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 5 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: benchmarks-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  tooling:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s benchmarks -p 'test_*.py' -v
+      - run: node --check benchmarks/dashboard.js
+
+  measure:
+    name: ${{ matrix.runner }} / Go ${{ matrix.go }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm, macos-15, macos-15-intel, windows-2025, windows-11-arm]
+        go: ${{ fromJSON(github.event_name == 'schedule' && '["1.23.x","1.24.x","1.25.x","1.26.x","stable"]' || '["1.23.x","stable"]') }}
+    runs-on: ${{ matrix.runner }}
+    env:
+      CGO_ENABLED: '0'
+      GOTOOLCHAIN: local
+      BENCH_RUNNER: ${{ matrix.runner }}
+      GO_SELECTOR: ${{ matrix.go }}
+      PR_NUMBER: ${{ github.event.pull_request.number || 0 }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: tooling
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          # Measure actual PR head, not GitHub's synthetic merge commit.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        if: github.event_name == 'pull_request'
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: baseline
+          persist-credentials: false
+      - uses: actions/setup-go@v7
+        with:
+          go-version: ${{ matrix.go }}
+          cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Measure both revisions on this worker
+        if: github.event_name == 'pull_request'
+        run: python tooling/benchmarks/run.py --head candidate --base baseline --output results
+      - name: Measure main
+        if: github.event_name != 'pull_request'
+        run: python tooling/benchmarks/run.py --head candidate --output results
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: benchmark-${{ matrix.runner }}-${{ matrix.go }}
+          path: |
+            results/result.json
+            results/raw.txt
+          retention-days: 30
+          if-no-files-found: warn

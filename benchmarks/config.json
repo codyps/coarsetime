@@ -1,0 +1,8 @@
+{
+  "samples": 10,
+  "benchtime": "500ms",
+  "threshold_percent": 10,
+  "threshold_ns": 0.5,
+  "bootstrap_confidence": 0.99,
+  "bootstrap_iterations": 5000
+}
