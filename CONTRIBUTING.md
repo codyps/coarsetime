@@ -31,16 +31,28 @@ notes: include a release-triggering Conventional Commit (for example,
 `feat: add coarse elapsed and wall clocks`) to start the first release PR. There
 is no need to rewrite old commits or update a version in `go.mod`.
 
-Automation uses the repository's built-in `GITHUB_TOKEN`; no extra secret is
-required. Repository Settings > Actions > General must allow GitHub Actions to
-create and approve pull requests. GitHub may require a maintainer to approve
-workflow runs on bot-created PRs. This does not automatically approve or merge
-the release PR.
+Release Please uses a fine-grained personal access token stored as the repository
+Actions secret `RELEASE_PLEASE_TOKEN`. Select resource owner `codyps`, limit access
+to `coarsetime`, and grant these repository permissions:
 
-Discovery runs directly in the same workflow because tags created with
-`GITHUB_TOKEN` do not trigger another push workflow. Manually pushed `v*` tags
-retain the existing test-and-discover behavior. If discovery fails, rerun its
-failed job rather than moving or recreating the published tag.
+- Contents: read and write (release branches, commits, tags, and releases).
+- Pull requests: read and write (release PRs).
+- Issues: read and write (release labels).
+- Metadata: read-only (automatically included by GitHub).
+
+Add the secret under Settings > Secrets and variables > Actions. No Actions,
+Workflows, or Administration write permission is needed for this configuration.
+Renew the secret before the token expires. The built-in `GITHUB_TOKEN` remains
+read-only; a missing release token fails the release job with a setup message.
+
+Using the PAT lets release PRs trigger CI automatically. Branch protection should
+require the test and cross-compile checks before merging; the token does not need
+a protection bypass, and automation does not approve or merge release PRs.
+
+PAT-created `v*` tags trigger a separate test workflow, just like manually pushed
+tags. Discovery runs there after the tag's tests and cross-compilation pass. If
+discovery fails, rerun its failed job rather than moving or recreating the
+published tag.
 
 Keep published version tags immutable. Review a transition to v1 explicitly;
 before releasing v2 or later, migrate the module path and imports to the required

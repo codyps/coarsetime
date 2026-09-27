@@ -18,14 +18,16 @@ jobs:
     concurrency:
       group: release-please-main
       cancel-in-progress: false
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
+      - name: Check Release Please token
+        env:
+          RELEASE_PLEASE_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+        shell: bash
+        run: |
+          if [ -z "$RELEASE_PLEASE_TOKEN" ]; then
+            echo '::error::Add the RELEASE_PLEASE_TOKEN repository Actions secret.'
+            exit 1
+          fi
       # An older CI run may finish after a newer push. Let the newer run release.
       - name: Check that this run still represents main
         id: current
@@ -42,20 +44,17 @@ jobs:
         id: release
         if: steps.current.outputs.current == 'true'
         with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           target-branch: main
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
 
   discover:
     name: Request pkg.go.dev discovery
-    needs: [test, cross-compile, release]
+    needs: [test, cross-compile]
     if: >-
-      always() &&
-      needs.test.result == 'success' &&
-      needs.cross-compile.result == 'success' &&
       github.event_name == 'push' &&
-      (startsWith(github.ref, 'refs/tags/v') ||
-       needs.release.outputs.release_created == 'true') &&
+      startsWith(github.ref, 'refs/tags/v') &&
       github.repository == 'codyps/coarsetime' &&
       github.event.repository.private == false
     runs-on: ubuntu-latest
@@ -65,13 +64,13 @@ jobs:
         with:
           go-version: stable
           cache: false
-      # GITHUB_TOKEN-created tags do not trigger another push workflow.
-      # The proxy feeds pkg.go.dev; discover both automatic and manual releases.
+      # PAT-created tags trigger this workflow, just like manually pushed tags.
+      # The proxy feeds pkg.go.dev; request the exact release after tag CI passes.
       # https://go.dev/doc/modules/publishing
       - name: Fetch tagged module through the public Go proxy
         env:
           GOPROXY: https://proxy.golang.org
-          MODULE_VERSION: ${{ needs.release.outputs.tag_name || github.ref_name }}
+          MODULE_VERSION: ${{ github.ref_name }}
         shell: bash
         run: |
           for attempt in 1 2 3; do
