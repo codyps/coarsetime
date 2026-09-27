@@ -1,7 +1,7 @@
 'use strict';
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
-const {alternatives, environmentKey, selectRecords, aggregate, buildSeries} = require('./dashboard-data.js');
+const {alternatives, environmentKey, selectGoVersion, selectRecords, aggregate, buildSeries} = require('./dashboard-data.js');
 
 function record(runner = 'linux', run = 1, image = 'image-1') {
   return {runner, run_id: run, run_attempt: 1, go_selector: 'stable', harness: 'harness',
@@ -11,6 +11,18 @@ function record(runner = 'linux', run = 1, image = 'image-1') {
       TimeNow: {ns: 10}, TimeSince: {ns: 8}, TimeUnixNano: {ns: 30}}};
 }
 const filters = {runners: ['linux', 'windows'], go: 'go1.27.1', harness: 'harness'};
+
+test('Go selection prefers newest stable but preserves explicit available versions', () => {
+  const minimum = record('linux', 2); minimum.go_selector = '1.23.x'; minimum.environment.go.GOVERSION = 'go1.23.12';
+  const oldStable = record('linux', 1); oldStable.environment.go.GOVERSION = 'go1.26.6';
+  const stable = record('linux', 2);
+  const records = [minimum, oldStable, stable];
+  assert.equal(selectGoVersion(records, ''), 'go1.27.1');
+  assert.equal(selectGoVersion(records, 'go1.23.12'), 'go1.23.12');
+  assert.equal(selectGoVersion(records, 'go1.25.0'), 'go1.27.1');
+  assert.equal(selectGoVersion([minimum], ''), 'go1.23.12');
+  assert.equal(selectGoVersion([], 'go1.27.1'), '');
+});
 
 test('multiple platforms in one run survive deduplication', () => {
   const linux = record(), windows = record('windows');

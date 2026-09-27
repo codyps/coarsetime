@@ -8,6 +8,12 @@
   const newestFirst = (a, b) => b.run_id - a.run_id || b.run_attempt - a.run_attempt
     || Number(a.go_selector === 'stable') - Number(b.go_selector === 'stable');
 
+  function selectGoVersion(records, previous) {
+    if (records.some(r => r.environment.go.GOVERSION === previous)) return previous;
+    const ordered = [...records].sort(newestFirst);
+    return (ordered.find(r => r.go_selector === 'stable') || ordered[0])?.environment.go.GOVERSION || '';
+  }
+
   function selectRecords(records, {runners, go, harness, environment = 'latest'}) {
     let selected = records.filter(r => runners.includes(r.runner)
       && r.environment.go.GOVERSION === go && r.harness === harness).sort(newestFirst);
@@ -63,7 +69,7 @@
     return [...groups.values()];
   }
 
-  const api = {alternatives, environmentKey, runKey, newestFirst, selectRecords, aggregate, buildSeries};
+  const api = {alternatives, environmentKey, runKey, newestFirst, selectGoVersion, selectRecords, aggregate, buildSeries};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.BenchmarkData = api;
 })(globalThis);

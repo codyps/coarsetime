@@ -1,16 +1,17 @@
 'use strict';
-const {alternatives, environmentKey, runKey, newestFirst, selectRecords, buildSeries} = BenchmarkData;
+const {alternatives, environmentKey, runKey, newestFirst, selectGoVersion, selectRecords, buildSeries} = BenchmarkData;
 const el = id => document.getElementById(id);
 let records = [], visibleSeries = [];
 const checked = id => [...el(id).querySelectorAll('input:checked')].map(input => input.value);
 const platformLabel = r => `${r.environment.go.GOOS}/${r.environment.go.GOARCH} · ${r.runner}`;
 
-function options(id, entries) {
+function options(id, entries, fallback) {
   const select = el(id), previous = select.value;
   select.replaceChildren(...entries.map(([value, label]) => {
     const option = document.createElement('option'); option.value = value; option.textContent = label; return option;
   }));
   if (entries.some(([value]) => value === previous)) select.value = previous;
+  else if (entries.some(([value]) => value === fallback)) select.value = fallback;
 }
 function checkboxes(id, entries, defaults) {
   el(id).replaceChildren(...entries.map(([value, text]) => {
@@ -32,7 +33,7 @@ function color(index) { return `hsl(${(index * 137.508 + 210) % 360} 65% 45%)`; 
 function render() {
   const runners = checked('runners'), operations = checked('operations'), mode = el('aggregation').value;
   let pool = records.filter(r => runners.includes(r.runner));
-  options('go', [...new Set(pool.map(r => r.environment.go.GOVERSION))].map(v => [v, v]));
+  options('go', [...new Set(pool.map(r => r.environment.go.GOVERSION))].map(v => [v, v]), selectGoVersion(pool, el('go').value));
   pool = pool.filter(r => r.environment.go.GOVERSION === el('go').value);
   options('harness', [...new Set(pool.map(r => r.harness))].map(v => [v, v.slice(0, 12)]));
   pool = pool.filter(r => r.harness === el('harness').value);
