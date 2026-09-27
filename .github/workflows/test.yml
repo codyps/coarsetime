@@ -152,9 +152,25 @@ jobs:
       - name: Build syscall baseline and vDSO candidate
         shell: bash
         run: |
+          # Fixed pre-vDSO ARM64 revision keeps this comparison reproducible
+          # after the feature branch is merged.
           git worktree add --detach "$RUNNER_TEMP/baseline" cfab1351632b48dc33f8830f3dd330b2ea7fed78
           (cd "$RUNNER_TEMP/baseline" && go test -c -o "$RUNNER_TEMP/baseline.test" .)
           go test -c -o "$RUNNER_TEMP/vdso.test" .
+      - name: Verify ARM64 reads do not enter the kernel
+        shell: bash
+        run: |
+          if ! command -v strace >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y strace
+          fi
+          strace -f -e trace=clock_gettime -o arm64-vdso.trace "$RUNNER_TEMP/vdso.test" -test.run '^TestVDSO$' -test.bench '^(BenchmarkNowInstant|BenchmarkNow|BenchmarkUnixNano)$' -test.benchtime=100000x
+          if grep -q 'clock_gettime(' arm64-vdso.trace; then
+            cat arm64-vdso.trace
+            exit 1
+          fi
+          strace -f -e trace=clock_gettime -o arm64-syscall.trace "$RUNNER_TEMP/baseline.test" -test.run '^$' -test.bench '^BenchmarkNowInstant$' -test.benchtime=100x
+          grep -q 'clock_gettime(' arm64-syscall.trace
       - name: Validate and measure native ARM64
         shell: bash
         run: |
@@ -170,7 +186,7 @@ jobs:
               if (( round % 2 == 0 )); then cases='vdso baseline'; fi
               for case in $cases; do
                 echo "case=$case round=$round"
-                "$RUNNER_TEMP/$case.test" -test.run '^$' -test.bench '^(Benchmark(NowInstant|Since|TimeSince|TimeNow|Now|UnixNano|TimeNowUnixNano|LinuxCoarseSyscall))$' -test.benchmem -test.benchtime=500ms
+                "$RUNNER_TEMP/$case.test" -test.run '^$' -test.bench '^Benchmark(NowInstant|Since|TimeSince|TimeNow|Now|UnixNano|LinuxCoarseSyscall)$' -test.benchmem -test.benchtime=500ms
               done
             done
           } 2>&1 | tee arm64-results.txt
@@ -178,7 +194,9 @@ jobs:
         if: always()
         with:
           name: linux-arm64-results
-          path: arm64-results.txt
+          path: |
+            arm64-results.txt
+            arm64-*.trace
 
   cross-compile:
     runs-on: ubuntu-latest
