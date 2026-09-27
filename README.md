@@ -107,6 +107,22 @@ updates rather than read speed.
 
 See [research](research/README.md) for implementation details and experiments.
 
+## Source map
+
+The production library is one package at the repository root. Files are grouped
+by clock family, with OS and architecture suffixes selecting native implementations:
+
+- `doc.go`: package documentation.
+- `instant.go` and `instant_*`: elapsed-time API, tick conversion, and platform readers.
+- `wall.go` and `wall_*`: wall-time API, platform readers, and standard-library fallbacks.
+- `vdso_linux_*` and `asmcgocall_linux_amd64.go`: Linux bridge shared by both clock families.
+- `internal/darwinwall/`: portable XNU calendar arithmetic, tested with synthetic mappings.
+- `*_test.go`: adjacent correctness tests; `coarsetime_bench_test.go` covers both public clock families.
+- `research/`: experiments and retained evidence, indexed by topic and adoption status.
+
+Native assembly shares its Go reader's filename stem. The `purego` build tag
+selects standard-library readers instead of native clock access.
+
 ## License
 
 Copyright 2026 coarsetime contributors.

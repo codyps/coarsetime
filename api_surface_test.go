@@ -63,7 +63,7 @@ func TestPortableAPISurface(t *testing.T) {
 					}
 					add := func(name string) {
 						got = append(got, name)
-						if file != "coarsetime.go" && file != "wall_api.go" {
+						if file != "instant.go" && file != "wall.go" {
 							t.Errorf("public declaration %s in platform implementation %s", name, file)
 						}
 					}

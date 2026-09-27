@@ -4,4 +4,4 @@ package coarsetime
 
 import "time"
 
-func unixNano() int64 { return time.Now().UnixNano() }
+func readWallUnixNano() int64 { return time.Now().UnixNano() }

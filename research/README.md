@@ -14,21 +14,21 @@ validation commands are documented [here](darwin/calendar/README.md).
 
 ## Topics
 
-| Directory | Contents | How to run code |
-| --- | --- | --- |
-| [darwin](darwin/README.md) | Apple clock source investigation and release history | Documentation and acquisition records |
-| [darwin/calendar](darwin/calendar/README.md) | OS-owned calendar mapping, without local correction | Root Darwin tests; portable arithmetic tests |
-| [darwin/commpage](darwin/commpage/README.md) | Commpage reader comparisons and adoption measurements | Overlay profile `darwin-commpage` |
-| [darwin/wall-split](darwin/wall-split/README.md) | Split timestamp and rebasing experiment | Overlay profile `darwin-wall-split` |
-| [linux-wall](linux-wall/README.md) | Bridge-cost probes, timestamp cache experiment, layout history | Overlay profile `linux-wall` |
-| [linux-vdso-bridge](linux-vdso-bridge/README.md) | Cgo-free Go 1.27 vDSO bridges, linker probes, and integration evidence | Standalone module and validation scripts |
-| [linux-wall/vvar](linux-wall/vvar/README.md) | Direct VVAR readers and exact-code recognition | Overlay profile `vvar` |
-| [linux-wall/vvar/detectors](linux-wall/vvar/detectors/README.md) | BTF and instruction-analysis detector module | `go -C research/linux-wall/vvar/detectors test ./...` |
-| [wall-optimizations](wall-optimizations/README.md) | Conversion and wall-read optimization comparisons | Overlay profile `wall-optimizations` |
-| [windows](windows/README.md) | Standalone Windows clock comparisons and historical [plan](windows/plan.md) | `go -C research/windows test -short ./...` on Windows amd64 |
-| [fastime](fastime/README.md) | Standalone comparison with the fastime cache | `go -C research/fastime test ./...` |
-| [api-shape](api-shape/README.md) | Shared API refactor measurements and compiler evidence | Production API benchmarks at the root |
-| [measurements.md](measurements.md) | Historical production clock measurements | Retained results, not a runnable suite |
+| Directory | Status | Contents | How to run code |
+| --- | --- | --- | --- |
+| [darwin](darwin/README.md) | Current implementation background | Apple clock source investigation and release history | Documentation and acquisition records |
+| [darwin/calendar](darwin/calendar/README.md) | Current implementation evidence | OS-owned calendar mapping, without local correction | Root Darwin tests; portable arithmetic tests |
+| [darwin/commpage](darwin/commpage/README.md) | Adopted elapsed reader; historical measurements | Commpage reader comparisons and adoption measurements | Overlay profile `darwin-commpage` |
+| [darwin/wall-split](darwin/wall-split/README.md) | Historical; cached-wall API removed | Split timestamp and rebasing experiment | Overlay profile `darwin-wall-split` |
+| [linux-wall](linux-wall/README.md) | Exploratory | Bridge-cost probes, timestamp cache experiment, layout history | Overlay profile `linux-wall` |
+| [linux-vdso-bridge](linux-vdso-bridge/README.md) | Adopted bridge; validation evidence | Cgo-free Go 1.27 vDSO bridges, linker probes, and integration evidence | Standalone module and validation scripts |
+| [linux-wall/vvar](linux-wall/vvar/README.md) | Exploratory | Direct VVAR readers and exact-code recognition | Overlay profile `vvar` |
+| [linux-wall/vvar/detectors](linux-wall/vvar/detectors/README.md) | Exploratory | BTF and instruction-analysis detector module | `go -C research/linux-wall/vvar/detectors test ./...` |
+| [wall-optimizations](wall-optimizations/README.md) | Historical comparisons; Darwin requires old revision | Conversion and wall-read optimization comparisons | Overlay profile `wall-optimizations` |
+| [windows](windows/README.md) | Adopted shared clocks; comparison evidence | Standalone Windows clock comparisons and historical [plan](windows/plan.md) | `go -C research/windows test -short ./...` on Windows amd64 |
+| [fastime](fastime/README.md) | External comparison | Standalone comparison with the fastime cache | `go -C research/fastime test ./...` |
+| [api-shape](api-shape/README.md) | Historical API refactor evidence | Shared API refactor measurements and compiler evidence | Production API benchmarks at the root |
+| [measurements.md](measurements.md) | Historical measurements | Historical production clock measurements | Retained results, not a runnable suite |
 
 Commands in research documents run from the repository root unless stated
 otherwise. Each standalone module has its own Go version and dependency

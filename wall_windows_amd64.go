@@ -5,7 +5,7 @@ package coarsetime
 // Windows FILETIME counts 100 ns intervals since 1601-01-01 UTC.
 const windowsUnixEpoch = 116444736000000000
 
-func unixNano() int64 { return filetimeUnixNano(readWindowsFiletime()) }
+func readWallUnixNano() int64 { return filetimeUnixNano(readWindowsFiletime()) }
 
 func filetimeUnixNano(ticks uint64) int64 {
 	// Convert to signed before multiplying to support dates before 1970.
