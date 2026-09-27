@@ -1,0 +1,656 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestDarwinCalendarSelection
+--- PASS: TestDarwinCalendarSelection (0.00s)
+=== RUN   TestDarwinCalendarLive
+    wall_darwin_test.go:84: accepted 10000/10000 shared-page snapshots
+--- PASS: TestDarwinCalendarLive (1.14s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	40049172	        15.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	29540521	        21.15 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	62935084	         8.627 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	90880407	         7.032 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	11120488	        55.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	23000953	        26.37 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	10113800	        58.60 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	11179732	        64.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	23067348	        26.50 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10642621	        55.42 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	86507272	         6.535 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	68769555	         9.454 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	28331955	        20.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	37525308	        15.13 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	36749878	        16.30 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	31576386	        19.73 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	66615778	         8.636 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	86966469	         7.045 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10475415	        57.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	22607101	        28.27 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	 9481225	        57.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	 9915204	        56.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	22432351	        26.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10058464	        60.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	92099886	         7.892 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	60515647	         9.126 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	27468858	        23.26 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	36111314	        15.42 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	40111644	        21.46 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	27736950	        19.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	68106358	         9.976 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	95077112	         6.922 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	 9478310	        55.75 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	22064805	        27.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	 9619687	        60.04 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	10017014	        61.58 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	21700701	        27.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10875992	        54.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	90739531	         7.048 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	70226773	         8.414 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	31322869	        19.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	39886435	        17.30 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	39330830	        15.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	22366812	        25.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	72811486	         9.192 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	95064564	         7.266 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10071007	        58.94 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	23290342	        27.46 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	10808294	        66.29 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	11057206	        57.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	20258463	        27.15 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	 9492418	        65.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	90775567	         7.024 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	70318336	         9.928 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	26063866	        21.26 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	40422980	        14.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	38506425	        18.43 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	26873292	        20.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	72664876	        10.40 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	71906721	         7.340 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	 7467627	        67.43 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	19824907	        37.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	 8964212	        71.55 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeUnixNano 	 6006090	       113.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeSince 	15580351	        35.23 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCITimeNow 	10603648	        71.83 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCIUnixNano 	75934150	         8.204 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINow 	70346499	         9.591 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCISince 	27788336	        24.54 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+cpu: Apple M1 (Virtual)
+BenchmarkCINowInstant 	33848842	        22.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+

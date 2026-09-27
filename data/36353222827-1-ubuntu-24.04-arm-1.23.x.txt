@@ -1,0 +1,608 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestSignalOffsets
+--- PASS: TestSignalOffsets (0.00s)
+=== RUN   TestVDSOTracebackOffsets
+--- PASS: TestVDSOTracebackOffsets (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.00s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.62s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestLinuxGoMonotonicClock
+--- PASS: TestLinuxGoMonotonicClock (0.01s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxGoFallback
+--- PASS: TestLinuxGoFallback (0.01s)
+=== RUN   TestLinuxCoarseClockFailure
+--- PASS: TestLinuxCoarseClockFailure (0.00s)
+=== RUN   TestVDSOProfileAttribution
+--- PASS: TestVDSOProfileAttribution (1.15s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallGoFallback
+--- PASS: TestLinuxWallGoFallback (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28886947	        20.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25448961	        23.52 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32046332	        18.75 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32451559	        18.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8384710	        71.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	15975282	        37.51 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8388951	        71.66 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8353518	        71.67 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16352248	        36.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8382208	        71.61 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32414856	        18.40 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32006689	        18.78 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25489255	        23.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28851570	        20.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28849893	        20.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25414615	        23.52 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32253921	        18.73 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32357696	        18.45 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8375797	        71.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16256103	        36.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8359874	        71.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8372371	        71.51 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16303680	        36.68 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8383888	        71.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32310763	        18.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32129354	        18.70 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25377745	        23.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28952908	        20.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28989567	        20.70 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25398592	        23.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32112418	        18.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32274493	        18.40 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8434287	        71.11 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16288035	        36.77 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8423316	        71.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8394015	        71.37 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16308176	        36.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8430561	        71.08 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32261058	        18.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	31856959	        18.74 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25507876	        23.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28842507	        20.70 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28898494	        20.75 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25400511	        23.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32022196	        18.72 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32171514	        18.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8378854	        71.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16036760	        37.34 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8362844	        71.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8416748	        71.10 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16083238	        37.33 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8411620	        71.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32276768	        18.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32001070	        18.75 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25460205	        23.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	25374922	        23.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28789363	        20.78 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25579736	        23.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	32179459	        18.73 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32218093	        18.54 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8441176	        70.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16308831	        36.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8435401	        71.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeUnixNano 	 8373452	        71.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeSince 	16309984	        36.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCITimeNow 	 8426988	        71.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCIUnixNano 	32454517	        18.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINow 	31735791	        18.77 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCISince 	25383534	        23.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: arm64
+pkg: github.com/codyps/coarsetime
+BenchmarkCINowInstant 	28692526	        20.79 ns/op	       0 B/op	       0 allocs/op
+PASS
+

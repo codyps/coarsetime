@@ -1,0 +1,663 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestDarwinCommpageAgainstLibc
+    instant_darwin_amd64_test.go:8: direct approximate time supported=true
+=== RUN   TestDarwinCommpageAgainstLibc/selected
+=== RUN   TestDarwinCommpageAgainstLibc/forced-fallback
+--- PASS: TestDarwinCommpageAgainstLibc (0.00s)
+    --- PASS: TestDarwinCommpageAgainstLibc/selected (0.00s)
+    --- PASS: TestDarwinCommpageAgainstLibc/forced-fallback (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.01s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestDarwinCalendarSelection
+--- PASS: TestDarwinCalendarSelection (0.00s)
+=== RUN   TestDarwinCalendarLive
+    wall_darwin_test.go:84: accepted 9990/10000 shared-page snapshots
+--- PASS: TestDarwinCalendarLive (1.13s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	804497527	         0.7694 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	148247242	         5.301 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	38511098	        16.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	50886082	        12.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 5304225	       120.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	13129717	        47.45 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 4830454	       124.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 5435826	       121.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	11735457	        49.04 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 4766815	       162.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	59706915	        10.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	39958849	        14.43 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	100000000	         5.223 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	576596966	         1.312 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	841774105	         0.8803 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	136999036	         4.244 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	39285362	        13.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	81034803	        10.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 5323875	       113.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	13933350	        44.84 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 5723598	       109.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 6339032	        96.76 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	15423736	        39.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 6192502	        99.65 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	60888348	         9.186 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	44831271	        13.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	163622522	         4.164 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	587194743	         0.9398 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	645304290	         1.145 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	100000000	         7.486 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	58765396	        19.28 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	46743751	        11.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 4520736	       129.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	12080480	        49.35 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 4680525	       128.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 4997186	       125.8 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	11701610	        48.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 4954929	       118.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	69501082	        10.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	57236863	        12.37 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	129582973	         4.907 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	698824089	         0.9417 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	576444189	         0.9056 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	120779310	         5.239 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	39959288	        21.71 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	46860003	        17.65 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 4767105	       116.7 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	12478192	        50.39 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 4999458	       122.6 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 4565592	       159.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	12195162	        53.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 4936526	       118.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	59585546	        11.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	43404309	        16.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	100000000	         5.122 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	757785190	         0.9954 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	605343451	         1.001 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	120855722	         5.179 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	42645992	        16.33 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	51985801	        15.44 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 6164456	       137.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	13640204	        44.61 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 5008047	       118.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeUnixNano 	 5067063	       121.5 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeSince 	13806147	        46.78 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCITimeNow 	 5237332	       120.3 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCIUnixNano 	63838168	         8.658 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINow 	58989567	        11.30 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCISince 	135042906	         3.941 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: darwin
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+BenchmarkCINowInstant 	884665030	         0.7038 ns/op	       0 B/op	       0 allocs/op
+PASS
+
