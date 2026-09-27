@@ -157,6 +157,18 @@ jobs:
           git worktree add --detach "$RUNNER_TEMP/baseline" cfab1351632b48dc33f8830f3dd330b2ea7fed78
           (cd "$RUNNER_TEMP/baseline" && go test -c -o "$RUNNER_TEMP/baseline.test" .)
           go test -c -o "$RUNNER_TEMP/vdso.test" .
+      - name: Verify profiling regression test detects the old bridge
+        shell: bash
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/pre-review" b58100fca23f174a1c4b5e114b910e2b2300cfb1
+          cp vdso_linux_arm64_profile_test.go "$RUNNER_TEMP/pre-review/"
+          (cd "$RUNNER_TEMP/pre-review" && go test -c -o "$RUNNER_TEMP/pre-review.test" .)
+          if "$RUNNER_TEMP/pre-review.test" -test.run '^TestVDSOProfileAttribution$' -test.v > arm64-profile-regression.txt 2>&1; then
+            echo 'Old bridge unexpectedly passed the profiling regression test'
+            exit 1
+          fi
+          grep -q 'vDSO samples lost their Go caller' arm64-profile-regression.txt
+          "$RUNNER_TEMP/vdso.test" -test.run '^TestVDSOProfileAttribution$' -test.count=5 -test.v
       - name: Verify ARM64 reads do not enter the kernel
         shell: bash
         run: |
@@ -197,6 +209,7 @@ jobs:
           path: |
             arm64-results.txt
             arm64-*.trace
+            arm64-profile-regression.txt
 
   cross-compile:
     runs-on: ubuntu-latest

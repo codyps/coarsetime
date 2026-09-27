@@ -9,14 +9,15 @@ import (
 	"fmt"
 	"reflect"
 	"runtime"
+	"strings"
 )
 
 // Read the two layout-dependent offsets from the verified runtime bridge,
 // rather than embedding a particular Go release's g/m layout. Fail closed if
 // the runtime no longer uses the audited instruction sequence.
-var runtimeGMOffset, runtimeMSignalOffset = mustResolveSignalOffsets()
+var runtimeGMOffset, runtimeMSignalOffset, runtimeVDSOPCOffset, runtimeVDSOSPOffset = mustResolveSignalOffsets()
 
-func mustResolveSignalOffsets() (uintptr, uintptr) {
+func mustResolveSignalOffsets() (uintptr, uintptr, uintptr, uintptr) {
 	f, err := elf.Open("/proc/self/exe")
 	if err != nil {
 		panic(err)
@@ -50,7 +51,25 @@ func mustResolveSignalOffsets() (uintptr, uintptr) {
 	if err != nil {
 		panic("coarsetime: " + err.Error())
 	}
-	return gm, ms
+	for _, fn := range table.Funcs {
+		if fn.Name != "runtime.nanotime1" {
+			continue
+		}
+		file, _, _ := table.PCToLine(fn.Entry)
+		if !strings.HasSuffix(file, "runtime/sys_linux_arm64.s") {
+			continue
+		}
+		code := make([]byte, 128)
+		if _, err := text.ReadAt(code, int64(fn.Entry-text.Addr)); err != nil {
+			panic(err)
+		}
+		pcOffset, spOffset, err := decodeVDSOOffsets(code)
+		if err != nil {
+			panic("coarsetime: " + err.Error())
+		}
+		return gm, ms, pcOffset, spOffset
+	}
+	panic("coarsetime: runtime.nanotime1 assembly entry not found")
 }
 
 func decodeSignalOffsets(code []byte) (uintptr, uintptr, error) {
@@ -69,4 +88,24 @@ func decodeSignalOffsets(code []byte) (uintptr, uintptr, error) {
 		}
 	}
 	return 0, 0, fmt.Errorf("unrecognized runtime.asmcgocall ARM64 signal-stack loads")
+}
+
+// Recognize nanotime1's save/publish sequence, checking that the later stores
+// use the same offsets as the loads. These fields are private runtime ABI.
+func decodeVDSOOffsets(code []byte) (uintptr, uintptr, error) {
+	const imm = uint32(0x003ffc00)
+	for i := 0; i+28 <= len(code); i += 4 {
+		w := func(n int) uint32 { return binary.LittleEndian.Uint32(code[i+4*n:]) }
+		a, b := w(0), w(1)
+		if a & ^imm == 0xf94002a2 && b & ^imm == 0xf94002a3 &&
+			w(2) == 0xf90007e2 && w(3) == 0xf9000be3 &&
+			w(4) & ^imm == 0x910003e2 &&
+			w(5) == 0xf90002be|(a&imm) && w(6) == 0xf90002a2|(b&imm) {
+			pc, sp := uintptr((a>>10)&4095)*8, uintptr((b>>10)&4095)*8
+			if pc != 0 && sp != 0 && pc != sp {
+				return pc, sp, nil
+			}
+		}
+	}
+	return 0, 0, fmt.Errorf("unrecognized runtime.nanotime1 ARM64 traceback fields")
 }
