@@ -2,14 +2,9 @@
 
 package coarsetime
 
-import "syscall"
+import "time"
 
-// CLOCK_REALTIME_COARSE already includes the kernel's wall-clock correction.
-// Reading it directly is cheaper and fresher than maintaining our own offset.
+// Let Go use its optimized clock reader on architectures without our vDSO bridge.
 func readWallUnixNano() int64 {
-	var ts syscall.Timespec
-	if readRealtimeVDSO(&ts) {
-		return int64(ts.Sec)*1_000_000_000 + int64(ts.Nsec)
-	}
-	return readRealtimeSyscall()
+	return time.Now().UnixNano()
 }

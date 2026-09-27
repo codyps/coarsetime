@@ -13,7 +13,7 @@ func TestVDSO(t *testing.T) {
 		if os.Getenv("COARSETIME_REQUIRE_VDSO") == "1" {
 			t.Fatal("vDSO fast path unavailable")
 		}
-		t.Skip("vDSO unavailable; syscall fallback is active")
+		t.Skip("vDSO unavailable; Go fallback is active")
 	}
 	var ts syscall.Timespec
 	if !readCoarseVDSO(&ts) {
@@ -28,20 +28,34 @@ func TestVDSO(t *testing.T) {
 	t.Log("monotonic and realtime vDSO fast paths active")
 }
 
-func TestLinuxSyscallFallback(t *testing.T) {
+func TestLinuxGoFallback(t *testing.T) {
 	// Tests are deliberately serial: change the initialization-time selection only
 	// while no clock readers are running, and restore it before subsequent tests.
 	saved := coarseVDSO
 	runtimeSaved := runtimeVDSOClockgettime
-	before := NowInstant()
 	coarseVDSO = 0
 	defer func() { coarseVDSO = saved }()
-	TestLinuxCoarseClock(t)
-	TestLinuxRealtimeClock(t)
-	if NowInstant().Before(before) {
-		t.Fatal("fallback changed the clock epoch")
+	if hasCoarseClock() {
+		t.Fatal("missing vDSO must select Go's monotonic clock at startup")
 	}
+	TestLinuxGoMonotonicClock(t)
+	testLinuxGoWallClock(t)
 	if runtimeVDSOClockgettime != runtimeSaved {
 		t.Fatal("forcing the package fallback changed the runtime's vDSO address")
 	}
+}
+
+func TestLinuxCoarseClockFailure(t *testing.T) {
+	if !linuxCoarseClock {
+		t.Skip("coarse clock unavailable")
+	}
+	saved := coarseVDSO
+	coarseVDSO = 0
+	defer func() { coarseVDSO = saved }()
+	defer func() {
+		if recover() == nil {
+			t.Fatal("failed coarse read must not silently switch epochs")
+		}
+	}()
+	NowInstant()
 }

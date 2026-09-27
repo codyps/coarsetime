@@ -1,0 +1,5 @@
+{
+  "Replace": {
+    "vdso_linux_arm64.s": "testdata/linux-arm64-unattributed.s"
+  }
+}

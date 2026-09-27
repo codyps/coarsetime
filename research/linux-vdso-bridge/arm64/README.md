@@ -2,7 +2,10 @@
 
 The production ARM64 reader calls the kernel's vDSO for both
 `CLOCK_MONOTONIC_COARSE` and `CLOCK_REALTIME_COARSE`. Missing symbols or a vDSO
-error retain the syscall fallback. `purego` retains standard-library clocks.
+error select Go clocks at startup. After successful selection, a failed monotonic
+read panics to preserve the Instant epoch; wall reads can fall back per call.
+This incorporates the newer Linux fallback behavior from `b564d67`. `purego`
+retains standard-library clocks.
 
 ## Runtime integration
 
@@ -55,7 +58,9 @@ symbol. Profiling stress combines concurrent reads, recursive stack growth,
 GC, and all-goroutine stack traces. The benchmark job repeats it 20 times.
 A separate test inspects CPU profiles for caller attribution, rejecting lost
 `runtime._VDSO` samples. CI verifies that this test fails on the pre-review
-bridge, then passes five times on the corrected implementation.
+assembly fixture under `testdata/`, then passes five times on the corrected
+implementation. The fixture is applied with a Go build overlay and survives
+squash merges without requiring an intermediate PR commit.
 
 The benchmark job also traces 100,000 reads of each public clock reader and
 rejects any `clock_gettime` syscall. A traced baseline read loop must contain

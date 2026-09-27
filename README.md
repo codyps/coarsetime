@@ -68,7 +68,7 @@ Default builds use these clock sources:
 | Platform | Elapsed time | Wall time (`Now`, `UnixNano`) |
 | --- | --- | --- |
 | Darwin amd64/arm64 | Mach approximate clock | XNU calendar mapping plus approximate ticks; Go fallback |
-| Linux | Kernel coarse monotonic clock | Kernel coarse realtime clock |
+| Linux | Kernel coarse monotonic clock; Go fallback selected at startup | Kernel coarse realtime clock; Go fallback |
 | Windows amd64 | Shared InterruptTime counter | Shared SystemTime page |
 | Other targets | Go monotonic clock | Go wall clock |
 
@@ -85,12 +85,17 @@ in native ticks until duration conversion.
 The macOS wall reader uses XNU's calendar mapping, falling back to Go when a
 snapshot is unusable. See the [calendar reader notes](research/darwin/calendar/README.md).
 
-Linux amd64/arm64 uses the kernel vDSO through a verified Go runtime bridge, with a
-syscall fallback. Initialization requires `/proc/self/exe` and panics if bridge
+Linux amd64/arm64 uses the kernel vDSO through a verified Go runtime bridge, with
+standard-library clock fallbacks. Initialization requires `/proc/self/exe` and panics if bridge
 verification fails. Stripped and PIE executables are supported; custom packers,
 obfuscation, and shared-library builds are unvalidated. Other Linux architectures
-use syscalls. ARM64 also publishes the original goroutine and caller traceback metadata;
-its runtime layout operands are verified at startup. See the [bridge notes](research/linux-vdso-bridge/README.md).
+use Go clocks. The monotonic source is selected once at startup: when the coarse
+vDSO clock is unavailable, `Instant` uses `time.Since` from a fixed `time.Now()`
+origin. A coarse read failure after successful selection panics instead of
+changing epochs beneath existing Instants. Wall reads can fall back per call;
+`Now` always removes Go's monotonic component. ARM64 also publishes the original
+goroutine and caller traceback metadata; its runtime layout operands are verified
+at startup. See the [bridge notes](research/linux-vdso-bridge/README.md).
 
 ## Tests and benchmarks
 
@@ -102,7 +107,9 @@ go test -run '^$' -bench . -benchmem -count=5
 ```
 
 On Linux amd64/arm64, `COARSETIME_REQUIRE_VDSO=1 go test ./...` requires the vDSO path;
-`BenchmarkLinuxCoarseSyscall` measures the syscall fallback.
+`BenchmarkLinuxCoarseSyscall` measures the former syscall implementation.
+`BenchmarkLinuxWallFallback` and `BenchmarkLinuxInstantFallback` compare the old
+syscalls with Go clocks on native GitHub Linux amd64 and arm64 runners.
 
 Run benchmarks on an otherwise idle machine. Compare `BenchmarkSince` with
 `BenchmarkTimeSince` for elapsed timing; `BenchmarkClockProgress` measures clock

@@ -23,8 +23,8 @@ func mustResolveAsmcgocall() uintptr {
 	defer f.Close()
 	pc, err := resolveAsmcgocall(f, reflect.ValueOf(runtime.Gosched).Pointer())
 	if err != nil {
-		// A runtime compatibility failure must not silently turn all reads into
-		// kernel syscalls, nor leave an unchecked indirect call target.
+		// A runtime compatibility failure must not silently disable the fast
+		// path, nor leave an unchecked indirect call target.
 		panic("coarsetime: resolve runtime.asmcgocall: " + err.Error())
 	}
 	return pc

@@ -21,7 +21,7 @@ func readWallTime() time.Time {
 			return time.Unix(args.ts.Sec, args.ts.Nsec)
 		}
 	}
-	return time.Unix(0, readRealtimeSyscall())
+	return time.Now().Round(0)
 }
 
 func readWallUnixNano() int64 {
@@ -35,5 +35,5 @@ func readWallUnixNano() int64 {
 			return args.ts.Sec*1e9 + args.ts.Nsec
 		}
 	}
-	return readRealtimeSyscall()
+	return time.Now().UnixNano()
 }
