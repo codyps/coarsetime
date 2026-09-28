@@ -1,4 +1,4 @@
-//go:build !purego
+//go:build !purego && (amd64 || arm64)
 
 package coarsetime
 
@@ -13,7 +13,7 @@ func filetimeUnixNano(ticks uint64) int64 {
 }
 
 // readWindowsFiletime reads KUSER_SHARED_DATA.SystemTime. This OS layout
-// dependency follows Go's runtime/time_windows.h and time_windows_amd64.s.
-// It must not be reused on another architecture without reviewing alignment,
+// dependency follows Go's runtime/time_windows.h, time_windows_amd64.s, and
+// time_windows_arm64.s. It must not be reused on another architecture without reviewing alignment,
 // atomicity, and memory ordering. Use the purego tag to avoid this dependency.
 func readWindowsFiletime() uint64

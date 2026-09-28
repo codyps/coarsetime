@@ -1,4 +1,4 @@
-//go:build !purego
+//go:build !purego && (amd64 || arm64)
 
 package coarsetime
 
@@ -10,11 +10,12 @@ const clockNumer, clockDenom = uint64(100), uint64(1)
 // This uses the same shared-page layout and atomic 64-bit read as Go's runtime:
 // https://go.dev/src/runtime/time_windows.h
 // https://go.dev/src/runtime/sys_windows_amd64.s
+// https://go.dev/src/runtime/time_windows_arm64.s
 //
 // Clock semantics (100 ns units, not resolution; unaffected by wall adjustments):
 // https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryinterrupttime
 // https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time
 //
-// The layout dependency is limited to amd64. Other architectures need separate
+// The layout dependency is limited to amd64 and arm64. Other architectures need separate
 // alignment, atomicity, and memory-ordering review. The purego tag avoids it.
 func readTicks() uint64

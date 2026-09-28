@@ -53,8 +53,9 @@ Native CI results captured on September 27, 2026 with Go 1.23.12 and 1.27.1 show
   gain on macOS arm64 is more modest.
 - Windows amd64 is faster for all four operations, with smaller gains for
   `Since` and `Now` than for `NowInstant` and `UnixNano`.
-- Windows arm64 uses Go clock fallbacks: `NowInstant` is modestly faster, but
-  `Since`, `Now`, and `UnixNano` are slower than their standard-library comparisons.
+- These Windows arm64 measurements used Go clock fallbacks: `NowInstant` was modestly faster, but
+  `Since`, `Now`, and `UnixNano` were slower than their standard-library comparisons.
+  Windows arm64 now reads the shared clocks directly; those measurements predate this change.
 
 See the dashboard for exact measurements and subsequent runs. Results depend on
 the runner hardware, OS, toolchain, and workload; differences between separate CI
@@ -81,8 +82,7 @@ Default builds use these clock sources:
 | --- | --- | --- |
 | Darwin amd64/arm64 | Mach approximate clock | XNU calendar mapping plus approximate ticks; Go fallback |
 | Linux amd64/arm64 | Kernel coarse monotonic clock; Go fallback selected at startup | Kernel coarse realtime clock; Go fallback |
-| Windows amd64 | Shared InterruptTime counter | Shared SystemTime page |
-| Windows arm64 | Go monotonic clock | Go wall clock |
+| Windows amd64/arm64 | Shared InterruptTime counter | Shared SystemTime page |
 | Other targets | Go monotonic clock | Go wall clock |
 
 Suspend accounting matches Go's current clocks: Linux and macOS exclude system
@@ -91,7 +91,7 @@ sleep; Windows includes it. Other targets follow Go's clock.
 Build with `-tags=purego` to use standard-library clocks on every platform,
 disabling this package's assembly and native clock access.
 
-Windows amd64 uses the same [shared clocks as Go](https://go.dev/src/runtime/time_windows.h),
+Windows amd64/arm64 uses the same [shared clocks as Go](https://go.dev/src/runtime/time_windows.h),
 keeping [interrupt time](https://learn.microsoft.com/en-us/windows/win32/sysinfo/interrupt-time)
 in native ticks until duration conversion.
 
