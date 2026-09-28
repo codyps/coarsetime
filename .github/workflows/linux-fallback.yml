@@ -1,6 +1,17 @@
 name: Linux fallback benchmark
 
-on: [push, pull_request]
+# Match the documentation/release exclusions in benchmarks.yml.
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+      - '.release-please-manifest.json'
+      - 'release-please-config.json'
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+      - '.release-please-manifest.json'
+      - 'release-please-config.json'
 
 permissions:
   contents: read
