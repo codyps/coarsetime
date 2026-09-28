@@ -1,0 +1,672 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.00s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.72s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestLinuxGoMonotonicClock
+--- PASS: TestLinuxGoMonotonicClock (0.01s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxGoFallback
+--- PASS: TestLinuxGoFallback (0.01s)
+=== RUN   TestLinuxCoarseClockFailure
+--- PASS: TestLinuxCoarseClockFailure (0.00s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallGoFallback
+--- PASS: TestLinuxWallGoFallback (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	62651498	         9.458 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	55195810	        10.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	68419114	         8.862 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	67600933	         8.484 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14126692	        42.57 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23258078	        25.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	13901683	        42.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14166260	        42.55 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23751708	        24.77 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14402257	        41.82 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	70406263	         8.477 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	66935590	         8.580 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	55014754	        11.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	62359392	         9.431 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	62883919	         9.430 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	53327421	        11.00 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	67044910	         8.751 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	70997430	         8.459 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14282245	        41.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23890621	        24.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14210250	        42.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	13978212	        42.35 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23575539	        24.99 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	13814696	        42.60 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	66677853	         8.648 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	65507968	         8.870 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	53178033	        11.61 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	60973594	         9.510 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	61033839	         9.457 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	54533055	        11.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	67178980	         8.894 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	67825610	         8.512 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14205602	        42.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23931196	        24.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14284143	        42.60 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14118693	        42.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23633840	        24.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14114052	        42.32 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	70829053	         8.626 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	69206098	         8.838 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	52865918	        11.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	64451475	         9.470 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	62613594	         9.811 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	52571006	        11.13 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	68889216	         8.754 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	69920680	         8.518 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14089515	        42.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	24008869	        24.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14318028	        42.31 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14132973	        42.29 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23883765	        25.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	13776378	        42.50 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	68536494	         8.558 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	67533313	         8.950 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	52577354	        11.00 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	60330423	         9.586 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	65227642	         9.474 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	54564120	        11.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	66297301	         8.838 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	68023670	         8.506 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14264317	        42.37 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23985418	        24.70 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	14198587	        41.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeUnixNano 	13875886	        42.54 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeSince 	23904519	        24.75 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCITimeNow 	14228920	        42.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCIUnixNano 	71732554	         8.547 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINow 	69993781	         8.828 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCISince 	49515127	        10.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: INTEL(R) XEON(R) PLATINUM 8573C
+BenchmarkCINowInstant 	59946886	         9.468 ns/op	       0 B/op	       0 allocs/op
+PASS
+
