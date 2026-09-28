@@ -1,4 +1,4 @@
-//go:build !purego && windows && !amd64
+//go:build !purego && windows && !amd64 && !arm64
 
 package coarsetime
 

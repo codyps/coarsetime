@@ -1,4 +1,4 @@
-//go:build purego || (!linux && (!darwin || (!amd64 && !arm64)) && (!windows || !amd64))
+//go:build purego || (!linux && (!darwin || (!amd64 && !arm64)) && (!windows || (!amd64 && !arm64)))
 
 package coarsetime
 
