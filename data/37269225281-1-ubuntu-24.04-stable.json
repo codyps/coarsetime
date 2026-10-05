@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "run_id": 37269225281,
+  "run_attempt": 1,
+  "pr": 0,
+  "event": "schedule",
+  "runner": "ubuntu-24.04",
+  "go_selector": "stable",
+  "harness": "4f5c6a99dbb86c7e7f6621297a38f6e82f6d18299a4f2fb0f4f0967f4664cc4c",
+  "config": {
+    "samples": 10,
+    "benchtime": "500ms",
+    "threshold_percent": 10,
+    "threshold_ns": 0.5,
+    "bootstrap_confidence": 0.99,
+    "bootstrap_iterations": 5000
+  },
+  "timestamp": "2026-10-05T05:47:27Z",
+  "environment": {
+    "go": {
+      "GOAMD64": "v1",
+      "GOARCH": "amd64",
+      "GOARM": "",
+      "GOEXPERIMENT": "",
+      "GOOS": "linux",
+      "GOVERSION": "go1.27.1"
+    },
+    "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) 6973P-C",
+    "image": "20260927.320.1",
+    "gomaxprocs": 1,
+    "cgo": 0,
+    "cpu_details": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  4\nOn-line CPU(s) list:                     0-3\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) 6973P-C\nCPU family:                              6\nModel:                                   173\nThread(s) per core:                      2\nCore(s) per socket:                      2\nSocket(s):                               1\nStepping:                                1\nCPU(s) scaling MHz:                      158%\nCPU max MHz:                             2600.0000\nCPU min MHz:                             800.0000\nBogoMIPS:                                5200.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves user_shstk avx_vnni avx512_bf16 vnmi avx512vbmi umip waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid cldemote movdiri movdir64b fsrm serialize tsxldtrk ibt amx_bf16 avx512_fp16 amx_tile amx_int8 arch_capabilities\nVirtualization:                          VT-x\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               96 KiB (2 instances)\nL1i cache:                               128 KiB (2 instances)\nL2 cache:                                4 MiB (2 instances)\nL3 cache:                                480 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-3\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+    "clocksource": "tsc"
+  },
+  "samples": {
+    "head": {
+      "NowInstant": [
+        {
+          "ns": 8.134,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.182,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.501,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.097,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.272,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.788,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.682,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.672,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.77,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.343,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "Since": [
+        {
+          "ns": 9.547,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 8.776,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.506,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.927,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.406,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 10.13,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 10.12,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.024,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.762,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 9.61,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "Now": [
+        {
+          "ns": 7.157,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.96,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.948,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.321,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.051,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.759,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.594,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.909,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.445,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.359,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "UnixNano": [
+        {
+          "ns": 7.099,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.299,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.885,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.854,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.072,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.966,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.197,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.092,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 7.986,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.704,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeNow": [
+        {
+          "ns": 36.43,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.99,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 39.43,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.44,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.72,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 41.12,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 40.53,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.1,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 38.92,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 35.93,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeSince": [
+        {
+          "ns": 21.45,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 23.21,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 22.54,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 21.44,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 22.1,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 24.3,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 22.03,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 22.82,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 24.91,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 21.61,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeUnixNano": [
+        {
+          "ns": 39.43,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 38.95,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 37.28,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.48,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 40.47,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 41.31,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.47,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 40.78,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.64,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 36.28,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ]
+    }
+  },
+  "commits": {
+    "head": "7b9437081d199175e7726d84b791a8f3e1c4ec2b"
+  },
+  "summary": {
+    "NowInstant": {
+      "ns": 8.422,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 4.489581755199033
+    },
+    "Since": {
+      "ns": 9.5785,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 2.3603490643173584
+    },
+    "Now": {
+      "ns": 7.239,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 5.226369163900932
+    },
+    "UnixNano": {
+      "ns": 7.0954999999999995,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 5.374020977797659
+    },
+    "TimeNow": {
+      "ns": 36.855000000000004,
+      "bytes": 0.0,
+      "allocs": 0.0
+    },
+    "TimeSince": {
+      "ns": 22.32,
+      "bytes": 0.0,
+      "allocs": 0.0
+    },
+    "TimeUnixNano": {
+      "ns": 38.115,
+      "bytes": 0.0,
+      "allocs": 0.0
+    }
+  },
+  "run_url": "https://github.com/codyps/coarsetime/actions/runs/37269225281"
+}
