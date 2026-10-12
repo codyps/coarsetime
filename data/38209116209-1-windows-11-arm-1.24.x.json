@@ -1,0 +1,447 @@
+{
+  "schema": 1,
+  "run_id": 38209116209,
+  "run_attempt": 1,
+  "pr": 0,
+  "event": "schedule",
+  "runner": "windows-11-arm",
+  "go_selector": "1.24.x",
+  "harness": "4f5c6a99dbb86c7e7f6621297a38f6e82f6d18299a4f2fb0f4f0967f4664cc4c",
+  "config": {
+    "samples": 10,
+    "benchtime": "500ms",
+    "threshold_percent": 10,
+    "threshold_ns": 0.5,
+    "bootstrap_confidence": 0.99,
+    "bootstrap_iterations": 5000
+  },
+  "timestamp": "2026-10-12T05:43:02Z",
+  "environment": {
+    "go": {
+      "GOAMD64": "",
+      "GOARCH": "arm64",
+      "GOARM": "",
+      "GOEXPERIMENT": "",
+      "GOOS": "windows",
+      "GOVERSION": "go1.24.13"
+    },
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "ARMv8 (64-bit) Family 8 Model D49 Revision   0, MICROSOFT CORPORATION",
+    "image": "20261004.176.1",
+    "gomaxprocs": 1,
+    "cgo": 0
+  },
+  "samples": {
+    "head": {
+      "NowInstant": [
+        {
+          "ns": 1.805,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.827,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.788,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.787,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.805,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.844,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.802,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.825,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.8,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.852,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "Since": [
+        {
+          "ns": 4.978,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.847,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.889,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.993,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.979,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.002,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.004,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.881,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.914,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.929,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "Now": [
+        {
+          "ns": 4.333,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.308,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.401,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.378,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.384,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.398,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.367,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.31,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.347,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 4.454,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "UnixNano": [
+        {
+          "ns": 1.831,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.794,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.825,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.826,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.829,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.8,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.815,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.79,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.802,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 1.841,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeNow": [
+        {
+          "ns": 5.264,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.201,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.279,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.218,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.289,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.227,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.205,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.314,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.226,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 5.364,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeSince": [
+        {
+          "ns": 3.353,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.369,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.317,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.383,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.33,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.432,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.342,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.362,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.393,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 3.426,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ],
+      "TimeUnixNano": [
+        {
+          "ns": 6.236,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.129,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.077,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.259,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.155,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.207,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.259,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.213,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.066,
+          "bytes": 0,
+          "allocs": 0
+        },
+        {
+          "ns": 6.147,
+          "bytes": 0,
+          "allocs": 0
+        }
+      ]
+    }
+  },
+  "commits": {
+    "head": "7b9437081d199175e7726d84b791a8f3e1c4ec2b"
+  },
+  "summary": {
+    "NowInstant": {
+      "ns": 1.805,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 2.9075570776255706
+    },
+    "Since": {
+      "ns": 4.9535,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 0.6822937014598947
+    },
+    "Now": {
+      "ns": 4.3725000000000005,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 1.203259575763041
+    },
+    "UnixNano": {
+      "ns": 1.8199999999999998,
+      "bytes": 0.0,
+      "allocs": 0.0,
+      "speedup": 3.4110885730516247
+    },
+    "TimeNow": {
+      "ns": 5.2455,
+      "bytes": 0.0,
+      "allocs": 0.0
+    },
+    "TimeSince": {
+      "ns": 3.3655,
+      "bytes": 0.0,
+      "allocs": 0.0
+    },
+    "TimeUnixNano": {
+      "ns": 6.181,
+      "bytes": 0.0,
+      "allocs": 0.0
+    }
+  },
+  "run_url": "https://github.com/codyps/coarsetime/actions/runs/38209116209"
+}
