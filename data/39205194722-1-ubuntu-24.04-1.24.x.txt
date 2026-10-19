@@ -1,0 +1,672 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.00s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.62s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestLinuxGoMonotonicClock
+--- PASS: TestLinuxGoMonotonicClock (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxGoFallback
+--- PASS: TestLinuxGoFallback (0.00s)
+=== RUN   TestLinuxCoarseClockFailure
+--- PASS: TestLinuxCoarseClockFailure (0.00s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallGoFallback
+--- PASS: TestLinuxWallGoFallback (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	67950554	         7.960 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	70056710	         8.585 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	83527882	         7.007 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	88837072	         6.858 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17150781	        34.93 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28481566	        21.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	17105972	        35.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	16999806	        35.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28788847	        22.66 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17147354	        35.00 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	88129136	         6.757 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	90352845	         6.763 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	67525842	         8.881 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	74083456	         7.939 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	74519544	         7.657 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	66435169	         8.915 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	87893800	         6.798 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	91779985	         6.504 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17068189	        34.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28322960	        20.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	17036408	        35.17 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	16998763	        35.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28604256	        20.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17156004	        34.96 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	90323941	         6.843 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	88055091	         7.066 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	68398548	         8.868 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	79529239	         7.624 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	75489882	         7.971 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	68580472	         8.900 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	80631300	         7.052 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	84288828	         6.521 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17134766	        36.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	24492957	        24.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	15348306	        37.48 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	17093533	        35.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28647633	        20.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17075761	        34.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	84697455	         6.764 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	83164047	         6.993 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	68806423	         8.860 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	73887675	         7.925 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	75408193	         7.661 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	66051848	         8.877 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	84882052	         7.051 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	91218931	         6.777 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17108263	        34.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28655199	        20.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	17112555	        36.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	16989368	        35.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28641132	        20.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17037014	        38.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	76146499	         6.835 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	70682025	         8.097 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	59086929	         9.252 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	72321778	         7.966 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	76711539	         7.986 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	70010458	         8.673 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	84086502	         7.006 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	87151753	         6.801 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17136874	        34.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28509356	        20.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	16988722	        35.15 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeUnixNano 	17028091	        35.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeSince 	28545909	        20.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCITimeNow 	17084074	        34.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCIUnixNano 	85192626	         6.752 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINow 	82177056	         7.056 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCISince 	68750367	         8.836 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: Intel(R) Xeon(R) 6973P-C
+BenchmarkCINowInstant 	75495922	         8.025 ns/op	       0 B/op	       0 allocs/op
+PASS
+
