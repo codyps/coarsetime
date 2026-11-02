@@ -1,0 +1,672 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestAsmcgocallResolution
+--- PASS: TestAsmcgocallResolution (0.01s)
+=== RUN   TestAsmcgocallMissingMetadata
+--- PASS: TestAsmcgocallMissingMetadata (0.00s)
+=== RUN   TestVDSOConcurrentProfiling
+--- PASS: TestVDSOConcurrentProfiling (0.48s)
+=== RUN   TestLinuxCoarseClock
+--- PASS: TestLinuxCoarseClock (0.00s)
+=== RUN   TestLinuxGoMonotonicClock
+--- PASS: TestLinuxGoMonotonicClock (0.01s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestVDSO
+    vdso_linux_test.go:28: monotonic and realtime vDSO fast paths active
+--- PASS: TestVDSO (0.00s)
+=== RUN   TestLinuxGoFallback
+--- PASS: TestLinuxGoFallback (0.01s)
+=== RUN   TestLinuxCoarseClockFailure
+--- PASS: TestLinuxCoarseClockFailure (0.00s)
+=== RUN   TestLinuxRealtimeClock
+--- PASS: TestLinuxRealtimeClock (0.00s)
+=== RUN   TestLinuxWallGoFallback
+--- PASS: TestLinuxWallGoFallback (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	37579416	        15.53 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	34280884	        17.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	49085672	        12.19 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	51117940	        11.85 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10488825	        57.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19126668	        30.96 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10419524	        57.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10372228	        57.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19210930	        30.92 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10519633	        57.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	51194119	        11.81 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	47835720	        12.17 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	35037099	        17.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	38229122	        15.66 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	38558078	        15.62 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	33909481	        17.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	46755520	        12.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	51078970	        11.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10480471	        57.05 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19281640	        30.94 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10443848	        57.31 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10436602	        57.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19382142	        30.96 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10451191	        58.27 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	43175102	        13.58 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	46739382	        12.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	34865823	        17.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	38415556	        15.78 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	37683594	        15.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	33705144	        17.46 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	27556521	        21.53 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	50319123	        11.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10485619	        57.07 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19284175	        30.90 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10426742	        58.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10475617	        58.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19309754	        30.95 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10490146	        57.08 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	49415322	        11.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	50560206	        12.08 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	34742540	        17.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	36922414	        16.29 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	39241954	        15.63 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	33040548	        17.08 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	50757585	        12.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	47774347	        12.04 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10494360	        56.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19191590	        30.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10399892	        57.42 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10401266	        57.31 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19074297	        30.93 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10499286	        57.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	48984906	        11.89 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	49615598	        12.23 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	34124767	        17.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	38537973	        15.49 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	38001330	        15.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	34351647	        17.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	47371471	        12.35 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	50571094	        11.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10455301	        57.08 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19189284	        30.96 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10421668	        58.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeUnixNano 	10369132	        57.56 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeSince 	19388008	        30.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCITimeNow 	10475056	        56.96 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCIUnixNano 	50597412	        11.84 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINow 	49311945	        12.18 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCISince 	33896516	        17.16 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: linux
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 7763 64-Core Processor                
+BenchmarkCINowInstant 	37578852	        16.12 ns/op	       0 B/op	       0 allocs/op
+PASS
+

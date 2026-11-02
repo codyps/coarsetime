@@ -1,0 +1,659 @@
+validation: head
+=== RUN   TestPortableAPISurface
+    api_surface_test.go:19: source checkout required for API surface inspection
+--- SKIP: TestPortableAPISurface (0.00s)
+=== RUN   TestScaleTicks
+--- PASS: TestScaleTicks (0.00s)
+=== RUN   TestInstant
+--- PASS: TestInstant (0.00s)
+=== RUN   TestClockProgress
+--- PASS: TestClockProgress (0.00s)
+=== RUN   TestConcurrentReads
+--- PASS: TestConcurrentReads (0.00s)
+=== RUN   TestSubAgainstBigInt
+--- PASS: TestSubAgainstBigInt (0.00s)
+=== RUN   TestWindowsInterruptTime
+--- PASS: TestWindowsInterruptTime (0.00s)
+=== RUN   TestWindowsInterruptDuration
+--- PASS: TestWindowsInterruptDuration (0.00s)
+=== RUN   TestWallClock
+--- PASS: TestWallClock (0.00s)
+=== RUN   TestConcurrentWallReads
+--- PASS: TestConcurrentWallReads (0.00s)
+=== RUN   TestWindowsSystemTime
+--- PASS: TestWindowsSystemTime (0.00s)
+=== RUN   TestFiletimeUnixNano
+--- PASS: TestFiletimeUnixNano (0.00s)
+=== RUN   TestUnixNanoConcurrent
+--- PASS: TestUnixNanoConcurrent (0.00s)
+PASS
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	617017245	         0.9607 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	187100773	         3.082 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	245873424	         2.455 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	491883511	         1.156 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	189383775	         3.019 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	184284013	         3.258 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 0
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	164311533	         3.485 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	170395196	         3.557 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	177628148	         3.384 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	183413658	         3.129 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	495434570	         1.196 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	231178238	         2.516 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	198199489	         3.058 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 1
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	542589181	         0.9672 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	578739427	         0.9505 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	195401422	         3.048 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	248488053	         2.433 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	484277134	         1.144 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	186566700	         3.336 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	179515165	         3.366 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 2
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	165208335	         3.617 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	164922156	         3.657 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	181483975	         3.308 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	182739854	         3.358 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	506957997	         1.186 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	229890165	         2.516 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	201833115	         2.953 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 3
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	533430535	         0.9616 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	606593059	         0.9316 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	203117445	         2.960 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	246211420	         2.399 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	497447265	         1.135 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	184611123	         3.127 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	179739897	         3.448 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 4
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	164551764	         3.602 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	166335012	         3.539 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	177523930	         3.453 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	187215898	         3.086 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	500595290	         1.178 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	235079595	         2.489 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	202542447	         2.971 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 5
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	607827603	         0.9483 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	590294960	         0.9218 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	202392618	         2.938 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	241965728	         2.464 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	504327126	         1.201 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	183316544	         3.182 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	173982837	         3.177 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 6
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	168614160	         3.462 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	173058135	         3.497 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	187578958	         3.231 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	182249671	         3.264 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	523519094	         1.166 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	243209292	         2.465 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	194843720	         3.156 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 7
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	655663897	         0.9502 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	568810957	         0.9628 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	187234185	         3.050 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	236507167	         2.437 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	505650219	         1.157 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	188430374	         3.278 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	185046457	         3.282 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 8
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	164311803	         3.614 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeUnixNano 	165312298	         3.578 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeSince 	180953989	         3.580 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCITimeNow 	182145159	         2.970 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCIUnixNano 	514525041	         1.234 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINow 	234922018	         2.577 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCISince 	196563351	         3.092 ns/op	       0 B/op	       0 allocs/op
+PASS
+
+round: 9
+revision: head
+goos: windows
+goarch: amd64
+pkg: github.com/codyps/coarsetime
+cpu: AMD EPYC 9V45 96-Core Processor                
+BenchmarkCINowInstant 	505818172	         1.040 ns/op	       0 B/op	       0 allocs/op
+PASS
+
