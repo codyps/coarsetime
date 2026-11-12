@@ -2,7 +2,9 @@
 
 Inexpensive functions for measuring elapsed time and obtaining approximate wall
 time in Go. Uses coarse platform clocks where available, trading resolution and
-freshness for speed.
+freshness for speed. Does not run any background go-routines, uses native platform
+functionality all the time.
+
 Requires Go 1.23 or newer; cgo is not required.
 
 ```sh
